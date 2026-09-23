@@ -1,0 +1,7 @@
+body.coaster #vignette{background:linear-gradient(#142a3925,transparent 18%,transparent 80%,#142a3945)}
+body.coaster #crosshair,body.coaster #prompt,body.coaster .controls-hint{display:none!important}
+body.coaster .objective{max-width:230px;text-shadow:0 2px 8px #25414e}
+body.coaster #subtitle{background:#173344d9;color:#fff8eb;border-radius:24px;font-family:inherit;font-size:14px;bottom:120px}
+body.coaster #hud:before,body.coaster #hud:after{content:'';position:absolute;left:0;right:0;height:16px;background:#172a35;pointer-events:none}
+body.coaster #hud:before{top:0}body.coaster #hud:after{bottom:0}
+body.coaster .wordmark,body.coaster .wordmark span,body.coaster .chapter,body.coaster .chapter .eyebrow,body.coaster .objective .eyebrow,body.coaster .objective p,body.coaster .profile,body.coaster .profile small{color:#234b5e;text-shadow:0 1px 4px #d8eaf1}

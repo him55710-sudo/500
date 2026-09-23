@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5efe5"><meta name="description" content="현수와 하영의 500일을 담은 작은 방탈출. 편지 한 장에서 시작되는, 우리 둘만의 기억 여행."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/src/welcome.css"><title>오백 번째 기억 — 현수와 하영</title></head><body>
+<canvas id="scene" aria-label="500일 기념 방탈출 3D 공간"></canvas>
+<div id="vignette"></div><div id="flash"></div>
+<div id="hud" hidden>
+ <header><div class="wordmark">500<span>오백 번째 기억</span></div><div class="chapter"><span class="eyebrow">CHAPTER 01 / 05</span><span>삐친 현수의 비밀 음악실</span></div><button id="menu-btn" class="icon-button" aria-label="일시정지 및 설정">Ⅱ</button></header>
+ <div class="objective"><span class="eyebrow" id="objective-label">첫 번째 기억</span><p id="objective-text"></p><div id="progress" aria-label="문제 진행"></div></div>
+ <div id="crosshair" aria-hidden="true"><i></i><i></i></div>
+ <div id="prompt" hidden><span class="key">E</span><div><b id="target-label"></b><small id="target-desc"></small></div></div>
+ <div id="toast" role="status" aria-live="polite"></div>
+ <div id="subtitle" role="status" aria-live="polite"></div>
+ <footer><div class="profile"><span class="profile-dot"></span><div>정하영 <small>23세 · 오늘의 주인공</small></div></div><div class="inventory" id="inventory"></div><div class="tools"><button id="view-btn">V <span>1인칭</span></button><button id="journal-btn">J <span>기억 노트</span></button><button id="hint-btn">H <span>현수에게 힌트</span></button></div></footer>
+ <div class="controls-hint">W A S D 이동 <span>·</span> 마우스 시선 <span>·</span> 우클릭 회전 <span>·</span> 휠 줌 <span>·</span> Tab 커서 <span>·</span> Esc 메뉴</div>
+</div>
+<section id="loading" class="fullscreen" hidden><span class="eyebrow">HYUNSU & HAYOUNG</span><h1>오백 번째 기억</h1><p id="loading-label">기억 보관실을 준비하고 있어요…</p><div class="load-track"><i id="load-progress"></i></div></section>
+<section id="welcome" class="fullscreen anniversary-poster" aria-labelledby="invitation-title">
+ <div class="poster-shell">
+  <div class="poster-top"><a class="poster-brand" href="#welcome" aria-label="오백 번째 기억 처음 화면"><span class="brand-monogram" aria-hidden="true">h<span>♡</span>h</span><span>오백 번째 기억</span></a><span class="poster-issue">HYUNSU & HAYOUNG <i aria-hidden="true">/</i> VOL. 500</span></div>
+  <div class="poster-layout">
+   <div class="invitation-copy">
+    <span class="invitation-kicker"><i aria-hidden="true"></i> 오직 하영을 위한 방탈출</span>
+    <h1 id="invitation-title">오백 번째<br>기억<span class="title-heart" aria-hidden="true">.</span></h1>
+    <p class="invitation-english" lang="en">500 days. A thousand little memories.</p>
+    <p class="invitation-letter">하영아, 우리의 추억을 잘 떠올려봐.<br>함께 웃었던 날, 처음 건넨 선물,<br>그리고 아직 못다 한 이야기까지.</p>
+    <p class="invitation-tease">다 기억하면 나갈 수 있겠지? <span>— 아주 많이 삐친 현수</span></p>
+    <div class="invitation-details"><span><small>오늘의 주인공</small><b>정하영</b></span><span><small>첫 번째 이야기</small><b>비밀의 음악실</b></span><span><small>준비된 기억</small><b>8개의 문제</b></span></div>
+    <div class="invitation-actions"><button id="start" class="primary invitation-play" disabled>첫 번째 기억 열기 <span aria-hidden="true">↗</span></button><button id="continue" class="text-button" hidden>지난 기억 이어 하기 <span aria-hidden="true">→</span></button><button id="princess-preview" class="text-button" hidden>♡ 헬로키티 공주방 미리 둘러보기</button></div>
+    <p class="invitation-device"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 21h8m-4-5v5"/></svg>PC · 키보드와 마우스 · 헤드폰 권장</p>
+   </div>
+   <figure class="memory-poster">
+    <div class="poster-print"><div class="print-label"><span>DEAR. HAYOUNG</span><span>WITH LOVE, H.</span></div><img src="/assets/invitation-poster-v3.png" width="1024" height="1280" alt="편지에서 피어난 작은 회전목마와 바이올린을 담은 기념일 포스터" fetchpriority="high" decoding="async"><div class="print-caption"><span>THE FIRST MEMORY</span><p>우리만 아는 이야기의 시작.</p><span class="print-rule" aria-hidden="true"></span><small>CHAPTER 01</small></div></div>
+    <span class="anniversary-seal" aria-label="500일 기념"><small>TOGETHER FOR</small><b>500</b><small>DAYS & COUNTING</small></span>
+    <figcaption>현수와 하영의 기억을 담은 포스터 일러스트</figcaption>
+   </figure>
+  </div>
+  <div class="poster-footer"><div class="poster-guide"><span class="guide-title">PLAY GUIDE</span><span><kbd>W A S D</kbd> 이동</span><span><kbd>E</kbd> 조사하기</span><span><kbd>V</kbd> 시점 전환</span></div><button id="intro-settings" class="poster-settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 17h16"/><rect x="8" y="4" width="4" height="6" rx="1" fill="currentColor"/><rect x="14" y="14" width="4" height="6" rx="1" fill="currentColor"/></svg>소리·연출·개인화 설정 <span aria-hidden="true">↗</span></button></div>
+  <div class="poster-notes"><span>인터넷 사용 가능 · 힌트는 현수에게 카톡 또는 전화</span><span>짧은 놀람 연출 포함 · 설정에서 끄기 가능</span></div>
+ </div>
+</section>
+<div id="modal-backdrop" hidden><section id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button id="close-modal" class="close" aria-label="닫기">×</button><span id="modal-kicker" class="eyebrow"></span><h2 id="modal-title"></h2><div id="modal-body"></div></section></div>
+<button id="resume-capture" hidden>클릭하여 시선 조작 시작</button>
+<script type="module" src="/src/main.js"></script></body></html>

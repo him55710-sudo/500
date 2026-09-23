@@ -1,0 +1,133 @@
+#modal-backdrop.story-backdrop{background:#21161cba;padding:32px;backdrop-filter:none}
+#modal.story-dialog{--story-wine:#772e3c;--story-ink:#392d2e;--story-muted:#82706a;background:#f7f0e6;color:var(--story-ink);width:min(850px,100%);padding:36px 42px 28px;border:1px solid #eddfca;border-radius:5px;box-shadow:0 28px 110px #140b1370;max-height:calc(100dvh - 64px);animation:story-unfold .2s ease;scrollbar-width:thin;scrollbar-color:#bb9990 #f7f0e6;color-scheme:light}
+#modal.story-dialog[data-kind=letter]{width:min(1030px,100%)}
+#modal.story-dialog[data-kind=hint]{width:min(790px,100%)}
+#modal.story-dialog #modal-kicker{display:block;color:var(--story-wine);font-size:9px;letter-spacing:2.1px;padding-right:28px}
+#modal.story-dialog h2{font-family:'Gowun Batang',serif;font-weight:700;font-size:30px;line-height:1.5;letter-spacing:-.8px;color:var(--story-ink);margin:9px 0 24px;padding-bottom:21px;border-bottom:1px solid #8f60522a}
+#modal.story-dialog .close{position:absolute;top:22px;right:24px;width:32px;height:32px;display:grid;place-items:center;padding:0;border:1px solid #b18d8338;border-radius:50%;font-size:24px;font-weight:400;color:#795c59;line-height:1;background:#fffcf64d}
+#modal.story-dialog .close:hover{color:var(--story-wine);background:#eeded4}
+#modal.story-dialog button:focus-visible,#modal.story-dialog input:focus-visible,#modal.story-dialog select:focus-visible,#modal.story-dialog textarea:focus-visible,#modal.story-dialog summary:focus-visible{outline:2px solid var(--story-wine);outline-offset:4px}
+#modal.story-dialog .primary{background:var(--story-wine);color:#fff7e9;border:1px solid var(--story-wine);border-radius:3px;min-height:46px;min-width:0;padding:13px 21px;font-size:12px;line-height:1.6;gap:25px;letter-spacing:.15px}
+#modal.story-dialog .primary:hover:not(:disabled){background:#5c2330}
+#modal.story-dialog .primary:disabled{opacity:1;background:#e9dfd3;border-color:#d8c5bc;color:#8a7168}
+#modal.story-dialog .primary>span{font-size:18px;font-weight:400}
+#modal.story-dialog .secondary{min-height:44px;background:transparent;color:var(--story-wine);border:1px solid #ac807664;border-radius:3px;padding:11px 16px;font-size:12px;line-height:1.7}
+#modal.story-dialog .secondary:hover{background:#eadbd35c}
+#modal.story-dialog .secondary>span{margin-left:10px}
+#modal.story-dialog .body-copy{color:#65514d;font-size:14px;line-height:1.95;margin:18px 0}
+#modal.story-dialog .notice{border-left:2px solid #bf9b83;color:#846b62;padding:9px 14px;background:#eee3d459;font-size:11px;line-height:1.9}
+#modal.story-dialog .puzzle-error{color:#8d3547;font-size:12px;line-height:1.8}
+#modal.story-dialog .story-label{font-size:9px;font-weight:500;letter-spacing:1.5px;color:#8c675d;line-height:1.8}
+#modal.story-dialog .story-intro{font-size:14px;line-height:1.95;color:#75605a;margin:-5px 0 22px}
+#modal.story-dialog .story-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-top:22px;margin-top:25px;border-top:1px solid #8f60522a}
+#modal.story-dialog .story-bottom>span{font-size:10px;line-height:1.8;color:#947b72}
+#modal.story-dialog .story-actions{display:flex;align-items:center;gap:10px}
+#modal.story-dialog .letter-layout{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:34px;align-items:start}
+#modal.story-dialog .keepsake-paper{position:relative;margin:0;transform:none;border:1px solid #e1cdb42e;border-radius:1px;background:#fffaf0;box-shadow:0 7px 18px #71463512,2px 3px 0 #fdf6e9,3px 4px 0 #d7c0a54d;padding:28px 36px 32px;color:#56423a;overflow:hidden;font-family:'Gowun Batang',serif;font-size:19px;line-height:1.95}
+#modal.story-dialog .letter-postmark{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:24px;color:#a28676;font-family:'Noto Sans KR',sans-serif;font-size:8px;line-height:1.9;letter-spacing:1.8px}
+#modal.story-dialog .letter-postmark b{font-size:9px;font-weight:400;letter-spacing:1.7px;color:#8c6e60}
+#modal.story-dialog .paper-stamp{width:55px;height:65px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px dashed #a16c645c;outline:1px solid #a16c642b;outline-offset:3px;color:#92525b;font-family:Georgia,serif;font-size:29px;line-height:1.1;transform:rotate(8deg)}
+#modal.story-dialog .paper-stamp small{font-family:'Noto Sans KR',sans-serif;font-size:6px;letter-spacing:1px;margin-top:5px}
+#modal.story-dialog .letter-salutation{font-size:22px;font-weight:700;margin:0 0 16px}
+#modal.story-dialog .letter-lines{background:repeating-linear-gradient(transparent 0 36px,#bd9e7b14 36px 37px);line-height:37px}
+#modal.story-dialog .letter-lines p{margin:0 0 21px}
+#modal.story-dialog .letter-paper strong{font-weight:700;color:#873d49;border-bottom:1px solid #9a455559;background:linear-gradient(transparent 65%,#d9b49135 65%);padding:0 1px}
+#modal.story-dialog .letter-last-word{font-size:22px;font-weight:700;transform:rotate(-3deg);transform-origin:left}
+#modal.story-dialog .signature{display:flex;flex-direction:column;align-items:flex-end;gap:2px;margin-top:6px;color:#754c49;font-size:25px;font-weight:700}
+#modal.story-dialog .signature small{font-size:12px;font-weight:400;color:#9b7c6b}
+#modal.story-dialog .paper-fold{position:absolute;right:0;bottom:0;width:26px;height:26px;background:linear-gradient(135deg,#ddc4a534 49%,#f7f0e6 50%);border-top:1px solid #d5b99d33;border-left:1px solid #d5b99d33}
+#modal.story-dialog .letter-margin{padding-top:17px}
+#modal.story-dialog .margin-icon{width:36px;height:36px;color:var(--story-wine);margin-bottom:20px}
+#modal.story-dialog .margin-icon svg{width:100%;height:100%}
+#modal.story-dialog .letter-margin h3{font-family:'Gowun Batang',serif;font-size:20px;line-height:1.7;margin:9px 0 15px;font-weight:700;letter-spacing:-.4px}
+#modal.story-dialog .letter-margin p{font-size:12px;line-height:2;color:#8a7268;margin:0}
+#modal.story-dialog .letter-next{border-top:1px solid #8f60522a;margin:27px 0 24px;padding-top:21px}
+#modal.story-dialog .letter-next p{margin-top:8px}
+#modal.story-dialog .letter-keep{display:flex;align-items:center;gap:10px;padding-top:4px}
+#modal.story-dialog .letter-keep svg{width:26px;height:26px;color:#ad8b73;flex-shrink:0}
+#modal.story-dialog .letter-keep span{font-size:10px;color:#a18b7c;line-height:1.8}
+#modal.story-dialog .hint-contact{display:flex;align-items:center;gap:17px;background:#efe0d447;color:var(--story-ink);border:1px solid #b88c7633;border-radius:4px;padding:22px;margin:0 0 22px}
+#modal.story-dialog .sender-mark{width:57px;height:57px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--story-wine);color:#f7e7ce;font:italic 33px Georgia,serif;position:relative;padding-right:3px}
+#modal.story-dialog .sender-mark span{font-size:13px;position:absolute;top:8px;right:8px}
+#modal.story-dialog .hint-contact h3{font-family:'Gowun Batang',serif;font-size:21px;font-weight:700;letter-spacing:-.5px;margin:3px 0 7px}
+#modal.story-dialog .hint-contact p{font-size:11px;color:#8a6f64;line-height:1.9;margin:0}
+#modal.story-dialog .contact-caption{margin-left:auto;color:#ae8c7d;font-family:Georgia,serif;font-style:italic;font-size:10px;line-height:1.6;text-align:right;white-space:nowrap}
+#modal.story-dialog .hint-message{padding:0 3px}
+#modal.story-dialog .hint-message label{display:block;margin-bottom:12px}
+#modal.story-dialog .hint-message label>b{display:block;font-size:14px;font-weight:500;color:#593c3e;margin-top:7px}
+#modal.story-dialog .hint-message label>b span{color:#b79e91;font-weight:400;padding:0 9px}
+#modal.story-dialog #hint-question{display:block;width:100%;resize:vertical;min-height:84px;max-height:180px;box-sizing:border-box;border:1px solid #b5918040;background:#fffaf1;border-radius:3px;color:#6f4e49;padding:16px 18px;font-family:'Gowun Batang',serif;font-size:16px;line-height:1.8}
+#modal.story-dialog .hint-copy-row{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:12px}
+#modal.story-dialog #copy-status{font-size:10px;line-height:1.8;color:#957769}
+#modal.story-dialog #copy-hint{font-size:11px;flex-shrink:0;min-height:38px;padding:7px 14px}
+#modal.story-dialog .hint-envelope{border:1px solid #b4917f4d;border-radius:4px;margin-top:25px;overflow:hidden;background:#fffcf43d}
+#modal.story-dialog .hint-envelope summary{list-style:none;display:flex;align-items:center;gap:14px;padding:20px 22px;margin:0;color:#70494c;cursor:pointer}
+#modal.story-dialog .hint-envelope summary::-webkit-details-marker{display:none}
+#modal.story-dialog .hint-envelope-icon{width:29px;height:29px;flex-shrink:0}
+#modal.story-dialog .hint-envelope summary b{display:block;font-family:'Gowun Batang',serif;font-size:17px;font-weight:700;line-height:1.5}
+#modal.story-dialog .hint-envelope summary small{display:block;font-size:10px;font-weight:400;color:#9b7e72;margin-top:5px;line-height:1.7}
+#modal.story-dialog .disclosure-mark{margin-left:auto;font-size:25px;font-weight:400;line-height:1}
+#modal.story-dialog .hint-envelope[open] .disclosure-mark{transform:rotate(45deg)}
+#modal.story-dialog .hint-envelope[open] summary{border-bottom:1px solid #b4917f33;background:#eee0d638}
+#modal.story-dialog .hint-envelope-body{padding:20px 22px 18px}
+#modal.story-dialog .hint-warning{font-size:11px;color:#997969;line-height:1.9;margin:0 0 20px}
+#modal.story-dialog .hint-steps{display:flex;gap:12px;list-style:none;margin:0 0 18px;padding:0}
+#modal.story-dialog .hint-steps li{display:flex;gap:7px;align-items:center;flex:1;font-size:10px;color:#b19b8d;border-bottom:1px solid #bda38b40;padding-bottom:11px}
+#modal.story-dialog .hint-steps li>span{font-size:10px;font-family:Georgia,serif}
+#modal.story-dialog .hint-steps li.revealed{color:var(--story-wine);border-bottom-color:#995b65}
+#modal.story-dialog .hint-card{border:1px solid #c9aa9438;background:#fffaf1;border-radius:3px;padding:17px 18px;margin-bottom:13px;animation:story-unfold .18s ease}
+#modal.story-dialog .hint-card>div{display:flex;align-items:center;gap:10px}
+#modal.story-dialog .hint-card-number{font-family:Georgia,serif;color:#b18a78;font-size:15px}
+#modal.story-dialog .hint-card h3{font-family:'Gowun Batang',serif;font-size:15px;margin:0;font-weight:700;color:#77474e}
+#modal.story-dialog .hint-card small{margin-left:auto;color:#a77968;font-size:9px}
+#modal.story-dialog .hint-card p{font-size:13px;color:#6f554f;line-height:1.95;margin:10px 0 0;overflow-wrap:anywhere}
+#modal.story-dialog .hint-card[data-hint-card="2"]{border-color:#c292984d;background:#f5e8e44f}
+#modal.story-dialog #next-hint{width:100%;justify-content:center;min-height:43px;font-size:11px;line-height:1.8}
+#modal.story-dialog .hint-progress{text-align:center;font-size:9px;color:#a58c7b;margin:10px 0 0}
+#modal.story-dialog .journal-cover{display:flex;gap:20px;align-items:center;padding:3px 0 20px}
+#modal.story-dialog .journal-emblem{width:46px;height:46px;color:#975d68;flex-shrink:0}
+#modal.story-dialog .journal-cover p{font-family:'Gowun Batang',serif;font-size:20px;line-height:1.7;color:#73534b;margin:4px 0 0}
+#modal.story-dialog .journal-count{display:flex;align-items:baseline;gap:7px;margin-left:auto;white-space:nowrap;color:#977166}
+#modal.story-dialog .journal-count b{font-family:Georgia,serif;font-weight:400;font-size:47px;color:var(--story-wine)}
+#modal.story-dialog .journal-count small{font-size:10px}
+#modal.story-dialog .journal-progress{display:flex;gap:7px;margin:5px 0 21px}
+#modal.story-dialog .journal-progress span{flex:1;text-align:center;font:12px Georgia,serif;padding:8px 0;border:1px solid #bfa29047;background:#ede4d44d;color:#bda38d;border-radius:2px}
+#modal.story-dialog .journal-progress .remembered{color:#fff7e9;border-color:var(--story-wine);background:var(--story-wine)}
+#modal.story-dialog .journal-empty{text-align:center;padding:31px 20px 35px;background:#fffcf552;border:1px dashed #b1917d55;border-radius:3px}
+#modal.story-dialog .journal-empty>svg{width:43px;height:43px;color:#ac8d75;margin-bottom:8px}
+#modal.story-dialog .journal-empty h3{font-family:'Gowun Batang',serif;font-size:20px;font-weight:700;color:#79554e;margin:9px 0 10px}
+#modal.story-dialog .journal-empty p{color:#9a7d6b;font-size:12px;line-height:1.9;margin:0}
+#modal.story-dialog .memory-pages{padding:0;margin:0;list-style:none}
+#modal.story-dialog .memory-pages li{display:flex;gap:18px;align-items:flex-start;padding:19px 4px;border-bottom:1px solid #b4917f30;margin:0}
+#modal.story-dialog .memory-page-number{font-family:Georgia,serif;font-size:24px;color:#b48b7a;padding-top:3px}
+#modal.story-dialog .memory-pages small{font-size:9px;letter-spacing:1px;color:#af8b78}
+#modal.story-dialog .memory-pages p{font-family:'Gowun Batang',serif;font-size:16px;color:#674d45;line-height:1.85;margin:3px 0 0}
+#modal.story-dialog .memory-check{color:#9c6a70;font-size:13px;margin:7px 0 0 auto}
+/* Shared surfaces keep every puzzle, note and settings panel in the same paper palette. */
+#modal.story-dialog .letter-paper:not(.keepsake-paper){transform:none;background:#fff9ee;border:1px solid #dec8ad66;box-shadow:0 5px 12px #8f605216;border-radius:2px;padding:28px 32px;color:#725448;font-size:18px;line-height:2.05}
+#modal.story-dialog .frame-choice{background:#fffaf1;color:#704c48;border-width:3px;border-radius:3px}
+#modal.story-dialog .frame-choice small{color:#9a7d70}
+#modal.story-dialog .sequence span{color:#875154;border-color:#c8a39266;background:#fffbf4}
+#modal.story-dialog .cut{background:#ded0b8;color:#72594a;border-color:#b0917166;border-radius:3px}
+#modal.story-dialog .cut.revealed{background:#a56d69;color:#fff4e4;border-color:#8a5451}
+#modal.story-dialog .taste-card{background:#fffbf4;border:1px solid #cdb59a61;border-radius:4px;padding:24px 20px;color:#72504a}
+#modal.story-dialog .taste-card small{color:#a0806f}
+#modal.story-dialog .item-drawing{color:#9f7160;background:#ebdecb44;border:1px solid #bc977f33;margin-bottom:20px;border-radius:3px}
+#modal.story-dialog .settings-row{border-bottom:1px solid #8f605225;color:#745950;padding:17px 0;font-size:12px}
+#modal.story-dialog .settings-row small{font-size:10px;color:#a17f6d}
+#modal.story-dialog .settings-row select,#modal.story-dialog .file-field select{background:#fff9ee;color:#744e45;border:1px solid #c6a58d80;border-radius:3px;padding:9px;font-size:11px;max-width:58%}
+#modal.story-dialog .settings-row input{accent-color:var(--story-wine)}
+#modal.story-dialog .file-field label{color:#8f6657}
+#modal.story-dialog .file-field input{color:#997d6b}
+#modal.story-dialog .choice-note{color:#947361}
+#modal.story-dialog .spoiler:not(.hint-envelope) summary{color:#94665b;font-size:12px;padding:10px 0;margin-top:15px}
+#modal.story-dialog .spoiler:not(.hint-envelope) p{color:#8d6f60}
+#modal.story-dialog .ending-stamp{color:var(--story-wine);font-size:72px;font-family:Georgia,serif}
+#modal.story-dialog .ending-text{color:#72564f}
+#modal.story-dialog .name-tag{color:var(--story-wine)}
+#modal.story-dialog .chapter-track span{border-color:#cbb598;color:#b29a7e}
+#modal.story-dialog .chapter-track span:first-child{background:var(--story-wine);color:#fff7e8;border-color:var(--story-wine)}
+@keyframes story-unfold{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){#modal.story-dialog .letter-layout{grid-template-columns:minmax(0,1fr) 180px;gap:24px}#modal.story-dialog .keepsake-paper{padding:25px 28px;font-size:17px}#modal.story-dialog .letter-margin h3{font-size:18px}#modal.story-dialog .letter-margin p{font-size:11px}#modal.story-dialog .story-bottom{align-items:flex-start;flex-direction:column}#modal.story-dialog .story-actions{align-self:flex-end}}
+@media(max-width:620px){#modal-backdrop.story-backdrop{padding:12px}#modal.story-dialog{padding:27px 22px 23px;max-height:calc(100dvh - 24px)}#modal.story-dialog h2{font-size:24px;margin-bottom:20px;padding-bottom:18px}#modal.story-dialog .close{top:15px;right:14px;width:29px;height:29px}#modal.story-dialog #modal-kicker{font-size:8px;letter-spacing:1.4px;padding-right:27px}#modal.story-dialog .letter-layout{grid-template-columns:1fr;gap:26px}#modal.story-dialog .keepsake-paper{padding:23px 23px 27px;font-size:16px}#modal.story-dialog .letter-salutation{font-size:20px}#modal.story-dialog .letter-lines{background-size:auto;line-height:32px;background:repeating-linear-gradient(transparent 0 31px,#bd9e7b14 31px 32px)}#modal.story-dialog .letter-postmark{margin-bottom:22px;font-size:7px;letter-spacing:1.3px}#modal.story-dialog .paper-stamp{width:46px;height:56px;font-size:25px}#modal.story-dialog .letter-margin{padding:0 4px}#modal.story-dialog .margin-icon{display:none}#modal.story-dialog .letter-margin h3{font-size:19px}#modal.story-dialog .letter-next{margin:18px 0;padding-top:16px}#modal.story-dialog .letter-margin br{display:none}#modal.story-dialog .letter-keep{display:none}#modal.story-dialog .story-bottom{margin-top:23px;padding-top:19px;gap:14px}#modal.story-dialog .story-actions{align-self:stretch;flex-wrap:wrap}#modal.story-dialog .story-actions .primary{flex:1;justify-content:center}#modal.story-dialog .story-bottom .secondary{font-size:11px}#modal.story-dialog .hint-contact{padding:17px 15px;gap:13px}#modal.story-dialog .sender-mark{width:43px;height:43px;font-size:26px}#modal.story-dialog .sender-mark span{font-size:11px;right:5px;top:4px}#modal.story-dialog .hint-contact h3{font-size:18px}#modal.story-dialog .hint-contact p{font-size:10px}#modal.story-dialog .contact-caption{display:none}#modal.story-dialog .hint-contact .story-label{font-size:7px;letter-spacing:.7px}#modal.story-dialog .story-intro{font-size:12px}#modal.story-dialog #hint-question{font-size:14px;padding:13px 14px;min-height:107px}#modal.story-dialog .hint-copy-row{gap:10px;align-items:flex-start}#modal.story-dialog #copy-status{font-size:9px;padding-top:3px}#modal.story-dialog .hint-envelope summary{padding:17px 14px;gap:11px}#modal.story-dialog .hint-envelope summary b{font-size:15px}#modal.story-dialog .hint-envelope summary small{font-size:9px}#modal.story-dialog .hint-envelope-icon{width:25px;height:25px}#modal.story-dialog .hint-envelope-body{padding:17px 14px}#modal.story-dialog .hint-warning{font-size:10px}#modal.story-dialog .hint-steps{gap:8px}#modal.story-dialog .hint-steps li{font-size:9px;gap:5px}#modal.story-dialog .hint-card{padding:14px}#modal.story-dialog .hint-card small{font-size:8px}#modal.story-dialog .hint-card p{font-size:12px}#modal.story-dialog #next-hint{padding:12px 10px;font-size:10px}#modal.story-dialog .journal-cover{gap:12px}#modal.story-dialog .journal-emblem{width:30px;height:30px}#modal.story-dialog .journal-cover .story-label{font-size:7px;letter-spacing:.7px}#modal.story-dialog .journal-cover p{font-size:15px}#modal.story-dialog .journal-count{flex-direction:column;gap:0;align-items:center}#modal.story-dialog .journal-count b{font-size:38px}#modal.story-dialog .journal-count small{font-size:8px}#modal.story-dialog .journal-progress{gap:4px}#modal.story-dialog .journal-empty{padding:26px 12px}#modal.story-dialog .journal-empty h3{font-size:18px}#modal.story-dialog .journal-empty p{font-size:11px}#modal.story-dialog .memory-pages p{font-size:14px}#modal.story-dialog .letter-paper:not(.keepsake-paper){font-size:16px;padding:23px}#modal.story-dialog .settings-row{gap:12px}#modal.story-dialog .settings-row input[type=range]{width:130px}#modal.story-dialog .settings-row select{font-size:10px;padding:7px}}
+@media(prefers-reduced-motion:reduce){#modal.story-dialog,#modal.story-dialog .hint-card{animation:none}}

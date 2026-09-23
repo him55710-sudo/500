@@ -1,0 +1,3 @@
+/* Keep the play view clear without an extra full-screen GPU post-processing pass. */
+body #vignette{background:radial-gradient(ellipse at 50% 44%,transparent 70%,#21171912 100%)}
+body.heaven #vignette{background:none}

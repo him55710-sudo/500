@@ -1,0 +1,12 @@
+node_modules
+dist
+blender
+test-results
+tests
+docs
+tools
+.env*
+*.log
+*.blend*
+게임 시작.cmd
+serve.mjs

@@ -1,0 +1,12 @@
+.cuts .food-cut{padding:0;overflow:hidden;border:1px solid #bda06a80;background:#17241f;display:flex;flex-direction:column;transition:border-color .16s,transform .16s;text-align:left;min-height:0;border-radius:7px}
+.cuts .food-cut:hover{border-color:#e6c795;transform:translateY(-2px)}
+.cuts .food-cut:focus-visible{outline:3px solid #e6c795;outline-offset:3px}
+.cut-photo{display:block;width:100%;aspect-ratio:1;background-image:url('/assets/beef-cuts-photo-atlas.jpg');background-size:300% 200%;background-color:#f7f3eb;background-repeat:no-repeat}
+.cut-photo-0{background-position:0 0}.cut-photo-1{background-position:50% 0}.cut-photo-2{background-position:100% 0}.cut-photo-3{background-position:0 100%}.cut-photo-4{background-position:50% 100%}.cut-photo-5{background-position:100% 100%}
+.cut-cover{width:100%;padding:12px;display:grid;grid-template-columns:22px 1fr;gap:4px 6px;align-items:center;background:linear-gradient(115deg,#514736,#262c23);border-top:1px solid #dac49b55}
+.cut-cover>b{grid-row:1/3;font:18px Georgia,serif;color:#d9bd85}.cut-name{font-size:13px;font-weight:600;color:#f1e5c9;line-height:1.45}.cut-action{font-size:10px;line-height:1.5;color:#bdb49e}
+.food-cut.revealed .cut-cover{background:#efe2c8}.food-cut.revealed .cut-name{color:#294336}.food-cut.revealed .cut-action{color:#635c4c}.food-cut.revealed .cut-cover>b{color:#887044}
+.steak-photo{width:100%;aspect-ratio:1;background-image:url('/assets/steak-photo-pair.jpg');background-size:200% 100%;background-repeat:no-repeat;border-radius:5px;margin-bottom:14px;box-shadow:0 3px 18px #0003}.steak-photo-hyunsu{background-position:0 0}.steak-photo-alpero{background-position:100% 0}
+.taste-card:has(.steak-photo){padding:12px}.taste-card:has(.steak-photo)>p{margin:12px 0 7px}.food-image-note{font-size:10px;color:#bdb49e;line-height:1.6}
+@media(max-width:550px){.cuts .cut-cover{padding:10px 8px;grid-template-columns:17px 1fr}.cut-name{font-size:12px}.cut-action{font-size:9px}.taste-grid:has(.steak-photo){gap:12px}.taste-card:has(.steak-photo){padding:9px}}
+@media(prefers-reduced-motion:reduce){.cuts .food-cut{transition:none}.cuts .food-cut:hover{transform:none}}

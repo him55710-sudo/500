@@ -1,0 +1,100 @@
+# 오백 번째 기억 — 첫 번째 방
+
+현수와 하영의 500일 기념 방탈출. 사용자가 작성한 문제 0~7을 순서대로 플레이하는 PC 브라우저용 3D 게임입니다. Blender 5.2.2 LTS에서 만든 공간과 소품을 Three.js로 렌더링합니다.
+
+2026-09-24 수정: 포스터형 시작 화면, 크림색 금장 클래식 음악 살롱, 조각 인형과 회전목마, 천장 프레스코. 렌더링 부담과 저프레임 이동 문제를 수정했고 걷기·달리기 속도를 높였습니다. 실제 레퍼런스와 오픈소스 적용 내역은 [레퍼런스와 개선](docs/레퍼런스와-개선.md)을 참고하세요.
+
+## 실행
+
+공개 게임: **[오백 번째 기억 플레이](https://hyunsu-hayoung-500.vercel.app)**. 키보드와 마우스를 사용하는 PC 브라우저에 맞춰 제작했습니다.
+
+로컬 실행은 `게임 시작.cmd`를 더블클릭합니다. 빌드 결과가 포함되어 있으며, 브라우저에서 `http://127.0.0.1:5178`을 엽니다. 이 로컬 서버는 해당 PC에서만 접근할 수 있습니다.
+
+프로젝트는 `C:\Users\user\Downloads\500일 방탈출`로 이전했습니다. 게임 코드·Blender 원본·텍스처·테스트가 이 폴더 안에 있고, 이전 `uni-foli-main` 아래의 게임 폴더는 이동 완료 후 제거했습니다. 클래식 음악 살롱은 실제 3D 플레이 공간이며 첫 화면은 기념일 포스터입니다.
+
+개발:
+
+```powershell
+pnpm install
+pnpm dev
+pnpm test
+pnpm build
+pnpm test:browser
+```
+
+Node.js 20.19+ 또는 22.12+가 필요합니다. 이 PC의 시작 스크립트는 Codex에 포함된 Node를 자동으로 찾습니다. 다른 PC에서는 Node.js 설치 후 실행하세요.
+
+## Vercel 배포
+
+Vercel 팀 `mongben`, 프로젝트 `hyunsu-hayoung-500`에 연결되어 있습니다. 이 프로젝트 폴더에서 실행하세요.
+
+```powershell
+pnpm test
+pnpm dlx vercel@59.25.0 build --prod --yes --scope mongben
+pnpm dlx vercel@59.25.0 deploy --prebuilt --prod --yes --scope mongben
+$env:GAME_BASE_URL='https://hyunsu-hayoung-500.vercel.app/'
+node tests/production-smoke.mjs
+node tests/asset-loading.mjs
+```
+
+검증한 정적 빌드만 배포합니다. Blender 편집 원본·제작자 정답 문서·테스트 기록·환경 파일은 공개 빌드에 들어가지 않습니다. 프로젝트 연결 정보는 로컬 `.vercel/project.json`에 보관합니다.
+
+로컬 실행 스크립트는 5178 포트로 빌드 결과를 제공합니다. 브라우저 개발 테스트는 `pnpm exec vite --host 127.0.0.1 --port 5179`를 켠 뒤 실행합니다. `pnpm test:browser`, `node tests/revision-ui.mjs`, `node tests/performance.mjs after`가 5179를 사용합니다.
+
+## 조작
+
+| 키 | 동작 |
+|---|---|
+| WASD | 걷기 |
+| 마우스 | 시선 조절 (화면 클릭으로 잠금) |
+| 마우스 우클릭 드래그 / 방향키 | 시선 조절 대체 방식 |
+| V | 1인칭 / 3인칭 |
+| 마우스 휠 | 3인칭 줌, 가까이 당기면 1인칭 |
+| Shift | 빠르게 걷기 |
+| E | 물건 조사·집기·놓기 |
+| Tab | 마우스 커서 풀기 / 시선 잠금 |
+| J | 풀어낸 기억 기록 |
+| H | 현수에게 카톡·전화 힌트 안내 |
+| Esc | 일시정지 / 창 닫기 |
+
+진행 상황은 브라우저에 자동 저장됩니다. 다른 브라우저·주소·기기 사이에서는 공유되지 않습니다. 오답으로 아이템을 잃지 않으며 정답까지 다시 시도할 수 있습니다. 힌트 UI는 카톡·전화 앱을 직접 열도록 안내하며 메시지를 자동 전송하지 않습니다. 연락이 어려울 때 사용할 단계별 보조 힌트도 접힌 상태로 제공합니다.
+
+## 반영한 이야기
+
+주인공은 23세 정하영입니다. 아바타 외모는 실제 인물 사진을 사용하지 않은 창작 스타일입니다. 현수의 장난스러운 삐침을 중심으로 하며 짧은 어두워짐·금속 소리 연출을 설정에서 끌 수 있습니다.
+
+8개 문제: 편지와 VITA500 → 네 액자의 추억 순서 → 바이올린 키링과 연주 인형 → 회전목마 집기 → 그림에 회전목마 넣기 → 9번에 평상 → 살치살 → 두 스테이크를 시식한 뒤 현수에게 투표. 상세 정답은 `docs/제작자-진행표.md`에 있습니다.
+
+## 교체할 개인 자료
+
+게임 설정의 **사진·그림·음원 개인화**에서 네 포스터, 하영의 그림, 보유한 음원을 선택할 수 있습니다. 업로드 없이 브라우저 안에서만 읽습니다. 개인 파일은 현재 세션에만 적용되어 새로고침 후 재선택해야 합니다.
+
+- 네 액자는 실제 추억 사진이 아닌 임시 만화 포스터입니다.
+- 놀이공원 그림은 원본이 없는 상태에서 만든 임시 작품입니다.
+- 요청한 곡의 제목은 `인생의 회전목마`로 반영되어 있습니다. 실제 녹음 파일은 포함되어 있지 않고, 기본 재생은 직접 만든 임시 왈츠입니다. 보유 음원을 설정에서 선택하면 바이올린 이벤트부터 해당 곡이 재생됩니다.
+- 실제 곡을 확인할 수 있는 [Joe Hisaishi 공식 영상](https://www.youtube.com/watch?v=2pQKqQ9sG50).
+
+## 제작 범위
+
+현재 **첫 번째 퍼즐 방과 탈출 후 들어가는 헬로키티 공주방**을 구현했습니다. 공주방은 보너스 휴식 공간이며 2~5번 퍼즐 방은 아직 없습니다. Unity Editor와 활성 라이선스가 이 PC에 없어 Unity 실행 파일은 만들지 않았습니다. Unity UI 스킬의 정보 계층·입력 차단·접근성 기준은 적용했지만 실행 엔진은 웹용 Three.js입니다.
+
+[헬로키티 공주방 미리 보기](https://hyunsu-hayoung-500.vercel.app/?preview=heaven)에서는 기존 진행을 덮어쓰지 않고 둘러볼 수 있습니다. 인형 14개, 액자 7개, 캐노피 침대, 구름 창문, 하트 화장대와 샹들리에를 Blender로 제작했습니다. 편집 원본은 `blender/hayoung-kitty-heaven-editable.blend`, 재생성 코드는 `blender/build_princess.py`입니다. [공주방 제작 기록과 참고 자료](docs/헬로키티-공주방.md)를 참고하세요. 추가 검증은 개발 서버를 켜고 `node tests/princess.mjs`, `node tests/princess-continuation.mjs`를 실행합니다.
+
+Blender 원본: `blender/500-memory-room.blend`  
+재생성 코드: `blender/build_room.py`  
+게임 자산: `public/assets/memory-room.glb`  
+게임 규칙: `src/state.js`  
+공간·카메라: `src/world.js`  
+UI·입력: `src/main.js`  
+소리: `src/audio.js`
+
+Blender 생성 스크립트는 새로운 이름의 씬을 만들며 기존 사용자의 씬 오브젝트를 삭제하지 않습니다. 원본에는 카메라·조명과 소품 구조가 남아 있어 계속 수정할 수 있습니다.
+
+## 설계 참고
+
+- [Scott Nicholson, Ask Why (2016)](https://scottnicholson.com/pubs/askwhy.pdf): 퍼즐, 공간, 이야기의 이유를 연결하는 설계. 선물은 인형의 악기가 되고, 곡은 회전목마를 가리키고, 회전목마는 하영의 그림을 완성하도록 적용했습니다.
+- [Escape, A Beginner's Guide to Escape Room Puzzles](https://www.escape.game/news/beginners-guide-to-puzzles): 탐색·코드·관찰·물리 조작의 다양성. 일곱 자리 휠, 순서 입력, 아이템 전달, 장소 연상, 덮개 열기, 시식 후 선택으로 문제 형식을 나눴습니다.
+- [Three.js 공식 문서](https://threejs.org/docs/): GLB 로딩, PBR, 카메라, 광원, 후처리.
+- [Poly Haven Wood Floor Deck](https://polyhaven.com/a/wood_floor_deck): 바닥의 색상·법선·거칠기 텍스처. CC0. 1K 파일을 로컬에 포함했습니다.
+
+실제 영업 중인 방탈출 카페의 비공개 문제·정답을 복제하지 않았으며, 문제 내용은 사용자가 제공한 연애 이야기와 설계입니다.
