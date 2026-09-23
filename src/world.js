@@ -36,14 +36,14 @@ export class World{
   this.renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});this.renderer.setPixelRatio(Math.min(devicePixelRatio,1));this.renderer.setSize(innerWidth,innerHeight);this.renderer.shadowMap.enabled=false;this.renderer.shadowMap.type=THREE.PCFSoftShadowMap;this.renderer.toneMapping=THREE.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1.08;this.renderer.outputColorSpace=THREE.SRGBColorSpace;
   this.camera=new THREE.PerspectiveCamera(65,innerWidth/innerHeight,.055,80);this.camera.position.set(0,1.65,4.4);this.yaw=0;this.pitch=-.06;this.thirdPerson=false;this.zoom=2.9;this.player=V(0,0,4.05);this.keys=new Set();this.walkTime=0;this.lastStep=0;this.sensitivity=1;this.motion=true;this.quality='auto';this.dpr=1;this.sampleTime=0;this.sampleFrames=0;this.speedScale=1;this.active=false;this.targets=[];this.ray=new THREE.Raycaster();this.hit=null;this.oldStage=-1;this.pendingAnimations=[];
   this.colliders=[[-4.85,-1.85,-4.4,-2.95],[-5.85,-4.65,-2.3,.5],[-5.3,-3.94,1.1,2.2],[-4.36,-.64,4.25,5.32]];this.wallBoxes=[new THREE.Box3(V(-6,0,-6.15),V(6,5,-5.9)),new THREE.Box3(V(-6.15,0,-6),V(-5.9,5,6)),new THREE.Box3(V(5.9,0,-6),V(6.15,5,6)),new THREE.Box3(V(-6,0,5.9),V(6,5,6.15))];
-  this.scene.add(new THREE.HemisphereLight(0xfffaf2,0x99929c,1.12));
+  this.scene.add(new THREE.HemisphereLight(0xf5faff,0xaaa49a,1.25));
   const pmrem=new THREE.PMREMGenerator(this.renderer);this.scene.environment=pmrem.fromScene(new RoomEnvironment(),.055).texture;pmrem.dispose();this.scene.environmentIntensity=.68;
   this.lights=[];
   const point=(p,color,intensity,distance)=>{let l=new THREE.PointLight(color,intensity,distance,2);l.position.copy(V(...p));this.scene.add(l);this.lights.push(l);return l;};
   // Cache one shadow map for immovable furniture. It is never redrawn while playing.
   this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=THREE.BasicShadowMap;this.renderer.shadowMap.autoUpdate=false;this.renderer.shadowMap.needsUpdate=true;
-  const key=new THREE.SpotLight(0xffefd9,86,18,Math.PI*.44,.95,1.5);key.position.set(0,3.25,.3);key.target.position.set(0,0,-.7);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.bias=-.0004;key.shadow.normalBias=.055;this.scene.add(key,key.target);this.lights.push(key);
-  const fill=new THREE.DirectionalLight(0xdceaff,.9);fill.position.set(-5,4,3);this.scene.add(fill);
+  const key=new THREE.SpotLight(0xfff4e6,14,18,Math.PI*.44,.95,1.5);key.position.set(0,3.25,.3);key.target.position.set(0,0,-.7);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.bias=-.0004;key.shadow.normalBias=.055;this.scene.add(key,key.target);this.lights.push(key);
+  const fill=new THREE.DirectionalLight(0xeaf4ff,1.35);fill.position.set(-5,4,3);this.scene.add(fill);
   this.exitLight=point([3.65,1.8,-5.45],0xffdba7,0,7);
   this.collisionBoxes=[...this.wallBoxes,...this.colliders.map(([a,b,c,d])=>new THREE.Box3(V(a,0,c),V(b,1.3,d)))];
   this.ready=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/assets/memory-room.glb',e=>onProgress(e.loaded/(e.total||6474836))).then(async g=>{this.model=g.scene;this.scene.add(g.scene);this.model.traverse(o=>{if(o.isMesh){o.castShadow=false;o.receiveShadow=false;}});polishRoomMaterials(this.model,'salon');this.avatar=this.model.getObjectByName('Hayoung');this.avatar.visible=false;this.avatar.rotation.y=Math.PI;await this.addMaterials();await this.addArt();this.addTargets();this.addDust();this.model.updateMatrixWorld(true);this.model.traverse(o=>{if(o.isMesh){o.updateMatrix();o.matrixAutoUpdate=false;}});this.addContactShadows();});
@@ -51,8 +51,20 @@ export class World{
  }
  get(name){return this.model?.getObjectByName(name);}
  async addMaterials(){
+  await this.addTextileMaterials();
   const loader=new THREE.TextureLoader();const [color,normal,rough]=await Promise.all(['/assets/wood-floor-color.jpg','/assets/wood-floor-normal.jpg','/assets/wood-floor-rough.jpg'].map(p=>loader.loadAsync(p)));color.colorSpace=THREE.SRGBColorSpace;for(const t of [color,normal,rough]){t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=8;}
   this.model.traverse(o=>{if(!o.isMesh||!o.name.startsWith('Architecture_Walnut_plank'))return;const uv=new THREE.Float32BufferAttribute(new Float32Array(o.geometry.attributes.position.count*2),2);o.geometry.setAttribute('uv',uv);const pos=o.geometry.attributes.position;o.updateWorldMatrix(true,false);const v=new THREE.Vector3();for(let i=0;i<pos.count;i++){v.fromBufferAttribute(pos,i).applyMatrix4(o.matrixWorld);uv.setXY(i,v.x/3,v.z/3);}uv.needsUpdate=true;o.material.map=color;o.material.normalMap=normal;o.material.normalScale.set(.24,.24);o.material.roughnessMap=rough;o.material.roughness=.56;o.material.color.set('#c7c3bb');o.material.needsUpdate=true;});
+ }
+ async addTextileMaterials(){
+  const loader=new THREE.TextureLoader();
+  const [normal,roughness]=await Promise.all(['woven-normal.png','woven-roughness.jpg'].map(name=>loader.loadAsync('/assets/salon/'+name)));
+  for(const texture of [normal,roughness]){texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.anisotropy=8;texture.repeat.set(42,42);}
+  const materials=new Set();
+  this.model.traverse(o=>{if(o.isMesh)for(const m of (Array.isArray(o.material)?o.material:[o.material]))materials.add(m);});
+  for(const m of materials){
+   if(!['Aubusson handwoven floral wool','Raspberry silk velvet','Pearl curtain lining'].includes(m.name))continue;
+   m.normalMap=normal;m.normalScale.set(.22,.22);m.roughnessMap=roughness;m.needsUpdate=true;
+  }
  }
  plane(texture,w,h,pos,rotY=0){const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshStandardMaterial({map:texture,roughness:.85,metalness:0,side:THREE.FrontSide}));m.position.copy(V(...pos));m.rotation.y=rotY;this.scene.add(m);return m;}
  label(text,p,w=1,size=44,color='#e8d5a9',rotY=0){const mesh=this.plane(canvasTexture(512,128,(c,W,H)=>{c.clearRect(0,0,W,H);c.fillStyle=color;c.font=`${size}px "Malgun Gothic",sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillText(text,W/2,H/2);}),w,w/4,p,rotY);mesh.material.transparent=true;mesh.material.depthWrite=false;return mesh;}

@@ -113,24 +113,7 @@ for side in [-1,1]:
 box('ceiling',(0,4.83,0),(12.2,.15,12.2),panel,0)
 for c in [-4,-2,0,2,4]:
  box('coffer beam',(c,4.68,0),(.13,.16,12),darkwood,.02);box('coffer beam',(0,4.68,c),(12,.16,.13),darkwood,.02)
-# Carpet, layered woven borders.
-box('Persian rug',(0,.04,-.7),(4.25,.018,4.65),red,.015)
-for w,d in [(4.1,4.5),(3.94,4.34),(3.65,4.05)]:
- for x in [-w/2,w/2]:box('rug border',(x,.055,-.7),(.035,.008,d),cream,0)
- for z in [-d/2,d/2]:box('rug border',(0,.055,z-.7),(w,.008,.035),cream,0)
-for a in range(18):
- x=math.cos(a*math.tau/18)*1.3;z=math.sin(a*math.tau/18)*1.5-.7
- o=box('rug motif',(x,.06,z),(.14,.006,.14),gold,0);o.rotation_euler[2]=math.pi/4
-# West rain windows.
-for zz in [-3.5,3.8]:
- box('window recess',(-5.84,2.7,zz),(.15,2.6,1.9),black,.02)
- box('night glass',(-5.74,2.7,zz),(.028,2.4,1.72),glass,.005)
- for z in [zz-.9,zz,zz+.9]:box('window mullion',(-5.69,2.7,z),(.09,2.55,.07),gold,.01)
- for y in [1.45,2.35,3.1,3.95]:box('window transom',(-5.69,y,zz),(.09,.065,1.88),gold,.01)
- box('window sill',(-5.62,1.4,zz),(.38,.12,2.15),darkwood,.02)
- for k in range(30):
-  z=zz+random.uniform(-.8,.8);y=random.uniform(1.6,3.8)
-  line('rain rivulet',(-5.716,y,z),(-5.716,y+random.uniform(.08,.4),z+.015),.005,glass)
+# The window and woven carpet are built in salon_textiles.py before batching.
 # Desk: letter, locked box, glass bottle, books, banker's lamp.
 desk=table('Desk',(-3.35,0,-3.65),2.7,1.25)
 box('drawer',(-3.35,.77,-2.97),(1.0,.24,.09),wood,.025)
@@ -279,6 +262,7 @@ bg=next(n for n in scene.world.node_tree.nodes if n.type=='BACKGROUND');bg.input
 scene.render.resolution_x=1600;scene.render.resolution_y=1000;scene.render.resolution_percentage=100
 scene.render.image_settings.file_format='PNG';scene.render.filepath=os.path.join(OUT,'blender-room.png')
 exec(compile(open(os.path.join(ROOT,'blender','salon_details.py'),encoding='utf-8').read(),'salon_details.py','exec'))
+exec(compile(open(os.path.join(ROOT,'blender','salon_textiles.py'),encoding='utf-8').read(),'salon_textiles.py','exec'))
 # Merge static objects per material to reduce browser draw calls. Keep interactive hierarchies intact.
 bpy.ops.object.select_all(action='DESELECT')
 static=[o for o in scene.objects if o.type=='MESH' and o.parent is None and not o.name.startswith('Tile')]

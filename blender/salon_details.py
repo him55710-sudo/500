@@ -56,20 +56,7 @@ for side in [-1,1]:
   for zz in [-.2,.2]:
    scroll=torus('capital volute',(0,3.99,zz),.069,.012,gold,col,True);scroll.rotation_euler[2]=math.pi/2
 
-# Deep arches and pleated curtains turn the two flat rain windows into alcoves.
-for z0 in [-3.5,3.8]:
- arch=group('ArchedWindow',(-5.60,0,z0));arch.rotation_euler[2]=math.pi/2
- for radius in [1.01,1.065]:
-  points=[(radius*math.cos(i*math.pi/32),3.15+radius*math.sin(i*math.pi/32),0) for i in range(33)]
-  ribbon('arched gold reveal',points,.029,gold,arch)
- for xx in [-1.04,1.04]:
-  box('arched jamb',(xx,2.26,0),(.07,1.84,.08),ivory,.015,arch)
-  for j in range(6):
-   x=xx+(.12+j*.063)*(1 if xx>0 else -1)
-   latheob=lathe('velvet curtain fold',[(1.32,.04),(1.4,.066),(2.4,.048),(3.7,.061),(4.17,.049)],red,arch,12)
-   latheob.location=xyz((x,0,.035))
-  ribbon('curtain tie',[(xx,2.03,.08),(xx+( .24 if xx>0 else -.24),1.98,.14),(xx+(.43 if xx>0 else -.43),2.03,.08)],.027,gold,arch)
- ribbon('velvet swag',[(-1.43,4.16,.08),(-.8,3.97,.16),(0,4.14,.12),(.8,3.97,.16),(1.43,4.16,.08)],.11,red,arch)
+# Continuous draped fabric and full arched joinery are in salon_textiles.py.
 
 # Tall gilded mirrors above the tasting console and beside the secret door.
 mirror=mat('Antique silver mirror',(.28,.34,.37),.88,.2)
