@@ -1,0 +1,54 @@
+{
+  "source": "https://polyhaven.com/a/book_encyclopedia_set_01",
+  "license": "CC0",
+  "files": [
+    {
+      "bytes": 55011,
+      "file": "books.gltf",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/book_encyclopedia_set_01/book_encyclopedia_set_01_1k.gltf",
+      "md5": "D0A77D421A6EA2C9D82BCAAA64E8479B"
+    },
+    {
+      "bytes": 126794,
+      "file": "textures/book_encyclopedia_set_01_cover_diff_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/book_encyclopedia_set_01/book_encyclopedia_set_01_cover_diff_1k.jpg",
+      "md5": "00A10B1B5A28EFA4670D68A089A64EF3"
+    },
+    {
+      "bytes": 2547932,
+      "file": "book_encyclopedia_set_01.bin",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/book_encyclopedia_set_01/book_encyclopedia_set_01.bin",
+      "md5": "AC617BE6503E537C5D1A16A94313E866"
+    },
+    {
+      "bytes": 193390,
+      "file": "textures/book_encyclopedia_set_01_paper_nor_gl_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/book_encyclopedia_set_01/book_encyclopedia_set_01_paper_nor_gl_1k.jpg",
+      "md5": "816A51A0B6520CF5E08751089722FC46"
+    },
+    {
+      "bytes": 189997,
+      "file": "textures/book_encyclopedia_set_01_cover_arm_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/book_encyclopedia_set_01/book_encyclopedia_set_01_cover_arm_1k.jpg",
+      "md5": "0E5788B0EE9CE810823356E187C31A8C"
+    },
+    {
+      "bytes": 19941,
+      "file": "textures/book_encyclopedia_set_01_cover_nor_gl_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/book_encyclopedia_set_01/book_encyclopedia_set_01_cover_nor_gl_1k.jpg",
+      "md5": "488FA9696AD4F1773A2D81F3AF7B6C76"
+    },
+    {
+      "bytes": 115297,
+      "file": "textures/book_encyclopedia_set_01_paper_diff_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/book_encyclopedia_set_01/book_encyclopedia_set_01_paper_diff_1k.jpg",
+      "md5": "7798B8E38721A4FC1ED45319ECC81B67"
+    },
+    {
+      "bytes": 12684,
+      "file": "textures/book_encyclopedia_set_01_paper_roughness_1k.jpg",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/book_encyclopedia_set_01/book_encyclopedia_set_01_paper_roughness_1k.jpg",
+      "md5": "B8E5B8431B0C53B20D83EC0BCFF51747"
+    }
+  ]
+}

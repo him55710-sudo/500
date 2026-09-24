@@ -1,0 +1,106 @@
+{
+  "purpose": "Additional object realism pass for MemorySalon_VisualSlice",
+  "authored": [
+    "Banker lamp",
+    "Hollow blue glazed vessel",
+    "Nine micro-surface maps"
+  ],
+  "reusedCC0": [
+    "potted_plant_01",
+    "potted_plant_02",
+    "potted_plant_04",
+    "book_encyclopedia_set_01"
+  ],
+  "providers": [
+    "https://polyhaven.com/license",
+    "../manifest.json",
+    "../../BookUpgrade/manifest.json"
+  ],
+  "files": [
+    {
+      "path": "authored-props.blend",
+      "bytes": 4776680,
+      "sha256": "239bc66916627c6b68dac591a798991d4c032640a01aa15f136f789e4af993fe"
+    },
+    {
+      "path": "authored-props.glb",
+      "bytes": 6248212,
+      "sha256": "0f499e6e366a92d6a2d4d0f95c71a08be0df16522b7d9f22fa11dc81d6e0c86b"
+    },
+    {
+      "path": "placement.json",
+      "bytes": 19729,
+      "sha256": "4498ebea18f02eb62c5edb7c16ba114fa2ec0a812a50f3e80d33a286fdc5d0cf"
+    },
+    {
+      "path": "real-plants-books.blend",
+      "bytes": 21811025,
+      "sha256": "afa540cf4c3656874c29dbe858302b35ff24278825312aa0b27b373b056feade"
+    },
+    {
+      "path": "real-plants-books.glb",
+      "bytes": 31961268,
+      "sha256": "918a0f0ecd086535221d3adeaa6c7469ad28b95428a48ae7ec205fc45faafd50"
+    },
+    {
+      "path": "Textures/BlueGlaze_Color.png",
+      "bytes": 736155,
+      "sha256": "3cd19a1cd76ad9cf2b95cbea0bc4a6c014938af77ca3a8fac45b1b711d456526"
+    },
+    {
+      "path": "Textures/BlueGlaze_Normal.png",
+      "bytes": 5372,
+      "sha256": "4bd37e3742ad5180cf537171deedcad884af650a4a90e2430c144b7e9de48f3b"
+    },
+    {
+      "path": "Textures/BlueGlaze_Rough.png",
+      "bytes": 551916,
+      "sha256": "e25ba5033bb4c2676784b6bfed5d1ab35e3102ed9a99ab04cea050c86151770b"
+    },
+    {
+      "path": "Textures/Brass_Color.png",
+      "bytes": 773602,
+      "sha256": "228bd24722ae36d58370c70568454d29c01efd96f046eca89cf105ee613f7b5a"
+    },
+    {
+      "path": "Textures/Brass_Normal.png",
+      "bytes": 5372,
+      "sha256": "4bd37e3742ad5180cf537171deedcad884af650a4a90e2430c144b7e9de48f3b"
+    },
+    {
+      "path": "Textures/Brass_Rough.png",
+      "bytes": 552637,
+      "sha256": "4db834d72e62fb1ae1641c752644551255413dda05b9446f6b01f7247f5266c2"
+    },
+    {
+      "path": "Textures/GreenGlass_Color.png",
+      "bytes": 526353,
+      "sha256": "d139d69861070d1f84827b221802b9eee1cc2249224d880f82085609ad5e10ab"
+    },
+    {
+      "path": "Textures/GreenGlass_Normal.png",
+      "bytes": 5372,
+      "sha256": "4bd37e3742ad5180cf537171deedcad884af650a4a90e2430c144b7e9de48f3b"
+    },
+    {
+      "path": "Textures/GreenGlass_Rough.png",
+      "bytes": 551655,
+      "sha256": "04aa28b26f2a8df979e7b9d7fdf8c3fbce7b0d3b1efb7513fd73a11539a02ac1"
+    },
+    {
+      "path": "trim-plan.json",
+      "bytes": 2407,
+      "sha256": "f88448b0d157b298cc594d4e352d35ad0531c476de9b96ef276c6ee1aa0c8aaa"
+    },
+    {
+      "path": "trimmed-architecture-v2.glb",
+      "bytes": 1071876,
+      "sha256": "b2d84047761f9bf0dbd08e0a7e62bccd43494f291eb73204294e3bc7e1ca02cb"
+    },
+    {
+      "path": "trimmed-architecture.glb",
+      "bytes": 1372964,
+      "sha256": "0429fc494643c79d3a5021580acebd53e0706571020e65985f130cc9437b011d"
+    }
+  ]
+}

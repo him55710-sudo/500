@@ -1,0 +1,15 @@
+{
+  "name": "DESK_DETAIL",
+  "location_cm": [
+    -345,
+    -245,
+    195
+  ],
+  "rotation": [
+    -31.966644287109375,
+    -90.0,
+    0.0
+  ],
+  "horizontal_fov": 55,
+  "role": "supplementary detail QA, not a fixed A/B/C comparison"
+}

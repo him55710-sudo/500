@@ -1,0 +1,20 @@
+[
+  {
+    "actor": "Letter_detail",
+    "old_bottom_cm": 111.05000096559525,
+    "new_bottom_cm": 108.53,
+    "offset_cm": -2.5200009655952442
+  },
+  {
+    "actor": "Architecture_Blue_rain_glass",
+    "old_bottom_cm": 113.49999523162842,
+    "new_bottom_cm": 108.53,
+    "offset_cm": -4.969995231628417
+  },
+  {
+    "actor": "LockBox_detail",
+    "old_bottom_cm": 104.00000286102295,
+    "new_bottom_cm": 108.53,
+    "offset_cm": 4.529997138977052
+  }
+]

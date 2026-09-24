@@ -1,0 +1,52 @@
+[
+  {
+    "label": "Salon_ReadingBook_0",
+    "bottom_cm": 75.1,
+    "top_cm": 78.96888587474822,
+    "center_xy": [
+      -255.00000000000003,
+      49.0
+    ],
+    "yaw": -12
+  },
+  {
+    "label": "Salon_ReadingBook_1",
+    "bottom_cm": 78.98888587474823,
+    "top_cm": 81.4510867547989,
+    "center_xy": [
+      -256.0,
+      50.0
+    ],
+    "yaw": 13
+  },
+  {
+    "label": "Salon_ReadingBook_2",
+    "bottom_cm": 12.600000000000001,
+    "top_cm": 15.003769969940198,
+    "center_xy": [
+      -485.0,
+      -150.0
+    ],
+    "yaw": -5
+  },
+  {
+    "label": "Salon_ReadingBook_3",
+    "bottom_cm": 15.023769969940197,
+    "top_cm": 17.185077781677265,
+    "center_xy": [
+      -486.0,
+      -149.0
+    ],
+    "yaw": 8
+  },
+  {
+    "label": "Salon_ReadingBook_4",
+    "bottom_cm": 17.20507778167726,
+    "top_cm": 19.366385474205046,
+    "center_xy": [
+      -485.0,
+      -150.0
+    ],
+    "yaw": -3
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "actor": "Quality_Stationery_NotebookCover",
+    "center_cm": [
+      -358.99999141693115,
+      -375.9999990463257,
+      108.61999988555908
+    ],
+    "extent_cm": [
+      15.5,
+      11.0,
+      0.12000000476837158
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_Pencil_0",
+    "center_cm": [
+      -396.00000381469727,
+      -361.9999885559082,
+      108.89999866485596
+    ],
+    "extent_cm": [
+      3.677056286306538,
+      8.390541513487506,
+      0.3700000047683716
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_Pencil_1",
+    "center_cm": [
+      -356.9999933242798,
+      -375.0,
+      109.89999771118164
+    ],
+    "extent_cm": [
+      7.675235845202735,
+      2.8085761829693183,
+      0.3700000047683716
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_OpenPage_Left",
+    "center_cm": [
+      -366.4500050544739,
+      -375.9999942779541,
+      109.52490897476673
+    ],
+    "extent_cm": [
+      7.150492191314697,
+      10.25014591217041,
+      0.16490550339221954
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_Score_2",
+    "center_cm": [
+      -420.7399867065757,
+      -349.6000025897699,
+      108.71648057550192
+    ],
+    "extent_cm": [
+      11.608545129226115,
+      15.611861972173585,
+      0.10648234933614731
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_OpenPage_Right",
+    "center_cm": [
+      -351.5500121116638,
+      -375.9999942779541,
+      109.52490897476673
+    ],
+    "extent_cm": [
+      7.150492191314697,
+      10.25014591217041,
+      0.16490550339221954
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_PageBlock_Left",
+    "center_cm": [
+      -366.44999980926514,
+      -375.9999990463257,
+      109.0499997138977
+    ],
+    "extent_cm": [
+      7.15000057220459,
+      10.25,
+      0.30000001192092896
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_PageBlock_Right",
+    "center_cm": [
+      -351.5500068664551,
+      -375.9999990463257,
+      109.0499997138977
+    ],
+    "extent_cm": [
+      7.15000057220459,
+      10.25,
+      0.30000001192092896
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_Score_0",
+    "center_cm": [
+      -421.00000381469727,
+      -350.0,
+      108.58460135385394
+    ],
+    "extent_cm": [
+      12.231528840731755,
+      16.018952472371893,
+      0.024599503725767136
+    ],
+    "simple_collision_shapes": 0
+  },
+  {
+    "actor": "Quality_Stationery_Score_1",
+    "center_cm": [
+      -420.8700180053711,
+      -349.7999906539917,
+      108.60959954187274
+    ],
+    "extent_cm": [
+      11.923016080644231,
+      15.819445844861661,
+      0.024599503725767136
+    ],
+    "simple_collision_shapes": 0
+  }
+]

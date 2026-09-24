@@ -1,0 +1,188 @@
+[
+  {
+    "actor": "Architecture_Petrol_painted_plaster",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Plaster.M_Quality_Plaster",
+    "after": "/Game/Quality/Materials/M_Quality_Plaster.M_Quality_Plaster"
+  },
+  {
+    "actor": "Architecture_Dark_walnut",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Architecture_Walnut_plank_0",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Architecture_Walnut_plank_1",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Architecture_Walnut_plank_2",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Architecture_Walnut_plank_3",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Architecture_Walnut_plank_4",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Architecture_Walnut_plank_5",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Architecture_Walnut___fine_satin",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "ArchedWindow_detail",
+    "slot": 4,
+    "before": "/Game/Quality/Materials/M_Quality_Jacquard.M_Quality_Jacquard",
+    "after": "/Game/Quality/Materials/M_Quality_Jacquard.M_Quality_Jacquard"
+  },
+  {
+    "actor": "ArchedWindow_001_detail",
+    "slot": 4,
+    "before": "/Game/Quality/Materials/M_Quality_Jacquard.M_Quality_Jacquard",
+    "after": "/Game/Quality/Materials/M_Quality_Jacquard.M_Quality_Jacquard"
+  },
+  {
+    "actor": "Cloche0_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Cloche1_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "ExitDoor_detail",
+    "slot": 1,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "LockBox_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "CowChart_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "MemoryFrame0_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "MemoryFrame1_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "MemoryFrame2_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "MemoryFrame3_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Painting_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Bench_detail",
+    "slot": 1,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Bench_detail",
+    "slot": 2,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "CarouselConsole_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "CarouselConsole_detail",
+    "slot": 1,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Desk_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "Desk_detail",
+    "slot": 1,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "MusicCabinet_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "MusicCabinet_detail",
+    "slot": 1,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "TastingTable_detail",
+    "slot": 0,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  },
+  {
+    "actor": "TastingTable_detail",
+    "slot": 1,
+    "before": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut",
+    "after": "/Game/Quality/Materials/M_Quality_Walnut.M_Quality_Walnut"
+  }
+]

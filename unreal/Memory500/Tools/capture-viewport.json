@@ -1,0 +1,30 @@
+{
+  "name": "call_tool",
+  "arguments": {
+    "toolset_name": "EditorToolset.EditorAppToolset",
+    "tool_name": "CaptureViewport",
+    "arguments": {
+      "captureTransform": {
+        "location": {
+          "y": -80,
+          "x": -300,
+          "z": 150
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": -5,
+          "yaw": 180
+        }
+      },
+      "annotations": {
+        "classFilter": null,
+        "gridSpacing": 0,
+        "gridHeight": 0,
+        "maxLabels": 0,
+        "maxLabelDistance": 0,
+        "gridExtent": 0
+      },
+      "bShowUI": false
+    }
+  }
+}

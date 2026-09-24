@@ -128,3 +128,7 @@ Blender 제작 원본은 `blender/day-400-china-journey.blend`, 현재 Blender�
 [정션 미리보기](http://127.0.0.1:5179/?preview=junction). 포스텍 중앙강당의 실제 이동 가능한 미로에서 빨강 방향키·색 버튼, 파랑의 두 음료와 시간 빈칸, 노랑의 미니언 세 개와 옷 이름을 풉니다. 현수에게 옷을 입혀 칭찬하면 세 광선이 아이패드를 부르고, 자유롭게 쓴 500일 편지가 현수의 기억을 되돌립니다. 중앙 원에서 하트와 함께 엔딩을 맞고 프롤로그로 돌아갈 수 있습니다.
 
 Blender 원본: `blender/day-500-junction-finale.blend`. [퍼즐 정답·제작 기록·검증](docs/500일-정션-엔딩.md).
+
+## Unreal 음악 살롱 시각 프로토타입
+
+[별도 Unreal 5.8 장면 실행 및 비교 화면](unreal/Memory500/README.md). 기존 웹 게임의 퍼즐·진행은 그대로 유지됩니다.

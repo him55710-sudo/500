@@ -1,0 +1,12 @@
+{
+  "actor": "Quality_LampChainLink",
+  "center_cm": [
+    -372.7,
+    -394.8,
+    146.475
+  ],
+  "height_cm": 0.9499999999999886,
+  "radius_cm": 0.05500000000000682,
+  "collision": false,
+  "source_note": "The regenerated authored-props.glb contains the same link. This actor repairs the pre-existing imported mesh; do not apply twice after reimport."
+}

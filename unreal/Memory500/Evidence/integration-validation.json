@@ -1,0 +1,12 @@
+{
+  "look_input": true,
+  "project": "unreal/Memory500",
+  "template_setup": "pass",
+  "editor_start": "pass",
+  "verified": "2026-09-25T05:07:57.2152800+09:00",
+  "native_mcp_play": "pass",
+  "wall_stop": true,
+  "movement_cm": 538.8283530837725,
+  "python_configuration": "pass",
+  "visual_inspection": "pass"
+}

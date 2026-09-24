@@ -1,0 +1,15 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "Visual prototype",
+  "Description": "Separate visual migration of the existing 500 memory salon. Original web game stays read-only.",
+  "Plugins": [
+    { "Name": "ModelContextProtocol", "Enabled": true },
+    { "Name": "ToolsetRegistry", "Enabled": true },
+    { "Name": "EditorToolset", "Enabled": true },
+    { "Name": "PythonScriptPlugin", "Enabled": true },
+    { "Name": "EditorScriptingUtilities", "Enabled": true },
+    { "Name": "Fab", "Enabled": true },
+    { "Name": "AndroidFileServer", "Enabled": false }
+  ]
+}

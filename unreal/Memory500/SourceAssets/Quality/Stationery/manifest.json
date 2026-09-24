@@ -1,0 +1,31 @@
+{
+  "source": "Original geometry and textures generated for this project",
+  "externalArtwork": false,
+  "files": [
+    {
+      "name": "salon-stationery.glb",
+      "bytes": 2469556,
+      "sha256": "d58069e03758b8da2b5e1af4511cd84323736b4d72cd411e70f75839b987b0f5"
+    },
+    {
+      "name": "salon-stationery.blend",
+      "bytes": 152912,
+      "sha256": "0001a7b1a66ba8bf9a35a85dfda5929d0daccba1660542c3445a90a6aa289d16"
+    },
+    {
+      "name": "original-score.png",
+      "bytes": 737182,
+      "sha256": "bd6d0b941a681992573f7d1361cc07f4be43e98c812a829b2979a682aa358a50"
+    },
+    {
+      "name": "practice-notes.png",
+      "bytes": 768007,
+      "sha256": "5cc3d613daead62b3eafb9043146eae5016387dc8b7e8d53aa550bbaf8ffbc0f"
+    },
+    {
+      "name": "paper-plain.png",
+      "bytes": 737117,
+      "sha256": "d4c4900ef947a060b89c584e006a667d14d75ed111dffd2661c9233f3d6cd777"
+    }
+  ]
+}

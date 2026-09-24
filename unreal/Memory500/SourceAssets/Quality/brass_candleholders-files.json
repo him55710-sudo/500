@@ -1,0 +1,2532 @@
+{
+  "candles_nor_gl": {
+    "4k": {
+      "jpg": {
+        "size": 1380665,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_nor_gl_4k.jpg",
+        "md5": "4bf92c612ef95e242b72e00f95e99365"
+      },
+      "png": {
+        "size": 22275438,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_nor_gl_4k.png",
+        "md5": "282c277bc235d2a48f1adea3a6fbce7c"
+      },
+      "exr": {
+        "size": 2640398,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_candles_nor_gl_4k.exr",
+        "md5": "258ba3cd4ca67e6c114fc1c9d1d38bad"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 478106,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.jpg",
+        "md5": "b83cc65526c68372e30b51229c756025"
+      },
+      "png": {
+        "size": 7367569,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.png",
+        "md5": "a61faacafea30d7044125cd58bef9d79"
+      },
+      "exr": {
+        "size": 971849,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.exr",
+        "md5": "7fdf346ede69473448e06495590267bb"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 175178,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_nor_gl_1k.jpg",
+        "md5": "5245cfc43c3e9ac52990b65d7c9e2d2f"
+      },
+      "png": {
+        "size": 2280082,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_nor_gl_1k.png",
+        "md5": "eceeb7630a1158865014dfbb9f9f5b2e"
+      },
+      "exr": {
+        "size": 383216,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_candles_nor_gl_1k.exr",
+        "md5": "8f45c34df4bd0a7f1468f478d916b17a"
+      }
+    }
+  },
+  "03_arm": {
+    "4k": {
+      "jpg": {
+        "size": 13458925,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_arm_4k.jpg",
+        "md5": "61c453a32dafdddcf0b809065355d6e4"
+      },
+      "png": {
+        "size": 22103517,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_arm_4k.png",
+        "md5": "82ae468ff64baeabc9ae3afff41cadca"
+      },
+      "exr": {
+        "size": 31933507,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_03_arm_4k.exr",
+        "md5": "d9926a57ecb6e057db495970334ba44c"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 3302021,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_arm_2k.jpg",
+        "md5": "b2eee715710d63b242100d67b8b8c9c0"
+      },
+      "png": {
+        "size": 5920072,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_arm_2k.png",
+        "md5": "fbacde9176f723e2b6b49c73cc604a3c"
+      },
+      "exr": {
+        "size": 7837617,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_03_arm_2k.exr",
+        "md5": "2f2a162273028dfb20b0b078569d91d3"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 866977,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_arm_1k.jpg",
+        "md5": "679498824b44b9745329c07a33a72445"
+      },
+      "png": {
+        "size": 1551668,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_arm_1k.png",
+        "md5": "5e31e97303866a074c2602cf02e9191e"
+      },
+      "exr": {
+        "size": 2051419,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_03_arm_1k.exr",
+        "md5": "6a82201b3323922d7755ba4387d0ab43"
+      }
+    }
+  },
+  "02_diff": {
+    "4k": {
+      "jpg": {
+        "size": 12806329,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_diff_4k.jpg",
+        "md5": "493ac1ad7b3e077bbc31ebe610b56c76"
+      },
+      "png": {
+        "size": 19941215,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_diff_4k.png",
+        "md5": "935254d17f6993856c3a5636a36635b9"
+      },
+      "exr": {
+        "size": 19675311,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_02_diff_4k.exr",
+        "md5": "87659833e6f8cbc2a37a3d3785c8c07e"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 3479550,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_diff_2k.jpg",
+        "md5": "b5dfe81094d1fec56b74a6e471591367"
+      },
+      "png": {
+        "size": 5474025,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_diff_2k.png",
+        "md5": "9abe02d061ba3ffc6520910cd78d3ab7"
+      },
+      "exr": {
+        "size": 5364712,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_02_diff_2k.exr",
+        "md5": "362948696e7f6647cbc7228a79e9bd5f"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 983525,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_diff_1k.jpg",
+        "md5": "8cff396b57f26ae7e54e99c5547162f3"
+      },
+      "png": {
+        "size": 1596738,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_diff_1k.png",
+        "md5": "e81bbf6a842c00c12e4192749e1debcd"
+      },
+      "exr": {
+        "size": 1534892,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_02_diff_1k.exr",
+        "md5": "a70d413b77339342bde03faf989ac239"
+      }
+    }
+  },
+  "blend": {
+    "4k": {
+      "blend": {
+        "include": {
+          "textures/brass_candleholders_flame_diff_4k.png": {
+            "size": 6291163,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_flame_diff_4k.png",
+            "md5": "787f326c9730d0aafd054c8fddafcad6"
+          },
+          "textures/brass_candleholders_03_nor_gl_4k.png": {
+            "size": 69595194,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_nor_gl_4k.png",
+            "md5": "3a115ede3487693263e2081d4d91649c"
+          },
+          "textures/brass_candleholders_01_diff_4k.png": {
+            "size": 20973284,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_diff_4k.png",
+            "md5": "7717e0ba37b379883293913b9785668a"
+          },
+          "textures/brass_candleholders_candles_nor_gl_4k.png": {
+            "size": 22275438,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_nor_gl_4k.png",
+            "md5": "282c277bc235d2a48f1adea3a6fbce7c"
+          },
+          "textures/brass_candleholders_01_metal_4k.png": {
+            "size": 34712,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_metal_4k.png",
+            "md5": "8f986487caa70378df5d90633f8994e8"
+          },
+          "textures/brass_candleholders_candles_rough_4k.png": {
+            "size": 3932675,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_rough_4k.png",
+            "md5": "e3da677ffcfd38ee40ddd28efcfbc168"
+          },
+          "textures/brass_candleholders_03_metal_4k.png": {
+            "size": 4581508,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_metal_4k.png",
+            "md5": "a6a9f895d66eb5e14dd529bf590e4890"
+          },
+          "textures/brass_candleholders_02_metal_4k.png": {
+            "size": 25415,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_metal_4k.png",
+            "md5": "7b3bffafeab0692be98c3db7a823a287"
+          },
+          "textures/brass_candleholders_01_rough_4k.png": {
+            "size": 8176211,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_rough_4k.png",
+            "md5": "c66d721f4c95ac1ee027fb016ca623ab"
+          },
+          "textures/brass_candleholders_03_rough_4k.png": {
+            "size": 9214946,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_rough_4k.png",
+            "md5": "fc509c8a663ad88169ab9b26dda8ed29"
+          },
+          "textures/brass_candleholders_candles_diff_4k.png": {
+            "size": 10031492,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_diff_4k.png",
+            "md5": "fa84cbdee8aa71b07cf80f2342e7b6b4"
+          },
+          "textures/brass_candleholders_02_rough_4k.png": {
+            "size": 6374509,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_rough_4k.png",
+            "md5": "cef8349abbf721922e3beb6677bb6ba1"
+          },
+          "textures/brass_candleholders_02_diff_4k.png": {
+            "size": 19941215,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_diff_4k.png",
+            "md5": "935254d17f6993856c3a5636a36635b9"
+          },
+          "textures/brass_candleholders_02_nor_gl_4k.png": {
+            "size": 59480115,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_nor_gl_4k.png",
+            "md5": "500fecbabd440ccff9018c6c6c6a0376"
+          },
+          "textures/brass_candleholders_01_nor_gl_4k.png": {
+            "size": 37151304,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_nor_gl_4k.png",
+            "md5": "5c080f1de93c7083cf27bf9e3d6c23a7"
+          },
+          "textures/brass_candleholders_03_diff_4k.png": {
+            "size": 22217246,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_diff_4k.png",
+            "md5": "559fc5e23f27e1ecf765d76d03098fe5"
+          }
+        },
+        "size": 1063987,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/4k/brass_candleholders/brass_candleholders_4k.blend",
+        "md5": "0e46832214ead30aa29e2b57cd4add75"
+      }
+    },
+    "2k": {
+      "blend": {
+        "include": {
+          "textures/brass_candleholders_01_nor_gl_2k.png": {
+            "size": 11985347,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.png",
+            "md5": "3e604b9dde78620a8f810bfd788ddd55"
+          },
+          "textures/brass_candleholders_03_diff_2k.png": {
+            "size": 5892604,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_diff_2k.png",
+            "md5": "a6f15e5f09294a7a37d85f39361b4418"
+          },
+          "textures/brass_candleholders_candles_nor_gl_2k.png": {
+            "size": 7367569,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.png",
+            "md5": "a61faacafea30d7044125cd58bef9d79"
+          },
+          "textures/brass_candleholders_02_nor_gl_2k.png": {
+            "size": 17540844,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.png",
+            "md5": "d386714dc508d49f84cfe912e711c1ec"
+          },
+          "textures/brass_candleholders_02_diff_2k.png": {
+            "size": 5474025,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_diff_2k.png",
+            "md5": "9abe02d061ba3ffc6520910cd78d3ab7"
+          },
+          "textures/brass_candleholders_03_nor_gl_2k.png": {
+            "size": 19578394,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.png",
+            "md5": "1a997715cbf2a148ac94ce4ba1675b29"
+          },
+          "textures/brass_candleholders_01_diff_2k.png": {
+            "size": 5493515,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_diff_2k.png",
+            "md5": "4704f7840bc2658a46f691bc8e5eba34"
+          },
+          "textures/brass_candleholders_01_metal_2k.png": {
+            "size": 18234,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_metal_2k.png",
+            "md5": "bc341a84c8daddf31677210a798f70a5"
+          },
+          "textures/brass_candleholders_02_metal_2k.png": {
+            "size": 8767,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_metal_2k.png",
+            "md5": "0572737ce11f70a245a25422e1047a8c"
+          },
+          "textures/brass_candleholders_03_metal_2k.png": {
+            "size": 1465566,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_metal_2k.png",
+            "md5": "023750b611d00de0a2868a82a652c30b"
+          },
+          "textures/brass_candleholders_flame_diff_2k.png": {
+            "size": 1472096,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_flame_diff_2k.png",
+            "md5": "7475bbcab959360bfd72df1d72b58eca"
+          },
+          "textures/brass_candleholders_candles_rough_2k.png": {
+            "size": 1064549,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_rough_2k.png",
+            "md5": "a06260b854dced4d0f45359de7b9a188"
+          },
+          "textures/brass_candleholders_01_rough_2k.png": {
+            "size": 2224059,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_rough_2k.png",
+            "md5": "4d024f5589fc3bdec6e775bd1133fe4f"
+          },
+          "textures/brass_candleholders_02_rough_2k.png": {
+            "size": 1864678,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_rough_2k.png",
+            "md5": "9ffa99a1a0bf4239b2d2c0a2438ef690"
+          },
+          "textures/brass_candleholders_candles_diff_2k.png": {
+            "size": 2670520,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_diff_2k.png",
+            "md5": "1d3e1b71eaf01a618340e8c68a9922ee"
+          },
+          "textures/brass_candleholders_03_rough_2k.png": {
+            "size": 2321504,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_rough_2k.png",
+            "md5": "b119b599519bd57603e7509592f2a277"
+          }
+        },
+        "size": 1064299,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/2k/brass_candleholders/brass_candleholders_2k.blend",
+        "md5": "9a392067c98228b3b9e5dc437715a4b9"
+      }
+    },
+    "1k": {
+      "blend": {
+        "include": {
+          "textures/brass_candleholders_03_nor_gl_1k.png": {
+            "size": 5135542,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_nor_gl_1k.png",
+            "md5": "9a21c6cead6f79300ea50d6d3a29cf83"
+          },
+          "textures/brass_candleholders_candles_nor_gl_1k.png": {
+            "size": 2280082,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_nor_gl_1k.png",
+            "md5": "eceeb7630a1158865014dfbb9f9f5b2e"
+          },
+          "textures/brass_candleholders_flame_diff_1k.png": {
+            "size": 424933,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_flame_diff_1k.png",
+            "md5": "704af7ae6b1da103b7cb129dd78f563d"
+          },
+          "textures/brass_candleholders_01_diff_1k.png": {
+            "size": 1536207,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_diff_1k.png",
+            "md5": "3a7d4cc78cf66e7b1ac6b6db54e07553"
+          },
+          "textures/brass_candleholders_03_metal_1k.png": {
+            "size": 440986,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_metal_1k.png",
+            "md5": "e5e5f7add5112a1355d008e0ab0c207b"
+          },
+          "textures/brass_candleholders_candles_rough_1k.png": {
+            "size": 276618,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_rough_1k.png",
+            "md5": "25459894ce7cd2fb47a8b59118e845d8"
+          },
+          "textures/brass_candleholders_01_rough_1k.png": {
+            "size": 605093,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_rough_1k.png",
+            "md5": "0bf2372369c3e7e0a94804d949684e01"
+          },
+          "textures/brass_candleholders_03_rough_1k.png": {
+            "size": 603968,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_rough_1k.png",
+            "md5": "a1fca93ccd6b279255790de98bf32ae0"
+          },
+          "textures/brass_candleholders_candles_diff_1k.png": {
+            "size": 728390,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_diff_1k.png",
+            "md5": "19c9a14f7bbfa1ef18ab767e219c7fe2"
+          },
+          "textures/brass_candleholders_02_rough_1k.png": {
+            "size": 533582,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_rough_1k.png",
+            "md5": "a563044517f57cbbbd994112d8be3a06"
+          },
+          "textures/brass_candleholders_02_metal_1k.png": {
+            "size": 3370,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_metal_1k.png",
+            "md5": "109c8a7eab9b4329f984f39205a32e30"
+          },
+          "textures/brass_candleholders_03_diff_1k.png": {
+            "size": 1643929,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_diff_1k.png",
+            "md5": "bafb63abaec68d62ca7fc2b7d129be51"
+          },
+          "textures/brass_candleholders_01_nor_gl_1k.png": {
+            "size": 3662171,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_nor_gl_1k.png",
+            "md5": "b767309d982bbc647ca0b4dd53db21bc"
+          },
+          "textures/brass_candleholders_01_metal_1k.png": {
+            "size": 8791,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_metal_1k.png",
+            "md5": "8897a6f45d426c134dde28ac8c6ba378"
+          },
+          "textures/brass_candleholders_02_nor_gl_1k.png": {
+            "size": 4819783,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_nor_gl_1k.png",
+            "md5": "d054bf15f9c8f195fc6d2290031cee32"
+          },
+          "textures/brass_candleholders_02_diff_1k.png": {
+            "size": 1596738,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_diff_1k.png",
+            "md5": "e81bbf6a842c00c12e4192749e1debcd"
+          }
+        },
+        "size": 1064396,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/blend/1k/brass_candleholders/brass_candleholders_1k.blend",
+        "md5": "412ad9c5b4401461bc0e6790f94f2eb2"
+      }
+    }
+  },
+  "usd": {
+    "4k": {
+      "usd": {
+        "include": {
+          "textures/brass_candleholders_flame_diff_4k.png": {
+            "size": 6291163,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_flame_diff_4k.png",
+            "md5": "787f326c9730d0aafd054c8fddafcad6"
+          },
+          "textures/brass_candleholders_03_nor_gl_4k.png": {
+            "size": 69595194,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_nor_gl_4k.png",
+            "md5": "3a115ede3487693263e2081d4d91649c"
+          },
+          "textures/brass_candleholders_01_diff_4k.png": {
+            "size": 20973284,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_diff_4k.png",
+            "md5": "7717e0ba37b379883293913b9785668a"
+          },
+          "textures/brass_candleholders_candles_nor_gl_4k.png": {
+            "size": 22275438,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_nor_gl_4k.png",
+            "md5": "282c277bc235d2a48f1adea3a6fbce7c"
+          },
+          "textures/brass_candleholders_01_metal_4k.png": {
+            "size": 34712,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_metal_4k.png",
+            "md5": "8f986487caa70378df5d90633f8994e8"
+          },
+          "textures/brass_candleholders_candles_rough_4k.png": {
+            "size": 3932675,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_rough_4k.png",
+            "md5": "e3da677ffcfd38ee40ddd28efcfbc168"
+          },
+          "textures/brass_candleholders_03_metal_4k.png": {
+            "size": 4581508,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_metal_4k.png",
+            "md5": "a6a9f895d66eb5e14dd529bf590e4890"
+          },
+          "textures/brass_candleholders_02_metal_4k.png": {
+            "size": 25415,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_metal_4k.png",
+            "md5": "7b3bffafeab0692be98c3db7a823a287"
+          },
+          "textures/brass_candleholders_01_rough_4k.png": {
+            "size": 8176211,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_rough_4k.png",
+            "md5": "c66d721f4c95ac1ee027fb016ca623ab"
+          },
+          "textures/brass_candleholders_03_rough_4k.png": {
+            "size": 9214946,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_rough_4k.png",
+            "md5": "fc509c8a663ad88169ab9b26dda8ed29"
+          },
+          "textures/brass_candleholders_candles_diff_4k.png": {
+            "size": 10031492,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_diff_4k.png",
+            "md5": "fa84cbdee8aa71b07cf80f2342e7b6b4"
+          },
+          "textures/brass_candleholders_02_rough_4k.png": {
+            "size": 6374509,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_rough_4k.png",
+            "md5": "cef8349abbf721922e3beb6677bb6ba1"
+          },
+          "textures/brass_candleholders_02_diff_4k.png": {
+            "size": 19941215,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_diff_4k.png",
+            "md5": "935254d17f6993856c3a5636a36635b9"
+          },
+          "textures/brass_candleholders_02_nor_gl_4k.png": {
+            "size": 59480115,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_nor_gl_4k.png",
+            "md5": "500fecbabd440ccff9018c6c6c6a0376"
+          },
+          "textures/brass_candleholders_01_nor_gl_4k.png": {
+            "size": 37151304,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_nor_gl_4k.png",
+            "md5": "5c080f1de93c7083cf27bf9e3d6c23a7"
+          },
+          "textures/brass_candleholders_03_diff_4k.png": {
+            "size": 22217246,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_diff_4k.png",
+            "md5": "559fc5e23f27e1ecf765d76d03098fe5"
+          }
+        },
+        "size": 2083896,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/4k/brass_candleholders/brass_candleholders_4k.usdc",
+        "md5": "cbdf36b498d1c149a6a8a3c4f5b3c69c"
+      }
+    },
+    "2k": {
+      "usd": {
+        "include": {
+          "textures/brass_candleholders_01_nor_gl_2k.png": {
+            "size": 11985347,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.png",
+            "md5": "3e604b9dde78620a8f810bfd788ddd55"
+          },
+          "textures/brass_candleholders_03_diff_2k.png": {
+            "size": 5892604,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_diff_2k.png",
+            "md5": "a6f15e5f09294a7a37d85f39361b4418"
+          },
+          "textures/brass_candleholders_candles_nor_gl_2k.png": {
+            "size": 7367569,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.png",
+            "md5": "a61faacafea30d7044125cd58bef9d79"
+          },
+          "textures/brass_candleholders_02_nor_gl_2k.png": {
+            "size": 17540844,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.png",
+            "md5": "d386714dc508d49f84cfe912e711c1ec"
+          },
+          "textures/brass_candleholders_02_diff_2k.png": {
+            "size": 5474025,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_diff_2k.png",
+            "md5": "9abe02d061ba3ffc6520910cd78d3ab7"
+          },
+          "textures/brass_candleholders_03_nor_gl_2k.png": {
+            "size": 19578394,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.png",
+            "md5": "1a997715cbf2a148ac94ce4ba1675b29"
+          },
+          "textures/brass_candleholders_01_diff_2k.png": {
+            "size": 5493515,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_diff_2k.png",
+            "md5": "4704f7840bc2658a46f691bc8e5eba34"
+          },
+          "textures/brass_candleholders_01_metal_2k.png": {
+            "size": 18234,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_metal_2k.png",
+            "md5": "bc341a84c8daddf31677210a798f70a5"
+          },
+          "textures/brass_candleholders_02_metal_2k.png": {
+            "size": 8767,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_metal_2k.png",
+            "md5": "0572737ce11f70a245a25422e1047a8c"
+          },
+          "textures/brass_candleholders_03_metal_2k.png": {
+            "size": 1465566,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_metal_2k.png",
+            "md5": "023750b611d00de0a2868a82a652c30b"
+          },
+          "textures/brass_candleholders_flame_diff_2k.png": {
+            "size": 1472096,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_flame_diff_2k.png",
+            "md5": "7475bbcab959360bfd72df1d72b58eca"
+          },
+          "textures/brass_candleholders_candles_rough_2k.png": {
+            "size": 1064549,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_rough_2k.png",
+            "md5": "a06260b854dced4d0f45359de7b9a188"
+          },
+          "textures/brass_candleholders_01_rough_2k.png": {
+            "size": 2224059,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_rough_2k.png",
+            "md5": "4d024f5589fc3bdec6e775bd1133fe4f"
+          },
+          "textures/brass_candleholders_02_rough_2k.png": {
+            "size": 1864678,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_rough_2k.png",
+            "md5": "9ffa99a1a0bf4239b2d2c0a2438ef690"
+          },
+          "textures/brass_candleholders_candles_diff_2k.png": {
+            "size": 2670520,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_diff_2k.png",
+            "md5": "1d3e1b71eaf01a618340e8c68a9922ee"
+          },
+          "textures/brass_candleholders_03_rough_2k.png": {
+            "size": 2321504,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_rough_2k.png",
+            "md5": "b119b599519bd57603e7509592f2a277"
+          }
+        },
+        "size": 2083895,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/2k/brass_candleholders/brass_candleholders_2k.usdc",
+        "md5": "12e5fd6d8f39fff7441180ec97be0cd1"
+      }
+    },
+    "1k": {
+      "usd": {
+        "include": {
+          "textures/brass_candleholders_03_nor_gl_1k.png": {
+            "size": 5135542,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_nor_gl_1k.png",
+            "md5": "9a21c6cead6f79300ea50d6d3a29cf83"
+          },
+          "textures/brass_candleholders_candles_nor_gl_1k.png": {
+            "size": 2280082,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_nor_gl_1k.png",
+            "md5": "eceeb7630a1158865014dfbb9f9f5b2e"
+          },
+          "textures/brass_candleholders_flame_diff_1k.png": {
+            "size": 424933,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_flame_diff_1k.png",
+            "md5": "704af7ae6b1da103b7cb129dd78f563d"
+          },
+          "textures/brass_candleholders_01_diff_1k.png": {
+            "size": 1536207,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_diff_1k.png",
+            "md5": "3a7d4cc78cf66e7b1ac6b6db54e07553"
+          },
+          "textures/brass_candleholders_03_metal_1k.png": {
+            "size": 440986,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_metal_1k.png",
+            "md5": "e5e5f7add5112a1355d008e0ab0c207b"
+          },
+          "textures/brass_candleholders_candles_rough_1k.png": {
+            "size": 276618,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_rough_1k.png",
+            "md5": "25459894ce7cd2fb47a8b59118e845d8"
+          },
+          "textures/brass_candleholders_01_rough_1k.png": {
+            "size": 605093,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_rough_1k.png",
+            "md5": "0bf2372369c3e7e0a94804d949684e01"
+          },
+          "textures/brass_candleholders_03_rough_1k.png": {
+            "size": 603968,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_rough_1k.png",
+            "md5": "a1fca93ccd6b279255790de98bf32ae0"
+          },
+          "textures/brass_candleholders_candles_diff_1k.png": {
+            "size": 728390,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_diff_1k.png",
+            "md5": "19c9a14f7bbfa1ef18ab767e219c7fe2"
+          },
+          "textures/brass_candleholders_02_rough_1k.png": {
+            "size": 533582,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_rough_1k.png",
+            "md5": "a563044517f57cbbbd994112d8be3a06"
+          },
+          "textures/brass_candleholders_02_metal_1k.png": {
+            "size": 3370,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_metal_1k.png",
+            "md5": "109c8a7eab9b4329f984f39205a32e30"
+          },
+          "textures/brass_candleholders_03_diff_1k.png": {
+            "size": 1643929,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_diff_1k.png",
+            "md5": "bafb63abaec68d62ca7fc2b7d129be51"
+          },
+          "textures/brass_candleholders_01_nor_gl_1k.png": {
+            "size": 3662171,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_nor_gl_1k.png",
+            "md5": "b767309d982bbc647ca0b4dd53db21bc"
+          },
+          "textures/brass_candleholders_01_metal_1k.png": {
+            "size": 8791,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_metal_1k.png",
+            "md5": "8897a6f45d426c134dde28ac8c6ba378"
+          },
+          "textures/brass_candleholders_02_nor_gl_1k.png": {
+            "size": 4819783,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_nor_gl_1k.png",
+            "md5": "d054bf15f9c8f195fc6d2290031cee32"
+          },
+          "textures/brass_candleholders_02_diff_1k.png": {
+            "size": 1596738,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_diff_1k.png",
+            "md5": "e81bbf6a842c00c12e4192749e1debcd"
+          }
+        },
+        "size": 2083894,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/usd/1k/brass_candleholders/brass_candleholders_1k.usdc",
+        "md5": "b9ca03d090e76d98c0ea10c1a6b9410d"
+      }
+    }
+  },
+  "02_arm": {
+    "4k": {
+      "jpg": {
+        "size": 11355815,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_arm_4k.jpg",
+        "md5": "efd8a1d09f44d780557d6e6f618c0e73"
+      },
+      "png": {
+        "size": 16386193,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_arm_4k.png",
+        "md5": "6caad1a2cd5c9132eb54605e14dae6eb"
+      },
+      "exr": {
+        "size": 31653939,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_02_arm_4k.exr",
+        "md5": "3e53196f33575a9b4765c69e5006ec98"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2817435,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_arm_2k.jpg",
+        "md5": "0846ce6718bf48a7c115708939c3d212"
+      },
+      "png": {
+        "size": 4226004,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_arm_2k.png",
+        "md5": "b8f07c278d4fd3ad2eae109f3d451786"
+      },
+      "exr": {
+        "size": 7757012,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_02_arm_2k.exr",
+        "md5": "118c192dddc9ca0e1c349f017feeed36"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 753959,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_arm_1k.jpg",
+        "md5": "7f9e6b7d4e7c2f1debfbbc9a062f5dce"
+      },
+      "png": {
+        "size": 1115287,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_arm_1k.png",
+        "md5": "fca475d0b06d28813761593abd4b58c3"
+      },
+      "exr": {
+        "size": 2031797,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_02_arm_1k.exr",
+        "md5": "9424820e8aa6c0efbb9707608afc2779"
+      }
+    }
+  },
+  "01_ao": {
+    "4k": {
+      "jpg": {
+        "size": 3442599,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_ao_4k.jpg",
+        "md5": "1b46e802578589a270209b9134393e4e"
+      },
+      "png": {
+        "size": 4054402,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_ao_4k.png",
+        "md5": "23d918b91b948f2752f0861c69e0bc92"
+      },
+      "exr": {
+        "size": 2656959,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_01_ao_4k.exr",
+        "md5": "e75c81ce8235ee1b414c947406d4ba45"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 675658,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_ao_2k.jpg",
+        "md5": "719372eec7f45a30c317ec574bfa3790"
+      },
+      "png": {
+        "size": 789162,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_ao_2k.png",
+        "md5": "190008a3e0931080222ce368a3852da4"
+      },
+      "exr": {
+        "size": 522968,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_01_ao_2k.exr",
+        "md5": "c38cced9a633d40776cb85a0b6dbe358"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 155072,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_ao_1k.jpg",
+        "md5": "f36ab8d6d698153af11a1251fb8f8c89"
+      },
+      "png": {
+        "size": 160285,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_ao_1k.png",
+        "md5": "aafc46949ffeab23b07de791439cb74c"
+      },
+      "exr": {
+        "size": 151046,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_01_ao_1k.exr",
+        "md5": "26f8b9a8776a55e402c7f2c4ff531196"
+      }
+    }
+  },
+  "03_rough": {
+    "4k": {
+      "jpg": {
+        "size": 10508436,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_rough_4k.jpg",
+        "md5": "466c38d97d9390da59698f37aa275094"
+      },
+      "png": {
+        "size": 9214946,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_rough_4k.png",
+        "md5": "fc509c8a663ad88169ab9b26dda8ed29"
+      },
+      "exr": {
+        "size": 11692336,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_03_rough_4k.exr",
+        "md5": "d104974aa9884d4391d7d68f627ed9d7"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2492335,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_rough_2k.jpg",
+        "md5": "2579f004dd47ecc06d71795b6f01369d"
+      },
+      "png": {
+        "size": 2321504,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_rough_2k.png",
+        "md5": "b119b599519bd57603e7509592f2a277"
+      },
+      "exr": {
+        "size": 2930511,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_03_rough_2k.exr",
+        "md5": "25562568e286075842dc0b2b0eed89f3"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 629535,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_rough_1k.jpg",
+        "md5": "380573f0368feafc9c9c5ad53fe7167b"
+      },
+      "png": {
+        "size": 603968,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_rough_1k.png",
+        "md5": "a1fca93ccd6b279255790de98bf32ae0"
+      },
+      "exr": {
+        "size": 774062,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_03_rough_1k.exr",
+        "md5": "0b56e3e0a84cd67b56e5489e79ef5ecc"
+      }
+    }
+  },
+  "candles_ao": {
+    "4k": {
+      "jpg": {
+        "size": 3140924,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_ao_4k.jpg",
+        "md5": "100390a8d4e7f38ebed9005d15f74b8a"
+      },
+      "png": {
+        "size": 3852726,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_ao_4k.png",
+        "md5": "1f38c4cd4ed4ef5afabb2c242e5ab34e"
+      },
+      "exr": {
+        "size": 2395398,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_candles_ao_4k.exr",
+        "md5": "b97fb5219025f1ffbbdb516f67c9acf5"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 622317,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_ao_2k.jpg",
+        "md5": "6feebc92be850a808e412f476babd7ea"
+      },
+      "png": {
+        "size": 754413,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_ao_2k.png",
+        "md5": "d719e3836cbc88500c9527a83956d319"
+      },
+      "exr": {
+        "size": 525387,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_candles_ao_2k.exr",
+        "md5": "a57cd7a56e791bfcdec0e3576eec1517"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 148365,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_ao_1k.jpg",
+        "md5": "6f95bb12c723a187f8c8ca7b3fa0cf10"
+      },
+      "png": {
+        "size": 159385,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_ao_1k.png",
+        "md5": "51dee8da0587c240e146558e5641c7ac"
+      },
+      "exr": {
+        "size": 166577,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_candles_ao_1k.exr",
+        "md5": "a92256ca6fb24b5e02f93823b9148ab0"
+      }
+    }
+  },
+  "03_ao": {
+    "4k": {
+      "jpg": {
+        "size": 4869384,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_ao_4k.jpg",
+        "md5": "c3a014b3c752d2779840c6df5b3b7552"
+      },
+      "png": {
+        "size": 5489202,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_ao_4k.png",
+        "md5": "b738e3a5014bcbc0b4758f46146256ca"
+      },
+      "exr": {
+        "size": 4716496,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_03_ao_4k.exr",
+        "md5": "5d04bb94c74a1c27249aec6081ca7d46"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 1199473,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_ao_2k.jpg",
+        "md5": "974c6c72a03a1fe8dd29511c697c72a3"
+      },
+      "png": {
+        "size": 1229929,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_ao_2k.png",
+        "md5": "147e39826e6288fc8fc46b6d40b01752"
+      },
+      "exr": {
+        "size": 1218623,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_03_ao_2k.exr",
+        "md5": "e18c6cd20d6fb63dc1bd3f7b06b7ec58"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 349125,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_ao_1k.jpg",
+        "md5": "fe0f0271e94719f62163c162f857f9b3"
+      },
+      "png": {
+        "size": 314662,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_ao_1k.png",
+        "md5": "5ee3cb643f989575a10d111e4790edfa"
+      },
+      "exr": {
+        "size": 402160,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_03_ao_1k.exr",
+        "md5": "7c1b3eedc7ef0147e03d81074ecde755"
+      }
+    }
+  },
+  "01_arm": {
+    "4k": {
+      "jpg": {
+        "size": 12941802,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_arm_4k.jpg",
+        "md5": "8ff7edb0d292c81dd28b805056dcfd2b"
+      },
+      "png": {
+        "size": 15056872,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_arm_4k.png",
+        "md5": "751d4caa3f34a91cfa3ce27ca9f893d1"
+      },
+      "exr": {
+        "size": 27886571,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_01_arm_4k.exr",
+        "md5": "b1b8483768ad8afe4b5dec6c57db9650"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 3441450,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_arm_2k.jpg",
+        "md5": "d6142ef1ee7f7576bd92dffaf717d5b5"
+      },
+      "png": {
+        "size": 3835707,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_arm_2k.png",
+        "md5": "98400d2acb4a898e8642ecdc301ab0db"
+      },
+      "exr": {
+        "size": 7300423,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_01_arm_2k.exr",
+        "md5": "b5310962b988aa659886719a880067bd"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 908699,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_arm_1k.jpg",
+        "md5": "8c97455ce6143e39d8185d7096f8b17b"
+      },
+      "png": {
+        "size": 1008172,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_arm_1k.png",
+        "md5": "feda390ddd9b4bb2c63c6da7f8251383"
+      },
+      "exr": {
+        "size": 1943276,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_01_arm_1k.exr",
+        "md5": "c45fe6b00361ba7845fa0fa164d34a07"
+      }
+    }
+  },
+  "02_nor_dx": {
+    "4k": {
+      "jpg": {
+        "size": 9238810,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_nor_dx_4k.jpg",
+        "md5": "8563cb303bcfdb87b405ed4ec24fdd81"
+      },
+      "png": {
+        "size": 59151996,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_nor_dx_4k.png",
+        "md5": "595cc5643fec9eef578c5f9b599db42f"
+      },
+      "exr": {
+        "size": 18179900,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_02_nor_dx_4k.exr",
+        "md5": "7a7523fbaf19d484bcfddefcebca6506"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2502596,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_nor_dx_2k.jpg",
+        "md5": "f8a95ca610f8ecc29cb601d9e2654510"
+      },
+      "png": {
+        "size": 17542459,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_nor_dx_2k.png",
+        "md5": "bac539f7ed32ff33120b000cb6103635"
+      },
+      "exr": {
+        "size": 4966715,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_02_nor_dx_2k.exr",
+        "md5": "2bc6640c09393aa7ca37d66ca6b3ce0c"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 675422,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_nor_dx_1k.jpg",
+        "md5": "db9fe24aff73a2577edba744bd0e54d3"
+      },
+      "png": {
+        "size": 4819478,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_nor_dx_1k.png",
+        "md5": "e8a79d881582dddcfb64a1117cfe3a1b"
+      },
+      "exr": {
+        "size": 1389812,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_02_nor_dx_1k.exr",
+        "md5": "30a60d5b8c5ba463c470387cec06683d"
+      }
+    }
+  },
+  "03_nor_dx": {
+    "4k": {
+      "jpg": {
+        "size": 11133151,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_nor_dx_4k.jpg",
+        "md5": "9333920cb7ebea52f68a050a69249b9d"
+      },
+      "png": {
+        "size": 69293624,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_nor_dx_4k.png",
+        "md5": "ba414f92259bb669f4394e280b9f518e"
+      },
+      "exr": {
+        "size": 23070126,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_03_nor_dx_4k.exr",
+        "md5": "3841402dae1f30b58fff9538fdb366a1"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2989967,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_nor_dx_2k.jpg",
+        "md5": "1191c0b22042326c907e6b2ca472ac71"
+      },
+      "png": {
+        "size": 19576559,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_nor_dx_2k.png",
+        "md5": "fad50817ef8194b02b6058fd022b1a38"
+      },
+      "exr": {
+        "size": 6444666,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_03_nor_dx_2k.exr",
+        "md5": "b711a2f2661145643952d1fc512732fa"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 778721,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_nor_dx_1k.jpg",
+        "md5": "3f0972fd7b741cdfe5cfeb25abdb6218"
+      },
+      "png": {
+        "size": 5135199,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_nor_dx_1k.png",
+        "md5": "9c632a4c63bb47a2f18dcf1b01fcee31"
+      },
+      "exr": {
+        "size": 1670570,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_03_nor_dx_1k.exr",
+        "md5": "94262204a592930adb663dcc8f5c2f72"
+      }
+    }
+  },
+  "01_rough": {
+    "4k": {
+      "jpg": {
+        "size": 10619179,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_rough_4k.jpg",
+        "md5": "0e2d832698713e92e86e111f829ca7bf"
+      },
+      "png": {
+        "size": 8176211,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_rough_4k.png",
+        "md5": "c66d721f4c95ac1ee027fb016ca623ab"
+      },
+      "exr": {
+        "size": 11163438,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_01_rough_4k.exr",
+        "md5": "2d07f82eb72ff8348ed70e9fa7aec25f"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2824862,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_rough_2k.jpg",
+        "md5": "271221177db211b5fc1e5f41436a6921"
+      },
+      "png": {
+        "size": 2224059,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_rough_2k.png",
+        "md5": "4d024f5589fc3bdec6e775bd1133fe4f"
+      },
+      "exr": {
+        "size": 2971845,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_01_rough_2k.exr",
+        "md5": "66a0ee146ec17a4d381fce215518089b"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 748928,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_rough_1k.jpg",
+        "md5": "d1db96b943ab1ab536e8a111b68c1e12"
+      },
+      "png": {
+        "size": 605093,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_rough_1k.png",
+        "md5": "0bf2372369c3e7e0a94804d949684e01"
+      },
+      "exr": {
+        "size": 806218,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_01_rough_1k.exr",
+        "md5": "26e5cc25ab3d0cb997ec029db1ab1709"
+      }
+    }
+  },
+  "01_metal": {
+    "4k": {
+      "jpg": {
+        "size": 293122,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_metal_4k.jpg",
+        "md5": "c4d230224c74f05a54329c9bc487b62c"
+      },
+      "png": {
+        "size": 34712,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_metal_4k.png",
+        "md5": "8f986487caa70378df5d90633f8994e8"
+      },
+      "exr": {
+        "size": 140481,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_01_metal_4k.exr",
+        "md5": "fd17cdde7d5882bdd706e6c399b5aa6b"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 89507,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_metal_2k.jpg",
+        "md5": "75f0098c062f8522d2e9082497f4e577"
+      },
+      "png": {
+        "size": 18234,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_metal_2k.png",
+        "md5": "bc341a84c8daddf31677210a798f70a5"
+      },
+      "exr": {
+        "size": 67273,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_01_metal_2k.exr",
+        "md5": "d677a043b67329471981a567d352560a"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 31132,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_metal_1k.jpg",
+        "md5": "ba717651be376599fac4cb423cd32d4f"
+      },
+      "png": {
+        "size": 8791,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_metal_1k.png",
+        "md5": "8897a6f45d426c134dde28ac8c6ba378"
+      },
+      "exr": {
+        "size": 32955,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_01_metal_1k.exr",
+        "md5": "20d45d5c633573103e549174babe8734"
+      }
+    }
+  },
+  "03_diff": {
+    "4k": {
+      "jpg": {
+        "size": 13202235,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_diff_4k.jpg",
+        "md5": "b41627a6aa6bc60ee04f7f2e592d948b"
+      },
+      "png": {
+        "size": 22217246,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_diff_4k.png",
+        "md5": "559fc5e23f27e1ecf765d76d03098fe5"
+      },
+      "exr": {
+        "size": 21406413,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_03_diff_4k.exr",
+        "md5": "1b0a23cda5a672868f20d5cc4936b116"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 3459883,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_diff_2k.jpg",
+        "md5": "ae2650e939ffd6a70291e0cfdd520ecb"
+      },
+      "png": {
+        "size": 5892604,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_diff_2k.png",
+        "md5": "a6f15e5f09294a7a37d85f39361b4418"
+      },
+      "exr": {
+        "size": 5519789,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_03_diff_2k.exr",
+        "md5": "f84f151f39ee68816aa220d9eedb40d9"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 945596,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_diff_1k.jpg",
+        "md5": "f78d864f46a832d39c06303ca8aa5da9"
+      },
+      "png": {
+        "size": 1643929,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_diff_1k.png",
+        "md5": "bafb63abaec68d62ca7fc2b7d129be51"
+      },
+      "exr": {
+        "size": 1518943,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_03_diff_1k.exr",
+        "md5": "ecf51aaee523f43cc3d5acbc87bbd0d4"
+      }
+    }
+  },
+  "01_nor_dx": {
+    "4k": {
+      "jpg": {
+        "size": 8691081,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_nor_dx_4k.jpg",
+        "md5": "4cd33e37f8a2f88219b127d64becfc3b"
+      },
+      "png": {
+        "size": 36663689,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_nor_dx_4k.png",
+        "md5": "f4464b997e2043aae564cd0a3b60d57f"
+      },
+      "exr": {
+        "size": 15681592,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_01_nor_dx_4k.exr",
+        "md5": "4b62c12d7bdece6cd50e16e41f5cfe24"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2481147,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_nor_dx_2k.jpg",
+        "md5": "038704976a5fdca6ca5b89bad601485e"
+      },
+      "png": {
+        "size": 11986438,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_nor_dx_2k.png",
+        "md5": "cddff73bccc1d2c99b891c54ea1f87fc"
+      },
+      "exr": {
+        "size": 4684578,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_01_nor_dx_2k.exr",
+        "md5": "03c7ba1cebe842acaa53621cc6d37c3d"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 632277,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_nor_dx_1k.jpg",
+        "md5": "de5625b42c92b84a83c5a7aa1be309f9"
+      },
+      "png": {
+        "size": 3661550,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_nor_dx_1k.png",
+        "md5": "b9a927db499cde14f296027371bffd1e"
+      },
+      "exr": {
+        "size": 1266889,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_01_nor_dx_1k.exr",
+        "md5": "fcef67f797e90b4e67364442afbc8cd6"
+      }
+    }
+  },
+  "gltf": {
+    "4k": {
+      "gltf": {
+        "include": {
+          "textures/brass_candleholders_03_arm_4k.jpg": {
+            "size": 13458925,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_arm_4k.jpg",
+            "md5": "61c453a32dafdddcf0b809065355d6e4"
+          },
+          "textures/brass_candleholders_candles_arm_4k.jpg": {
+            "size": 3967304,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_arm_4k.jpg",
+            "md5": "3aff4f73d344a075dbea0691cac935f5"
+          },
+          "textures/brass_candleholders_03_nor_gl_4k.jpg": {
+            "size": 10521653,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_nor_gl_4k.jpg",
+            "md5": "e0a288f52e617f23e8eda56228812324"
+          },
+          "textures/brass_candleholders_02_arm_4k.jpg": {
+            "size": 11355815,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_arm_4k.jpg",
+            "md5": "efd8a1d09f44d780557d6e6f618c0e73"
+          },
+          "textures/brass_candleholders_01_diff_4k.jpg": {
+            "size": 12910583,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_diff_4k.jpg",
+            "md5": "5458e3a1d1e89a224eb019f3108af9c5"
+          },
+          "textures/brass_candleholders_candles_nor_gl_4k.jpg": {
+            "size": 1380665,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_nor_gl_4k.jpg",
+            "md5": "4bf92c612ef95e242b72e00f95e99365"
+          },
+          "textures/brass_candleholders_03_diff_4k.jpg": {
+            "size": 13202235,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_diff_4k.jpg",
+            "md5": "b41627a6aa6bc60ee04f7f2e592d948b"
+          },
+          "textures/brass_candleholders_02_diff_4k.jpg": {
+            "size": 12806329,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_diff_4k.jpg",
+            "md5": "493ac1ad7b3e077bbc31ebe610b56c76"
+          },
+          "textures/brass_candleholders_02_nor_gl_4k.jpg": {
+            "size": 8589974,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_nor_gl_4k.jpg",
+            "md5": "6fac8a035449a1cf1ff860c831383d30"
+          },
+          "textures/brass_candleholders_01_nor_gl_4k.jpg": {
+            "size": 8080340,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_nor_gl_4k.jpg",
+            "md5": "27faf057bd30d0d1a2e432c59c87d590"
+          },
+          "textures/brass_candleholders_flame_diff_4k.jpg": {
+            "size": 1139007,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_flame_diff_4k.jpg",
+            "md5": "c5ae0b67ffbe241ae69b812988c09dda"
+          },
+          "textures/brass_candleholders_candles_diff_4k.jpg": {
+            "size": 3545939,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_diff_4k.jpg",
+            "md5": "1165dbddc7b97723327c03a35b3971ff"
+          },
+          "textures/brass_candleholders_01_arm_4k.jpg": {
+            "size": 12941802,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_arm_4k.jpg",
+            "md5": "8ff7edb0d292c81dd28b805056dcfd2b"
+          },
+          "brass_candleholders.bin": {
+            "size": 1189088,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/brass_candleholders/brass_candleholders.bin",
+            "md5": "ea4f625bd0ef542c0026bbcf61370b71"
+          }
+        },
+        "size": 14865,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/brass_candleholders/brass_candleholders_4k.gltf",
+        "md5": "ee72e40763abe7818d20b2f09aba2e55"
+      }
+    },
+    "2k": {
+      "gltf": {
+        "include": {
+          "textures/brass_candleholders_02_nor_gl_2k.jpg": {
+            "size": 2439207,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.jpg",
+            "md5": "d132f1aae14759a0a9510ccd12c0194b"
+          },
+          "textures/brass_candleholders_02_diff_2k.jpg": {
+            "size": 3479550,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_diff_2k.jpg",
+            "md5": "b5dfe81094d1fec56b74a6e471591367"
+          },
+          "textures/brass_candleholders_03_nor_gl_2k.jpg": {
+            "size": 2912192,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.jpg",
+            "md5": "78fd75415610553e45a2d5bb3449337e"
+          },
+          "textures/brass_candleholders_02_arm_2k.jpg": {
+            "size": 2817435,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_arm_2k.jpg",
+            "md5": "0846ce6718bf48a7c115708939c3d212"
+          },
+          "textures/brass_candleholders_candles_nor_gl_2k.jpg": {
+            "size": 478106,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.jpg",
+            "md5": "b83cc65526c68372e30b51229c756025"
+          },
+          "textures/brass_candleholders_01_diff_2k.jpg": {
+            "size": 3507869,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_diff_2k.jpg",
+            "md5": "f0123cfae1ccd34305d367e00e8f01fe"
+          },
+          "textures/brass_candleholders_01_nor_gl_2k.jpg": {
+            "size": 2380892,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.jpg",
+            "md5": "23c865455ad736f436e8ceb0c15c6235"
+          },
+          "textures/brass_candleholders_03_diff_2k.jpg": {
+            "size": 3459883,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_diff_2k.jpg",
+            "md5": "ae2650e939ffd6a70291e0cfdd520ecb"
+          },
+          "textures/brass_candleholders_01_arm_2k.jpg": {
+            "size": 3441450,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_arm_2k.jpg",
+            "md5": "d6142ef1ee7f7576bd92dffaf717d5b5"
+          },
+          "textures/brass_candleholders_candles_diff_2k.jpg": {
+            "size": 952690,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_diff_2k.jpg",
+            "md5": "edf5ccde0a5362c0193f11931eb99b34"
+          },
+          "textures/brass_candleholders_03_arm_2k.jpg": {
+            "size": 3302021,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_arm_2k.jpg",
+            "md5": "b2eee715710d63b242100d67b8b8c9c0"
+          },
+          "textures/brass_candleholders_candles_arm_2k.jpg": {
+            "size": 1040675,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_arm_2k.jpg",
+            "md5": "9317fc5c54609fdc2f77ddca276a7aaa"
+          },
+          "textures/brass_candleholders_flame_diff_2k.jpg": {
+            "size": 330500,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_flame_diff_2k.jpg",
+            "md5": "0948f2bc8a0470fec0153845d2a01f0d"
+          },
+          "brass_candleholders.bin": {
+            "size": 1189088,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/brass_candleholders/brass_candleholders.bin",
+            "md5": "ea4f625bd0ef542c0026bbcf61370b71"
+          }
+        },
+        "size": 14865,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/brass_candleholders/brass_candleholders_2k.gltf",
+        "md5": "92e52c0f9375bb1ecc0f3a6a581f8e9e"
+      }
+    },
+    "1k": {
+      "gltf": {
+        "include": {
+          "textures/brass_candleholders_03_arm_1k.jpg": {
+            "size": 866977,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_arm_1k.jpg",
+            "md5": "679498824b44b9745329c07a33a72445"
+          },
+          "textures/brass_candleholders_03_nor_gl_1k.jpg": {
+            "size": 773357,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_nor_gl_1k.jpg",
+            "md5": "93384d7e37ff13a50b4cf6ec108bc6d9"
+          },
+          "textures/brass_candleholders_flame_diff_1k.jpg": {
+            "size": 88579,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_flame_diff_1k.jpg",
+            "md5": "e03f12b1e6cb00ebbcf72dbe68370d34"
+          },
+          "textures/brass_candleholders_candles_nor_gl_1k.jpg": {
+            "size": 175178,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_nor_gl_1k.jpg",
+            "md5": "5245cfc43c3e9ac52990b65d7c9e2d2f"
+          },
+          "textures/brass_candleholders_candles_arm_1k.jpg": {
+            "size": 288769,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_arm_1k.jpg",
+            "md5": "7cfc5157dec680365b92b45ae4d1340a"
+          },
+          "textures/brass_candleholders_02_arm_1k.jpg": {
+            "size": 753959,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_arm_1k.jpg",
+            "md5": "7f9e6b7d4e7c2f1debfbbc9a062f5dce"
+          },
+          "textures/brass_candleholders_01_diff_1k.jpg": {
+            "size": 942661,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_diff_1k.jpg",
+            "md5": "27a666093ce421d4200c1dab13356436"
+          },
+          "textures/brass_candleholders_03_diff_1k.jpg": {
+            "size": 945596,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_diff_1k.jpg",
+            "md5": "f78d864f46a832d39c06303ca8aa5da9"
+          },
+          "textures/brass_candleholders_01_nor_gl_1k.jpg": {
+            "size": 627197,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_nor_gl_1k.jpg",
+            "md5": "8631362fee28487f801c851b7a9254dc"
+          },
+          "textures/brass_candleholders_02_nor_gl_1k.jpg": {
+            "size": 672717,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_nor_gl_1k.jpg",
+            "md5": "5747f3304a49c81ccf1191224f56f4cb"
+          },
+          "textures/brass_candleholders_02_diff_1k.jpg": {
+            "size": 983525,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_diff_1k.jpg",
+            "md5": "8cff396b57f26ae7e54e99c5547162f3"
+          },
+          "textures/brass_candleholders_candles_diff_1k.jpg": {
+            "size": 271273,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_diff_1k.jpg",
+            "md5": "0945ff49048efed6df37564563012a7a"
+          },
+          "textures/brass_candleholders_01_arm_1k.jpg": {
+            "size": 908699,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_arm_1k.jpg",
+            "md5": "8c97455ce6143e39d8185d7096f8b17b"
+          },
+          "brass_candleholders.bin": {
+            "size": 1189088,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/4k/brass_candleholders/brass_candleholders.bin",
+            "md5": "ea4f625bd0ef542c0026bbcf61370b71"
+          }
+        },
+        "size": 14865,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/brass_candleholders/brass_candleholders_1k.gltf",
+        "md5": "c813a8f9856bcab38f87da3ca8aef74d"
+      }
+    }
+  },
+  "03_nor_gl": {
+    "4k": {
+      "jpg": {
+        "size": 10521653,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_nor_gl_4k.jpg",
+        "md5": "e0a288f52e617f23e8eda56228812324"
+      },
+      "png": {
+        "size": 69595194,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_nor_gl_4k.png",
+        "md5": "3a115ede3487693263e2081d4d91649c"
+      },
+      "exr": {
+        "size": 22995684,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_03_nor_gl_4k.exr",
+        "md5": "b8b26605deecd2a6a22ed186790d25cf"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2912192,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.jpg",
+        "md5": "78fd75415610553e45a2d5bb3449337e"
+      },
+      "png": {
+        "size": 19578394,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.png",
+        "md5": "1a997715cbf2a148ac94ce4ba1675b29"
+      },
+      "exr": {
+        "size": 6418716,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.exr",
+        "md5": "774360d0a89b8dd76c0989ccec1447dc"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 773357,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_nor_gl_1k.jpg",
+        "md5": "93384d7e37ff13a50b4cf6ec108bc6d9"
+      },
+      "png": {
+        "size": 5135542,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_nor_gl_1k.png",
+        "md5": "9a21c6cead6f79300ea50d6d3a29cf83"
+      },
+      "exr": {
+        "size": 1668584,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_03_nor_gl_1k.exr",
+        "md5": "1baf9f532dd8570992de8d3d9898aaf6"
+      }
+    }
+  },
+  "03_metal": {
+    "4k": {
+      "jpg": {
+        "size": 8452328,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_03_metal_4k.jpg",
+        "md5": "a2b7393a6aca6d257e7b2bf2c9195443"
+      },
+      "png": {
+        "size": 4581508,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_metal_4k.png",
+        "md5": "a6a9f895d66eb5e14dd529bf590e4890"
+      },
+      "exr": {
+        "size": 8029634,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_03_metal_4k.exr",
+        "md5": "d3832a2edb20aed4957b5a6ec5d389ee"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2270453,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_03_metal_2k.jpg",
+        "md5": "08bc17c27aaf5105717f9940d80d2e3c"
+      },
+      "png": {
+        "size": 1465566,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_metal_2k.png",
+        "md5": "023750b611d00de0a2868a82a652c30b"
+      },
+      "exr": {
+        "size": 2309586,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_03_metal_2k.exr",
+        "md5": "1761f3754dac045b7db36af5b62dbd91"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 648943,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_03_metal_1k.jpg",
+        "md5": "30c7370653a92c818fc502a59e14222f"
+      },
+      "png": {
+        "size": 440986,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_metal_1k.png",
+        "md5": "e5e5f7add5112a1355d008e0ab0c207b"
+      },
+      "exr": {
+        "size": 700294,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_03_metal_1k.exr",
+        "md5": "07a7681e84c270e7a8a3e446a685f90e"
+      }
+    }
+  },
+  "candles_rough": {
+    "4k": {
+      "jpg": {
+        "size": 3558832,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_rough_4k.jpg",
+        "md5": "a02ae1f3409b5c1c56fc93c6454531be"
+      },
+      "png": {
+        "size": 3932675,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_rough_4k.png",
+        "md5": "e3da677ffcfd38ee40ddd28efcfbc168"
+      },
+      "exr": {
+        "size": 4141254,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_candles_rough_4k.exr",
+        "md5": "ae24606b9d8abff4ad67ac0bf899a747"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 962614,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_rough_2k.jpg",
+        "md5": "819ea6237330358877e595a49e1f240d"
+      },
+      "png": {
+        "size": 1064549,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_rough_2k.png",
+        "md5": "a06260b854dced4d0f45359de7b9a188"
+      },
+      "exr": {
+        "size": 1158231,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_candles_rough_2k.exr",
+        "md5": "144bc5bda4334d2720047ad5a15c2089"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 248328,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_rough_1k.jpg",
+        "md5": "a35949b24a5794cd587e8f6e9cc4638c"
+      },
+      "png": {
+        "size": 276618,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_rough_1k.png",
+        "md5": "25459894ce7cd2fb47a8b59118e845d8"
+      },
+      "exr": {
+        "size": 316113,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_candles_rough_1k.exr",
+        "md5": "105ed05750eac8eb2521640a25325654"
+      }
+    }
+  },
+  "flame_diff": {
+    "4k": {
+      "jpg": {
+        "size": 1139007,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_flame_diff_4k.jpg",
+        "md5": "c5ae0b67ffbe241ae69b812988c09dda"
+      },
+      "png": {
+        "size": 6291163,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_flame_diff_4k.png",
+        "md5": "787f326c9730d0aafd054c8fddafcad6"
+      },
+      "exr": {
+        "size": 5046812,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_flame_diff_4k.exr",
+        "md5": "576752abac1b8dc5374e02053a41511e"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 330500,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_flame_diff_2k.jpg",
+        "md5": "0948f2bc8a0470fec0153845d2a01f0d"
+      },
+      "png": {
+        "size": 1472096,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_flame_diff_2k.png",
+        "md5": "7475bbcab959360bfd72df1d72b58eca"
+      },
+      "exr": {
+        "size": 1692475,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_flame_diff_2k.exr",
+        "md5": "711842656cd7c96afb5c8ecf5b4f2588"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 88579,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_flame_diff_1k.jpg",
+        "md5": "e03f12b1e6cb00ebbcf72dbe68370d34"
+      },
+      "png": {
+        "size": 424933,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_flame_diff_1k.png",
+        "md5": "704af7ae6b1da103b7cb129dd78f563d"
+      },
+      "exr": {
+        "size": 485082,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_flame_diff_1k.exr",
+        "md5": "f045f76e9399e4a52a5d69b8a9fbcea9"
+      }
+    }
+  },
+  "01_diff": {
+    "4k": {
+      "jpg": {
+        "size": 12910583,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_diff_4k.jpg",
+        "md5": "5458e3a1d1e89a224eb019f3108af9c5"
+      },
+      "png": {
+        "size": 20973284,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_diff_4k.png",
+        "md5": "7717e0ba37b379883293913b9785668a"
+      },
+      "exr": {
+        "size": 18418679,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_01_diff_4k.exr",
+        "md5": "32fdb31743df3195ea138ec6c4aa7b39"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 3507869,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_diff_2k.jpg",
+        "md5": "f0123cfae1ccd34305d367e00e8f01fe"
+      },
+      "png": {
+        "size": 5493515,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_diff_2k.png",
+        "md5": "4704f7840bc2658a46f691bc8e5eba34"
+      },
+      "exr": {
+        "size": 5071713,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_01_diff_2k.exr",
+        "md5": "ad1c459a42d2a10aaf62a7458c9ec5d5"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 942661,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_diff_1k.jpg",
+        "md5": "27a666093ce421d4200c1dab13356436"
+      },
+      "png": {
+        "size": 1536207,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_diff_1k.png",
+        "md5": "3a7d4cc78cf66e7b1ac6b6db54e07553"
+      },
+      "exr": {
+        "size": 1397304,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_01_diff_1k.exr",
+        "md5": "246c4293a9d7d20abd51dba025cd0f00"
+      }
+    }
+  },
+  "01_nor_gl": {
+    "4k": {
+      "jpg": {
+        "size": 8080340,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_01_nor_gl_4k.jpg",
+        "md5": "27faf057bd30d0d1a2e432c59c87d590"
+      },
+      "png": {
+        "size": 37151304,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_nor_gl_4k.png",
+        "md5": "5c080f1de93c7083cf27bf9e3d6c23a7"
+      },
+      "exr": {
+        "size": 15841969,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_01_nor_gl_4k.exr",
+        "md5": "18f920ab2039d8c14609d81e3a5b83a8"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2380892,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.jpg",
+        "md5": "23c865455ad736f436e8ceb0c15c6235"
+      },
+      "png": {
+        "size": 11985347,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.png",
+        "md5": "3e604b9dde78620a8f810bfd788ddd55"
+      },
+      "exr": {
+        "size": 4705239,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.exr",
+        "md5": "49c9b4ef1086c31056f8584bf4555fbe"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 627197,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_01_nor_gl_1k.jpg",
+        "md5": "8631362fee28487f801c851b7a9254dc"
+      },
+      "png": {
+        "size": 3662171,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_nor_gl_1k.png",
+        "md5": "b767309d982bbc647ca0b4dd53db21bc"
+      },
+      "exr": {
+        "size": 1266872,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_01_nor_gl_1k.exr",
+        "md5": "1952063670f99952712bb70eca4a70cf"
+      }
+    }
+  },
+  "candles_nor_dx": {
+    "4k": {
+      "jpg": {
+        "size": 1393210,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_nor_dx_4k.jpg",
+        "md5": "2627a0c55097716bef98391d198b71a2"
+      },
+      "png": {
+        "size": 21932216,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_nor_dx_4k.png",
+        "md5": "d54faf935308c040603bc61d8f899db4"
+      },
+      "exr": {
+        "size": 2607003,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_candles_nor_dx_4k.exr",
+        "md5": "b24667a0e7de924652f71b09f76c96c8"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 473778,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_nor_dx_2k.jpg",
+        "md5": "37fe7920cc4cf5a131a06a1dbda9701d"
+      },
+      "png": {
+        "size": 7367569,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_nor_dx_2k.png",
+        "md5": "2161c3d3ee5c204e6f880cc2285c95af"
+      },
+      "exr": {
+        "size": 964375,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_candles_nor_dx_2k.exr",
+        "md5": "0557deb78177e701672995bbf98e78ba"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 174223,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_nor_dx_1k.jpg",
+        "md5": "156cd53500a75ae5ef5f4dafaa3ee945"
+      },
+      "png": {
+        "size": 2279795,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_nor_dx_1k.png",
+        "md5": "5fbdfdf53585d357cde1efbcb71cce5e"
+      },
+      "exr": {
+        "size": 380959,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_candles_nor_dx_1k.exr",
+        "md5": "1a9d82a30e777db3358ade294c263e29"
+      }
+    }
+  },
+  "02_metal": {
+    "4k": {
+      "jpg": {
+        "size": 197070,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_metal_4k.jpg",
+        "md5": "8009c2dfe4513c6f2064eee9d6e28c30"
+      },
+      "png": {
+        "size": 25415,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_metal_4k.png",
+        "md5": "7b3bffafeab0692be98c3db7a823a287"
+      },
+      "exr": {
+        "size": 22802,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_02_metal_4k.exr",
+        "md5": "4818f6746ec68319ce8144a421280711"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 49614,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_metal_2k.jpg",
+        "md5": "203d046e87add52c8c9389da9ff66e3b"
+      },
+      "png": {
+        "size": 8767,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_metal_2k.png",
+        "md5": "0572737ce11f70a245a25422e1047a8c"
+      },
+      "exr": {
+        "size": 10898,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_02_metal_2k.exr",
+        "md5": "39d22923eb4100b710e468399d853c4e"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 12750,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_metal_1k.jpg",
+        "md5": "b39f27b03fc6a526e625a823e3613257"
+      },
+      "png": {
+        "size": 3370,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_metal_1k.png",
+        "md5": "109c8a7eab9b4329f984f39205a32e30"
+      },
+      "exr": {
+        "size": 5394,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_02_metal_1k.exr",
+        "md5": "5cbdbe904758300a3fd35ca3adbf9d7d"
+      }
+    }
+  },
+  "02_nor_gl": {
+    "4k": {
+      "jpg": {
+        "size": 8589974,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_nor_gl_4k.jpg",
+        "md5": "6fac8a035449a1cf1ff860c831383d30"
+      },
+      "png": {
+        "size": 59480115,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_nor_gl_4k.png",
+        "md5": "500fecbabd440ccff9018c6c6c6a0376"
+      },
+      "exr": {
+        "size": 18284702,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_02_nor_gl_4k.exr",
+        "md5": "3c293156f23abe7fd84b8377bea9eb8e"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2439207,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.jpg",
+        "md5": "d132f1aae14759a0a9510ccd12c0194b"
+      },
+      "png": {
+        "size": 17540844,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.png",
+        "md5": "d386714dc508d49f84cfe912e711c1ec"
+      },
+      "exr": {
+        "size": 4979431,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.exr",
+        "md5": "6807b59eafc4dfbb07dacaafe225ce79"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 672717,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_nor_gl_1k.jpg",
+        "md5": "5747f3304a49c81ccf1191224f56f4cb"
+      },
+      "png": {
+        "size": 4819783,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_nor_gl_1k.png",
+        "md5": "d054bf15f9c8f195fc6d2290031cee32"
+      },
+      "exr": {
+        "size": 1393751,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_02_nor_gl_1k.exr",
+        "md5": "82636bdc817f104eec48b32c26a075b6"
+      }
+    }
+  },
+  "02_ao": {
+    "4k": {
+      "jpg": {
+        "size": 4997059,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_ao_4k.jpg",
+        "md5": "696ef4c066646015f48c170ee21d74be"
+      },
+      "png": {
+        "size": 5476298,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_ao_4k.png",
+        "md5": "09d036f4ba3dde20ce973637e5a58c56"
+      },
+      "exr": {
+        "size": 4998380,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_02_ao_4k.exr",
+        "md5": "ed1f5ef165479ca500999cd297b180d5"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 1180769,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_ao_2k.jpg",
+        "md5": "ff40ffb5dc34ea9f27bc77011f9584e9"
+      },
+      "png": {
+        "size": 1224810,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_ao_2k.png",
+        "md5": "7683095600af9315473c5d7f31e7ac4f"
+      },
+      "exr": {
+        "size": 1229044,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_02_ao_2k.exr",
+        "md5": "1a25c09475fc9726d031820d9c9a566b"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 332334,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_ao_1k.jpg",
+        "md5": "989d5937c5679dd8c4bd2ea59108a929"
+      },
+      "png": {
+        "size": 313413,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_ao_1k.png",
+        "md5": "8a2f0ceff763370269ef18811a9a28a9"
+      },
+      "exr": {
+        "size": 396706,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_02_ao_1k.exr",
+        "md5": "6ec5eddf52d859095696152d0f4822de"
+      }
+    }
+  },
+  "02_rough": {
+    "4k": {
+      "jpg": {
+        "size": 9515699,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_02_rough_4k.jpg",
+        "md5": "fb5fca370e63f6f5f81ead9f961c9217"
+      },
+      "png": {
+        "size": 6374509,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_rough_4k.png",
+        "md5": "cef8349abbf721922e3beb6677bb6ba1"
+      },
+      "exr": {
+        "size": 12407678,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_02_rough_4k.exr",
+        "md5": "5219b48d185a5f900efdb350e34836b5"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 2288176,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_02_rough_2k.jpg",
+        "md5": "7b1998edbaa8ba7a55d5a95948492fd5"
+      },
+      "png": {
+        "size": 1864678,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_rough_2k.png",
+        "md5": "9ffa99a1a0bf4239b2d2c0a2438ef690"
+      },
+      "exr": {
+        "size": 3099945,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_02_rough_2k.exr",
+        "md5": "8c1bd50f25e8d7836602e7338e126558"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 583984,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_02_rough_1k.jpg",
+        "md5": "a48383d3c5e308caa42f73e7c065c7ee"
+      },
+      "png": {
+        "size": 533582,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_rough_1k.png",
+        "md5": "a563044517f57cbbbd994112d8be3a06"
+      },
+      "exr": {
+        "size": 817429,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_02_rough_1k.exr",
+        "md5": "5901c50fd8dda8342560d1190b19e739"
+      }
+    }
+  },
+  "fbx": {
+    "4k": {
+      "fbx": {
+        "include": {
+          "textures/brass_candleholders_flame_diff_4k.png": {
+            "size": 6291163,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_flame_diff_4k.png",
+            "md5": "787f326c9730d0aafd054c8fddafcad6"
+          },
+          "textures/brass_candleholders_03_nor_gl_4k.png": {
+            "size": 69595194,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_nor_gl_4k.png",
+            "md5": "3a115ede3487693263e2081d4d91649c"
+          },
+          "textures/brass_candleholders_01_diff_4k.png": {
+            "size": 20973284,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_diff_4k.png",
+            "md5": "7717e0ba37b379883293913b9785668a"
+          },
+          "textures/brass_candleholders_candles_nor_gl_4k.png": {
+            "size": 22275438,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_nor_gl_4k.png",
+            "md5": "282c277bc235d2a48f1adea3a6fbce7c"
+          },
+          "textures/brass_candleholders_01_metal_4k.png": {
+            "size": 34712,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_metal_4k.png",
+            "md5": "8f986487caa70378df5d90633f8994e8"
+          },
+          "textures/brass_candleholders_candles_rough_4k.png": {
+            "size": 3932675,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_rough_4k.png",
+            "md5": "e3da677ffcfd38ee40ddd28efcfbc168"
+          },
+          "textures/brass_candleholders_03_metal_4k.png": {
+            "size": 4581508,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_metal_4k.png",
+            "md5": "a6a9f895d66eb5e14dd529bf590e4890"
+          },
+          "textures/brass_candleholders_02_metal_4k.png": {
+            "size": 25415,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_metal_4k.png",
+            "md5": "7b3bffafeab0692be98c3db7a823a287"
+          },
+          "textures/brass_candleholders_01_rough_4k.png": {
+            "size": 8176211,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_rough_4k.png",
+            "md5": "c66d721f4c95ac1ee027fb016ca623ab"
+          },
+          "textures/brass_candleholders_03_rough_4k.png": {
+            "size": 9214946,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_rough_4k.png",
+            "md5": "fc509c8a663ad88169ab9b26dda8ed29"
+          },
+          "textures/brass_candleholders_candles_diff_4k.png": {
+            "size": 10031492,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_diff_4k.png",
+            "md5": "fa84cbdee8aa71b07cf80f2342e7b6b4"
+          },
+          "textures/brass_candleholders_02_rough_4k.png": {
+            "size": 6374509,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_rough_4k.png",
+            "md5": "cef8349abbf721922e3beb6677bb6ba1"
+          },
+          "textures/brass_candleholders_02_diff_4k.png": {
+            "size": 19941215,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_diff_4k.png",
+            "md5": "935254d17f6993856c3a5636a36635b9"
+          },
+          "textures/brass_candleholders_02_nor_gl_4k.png": {
+            "size": 59480115,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_02_nor_gl_4k.png",
+            "md5": "500fecbabd440ccff9018c6c6c6a0376"
+          },
+          "textures/brass_candleholders_01_nor_gl_4k.png": {
+            "size": 37151304,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_01_nor_gl_4k.png",
+            "md5": "5c080f1de93c7083cf27bf9e3d6c23a7"
+          },
+          "textures/brass_candleholders_03_diff_4k.png": {
+            "size": 22217246,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_03_diff_4k.png",
+            "md5": "559fc5e23f27e1ecf765d76d03098fe5"
+          }
+        },
+        "size": 1283532,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/4k/brass_candleholders/brass_candleholders_4k.fbx",
+        "md5": "89d54753bced522827a23610f8348859"
+      }
+    },
+    "2k": {
+      "fbx": {
+        "include": {
+          "textures/brass_candleholders_01_nor_gl_2k.png": {
+            "size": 11985347,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_nor_gl_2k.png",
+            "md5": "3e604b9dde78620a8f810bfd788ddd55"
+          },
+          "textures/brass_candleholders_03_diff_2k.png": {
+            "size": 5892604,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_diff_2k.png",
+            "md5": "a6f15e5f09294a7a37d85f39361b4418"
+          },
+          "textures/brass_candleholders_candles_nor_gl_2k.png": {
+            "size": 7367569,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_nor_gl_2k.png",
+            "md5": "a61faacafea30d7044125cd58bef9d79"
+          },
+          "textures/brass_candleholders_02_nor_gl_2k.png": {
+            "size": 17540844,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_nor_gl_2k.png",
+            "md5": "d386714dc508d49f84cfe912e711c1ec"
+          },
+          "textures/brass_candleholders_02_diff_2k.png": {
+            "size": 5474025,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_diff_2k.png",
+            "md5": "9abe02d061ba3ffc6520910cd78d3ab7"
+          },
+          "textures/brass_candleholders_03_nor_gl_2k.png": {
+            "size": 19578394,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_nor_gl_2k.png",
+            "md5": "1a997715cbf2a148ac94ce4ba1675b29"
+          },
+          "textures/brass_candleholders_01_diff_2k.png": {
+            "size": 5493515,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_diff_2k.png",
+            "md5": "4704f7840bc2658a46f691bc8e5eba34"
+          },
+          "textures/brass_candleholders_01_metal_2k.png": {
+            "size": 18234,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_metal_2k.png",
+            "md5": "bc341a84c8daddf31677210a798f70a5"
+          },
+          "textures/brass_candleholders_02_metal_2k.png": {
+            "size": 8767,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_metal_2k.png",
+            "md5": "0572737ce11f70a245a25422e1047a8c"
+          },
+          "textures/brass_candleholders_03_metal_2k.png": {
+            "size": 1465566,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_metal_2k.png",
+            "md5": "023750b611d00de0a2868a82a652c30b"
+          },
+          "textures/brass_candleholders_flame_diff_2k.png": {
+            "size": 1472096,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_flame_diff_2k.png",
+            "md5": "7475bbcab959360bfd72df1d72b58eca"
+          },
+          "textures/brass_candleholders_candles_rough_2k.png": {
+            "size": 1064549,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_rough_2k.png",
+            "md5": "a06260b854dced4d0f45359de7b9a188"
+          },
+          "textures/brass_candleholders_01_rough_2k.png": {
+            "size": 2224059,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_01_rough_2k.png",
+            "md5": "4d024f5589fc3bdec6e775bd1133fe4f"
+          },
+          "textures/brass_candleholders_02_rough_2k.png": {
+            "size": 1864678,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_02_rough_2k.png",
+            "md5": "9ffa99a1a0bf4239b2d2c0a2438ef690"
+          },
+          "textures/brass_candleholders_candles_diff_2k.png": {
+            "size": 2670520,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_diff_2k.png",
+            "md5": "1d3e1b71eaf01a618340e8c68a9922ee"
+          },
+          "textures/brass_candleholders_03_rough_2k.png": {
+            "size": 2321504,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_03_rough_2k.png",
+            "md5": "b119b599519bd57603e7509592f2a277"
+          }
+        },
+        "size": 1283532,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/2k/brass_candleholders/brass_candleholders_2k.fbx",
+        "md5": "1020c3341a3c6e885e7ff6d937c7b97f"
+      }
+    },
+    "1k": {
+      "fbx": {
+        "include": {
+          "textures/brass_candleholders_03_nor_gl_1k.png": {
+            "size": 5135542,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_nor_gl_1k.png",
+            "md5": "9a21c6cead6f79300ea50d6d3a29cf83"
+          },
+          "textures/brass_candleholders_candles_nor_gl_1k.png": {
+            "size": 2280082,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_nor_gl_1k.png",
+            "md5": "eceeb7630a1158865014dfbb9f9f5b2e"
+          },
+          "textures/brass_candleholders_flame_diff_1k.png": {
+            "size": 424933,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_flame_diff_1k.png",
+            "md5": "704af7ae6b1da103b7cb129dd78f563d"
+          },
+          "textures/brass_candleholders_01_diff_1k.png": {
+            "size": 1536207,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_diff_1k.png",
+            "md5": "3a7d4cc78cf66e7b1ac6b6db54e07553"
+          },
+          "textures/brass_candleholders_03_metal_1k.png": {
+            "size": 440986,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_metal_1k.png",
+            "md5": "e5e5f7add5112a1355d008e0ab0c207b"
+          },
+          "textures/brass_candleholders_candles_rough_1k.png": {
+            "size": 276618,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_rough_1k.png",
+            "md5": "25459894ce7cd2fb47a8b59118e845d8"
+          },
+          "textures/brass_candleholders_01_rough_1k.png": {
+            "size": 605093,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_rough_1k.png",
+            "md5": "0bf2372369c3e7e0a94804d949684e01"
+          },
+          "textures/brass_candleholders_03_rough_1k.png": {
+            "size": 603968,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_rough_1k.png",
+            "md5": "a1fca93ccd6b279255790de98bf32ae0"
+          },
+          "textures/brass_candleholders_candles_diff_1k.png": {
+            "size": 728390,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_diff_1k.png",
+            "md5": "19c9a14f7bbfa1ef18ab767e219c7fe2"
+          },
+          "textures/brass_candleholders_02_rough_1k.png": {
+            "size": 533582,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_rough_1k.png",
+            "md5": "a563044517f57cbbbd994112d8be3a06"
+          },
+          "textures/brass_candleholders_02_metal_1k.png": {
+            "size": 3370,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_metal_1k.png",
+            "md5": "109c8a7eab9b4329f984f39205a32e30"
+          },
+          "textures/brass_candleholders_03_diff_1k.png": {
+            "size": 1643929,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_03_diff_1k.png",
+            "md5": "bafb63abaec68d62ca7fc2b7d129be51"
+          },
+          "textures/brass_candleholders_01_nor_gl_1k.png": {
+            "size": 3662171,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_nor_gl_1k.png",
+            "md5": "b767309d982bbc647ca0b4dd53db21bc"
+          },
+          "textures/brass_candleholders_01_metal_1k.png": {
+            "size": 8791,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_01_metal_1k.png",
+            "md5": "8897a6f45d426c134dde28ac8c6ba378"
+          },
+          "textures/brass_candleholders_02_nor_gl_1k.png": {
+            "size": 4819783,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_nor_gl_1k.png",
+            "md5": "d054bf15f9c8f195fc6d2290031cee32"
+          },
+          "textures/brass_candleholders_02_diff_1k.png": {
+            "size": 1596738,
+            "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_02_diff_1k.png",
+            "md5": "e81bbf6a842c00c12e4192749e1debcd"
+          }
+        },
+        "size": 1283532,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/1k/brass_candleholders/brass_candleholders_1k.fbx",
+        "md5": "34e5982e27c068cbc5a5da7a6d0a9dbb"
+      }
+    }
+  },
+  "candles_arm": {
+    "4k": {
+      "jpg": {
+        "size": 3967304,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_arm_4k.jpg",
+        "md5": "3aff4f73d344a075dbea0691cac935f5"
+      },
+      "png": {
+        "size": 9067450,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_arm_4k.png",
+        "md5": "2f996145df68d463bda7d3364d203136"
+      },
+      "exr": {
+        "size": 7564274,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_candles_arm_4k.exr",
+        "md5": "825d3551a10b11f40683da6731687f8f"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 1040675,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_arm_2k.jpg",
+        "md5": "9317fc5c54609fdc2f77ddca276a7aaa"
+      },
+      "png": {
+        "size": 2228136,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_arm_2k.png",
+        "md5": "9a56852732a6fc843d5559137fd4cbf1"
+      },
+      "exr": {
+        "size": 2030390,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_candles_arm_2k.exr",
+        "md5": "61426ef381411f73a2e0e45ff097f369"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 288769,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_arm_1k.jpg",
+        "md5": "7cfc5157dec680365b92b45ae4d1340a"
+      },
+      "png": {
+        "size": 538659,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_arm_1k.png",
+        "md5": "47bb6b695e8194f40555f20d2bc18de9"
+      },
+      "exr": {
+        "size": 584354,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_candles_arm_1k.exr",
+        "md5": "fd22c42803985590c6c4a84912ae7a78"
+      }
+    }
+  },
+  "candles_diff": {
+    "4k": {
+      "jpg": {
+        "size": 3545939,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/4k/brass_candleholders/brass_candleholders_candles_diff_4k.jpg",
+        "md5": "1165dbddc7b97723327c03a35b3971ff"
+      },
+      "png": {
+        "size": 10031492,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/4k/brass_candleholders/brass_candleholders_candles_diff_4k.png",
+        "md5": "fa84cbdee8aa71b07cf80f2342e7b6b4"
+      },
+      "exr": {
+        "size": 4585079,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/4k/brass_candleholders/brass_candleholders_candles_diff_4k.exr",
+        "md5": "d3d4d845142fd1aaef6eece97be7589e"
+      }
+    },
+    "2k": {
+      "jpg": {
+        "size": 952690,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/brass_candleholders/brass_candleholders_candles_diff_2k.jpg",
+        "md5": "edf5ccde0a5362c0193f11931eb99b34"
+      },
+      "png": {
+        "size": 2670520,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/brass_candleholders/brass_candleholders_candles_diff_2k.png",
+        "md5": "1d3e1b71eaf01a618340e8c68a9922ee"
+      },
+      "exr": {
+        "size": 1278604,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/2k/brass_candleholders/brass_candleholders_candles_diff_2k.exr",
+        "md5": "0327c07909dcc2568ed0ea0f58255208"
+      }
+    },
+    "1k": {
+      "jpg": {
+        "size": 271273,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/brass_candleholders/brass_candleholders_candles_diff_1k.jpg",
+        "md5": "0945ff49048efed6df37564563012a7a"
+      },
+      "png": {
+        "size": 728390,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/png/1k/brass_candleholders/brass_candleholders_candles_diff_1k.png",
+        "md5": "19c9a14f7bbfa1ef18ab767e219c7fe2"
+      },
+      "exr": {
+        "size": 385717,
+        "url": "https://dl.polyhaven.org/file/ph-assets/Models/exr/1k/brass_candleholders/brass_candleholders_candles_diff_1k.exr",
+        "md5": "2ec8075f90ac47a6f3821ff820a18f31"
+      }
+    }
+  }
+}

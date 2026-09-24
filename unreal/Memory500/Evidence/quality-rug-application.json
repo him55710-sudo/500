@@ -1,0 +1,8 @@
+[
+  {
+    "actor": "Architecture_Aubusson_handwoven_floral_wool",
+    "before": "/Game/SourceSalon/salon-source/Materials/Aubusson_handwoven_floral_wool.Aubusson_handwoven_floral_wool",
+    "after": "/Game/Quality/Materials/M_Quality_Rug.M_Quality_Rug",
+    "color": "/Game/SourceSalon/salon-source/Textures/aubusson-wool-color.aubusson-wool-color"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "checked_meshes": 14,
+  "max_bound_error_cm": 3.0308112627608352e-05,
+  "zero_simple_collisions": true,
+  "hidden_original_visuals": 17,
+  "actors": [
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_0",
+      "max_error_cm": 1.340972085017711e-05
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_1",
+      "max_error_cm": 8.034760412556352e-06
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_2",
+      "max_error_cm": 1.7408696749043884e-05
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_3",
+      "max_error_cm": 1.8166331756219734e-05
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_02_0",
+      "max_error_cm": 6.405782187357545e-06
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_02_1",
+      "max_error_cm": 6.7059345383313484e-06
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_02_2",
+      "max_error_cm": 2.1664737460014294e-05
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_0",
+      "max_error_cm": 1.0455291885591578e-05
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_1",
+      "max_error_cm": 6.779082923458191e-06
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_2",
+      "max_error_cm": 2.319536474715278e-05
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_3",
+      "max_error_cm": 2.2493554297398077e-05
+    },
+    {
+      "actor": "Quality_RealShelfBooks",
+      "max_error_cm": 3.0308112627608352e-05
+    },
+    {
+      "actor": "Quality_RealLamp",
+      "max_error_cm": 1.52587890625e-05
+    },
+    {
+      "actor": "Quality_RealBlueVessel",
+      "max_error_cm": 7.62939453125e-06
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "file": "trimmed-architecture-v2.glb",
+    "actors": [
+      "Quality_TrimV2_Architecture_Aged_brass",
+      "Quality_TrimV2_Architecture_Dark_walnut",
+      "Quality_TrimV2_Architecture_Warm_bulb"
+    ],
+    "collision_generation": false,
+    "nanite": false
+  },
+  {
+    "file": "authored-props.glb",
+    "actors": [
+      "Quality_RealBlueVessel",
+      "Quality_RealLamp"
+    ],
+    "collision_generation": false,
+    "nanite": false
+  },
+  {
+    "file": "real-plants-books.glb",
+    "actors": [
+      "Quality_RealPlant_potted_plant_01_0",
+      "Quality_RealPlant_potted_plant_01_1",
+      "Quality_RealPlant_potted_plant_01_2",
+      "Quality_RealPlant_potted_plant_01_3",
+      "Quality_RealPlant_potted_plant_02_0",
+      "Quality_RealPlant_potted_plant_02_1",
+      "Quality_RealPlant_potted_plant_02_2",
+      "Quality_RealPlant_potted_plant_04_0",
+      "Quality_RealPlant_potted_plant_04_1",
+      "Quality_RealPlant_potted_plant_04_2",
+      "Quality_RealPlant_potted_plant_04_3",
+      "Quality_RealShelfBooks"
+    ],
+    "collision_generation": false,
+    "nanite": false
+  }
+]

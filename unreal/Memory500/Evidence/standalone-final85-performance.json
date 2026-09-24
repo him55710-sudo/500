@@ -1,0 +1,61 @@
+{
+  "source": "standalone-final85.csv",
+  "screenshot": "standalone-final85.png",
+  "verified_viewport_pixels": [
+    1920,
+    1080
+  ],
+  "internal_screen_percentage": 85,
+  "context": "Uncooked standalone UE5.8 development runtime; no editor open, Codex open; first200rows omitted, screenshot at frame100; RTX4050Laptop6GB",
+  "metrics": {
+    "FrameTime": {
+      "mean": 21.088292363636363,
+      "median": 20.9898,
+      "p95": 24.4258,
+      "samples": 550
+    },
+    "GPUTime": {
+      "mean": 20.112741636363637,
+      "median": 20.13175,
+      "p95": 20.6093,
+      "samples": 550
+    },
+    "GameThreadTime": {
+      "mean": 6.0177712727272725,
+      "median": 5.95495,
+      "p95": 8.1016,
+      "samples": 550
+    },
+    "GPU/LumenReflections": {
+      "mean": 1.741972909090909,
+      "median": 1.7219,
+      "p95": 1.9978,
+      "samples": 550
+    },
+    "GPU/ShadowDepths": {
+      "mean": 1.1331825454545454,
+      "median": 1.13805,
+      "p95": 1.3593,
+      "samples": 550
+    },
+    "GPU/TemporalSuperResolution": {
+      "mean": 3.111534363636364,
+      "median": 3.0955,
+      "p95": 3.288,
+      "samples": 550
+    },
+    "GPUMem/LocalUsedMB": {
+      "mean": 3615.6050818181816,
+      "median": 3616.1094,
+      "p95": 3616.1094,
+      "samples": 550
+    },
+    "GPUMem/LocalBudgetMB": {
+      "mean": 5153.0,
+      "median": 5153.0,
+      "p95": 5153.0,
+      "samples": 550
+    }
+  },
+  "fps_from_mean_frame_time": 47.41967641364608
+}

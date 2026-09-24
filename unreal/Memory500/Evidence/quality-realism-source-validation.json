@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-24T19:58:39.031Z",
+  "packages": [
+    {
+      "manifest": "SourceAssets/Quality/manifest.json",
+      "files": 60,
+      "bytes": 55914882,
+      "verified": true
+    },
+    {
+      "manifest": "SourceAssets/BookUpgrade/manifest.json",
+      "files": 8,
+      "bytes": 3261046,
+      "verified": true
+    },
+    {
+      "manifest": "SourceAssets/Quality/Realism/manifest.json",
+      "files": 17,
+      "bytes": 70972595,
+      "verified": true
+    }
+  ]
+}

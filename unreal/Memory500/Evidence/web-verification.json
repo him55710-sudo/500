@@ -1,0 +1,8 @@
+{
+  "production_build": "pass",
+  "failed": 0,
+  "passed": 47,
+  "tests": 47,
+  "web_gameplay_changes": 0,
+  "existing_warning": "meshopt decoder bundle exceeds500kB"
+}

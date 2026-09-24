@@ -1,0 +1,261 @@
+{
+  "hidden_original_visuals": [
+    "Architecture_Aged_brass",
+    "Architecture_Blue_rain_glass",
+    "Architecture_Charcoal",
+    "Architecture_Dark_walnut",
+    "Architecture_Frame_green",
+    "Architecture_Sage_foliage",
+    "Architecture_Warm_bulb",
+    "Architecture_Book_0",
+    "Architecture_Book_1",
+    "Architecture_Book_2",
+    "Architecture_Book_3",
+    "Architecture_Book_4",
+    "Salon_BookSpineFoil",
+    "Salon_CarafeNeckCollar",
+    "Quality_Trim_Architecture_Aged_brass",
+    "Quality_Trim_Architecture_Dark_walnut",
+    "Quality_Trim_Architecture_Warm_bulb"
+  ],
+  "new_visuals": [
+    {
+      "actor": "Quality_TrimV2_Architecture_Aged_brass",
+      "min_cm": [
+        -615.0,
+        -618.4999942779541,
+        -3.9999966621398926
+      ],
+      "max_cm": [
+        615.0,
+        618.4998931884766,
+        470.6999545097351
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_TrimV2_Architecture_Dark_walnut",
+      "min_cm": [
+        -615.0,
+        -615.0,
+        -21.9999997317791
+      ],
+      "max_cm": [
+        615.0,
+        615.0,
+        -1.9999997317790985
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_TrimV2_Architecture_Warm_bulb",
+      "min_cm": [
+        -573.0000200271606,
+        -542.9999847412109,
+        283.00000524520874
+      ],
+      "max_cm": [
+        572.9999952316284,
+        497.99993896484375,
+        398.0000205039978
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealBlueVessel",
+      "min_cm": [
+        -422.55000925064087,
+        -397.55000925064087,
+        108.60000381618738
+      ],
+      "max_cm": [
+        -407.45000982284546,
+        -382.45000982284546,
+        159.90000534057617
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealLamp",
+      "min_cm": [
+        -427.7449998855591,
+        -427.49044036865234,
+        104.82453393936157
+      ],
+      "max_cm": [
+        -362.2550096511841,
+        -385.42000007629395,
+        173.99999618530273
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_0",
+      "min_cm": [
+        -501.52316321455055,
+        -499.2912792354018,
+        50.13090936808749
+      ],
+      "max_cm": [
+        -459.44204017663105,
+        -454.7327388753529,
+        147.12733179198403
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_1",
+      "min_cm": [
+        -499.71018246030917,
+        -499.3731537383942,
+        2.0000002304520876
+      ],
+      "max_cm": [
+        -450.9476200107397,
+        -450.53530542855924,
+        63.644608430383414
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_2",
+      "min_cm": [
+        -501.3526072074583,
+        -501.10084151072533,
+        3.5532288253307343
+      ],
+      "max_cm": [
+        -448.52245497289505,
+        -448.27069143756125,
+        63.77499656082364
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_01_3",
+      "min_cm": [
+        -513.2812394439534,
+        -515.8976850044446,
+        69.65067802264184
+      ],
+      "max_cm": [
+        -446.71878899445846,
+        -444.10239859034846,
+        154.99999477240272
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_02_0",
+      "min_cm": [
+        467.2994549589639,
+        463.9040433728619,
+        1.9999999226006935
+      ],
+      "max_cm": [
+        536.0673014802451,
+        532.6718871278281,
+        50.752205101951404
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_02_1",
+      "min_cm": [
+        444.15396973449515,
+        437.32809381436437,
+        32.254916464370126
+      ],
+      "max_cm": [
+        545.8459827581901,
+        530.6177127460523,
+        123.99999938226574
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_02_2",
+      "min_cm": [
+        471.57279054111916,
+        468.13285568511606,
+        45.050861262990566
+      ],
+      "max_cm": [
+        531.6433019238202,
+        527.7208753974037,
+        51.414533419951624
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_0",
+      "min_cm": [
+        -455.4449628010583,
+        -409.4104203879823,
+        121.86324617692912
+      ],
+      "max_cm": [
+        -440.68170639340224,
+        -394.49205062435135,
+        124.04077895435944
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_1",
+      "min_cm": [
+        -455.9036322464349,
+        -409.72432571342665,
+        122.01313904569247
+      ],
+      "max_cm": [
+        -440.23385443205177,
+        -394.069521800629,
+        123.93303413775652
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_2",
+      "min_cm": [
+        -454.2510159701558,
+        -409.0915511561092,
+        122.13904519479684
+      ],
+      "max_cm": [
+        -439.61021835527686,
+        -391.7437101765661,
+        135.40000200714258
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealPlant_potted_plant_04_3",
+      "min_cm": [
+        -456.41133920078164,
+        -410.25631562595254,
+        108.6000010041378
+      ],
+      "max_cm": [
+        -439.5886636583075,
+        -393.4336410390865,
+        124.13888932980058
+      ],
+      "simple_collision_shapes": 0
+    },
+    {
+      "actor": "Quality_RealShelfBooks",
+      "min_cm": [
+        -507.67173767089844,
+        -209.50000286102295,
+        169.50997114181519
+      ],
+      "max_cm": [
+        -478.0507390788646,
+        20.26979999574081,
+        209.5641485158074
+      ],
+      "simple_collision_shapes": 0
+    }
+  ]
+}

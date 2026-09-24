@@ -1,0 +1,22 @@
+[
+  {
+    "Check": "Tile width 99cm",
+    "Passed": true
+  },
+  {
+    "Check": "Frame width 127cm",
+    "Passed": true
+  },
+  {
+    "Check": "Frame height 157cm",
+    "Passed": true
+  },
+  {
+    "Check": "Rug width 420cm",
+    "Passed": true
+  },
+  {
+    "Check": "Rug length 460cm",
+    "Passed": true
+  }
+]

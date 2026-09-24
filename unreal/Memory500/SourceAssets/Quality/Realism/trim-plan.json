@@ -1,0 +1,79 @@
+[
+  {
+    "original_actor": "Architecture_Aged_brass",
+    "replacement_actor": "Quality_TrimV2_Architecture_Aged_brass",
+    "original_faces": 19368,
+    "removed_faces": 5796,
+    "remaining_faces": 13572,
+    "unchanged_geometry_sha256": "6e0118aa09981beb8f4a74b56b28bbe35e1206b0728408cd1bf7caf4141f71c7",
+    "materials": [
+      "Aged brass"
+    ]
+  },
+  {
+    "original_actor": "Architecture_Blue_rain_glass",
+    "replacement_actor": null,
+    "original_faces": 568,
+    "removed_faces": 568,
+    "remaining_faces": 0,
+    "unchanged_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "materials": [
+      "Blue rain glass"
+    ]
+  },
+  {
+    "original_actor": "Architecture_Charcoal",
+    "replacement_actor": null,
+    "original_faces": 568,
+    "removed_faces": 568,
+    "remaining_faces": 0,
+    "unchanged_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "materials": [
+      "Charcoal"
+    ]
+  },
+  {
+    "original_actor": "Architecture_Dark_walnut",
+    "replacement_actor": "Quality_TrimV2_Architecture_Dark_walnut",
+    "original_faces": 772,
+    "removed_faces": 760,
+    "remaining_faces": 12,
+    "unchanged_geometry_sha256": "505e1dd99ee1240ee7f547a6d92636656544363d9fbc037166b358f5609e65fb",
+    "materials": [
+      "Dark walnut"
+    ]
+  },
+  {
+    "original_actor": "Architecture_Frame_green",
+    "replacement_actor": null,
+    "original_faces": 108,
+    "removed_faces": 108,
+    "remaining_faces": 0,
+    "unchanged_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "materials": [
+      "Frame green"
+    ]
+  },
+  {
+    "original_actor": "Architecture_Sage_foliage",
+    "replacement_actor": null,
+    "original_faces": 11616,
+    "removed_faces": 11616,
+    "remaining_faces": 0,
+    "unchanged_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "materials": [
+      "Sage foliage"
+    ]
+  },
+  {
+    "original_actor": "Architecture_Warm_bulb",
+    "replacement_actor": "Quality_TrimV2_Architecture_Warm_bulb",
+    "original_faces": 5380,
+    "removed_faces": 108,
+    "remaining_faces": 5272,
+    "unchanged_geometry_sha256": "1c001e7796bcad5f2933ea04b4c9f060cbb7d995dd7246f174187f6d65c0c45c",
+    "materials": [
+      "Warm bulb"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+unreal/Memory500/** text eol=lf
+unreal/Memory500/SourceAssets/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+unreal/Memory500/**/*.uasset filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.umap filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.glb filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.gltf filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.bin filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.hdr filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.exr filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.png filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.tga filter=lfs diff=lfs merge=lfs -text
+unreal/Memory500/**/*.blend filter=lfs diff=lfs merge=lfs -text

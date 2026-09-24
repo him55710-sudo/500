@@ -1,0 +1,622 @@
+[
+  {
+    "Path": "${WORKSPACE}\\500-main\\.gitignore",
+    "Bytes": 126,
+    "SHA256": "6AA35EEEF539066A5E925E0C9F9A505A3708EA37323BFAFE01CA436FBDB5755A"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\.vercelignore",
+    "Bytes": 114,
+    "SHA256": "26198927C009AA5BFBD1AA39123D2D8D3C6D450AFCB9EBA30D6F8C2ED938C10C"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\게임 시작.cmd",
+    "Bytes": 246,
+    "SHA256": "7EDEED609EF2CC0E92410AB30726047890D4E1BAD2A373138BCFDB8E3C85C62A"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\index.html",
+    "Bytes": 12386,
+    "SHA256": "0AB00BF82FF72146F209CB291C0611A329B7313779A73C01236D384D3DD9BEDD"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\package.json",
+    "Bytes": 692,
+    "SHA256": "05726A09BFD2917ABCA6AA63794AB83B2E15A04EA08D25A05BBC645D2538F5DF"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\pnpm-lock.yaml",
+    "Bytes": 36800,
+    "SHA256": "8E80F922C860679329D23BB810BDB1ADE9BA0B4E4AB69FFE07F84FC3715C01E4"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\pnpm-workspace.yaml",
+    "Bytes": 51,
+    "SHA256": "9AA3A2F87F5409AD71C04BA55667BDDFAAD6078A4FE81DA5B4CF465F9A2BEE4A"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\README.md",
+    "Bytes": 13059,
+    "SHA256": "C54EEBBD59BFFD950EC5C81CFC7D4582095991EBFE4614570BF44C606F85807D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\serve.mjs",
+    "Bytes": 2378,
+    "SHA256": "CEE4759B9A6CF7B8E566FE4A357C5F2E4A1E5EB33D442773AB7BF50E4D42F018"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\vercel.json",
+    "Bytes": 145,
+    "SHA256": "1CB0CF660EA241130D7972918D33AF6C59566DE23EA45AE09B8C24B587F07E7D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\500-memory-room.blend",
+    "Bytes": 12582489,
+    "SHA256": "81668A05F14B55B09C44FCA028975B8B49531A2E5B91CD713632AF0D581C4E7F"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\add_bakery_drawer.py",
+    "Bytes": 4623,
+    "SHA256": "C959D3A4DCFE82FCD108D90AC5906F29003F03F0C169BC055B4CDAFDA5C1F744"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\add_sungsimdang_puzzle.py",
+    "Bytes": 10002,
+    "SHA256": "3CA66D2FFC9DE860B5CF8317C168D38BBCF08258A0C80A0329A89C984EB91ABC"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_coaster.py",
+    "Bytes": 15239,
+    "SHA256": "21A811EB24CA37008D95C9E7016B92FFA1AE9975C424B1A0A284ED0FC40CB0FF"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_hayoung_avatar.py",
+    "Bytes": 2902,
+    "SHA256": "B1EDB36FCB19B3E87EB70B37C8A133604FFD1430D01DA68CF9E553E2FEF6FF03"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_hyunsu_master.py",
+    "Bytes": 4303,
+    "SHA256": "5C3050D1FF62B6F7D6054947D8D6B75A68C9C70AF915FE9B92926588C199B37D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_interior_details.py",
+    "Bytes": 9970,
+    "SHA256": "F04821E38DAF1531A902AA94528D94B3AF728012F8D290FB5D33A144593645B0"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_journey.py",
+    "Bytes": 19185,
+    "SHA256": "2D689BD41094454EAB7154EFB7518B90125625F4E9F6C76E82039A570B9FCA07"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_junction.py",
+    "Bytes": 13196,
+    "SHA256": "0B2BB8DA0147B688506DD02980DFA99FC135DEBFB6D8D49A0DDA8C8CA920AFDA"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_kitchen.py",
+    "Bytes": 17340,
+    "SHA256": "233AE1C1212E2038128E66131EF72600D94C6CE2BC5118D79BECC6E960D24246"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_princess.py",
+    "Bytes": 22467,
+    "SHA256": "B326F7A7DA633F863ECB7069B2B73396E467FD109E03664C151E7AC8C2FF7DBE"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_rescue_head.py",
+    "Bytes": 2611,
+    "SHA256": "AC43CD10171BFD4AD9C03811A529CD2226851E41CFE45030CCC9A60DFC4FC020"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_rescue.py",
+    "Bytes": 20471,
+    "SHA256": "E3D0D74E8AD1E802BD7E06BC95D4D99A5D593B341D81FF86D17908FCD4D8183D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_room.py",
+    "Bytes": 20637,
+    "SHA256": "5F6F5487211E35C2329695677562398FAEFEA676EE6BAB470BBEDD7196F05FA3"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\build_sungsimdang.py",
+    "Bytes": 21903,
+    "SHA256": "3B58B375FAA8A73B34410A4239E996165FA401CD44F9E4415C236101AE6F407F"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-200-convenience-market.blend",
+    "Bytes": 3101394,
+    "SHA256": "A7B16841A780655E2A75EC13F033F58DC46805B02BC9B5FFA28DA698F3274B05"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-200-cooking-rotunda.blend",
+    "Bytes": 2177158,
+    "SHA256": "908D447335EDEE9F0CD78C3E3EC3A347E0231BCABF2A79320F65FDFC1BA9B183"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-300-save-hyunsu.blend",
+    "Bytes": 21547392,
+    "SHA256": "BE6A8DF763FF0B491E3C8BCDC3267D7DEC72214344176FB1E08864352FE6503E"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-400-china-journey-editable.blend",
+    "Bytes": 57611489,
+    "SHA256": "0E31E7C51E3475901B6DB49963B5F96BE6C83EEDB736C38FC8CD5FBC29D82C40"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-400-china-journey.blend",
+    "Bytes": 67895378,
+    "SHA256": "35BCD1C5543B8AFC1BBF9597A30833A682BE8A3BF113BC206A0A184DF4C53834"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-500-01-sungsimdang.blend",
+    "Bytes": 66870035,
+    "SHA256": "AA6D08A9810B3029901A5730E17162B52D50EE9D9BD0F24406AA533C514B4FEC"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-500-junction-before-maze-redesign.blend",
+    "Bytes": 66863048,
+    "SHA256": "6F98B1DF0ECD6F43E16E6D4052EFB794F3590077B7338007129085EDCBA73DF3"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\day-500-junction-finale.blend",
+    "Bytes": 67148875,
+    "SHA256": "946C464DE4D4AD455D09F827CB24E648EFE840D4D2904CC8D125D181D85B30E1"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\expand_bakery.py",
+    "Bytes": 7181,
+    "SHA256": "16CF5D390D8E5FE5F26DD90887F0D4A73F6245CDE15D9F91946CEB6368DAA961"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\export_junction.py",
+    "Bytes": 1232,
+    "SHA256": "5FAAFA4F5BFA15679E413BE87335C69335B84CF4DF85C4D70AF44518D28FE806"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\export_sungsimdang.py",
+    "Bytes": 2938,
+    "SHA256": "1403C16AC04F3B4B076E8CB1A0BF3AAD14D8DDA94A539B6FBB265D88ACF38CF2"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\finish_princess_source.py",
+    "Bytes": 1150,
+    "SHA256": "9562B592B005F5325C0219A72DF3AF97292779F7CAEA10042E8B9837D7922059"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\hayoung-casual-avatar.blend",
+    "Bytes": 1654641,
+    "SHA256": "51922192D11BA1FC41DC59D5B747ED37B691C69AF19B0C191E2E1DFB8F027641"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\hayoung-casual-preview.png",
+    "Bytes": 689044,
+    "SHA256": "9901362737D92B7ECF50C236698AB6811EFAE4839D3C0188FE4A540608FDC285"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\hayoung-kitty-heaven-editable.blend",
+    "Bytes": 3099222,
+    "SHA256": "15B1175E9C88D6BFB063281548406786CFCB0B9CA1366F5185ADC288CEAA420D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\hayoung-kitty-heaven.blend",
+    "Bytes": 9847029,
+    "SHA256": "571929C0DB2CF15F1D24A2B121555CB905298416F8E2034E6680C6964C73E8B6"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\hyunsu-character-master.blend",
+    "Bytes": 10421979,
+    "SHA256": "47DF212B020A1762333247FF13DA9F75BB943136D62B863CF19F723094D475C9"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\hyunsu-rescue-head.blend",
+    "Bytes": 16666610,
+    "SHA256": "F602DC9418F5001FDCA4C928CAD3048E5871F126A91204BCD92972991D808938"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\inspect_rescue_character.py",
+    "Bytes": 830,
+    "SHA256": "33D12C812E98B4F5ADBB113F55C6697BE7EDF65EB10E8B776A731328E547236C"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\inspect-hayoung-bounds.py",
+    "Bytes": 477,
+    "SHA256": "0CDD934EE0D5E4E0E496C1B5741929EA60B71EA4700E1029B3C1F31F47757EED"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\inspect-hayoung-casual.py",
+    "Bytes": 645,
+    "SHA256": "4572DD7C1A81A0ED628294BB770382D0C5F2EEEBB68F2119084B9405D7C35401"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\interior-detail-library.blend",
+    "Bytes": 2884194,
+    "SHA256": "FC72B3AF53E5BD6E5DB17C03F60FECB15D92C731FC63D01C511640DC4632FDD9"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\journey_attendant.py",
+    "Bytes": 3284,
+    "SHA256": "CDF6CE691CC0F444356EAFCED50B3159F3E543EFC2309FEEA2FDB3EF6A73EB85"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\junction-auditorium.png",
+    "Bytes": 1250121,
+    "SHA256": "C6C231CDB4CBFB1EA197D2C5548A159C32F56DE90704DA8427D0144C9229F108"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\junction-purple-overview.png",
+    "Bytes": 1721000,
+    "SHA256": "2368D1C958E1867795BB3F127D583D476BDBDE8B75EE680533EFC7297C636AFE"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\junction-purple-plan.png",
+    "Bytes": 1993921,
+    "SHA256": "E3640CE90349715256A110D0BED86B50F58F0034FAC44985E80EA16936C4FC22"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\kaykit-knight-preview.png",
+    "Bytes": 702980,
+    "SHA256": "54B3EC162282B66722CB8376B8FAA5002C16FC2B465CCE03AA30387FE9ECA0BF"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\kaykit-mage-preview.png",
+    "Bytes": 625007,
+    "SHA256": "2A26F62531CD77B6362753F54C5E0BE81CECEE9F0A0329F42F0469D3A65A237D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\kaykit-rogue-preview.png",
+    "Bytes": 568255,
+    "SHA256": "23F93B3DAAB995D7997CED62F817C620C69AD6EBA2169CBDE0CA39B49C7D6818"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\market_shelves.py",
+    "Bytes": 7908,
+    "SHA256": "4249425A0A007F492BB2CA53FFCB94083EAAF05254E6AC10C4FBB3EBFF611039"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\quaternius-women-reference.jpg",
+    "Bytes": 286665,
+    "SHA256": "80DAA5B48791A014D356C5107E6D312672400B87D247472EE72437F66A18EFD6"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\render_junction_preview.py",
+    "Bytes": 996,
+    "SHA256": "DF17D43C43071C32717907AEDAA25D6A6D016AA783B9003714906636DB2328E9"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\render_sungsimdang.py",
+    "Bytes": 582,
+    "SHA256": "AFCB61F0AC91D424ED8773D64D87D5040C05197FE2403E3E7D4BBEABA91CB424"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\render-hayoung-preview.py",
+    "Bytes": 2045,
+    "SHA256": "A3A0EC96DBD30489020914933B9AE4ED1A1FBA2DC94FADC3B76F444EF9F876E4"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\replace_export.ps1",
+    "Bytes": 323,
+    "SHA256": "536CFF0F6B082294D4B517F48E4B3C0461772A125F0652BB6AB37D218459AC8A"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\rescue_cabinet.py",
+    "Bytes": 4225,
+    "SHA256": "B18A6F7FA635DBADA46620D3BB8E57232199A9DB9EA10235DDFC01A7E3D1E7FF"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\salon_details.py",
+    "Bytes": 11902,
+    "SHA256": "FC17431AE9E10C2789D269C2F6AEAF5DD1EAE6C0F13C283FE12BD1CA887AFADB"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\salon_textiles.py",
+    "Bytes": 7181,
+    "SHA256": "79B514FC5003D71DDEB284EE7908FC1A9F5AB8A36B8C1DFE5200FE1A25289E4E"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\salon-preview.blend",
+    "Bytes": 4899928,
+    "SHA256": "67EA7CCF3A76BF5D872783BDFFCAC0B670749E0CCCBFECF315FC2E6FA9498295"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\seoulland-transfer.blend",
+    "Bytes": 4550749,
+    "SHA256": "88A237060D169FE86AFDB885322786F2C81D3A2B685D89AAC0D3DD1C21E79AB2"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\sungsimdang-breads.png",
+    "Bytes": 1649239,
+    "SHA256": "CED2FC52EC5BD2DEDD11B72A0ED44AED4A2E14A18B79DFAB1DC2D2183762DC43"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\sungsimdang-interior.png",
+    "Bytes": 1574811,
+    "SHA256": "7C4830DCC1469409C3B97AE17FE8D24CC4DD31EB6734C7E7FE42BF26A7533B04"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\sungsimdang-mango-safe.png",
+    "Bytes": 1575741,
+    "SHA256": "3375DDAAE7A0EEF4B19E1AE1BEE62955926479D1ADDF6F45FB4AC2A89A298759"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\sungsimdang-player.png",
+    "Bytes": 1364028,
+    "SHA256": "E3CEE9AF6886AB532381938FF1028EA67EC5A23FA361467917455C313B169BDB"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\blender\\update_rescue_cabinet.py",
+    "Bytes": 1075,
+    "SHA256": "C7507F172FD22A1D5DDD65EB434AFE8DE4B36FC9814B97738287B9FF63196CF4"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\100일-방-창문과-패브릭.md",
+    "Bytes": 3513,
+    "SHA256": "AD91A4C1135359CDBEC122362DA17D8F9F12514CA15A7DEAE41D5A4A5698F90E"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\200일-요리방.md",
+    "Bytes": 6387,
+    "SHA256": "5656CA41B62F32458BDC8EA45019BD78FEF9D5F9DC20AC7D7815C7B60305C475"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\200일-편의점-개선.md",
+    "Bytes": 2773,
+    "SHA256": "05A525448532420D63CA032B471A7733A290F4E55A8AAE53E2AE5E6CDCB8C494"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\300일-현수를-구해라.md",
+    "Bytes": 6849,
+    "SHA256": "8C614B1B1569828D024DBC7FD6C4B86BDC138A15E246EFC50B37D6141E1641AC"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\400일-중국여행.md",
+    "Bytes": 8492,
+    "SHA256": "4DFE63DC7E94B2C08C770E481DC35E51120FB28789FDCF05B5D1541D21FF9B17"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\500일-성심당.md",
+    "Bytes": 7719,
+    "SHA256": "3F5A38AE89F1E8E282325CA78CB06DD866A9E8590CCA1CAC06F35275D7D2FA25"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\500일-정션-엔딩.md",
+    "Bytes": 6117,
+    "SHA256": "B3AE84B0DCC8F6D367E9F6132C772905BB6DED2E5A0E112574F1C24882A76A28"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\500일-추억-필름.md",
+    "Bytes": 2408,
+    "SHA256": "5B0ACD63E1A16A8A1473D4DEBC3354E9A68D54D26742D2DF23616D77F64BB9F8"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\검증결과.md",
+    "Bytes": 9386,
+    "SHA256": "5B76EB0C71F5890276523FA527E109A62999C33A65C34B97C525F7A58C45FB87"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\공간-조작-리디자인.md",
+    "Bytes": 10029,
+    "SHA256": "C99D5DC7F0B6BB3FD834364BA91D134B6EAA49E4489C9BB9591688F8C60413FC"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\레퍼런스와-개선.md",
+    "Bytes": 4774,
+    "SHA256": "910AD965A8C78EF347BB1D447AC64F8B30F856FC29286E99FA9A35F452EC5E04"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\롤러코스터-이동.md",
+    "Bytes": 4489,
+    "SHA256": "C888EB668ACE4FD572AE27033591E99F729786F98DDD40B5122D84037C202576"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\메인페이지-포스터.md",
+    "Bytes": 2557,
+    "SHA256": "E4E13B8F2B513CEB199BCCC654B2A6A43229AA29FABDD3197543F2300DA455B7"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\방-색감과-조명.md",
+    "Bytes": 2787,
+    "SHA256": "61FF559C6F5B17EF176E292D88099483E3F021DBE67C514674859593A3B6AE87"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\음식-사진-개선.md",
+    "Bytes": 4069,
+    "SHA256": "F336400E3C9213C0006CAB12308B59040BCB983A5225774B595FDD209C998333"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\이미지-생성.md",
+    "Bytes": 2584,
+    "SHA256": "39C602BD54E0B0A2EFDC6D157A6487D9493813FC7955F41349108E528AA775DB"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\제작자-진행표.md",
+    "Bytes": 3006,
+    "SHA256": "06617819B86722B4E8B6175D0E7A2023A38ABABCFE968D19B0C612B196B164CD"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\편지와-힌트-디자인.md",
+    "Bytes": 2748,
+    "SHA256": "829F22FBE5FCE1C48FEF7DAC6F3C6DE91894466FC4A6BF9C572A9E8E9361D25A"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\헬로키티-공주방.md",
+    "Bytes": 4884,
+    "SHA256": "3CA740AE3491086A2226088125CC2C742C69D8023D2E156169373921E9CFF646"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\readability-and-pointer-controls.md",
+    "Bytes": 2081,
+    "SHA256": "895D30D56A474FC8D00E925DA9F868989D78172F6E2131BA37DF2FDAFB26EAD9"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\food-references\\beef-cuts-photo-atlas-generated.png",
+    "Bytes": 2342969,
+    "SHA256": "920B211492B63C3394DE0CBBAF986C11AE3B53E7B08E0B3F7B75E1240524507F"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\food-references\\chuck-flap-reference.jpg",
+    "Bytes": 15583,
+    "SHA256": "7A378A3205666FA4889A71D0D2A8E991E151146F3C4EF5D71CE34BD140D89A5B"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\food-references\\generation-prompts.json",
+    "Bytes": 3269,
+    "SHA256": "C179B133817E48A914123818C714D868DF39BDE915BB08818CA9E204703E3EFD"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\food-references\\steak-photo-pair-generated.png",
+    "Bytes": 2865149,
+    "SHA256": "9A2D17B7B1F11ECB7EA1882467942A18E7D8F9DC166B6103C0E2843908DB90BA"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\journey-references\\meaty.png",
+    "Bytes": 19407493,
+    "SHA256": "623BAD765A506488C1410AFE39885BCB5C85D141A5A5AA8C672510401DCA520E"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\journey-references\\zagee-wrap.png",
+    "Bytes": 3767554,
+    "SHA256": "F6CB61FB0C9F689147A7FCAF87FF3EE964A20429CB59B837A5F6BBAF6E4F1D35"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\market-references\\deployment.json",
+    "Bytes": 663,
+    "SHA256": "13486446AA3DAEA6D2A332118983234A7E38A2A66FFE88D8F47CF187606EF21F"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\market-references\\photos.json",
+    "Bytes": 567,
+    "SHA256": "7755719428CBFDA10058E171D573B302FCA9987041436D82E0E20D8F1B6F709F"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\명란바게트.png",
+    "Bytes": 147510,
+    "SHA256": "5CB499DEE0324691DF9C956BFBEFD021F8F2214F11AC07F61DA9BAB337A2A6B4"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\보문산메아리.png",
+    "Bytes": 190530,
+    "SHA256": "825578309402DA71952D4346AF9CABDC0E30866E23234E46DC0F63B0CDB127DE"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\튀김소보로.png",
+    "Bytes": 186117,
+    "SHA256": "D0564A8BBD1CA0EBE664B722D6934B4A6D3E25F0D00345FD4609C4F0EF9AF65D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\튀소구마.png",
+    "Bytes": 180984,
+    "SHA256": "2353806169F99AE1EF0341660D1D85C40E56B20C3BA8E00A0294F84BE8CEE45D"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\판타롱부추빵.png",
+    "Bytes": 162300,
+    "SHA256": "85B49BFC6968AA742D2541C85CEF2677872E4EF3B6581B726905E5DCC19B968C"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\asset-validation.json",
+    "Bytes": 246,
+    "SHA256": "2AEF4291EDD2DB4EEE7BF008A6A37F5A1A2AD9AC384AA57A55386311787657D1"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\products-망고시루.html",
+    "Bytes": 1,
+    "SHA256": "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\products-명란바게트.html",
+    "Bytes": 1308,
+    "SHA256": "5BF0CD5EEE0EBDB1B1B69DA2074C6235FE559794BDC43C4708DAF71F9C4715D4"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\products-보문산메아리.html",
+    "Bytes": 1397,
+    "SHA256": "7CFF00409F2298331B39ED2FEE2356805D14A9716A41398EBECD0866D03A31DF"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\products-튀김소보로.html",
+    "Bytes": 7175,
+    "SHA256": "35BBD443CF79AEB661B5C0E404F8952D2050C4B432378A70E233157460F3E5F6"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\products-튀소구마.html",
+    "Bytes": 2265,
+    "SHA256": "B66E19BD34CFCA13A36C163CF1B54C55AC5E9D8E6AD2858BE6C0DE0260BA3FB7"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\products-판타롱부추빵.html",
+    "Bytes": 1366,
+    "SHA256": "AF59AB18B2038F0B088BB4D2EB330E6085355A578D98108E828BE4D4C2162C7A"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\signature-10.jpg",
+    "Bytes": 126251,
+    "SHA256": "0F57CA059E1BBDE0DBF087E6404C843171B1024094787815C9B94F2BE045C0E6"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\signature-11.jpg",
+    "Bytes": 71286,
+    "SHA256": "9C975EFE9DE75D5A8CA795574D61CA20C17E6BDAB3BF9A94721EE96083D489D2"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\docs\\sungsimdang-references\\signature-9.jpg",
+    "Bytes": 132136,
+    "SHA256": "115FF5A7C9D14D8A54B11AF8EAA79B3AE2BE6CFB50A7007C11B4E1DA2E25F210"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food.zip",
+    "Bytes": 4606270,
+    "SHA256": "CDAD90853682499B94C9FDA2F87678B24BFD8F3264E0ED323F6B6A27FD7C6F6F"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\License.txt",
+    "Bytes": 684,
+    "SHA256": "60BFEC302D676181DFF5B9BC6138F8316458B0AADE3F198E02C22AE7E7006684"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Overview.html",
+    "Bytes": 29656,
+    "SHA256": "F63E15B23FC03E85659F2869E0C2D85194F517D5C18BDD324AD221026DC5AF5F"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Preview.png",
+    "Bytes": 139035,
+    "SHA256": "5824D6462448E59A111E8528CDA7416484F1086B415AAA8B5FDE02D65DBEFE93"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\View Documentation.url",
+    "Bytes": 179,
+    "SHA256": "A94AC121E527CA16416F5C8495EFC3ED632A2DD960FD2971D49556E47A70B294"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Visit Kenney.url",
+    "Bytes": 112,
+    "SHA256": "D98A24023741CD12C7F207DE06F49CC6FCC39F839D3C209F636BD56475FE4C97"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Visit Patreon.url",
+    "Bytes": 54,
+    "SHA256": "2FCBA31333935F4AA35E9DE2E74E2B7BA1B1A8011540E08016FF6D81E9DD7490"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Models\\FBX format\\advocado-half.fbx",
+    "Bytes": 34816,
+    "SHA256": "15FA07C1368D2006A3E8A71477B10391BD9DEF0E9643985CAAD2303E776ECEA1"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Models\\FBX format\\apple-half.fbx",
+    "Bytes": 28720,
+    "SHA256": "D4E70B28E6E2B184D918442DB3355AD5AD4DB0C5E6185A09B440D492C03BEF07"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Models\\FBX format\\apple.fbx",
+    "Bytes": 31056,
+    "SHA256": "077AC7CAFD0E03C14023649FC9098163A16A16D03C15377B1C9D7FEAC01FDE9E"
+  },
+  {
+    "Path": "${WORKSPACE}\\500-main\\external\\kenney-food\\Models\\FBX format\\avocado.fbx",
+    "Bytes": 27136,
+    "SHA256": "F2117D2A239FB4964AFE3458ECA0FBB048A87398D0BC286A6181B98101139F69"
+  }
+]
