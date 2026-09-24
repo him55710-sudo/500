@@ -20,6 +20,7 @@ export class Soundscape {
   if(v){this.musicActive=false;this.musicFile?.pause();if(this.ctx){this.ambienceFilter.type='lowpass';this.ambienceFilter.frequency.value=680;this.ambienceGain.gain.setTargetAtTime(.07,this.ctx.currentTime,1);this.panner.positionX.value=4.01;this.panner.positionY.value=1.5;this.panner.positionZ.value=4.6;}this.effect('chime');}
  }
  setMuted(v){this.muted=v;this.setVolume(this.volume);}
+ setKitchen(v){this.kitchen=v;if(v){this.setRide(false);this.setHeaven(false);this.musicActive=false;this.musicFile?.pause();if(this.ctx){this.ambienceFilter.type='lowpass';this.ambienceFilter.frequency.value=350;this.ambienceGain.gain.setTargetAtTime(.025,this.ctx.currentTime,.3);}}}
  setRide(v){
   this.riding=v;this.rideBeat=0;
   if(v){this.heaven=false;this.musicActive=false;this.musicFile?.pause();if(this.ctx){this.ambienceFilter.type='lowpass';this.ambienceFilter.frequency.value=550;this.ambienceGain.gain.setTargetAtTime(.06,this.ctx.currentTime,.4);}}
@@ -38,6 +39,12 @@ export class Soundscape {
   const s=c.createBufferSource(),f=c.createBiquadFilter(),g=c.createGain();s.buffer=b;f.type='lowpass';f.frequency.value=freq;g.gain.value=vol;s.connect(f);f.connect(g);g.connect(this.master);s.start();
  }
  effect(name){
+  if(name==='power'){this.noise(.08,.12,1100);this.tone(110,.35,.04,'sine');[440,660,880].forEach((f,i)=>this.tone(f,.3,.035,'sine',i*.08));}
+  if(name==='sizzle'){this.noise(.65,.12,3400);this.noise(.18,.06,1700);}
+  if(name==='chop'){[0,.13,.26].forEach(t=>this.tone(170,.055,.08,'triangle',t));}
+  if(name==='wash')this.noise(.6,.09,2500);
+  if(name==='order'){this.tone(659,.18,.065,'sine');this.tone(880,.4,.06,'sine',.15);}
+  if(name==='doorbell'){this.tone(784,.7,.08,'sine');this.tone(622,.9,.07,'sine',.36);}
   if(name==='chime'){[523.25,659.25,783.99,1046.5].forEach((f,i)=>{this.tone(f,1.8,.055,'sine',i*.16);this.tone(f*2,.6,.009,'sine',i*.16);});}
   if(name==='dial'){this.noise(.035,.12,2600);this.tone(710,.04,.018,'triangle');}
   if(name==='step'){this.noise(.105,.15,230);this.tone(75,.065,.03,'sine');}
@@ -57,7 +64,7 @@ export class Soundscape {
  update(pos,forward,time){
   if(!this.ctx||this.paused)return;const l=this.ctx.listener;
   if(l.positionX){l.positionX.value=pos.x;l.positionY.value=pos.y;l.positionZ.value=pos.z;l.forwardX.value=forward.x;l.forwardY.value=forward.y;l.forwardZ.value=forward.z;l.upY.value=1;}
-  if(!this.heaven&&!this.riding&&time>this.clockAt){this.clockAt=time+1;this.noise(.012,.019,2000);}
+  if(!this.heaven&&!this.riding&&!this.kitchen&&time>this.clockAt){this.clockAt=time+1;this.noise(.012,.019,2000);}
   if(this.heaven&&this.heavenMusic&&this.ctx.currentTime>=this.heavenAt){
    this.heavenAt=this.ctx.currentTime+.66;const melody=[72,76,79,84,81,79,76,0,74,77,81,86,84,81,79,0];const note=melody[this.heavenBeat++%melody.length];
    if(note){const f=440*2**((note-69)/12);this.tone(f,2,.15,'sine',0,this.musicGain);this.tone(f*2,.8,.026,'sine',0,this.musicGain);}

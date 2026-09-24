@@ -1,0 +1,10 @@
+import {NodeIO} from '@gltf-transform/core';
+import {ALL_EXTENSIONS} from '@gltf-transform/extensions';
+import {dedup,weld,prune,meshopt} from '@gltf-transform/functions';
+import {MeshoptEncoder,MeshoptDecoder} from 'meshoptimizer';
+import fs from 'node:fs/promises';
+await Promise.all([MeshoptEncoder.ready,MeshoptDecoder.ready]);
+const path='public/assets/day-200-kitchen.glb',before=(await fs.stat(path)).size;
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'meshopt.encoder':MeshoptEncoder,'meshopt.decoder':MeshoptDecoder});
+const doc=await io.read(path);await doc.transform(dedup(),weld(),prune({keepLeaves:true}),meshopt({encoder:MeshoptEncoder,level:'medium',quantizePosition:16,quantizeNormal:12}));await io.write(path,doc);
+const report={before,after:(await fs.stat(path)).size};await fs.writeFile('test-results/kitchen-compression.json',JSON.stringify(report,null,2));console.log(report);

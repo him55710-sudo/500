@@ -4,6 +4,9 @@ test-results/
 *.log
 *.blend1
 .vercel/
+__pycache__/
+blender/*.zip
+external/quaternius-base/
 
 .vercel
 .env*

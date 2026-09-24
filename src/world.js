@@ -7,6 +7,7 @@ import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {movePlayer} from './movement.js';
 import {polishRoomMaterials} from './render-look.js';
 import {improveSalon} from './salon-upgrades.js';
+import {personalPhoto,memoryPhotos,addMemorySafe} from './personal-memories.js';
 const V=(x=0,y=0,z=0)=>new THREE.Vector3(x,y,z);
 function canvasTexture(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;draw(c.getContext('2d'),w,h);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;return t;}
 function poster(ctx,w,h,title,subtitle,color,index){
@@ -46,7 +47,8 @@ export class World{
   const fill=new THREE.DirectionalLight(0xeaf4ff,1.35);fill.position.set(-5,4,3);this.scene.add(fill);
   this.exitLight=point([3.65,1.8,-5.45],0xffdba7,0,7);
   this.collisionBoxes=[...this.wallBoxes,...this.colliders.map(([a,b,c,d])=>new THREE.Box3(V(a,0,c),V(b,1.3,d)))];
-  this.ready=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/assets/memory-room.glb',e=>onProgress(e.loaded/(e.total||6474836))).then(async g=>{this.model=g.scene;this.scene.add(g.scene);this.model.traverse(o=>{if(o.isMesh){o.castShadow=false;o.receiveShadow=false;}});polishRoomMaterials(this.model,'salon');this.avatar=this.model.getObjectByName('Hayoung');this.avatar.visible=false;this.avatar.rotation.y=Math.PI;await this.addMaterials();await this.addArt();this.addTargets();this.addDust();this.model.updateMatrixWorld(true);this.model.traverse(o=>{if(o.isMesh){o.updateMatrix();o.matrixAutoUpdate=false;}});this.addContactShadows();});
+  this.avatarMixer=null;this.avatarActions=new Map();this.activeAvatarAction=null;this.avatarAnimationName='';this.avatarPose='standing';
+  this.ready=new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/assets/memory-room.glb',e=>onProgress(e.loaded/(e.total||6474836))).then(async g=>{this.model=g.scene;this.scene.add(g.scene);this.model.traverse(o=>{if(o.isMesh){o.castShadow=false;o.receiveShadow=false;}});polishRoomMaterials(this.model,'salon');const legacyAvatar=this.model.getObjectByName('Hayoung');if(legacyAvatar)legacyAvatar.visible=false;const player=await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/assets/hayoung-casual.gltf');this.avatar=new THREE.Group();this.avatar.name='Hayoung';this.avatar.position.set(0,0,4.2);this.avatar.rotation.y=Math.PI;player.scene.name='Hayoung_Casual';player.scene.traverse(o=>{if(o.isMesh){if(o.name==='Cube'||o.name==='Icosphere')o.visible=false;o.castShadow=false;o.receiveShadow=false;}});this.avatar.add(player.scene);this.scene.add(this.avatar);this.avatarMixer=new THREE.AnimationMixer(player.scene);this.avatarActions=new Map(player.animations.map(clip=>[clip.name,this.avatarMixer.clipAction(clip)]));this.playAvatarAnimation('Idle_Neutral',0);this.avatar.visible=false;await this.addMaterials();await this.addArt();this.addTargets();this.addDust();this.model.updateMatrixWorld(true);this.model.traverse(o=>{if(o.isMesh){o.updateMatrix();o.matrixAutoUpdate=false;}});this.addContactShadows();});
   addEventListener('resize',()=>{this.camera.aspect=innerWidth/innerHeight;this.camera.updateProjectionMatrix();this.renderer.setSize(innerWidth,innerHeight);});
  }
  get(name){return this.model?.getObjectByName(name);}
@@ -79,8 +81,9 @@ export class World{
   const frescoMap=await new THREE.TextureLoader().loadAsync('/assets/salon-fresco.png');frescoMap.colorSpace=THREE.SRGBColorSpace;frescoMap.anisotropy=4;
   const fresco=new THREE.Mesh(new THREE.CircleGeometry(2.02,80),new THREE.MeshBasicMaterial({map:frescoMap,color:0xffffff}));fresco.rotation.x=Math.PI/2;fresco.scale.x=1.3;fresco.position.set(0,4.565,-.7);this.scene.add(fresco);
   this.posters=[];const names=['100일 홍대','잣절','현수 생일','필리핀'],subs=['함께한 100번째 날','처음의 설렘','너의 하루를 축하해','우리의 푸른 여행'],colors=['#9a403f','#a18a37','#3e765a','#3f6c91'];
-  for(let i=0;i<4;i++){const p=this.plane(canvasTexture(512,640,(c,w,h)=>poster(c,w,h,names[i],subs[i],colors[i],i)),.97,1.24,[-4.65+i*1.6,2.85,-5.66]);this.posters.push(p);this.get('MemoryFrame'+i).attach(p);}
-  this.painting=this.plane(paintingTexture(false),2.15,1.48,[5.657,2.48,-1.75],-Math.PI/2);
+  const photoMaps=await Promise.all(memoryPhotos.map(p=>p?personalPhoto(p,.97/1.24):null));
+  for(let i=0;i<4;i++){const p=this.plane(photoMaps[i]||canvasTexture(512,640,(c,w,h)=>poster(c,w,h,names[i],subs[i],colors[i],i)),.97,1.24,[-4.65+i*1.6,2.85,-5.66]);this.posters.push(p);this.get('MemoryFrame'+i).attach(p);}
+  this.painting=this.plane(await personalPhoto('/assets/memories/hayoung-painting.png',2.15/1.48),2.15,1.48,[5.657,2.48,-1.75],-Math.PI/2);this.customPainting=true;addMemorySafe(this);
   this.label('한때 나는 너의 그림마저 사랑했어…',[5.62,1.35,-1.75],2.4,28,'#e3cfaa',-Math.PI/2);
   this.cow=this.plane(canvasTexture(1000,640,(c,w,h)=>{
    c.fillStyle='#ded1ad';c.fillRect(0,0,w,h);c.fillStyle='#775f43';c.font='25px serif';c.textAlign='center';c.fillText('THE TASTE OF OUR 100TH DAY',w/2,57);
@@ -110,6 +113,7 @@ export class World{
  addTargets(){
   const add=(id,name,desc,p,s,stage=-1)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(...s),new THREE.MeshBasicMaterial({visible:false}));m.position.copy(V(...p));m.userData={id,name,desc,stage};this.scene.add(m);this.targets.push(m);};
   add('letter','현수의 편지','책상 위의 봉투 읽기',[-3.7,1.2,-3.25],[.8,.32,.65]);
+  add('memory-safe','초록 액자 뒤 금고','금고를 열고 첫 선물 꺼내기',[-1.45,2.75,-5.15],[1.1,1.3,.4]);
   add('lock','일곱 자리 자물쇠','휠을 돌려 잠금 해제',[-2.65,1.32,-3.3],[.85,.6,.5]);
   for(let i=0;i<4;i++)add('frames','네 장의 추억','시간 순서대로 색 버튼 누르기',[-4.65+i*1.6,2.6,-5.43],[1.25,1.8,.6],1);
   add('violinist','바이올린 연주 인형','턱 아래로 악기를 받치는 자세',[-4.55,1.3,-.8],[.65,.8,.62]);
@@ -127,7 +131,10 @@ export class World{
  sync(state,animate=true){
   if(!this.model)return;this.state=state;const st=state.stage;
   for(let i=0;i<4;i++){const cover=this.get('FrameCover'+i);if(!animate||this.oldStage<0)cover.position.y=st>0?4.43:2.85;else if(st>0&&this.oldStage===0)this.animate(cover.position,'y',4.43,1.4+i*.12);this.posters[i].visible=st>0;}
-  this.get('ViolinKeyring').visible=st>=2;
+  this.memorySafe.visible=state.framesSolved||st>=2;
+  const open=state.framesSolved||st>=2;if(this.safeWasOpen!==open){if(animate&&open)this.animate(this.memoryFrameHinge.rotation,'y',-1.5,1.2);else this.memoryFrameHinge.rotation.y=open?-1.5:0;this.safeWasOpen=open;}
+  this.safeHinge.rotation.y=state.safeOpen?-1.7:0;
+  this.get('ViolinKeyring').visible=(st===1&&state.safeOpen)||st>=3;
   if(st>=3){this.get('ViolinKeyring').position.set(-4.45,1.46,-.91);this.get('ViolinKeyring').rotation.set(0,Math.PI/2,Math.PI/2);}
   else if(st===2)this.get('ViolinKeyring').visible=false;
   this.dollBow.visible=st>=3;
@@ -135,7 +142,6 @@ export class World{
   if(st>=5&&!this.painted){if(!this.customPainting){this.painting.material.map.dispose();this.painting.material.map=paintingTexture(true);}this.painted=true;}this.placedCarousel.visible=st>=5;
   const bench=this.get('Bench');bench.visible=true;if(st>=6)bench.position.set(4.5,.05,2.75);
   for(const [id,o] of Object.entries(this.heldItems)){o.visible=state.inventory.includes(id);this.thirdItems[id].visible=o.visible;}
-  if(st>=2){const f=this.get('MemoryFrame2');if(animate&&this.oldStage===1)this.animate(f.rotation,'y',.68,1);else f.rotation.y=.68;}
   this.get('BeefToken').visible=st>=6&&st<7&&!state.inventory.includes('beef');
   for(let i=0;i<2;i++){const cl=this.get('Cloche'+i);if(st>=7){if(animate&&this.oldStage===6){cl.visible=true;this.animate(cl.position,'y',2.5,1,()=>cl.visible=false);}else cl.visible=false;}else cl.visible=true;}
   if(!this.doorHinge)improveSalon(this);
@@ -144,8 +150,12 @@ export class World{
  }
  animate(obj,key,to,duration,done){this.pendingAnimations.push({obj,key,from:obj[key],to,duration,t:0,done});}
  toggleView(force){this.thirdPerson=force??!this.thirdPerson;this.avatar.visible=this.thirdPerson;return this.thirdPerson;}
+ playAvatarAnimation(name,fade=.22){const next=this.avatarActions?.get(name)||this.avatarActions?.get('Idle_Neutral')||this.avatarActions?.get('Idle');if(!next||next===this.activeAvatarAction)return;next.reset().setEffectiveWeight(1).setEffectiveTimeScale(1).play();if(this.activeAvatarAction)this.activeAvatarAction.crossFadeTo(next,fade,false);this.activeAvatarAction=next;this.avatarAnimationName=name;}
+ applyAvatarPose(){if(this.avatarPose!=='ride'||!this.avatar)return;for(const [name,axis,value] of [['UpperLeg.L','x',1.02],['UpperLeg.R','x',1.02],['LowerLeg.L','x',-1.24],['LowerLeg.R','x',-1.24],['UpperArm.L','x',1.02],['UpperArm.R','x',1.02],['LowerArm.L','x',-.24],['LowerArm.R','x',-.24]]){const bone=this.avatar.getObjectByName(name);if(bone)bone.rotation[axis]+=value;}}
  setQuality(q){this.quality=q;this.dpr=Math.min(devicePixelRatio,q==='high'?1.3:q==='standard'?.75:1);this.renderer.setPixelRatio(this.dpr);this.renderer.setSize(innerWidth,innerHeight);this.sampleTime=0;this.sampleFrames=0;}
  blocked(x,z){
+  if(this.mode==='rescue')return this.rescueRuntime.blocked(x,z);
+  if(this.mode==='kitchen')return Math.hypot(x,z)>(this.kitchenRadius||15.3)||this.colliders.some(([a,b,c,d])=>x>a-.22&&x<b+.22&&z>c-.22&&z<d+.22);
   if(this.mode==='rotunda')return Math.hypot(x,z)>13.25||Math.hypot(x,z)<2.62;
   if(!this.mode&&this.state?.stage>=8&&this.doorHinge?.rotation.y<-1.55&&x>3.08&&x<4.22&&z<-5.0&&z>-9.7)return false;
   const limit=this.mode==='heaven'?6.50:5.48;
@@ -155,15 +165,19 @@ export class World{
  }
  lookAtPoint(p){let d=V(...p).sub(this.player.clone().add(V(0,1.63,0)));this.yaw=Math.atan2(-d.x,-d.z);this.pitch=Math.asin(THREE.MathUtils.clamp(d.y/d.length(),-.95,.95));}
  focus(id){const t=this.targets.find(t=>t.userData.id===id);if(!t)return;const p=t.position;
+  if(this.mode==='rescue'){this.player.copy(p).add(V(...t.userData.offset));this.player.y=0;this.lookAtPoint(p.toArray());this.toggleView(false);return;}
+  if(this.mode==='kitchen'){const direction=new THREE.Vector3(-p.x,0,-p.z).normalize();if(id==='kitchen-power')direction.set(0,0,-1);if(id==='kitchen-market')direction.set(0,0,1);this.player.copy(p).addScaledVector(direction,2.2);this.player.y=0;this.lookAtPoint([p.x,p.y,p.z]);this.toggleView(false);return;}
   let offset=V(0,0,1.7);if(['violinist','bear','dancer','carousel'].includes(id))offset=V(1.9,0,0);if(['painting','cow'].includes(id))offset=V(-1.8,0,0);if(id==='steaks')offset=V(0,0,-1.7);if(id.startsWith('tile'))offset=V(0,0,1.0);if(id==='bench')offset=V(0,0,1.5);
   this.player.set(THREE.MathUtils.clamp(p.x+offset.x,-5.3,5.3),0,THREE.MathUtils.clamp(p.z+offset.z,-5.3,5.3));this.lookAtPoint([p.x,p.y,p.z]);this.toggleView(false);
  }
  update(dt,time,onStep){
   if(!this.model)return;dt=Math.min(Math.max(dt,0),.25);
+  this.avatarMixer?.update(dt);this.applyAvatarPose();
   if(this.mode==='coaster'){this.ride.update(dt);this.renderer.render(this.scene,this.camera);return;}
   for(const a of this.pendingAnimations){a.t+=dt;const f=Math.min(1,a.t/a.duration);a.obj[a.key]=THREE.MathUtils.lerp(a.from,a.to,1-(1-f)**3);if(f===1)a.done?.();}this.pendingAnimations=this.pendingAnimations.filter(a=>a.t<a.duration);
   if(this.active){
    let mx=(this.keys.has('KeyD')?1:0)-(this.keys.has('KeyA')?1:0),mz=(this.keys.has('KeyS')?1:0)-(this.keys.has('KeyW')?1:0);let moving=mx!==0||mz!==0;
+   this.playAvatarAnimation(moving?'Walk':'Idle_Neutral');
    if(this.keys.has('ArrowLeft'))this.yaw+=dt*1.35;if(this.keys.has('ArrowRight'))this.yaw-=dt*1.35;if(this.keys.has('ArrowUp'))this.pitch=Math.min(1.25,this.pitch+dt);if(this.keys.has('ArrowDown'))this.pitch=Math.max(-1.25,this.pitch-dt);
    if(moving){let norm=Math.hypot(mx,mz);mx/=norm;mz/=norm;const speed=(this.state?.inventory.includes('bench')?2.8:this.keys.has('ShiftLeft')?6:3.8)*this.speedScale;
     const {dx,dz}=movePlayer(this.player,mx,mz,this.yaw,dt,speed,(x,z)=>this.blocked(x,z));this.walkTime+=dt*(speed/3.8)*9;
@@ -183,11 +197,14 @@ export class World{
   if(this.state?.stage>=3&&this.state.stage<4)this.get('Carousel').rotation.y=time*.48;
   if(this.mode==='heaven'&&this.musicBox&&this.heavenMusic)this.musicBox.rotation.y=time*.30;
   this.dust.rotation.y=time*.003;
+  if(this.mode==='rescue')this.rescueRuntime.afterUpdate(dt,time);
   this.camera.updateMatrixWorld();this.scene.updateMatrixWorld();
   this.ray.setFromCamera(new THREE.Vector2(),this.camera);
   let hits=this.ray.intersectObjects(this.targets,false);this.hit=null;
   for(const h of hits){const t=h.object,st=this.state?.stage||0,id=t.userData.id;
+   if(!t.visible)continue;
    if(t.userData.stage>=0&&t.userData.stage!==st)continue;
+   if(id==='memory-safe'&&(!this.state.framesSolved||st!==1))continue;
    if(id==='bench'&&(st!==5||this.state.inventory.includes('bench')))continue;if(id==='carousel'&&st>=4)continue;
    if(this.player.clone().add(V(0,1.3,0)).distanceTo(t.position)>3.05)continue;
    const front=t.position.clone().sub(this.player);if(front.length()>4)continue;

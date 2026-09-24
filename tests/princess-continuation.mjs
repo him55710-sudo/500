@@ -2,7 +2,7 @@ import {chromium} from '@playwright/test';
 import assert from 'node:assert/strict';
 import {initialState,transition,SAVE_KEY} from '../src/state.js';
 let complete=initialState();
-for(const event of [{type:'read-letter'},{type:'lock',code:'VITA500'},{type:'frames',order:['yellow','green','blue','red']},{type:'give-violin',doll:'violinist'},{type:'take-carousel'},{type:'place-carousel'},{type:'take-bench'},{type:'place-bench',tile:9},{type:'place-beef',cut:'살치살'},{type:'taste',which:'hyunsu'},{type:'taste',which:'alpero'},{type:'vote',which:'hyunsu'},{type:'exit'}]){const r=transition(complete,event);assert.equal(r.ok,true);complete=r.state;}
+for(const event of [{type:'read-letter'},{type:'lock',code:'VITA500'},{type:'frames',order:['yellow','green','blue','red']},{type:'open-safe'},{type:'take-violin'},{type:'give-violin',doll:'violinist'},{type:'take-carousel'},{type:'place-carousel'},{type:'take-bench'},{type:'place-bench',tile:9},{type:'place-beef',cut:'살치살'},{type:'taste',which:'hyunsu'},{type:'taste',which:'alpero'},{type:'vote',which:'hyunsu'},{type:'exit'}]){const r=transition(complete,event);assert.equal(r.ok,true);complete=r.state;}
 const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
 const page=await browser.newPage({viewport:{width:1280,height:800}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
 try{

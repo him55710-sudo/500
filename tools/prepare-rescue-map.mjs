@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+const dir='public/assets/rescue',countries=JSON.parse(await fs.readFile(dir+'/countries.geojson')),states=JSON.parse(await fs.readFile(dir+'/states.geojson'));
+const texas=states.features.find(f=>f.properties.name==='Texas');if(!texas)throw Error('Missing Texas boundary');
+const regions=countries.features.filter(f=>f.properties.ADMIN!=='Antarctica').map(f=>({name:f.properties.ADMIN,geometry:f.geometry}));regions.unshift({name:'Texas',geometry:texas.geometry});
+await fs.writeFile(dir+'/regions.json',JSON.stringify(regions));
+const project=([lon,lat])=>[(lon+180)*4,(90-lat)*4];const path=g=>(g.type==='Polygon'?[g.coordinates]:g.coordinates).map(poly=>poly.map(ring=>ring.map((p,i)=>(i?'L':'M')+project(p).map(v=>v.toFixed(1)).join(',')).join('')+'Z').join('')).join('');
+const grid=Array.from({length:13},(_,i)=>`<path d="M${i*120},0V720"/>`).join('')+Array.from({length:7},(_,i)=>`<path d="M0,${i*120}H1440"/>`).join('');
+const labels=[['NORTH AMERICA',-110,48],['SOUTH AMERICA',-62,-37],['EUROPE',18,57],['AFRICA',18,8],['ASIA',94,47],['AUSTRALIA',134,-29],['PACIFIC OCEAN',-150,-8],['ATLANTIC OCEAN',-28,15],['INDIAN OCEAN',78,-25]];
+const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720"><rect width="1440" height="720" fill="#dce7e7"/><g stroke="#b6cdcd" stroke-width=".5">${grid}</g><g fill="#f2ead8" stroke="#7f9186" stroke-width="1.2">${regions.slice(1).map(f=>`<path d="${path(f.geometry)}"/>`).join('')}</g><g fill="none" stroke="#9b9c88" stroke-width=".7">${states.features.filter(f=>f.properties.admin==='United States of America').map(f=>`<path d="${path(f.geometry)}"/>`).join('')}</g><g font-family="Georgia,serif" font-size="13" letter-spacing="3" fill="#667d7b" text-anchor="middle">${labels.map(([n,x,y])=>`<text x="${project([x,y])[0]}" y="${project([x,y])[1]}">${n}</text>`).join('')}</g></svg>`;
+await fs.writeFile(dir+'/world-map.svg',svg);console.log('Natural Earth map and precise Texas/Brazil hit areas saved.');

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "garment-83",
+    "name": "Blue & Black Check Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/1.webp",
+    "category": "mens-shirts",
+    "source": "https://dummyjson.com/products/83",
+    "photo": "/assets/rescue/garment-83.jpg"
+  },
+  {
+    "id": "garment-84",
+    "name": "Gigabyte Aorus Men Tshirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/gigabyte-aorus-men-tshirt/1.webp",
+    "category": "mens-shirts",
+    "source": "https://dummyjson.com/products/84",
+    "photo": "/assets/rescue/garment-84.jpg"
+  },
+  {
+    "id": "garment-85",
+    "name": "Man Plaid Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/man-plaid-shirt/1.webp",
+    "category": "mens-shirts",
+    "source": "https://dummyjson.com/products/85",
+    "photo": "/assets/rescue/garment-85.jpg"
+  },
+  {
+    "id": "garment-86",
+    "name": "Man Short Sleeve Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/1.webp",
+    "category": "mens-shirts",
+    "source": "https://dummyjson.com/products/86",
+    "photo": "/assets/rescue/garment-86.jpg"
+  },
+  {
+    "id": "garment-87",
+    "name": "Men Check Shirt",
+    "image": "https://cdn.dummyjson.com/product-images/mens-shirts/men-check-shirt/1.webp",
+    "category": "mens-shirts",
+    "source": "https://dummyjson.com/products/87",
+    "photo": "/assets/rescue/garment-87.jpg"
+  },
+  {
+    "id": "garment-162",
+    "name": "Blue Frock",
+    "image": "https://cdn.dummyjson.com/product-images/tops/blue-frock/1.webp",
+    "category": "tops",
+    "source": "https://dummyjson.com/products/162",
+    "photo": "/assets/rescue/garment-162.jpg"
+  },
+  {
+    "id": "garment-163",
+    "name": "Girl Summer Dress",
+    "image": "https://cdn.dummyjson.com/product-images/tops/girl-summer-dress/1.webp",
+    "category": "tops",
+    "source": "https://dummyjson.com/products/163",
+    "photo": "/assets/rescue/garment-163.jpg"
+  },
+  {
+    "id": "garment-164",
+    "name": "Gray Dress",
+    "image": "https://cdn.dummyjson.com/product-images/tops/gray-dress/1.webp",
+    "category": "tops",
+    "source": "https://dummyjson.com/products/164",
+    "photo": "/assets/rescue/garment-164.jpg"
+  },
+  {
+    "id": "garment-165",
+    "name": "Short Frock",
+    "image": "https://cdn.dummyjson.com/product-images/tops/short-frock/1.webp",
+    "category": "tops",
+    "source": "https://dummyjson.com/products/165",
+    "photo": "/assets/rescue/garment-165.jpg"
+  },
+  {
+    "id": "garment-166",
+    "name": "Tartan Dress",
+    "image": "https://cdn.dummyjson.com/product-images/tops/tartan-dress/1.webp",
+    "category": "tops",
+    "source": "https://dummyjson.com/products/166",
+    "photo": "/assets/rescue/garment-166.jpg"
+  },
+  {
+    "id": "garment-177",
+    "name": "Black Women's Gown",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/1.webp",
+    "category": "womens-dresses",
+    "source": "https://dummyjson.com/products/177",
+    "photo": "/assets/rescue/garment-177.jpg"
+  },
+  {
+    "id": "garment-178",
+    "name": "Corset Leather With Skirt",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/1.webp",
+    "category": "womens-dresses",
+    "source": "https://dummyjson.com/products/178",
+    "photo": "/assets/rescue/garment-178.jpg"
+  },
+  {
+    "id": "garment-179",
+    "name": "Corset With Black Skirt",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/1.webp",
+    "category": "womens-dresses",
+    "source": "https://dummyjson.com/products/179",
+    "photo": "/assets/rescue/garment-179.jpg"
+  },
+  {
+    "id": "garment-180",
+    "name": "Dress Pea",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/1.webp",
+    "category": "womens-dresses",
+    "source": "https://dummyjson.com/products/180",
+    "photo": "/assets/rescue/garment-180.jpg"
+  },
+  {
+    "id": "garment-181",
+    "name": "Marni Red & Black Suit",
+    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/1.webp",
+    "category": "womens-dresses",
+    "source": "https://dummyjson.com/products/181",
+    "photo": "/assets/rescue/garment-181.jpg"
+  },
+  {
+    "id": "garment-f1",
+    "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    "category": "men's clothing",
+    "source": "https://fakestoreapi.com/products/1",
+    "photo": "/assets/rescue/garment-f1.jpg"
+  },
+  {
+    "id": "garment-f2",
+    "name": "Mens Casual Premium Slim Fit T-Shirts ",
+    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    "category": "men's clothing",
+    "source": "https://fakestoreapi.com/products/2",
+    "photo": "/assets/rescue/garment-f2.jpg"
+  },
+  {
+    "id": "garment-f3",
+    "name": "Mens Cotton Jacket",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    "category": "men's clothing",
+    "source": "https://fakestoreapi.com/products/3",
+    "photo": "/assets/rescue/garment-f3.jpg"
+  },
+  {
+    "id": "garment-f4",
+    "name": "Mens Casual Slim Fit",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    "category": "men's clothing",
+    "source": "https://fakestoreapi.com/products/4",
+    "photo": "/assets/rescue/garment-f4.jpg"
+  },
+  {
+    "id": "garment-f15",
+    "name": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+    "category": "women's clothing",
+    "source": "https://fakestoreapi.com/products/15",
+    "photo": "/assets/rescue/garment-f15.jpg"
+  }
+]

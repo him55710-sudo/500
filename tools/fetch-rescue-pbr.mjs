@@ -1,0 +1,3 @@
+import fs from 'node:fs/promises';
+const dir='public/assets/rescue';const sources=[];
+for(const id of ['painted_plaster_wall','knitted_fleece','poly_wool_herringbone']){const files=await(await fetch('https://api.polyhaven.com/files/'+id)).json();for(const [kind,key]of [['normal','nor_gl'],['roughness','rough']]){const entry=files[key]?.['1k']?.jpg;if(!entry)continue;const r=await fetch(entry.url);if(!r.ok)throw Error(entry.url);await fs.writeFile(`${dir}/${id}-${kind}.jpg`,Buffer.from(await r.arrayBuffer()));sources.push({id,kind,url:entry.url,license:'CC0',source:'https://polyhaven.com/a/'+id});}console.log(id);}await fs.writeFile(dir+'/pbr-sources.json',JSON.stringify(sources,null,2));

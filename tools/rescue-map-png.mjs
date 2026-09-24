@@ -1,0 +1,2 @@
+import {chromium} from '@playwright/test';
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});const page=await browser.newPage({viewport:{width:1440,height:720},deviceScaleFactor:1});await page.goto('http://127.0.0.1:5179/assets/rescue/world-map.svg');await page.locator('svg').screenshot({path:'public/assets/rescue/world-map.png'});await browser.close();

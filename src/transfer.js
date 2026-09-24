@@ -38,13 +38,13 @@ export async function beginTransfer(world,{onStatus,onArrive,onSound,onProgress}
  const bridge=new THREE.Mesh(new THREE.BoxGeometry(3.7,.18,17),new THREE.MeshStandardMaterial({color:'#eee4d5',roughness:.85}));bridge.position.set(55,2.22,92.5);scene.add(bridge);
  for(const c of cars){const badge=world.label('BLACK HOLE 2000',[0,.78,-1.715],1.35,25,'#fff4da');c.add(badge);badge.rotation.y=Math.PI;}
  const avatar=world.avatar;cars[0].add(avatar);avatar.rotation.set(0,Math.PI,0);avatar.position.set(-.43,.08,-.68);avatar.visible=true;
- for(const n of ['LegL','LegR']){const limb=avatar.getObjectByName(n);if(limb)limb.rotation.x=-Math.PI*.43;}
- for(const n of ['ArmL','ArmR']){const limb=avatar.getObjectByName(n);if(limb)limb.rotation.x=-.6;}
+ world.avatarPose='standing';world.playAvatarAnimation('Walk',0);
  placard(world,'BLACK HOLE 2000',[-1.5,5.55,74.65],5.3);
  placard(world,'HAYOUNG  ·  NEXT MEMORY',[-2.8,3.4,39],2.6);
  placard(world,'02  /  THE CIRCULAR ROOM',[58,4.5,87],5);
  let elapsed=0,distance=30,speed=0,finished=false,lastPhase='';
- const cameraOffset=new THREE.Vector3(4.4,3.1,7.6),localEye=new THREE.Vector3(-.43,1.72,-.78);
+ // A close over-the-shoulder chase keeps Hayoung readable while the track sweeps behind her.
+ const cameraOffset=new THREE.Vector3(2.3,1.65,-2.35),localEye=new THREE.Vector3(-.43,1.62,-.78),baseFov=world.camera.fov;
  function status(phase){if(phase!==lastPhase){lastPhase=phase;onStatus?.(phases[phase]);}}
  world.ride={cars,path:data,get progress(){return distance/data.length;},get phase(){return lastPhase;},get distance(){return distance;},get speed(){return speed;},
   update(dt){
@@ -58,15 +58,17 @@ export async function beginTransfer(world,{onStatus,onArrive,onSound,onProgress}
    }
    for(let i=0;i<cars.length;i++){const pose=trackPose(data,distance-i*3.9);cars[i].position.copy(pose.position);cars[i].quaternion.copy(pose.quaternion);}
    // The initial four seconds show Hayoung stepping from the platform into her seat.
-   const board=THREE.MathUtils.smoothstep(elapsed,0,3.2);avatar.position.x=THREE.MathUtils.lerp(-2.75,-.43,board);avatar.position.y=THREE.MathUtils.lerp(.3,.08,board);
+   const board=THREE.MathUtils.smoothstep(elapsed,0,3.2);avatar.position.x=THREE.MathUtils.lerp(-2.75,-.43,board);avatar.position.y=THREE.MathUtils.lerp(.30,.08,board);
    avatar.rotation.y=THREE.MathUtils.lerp(Math.PI/2,Math.PI,THREE.MathUtils.smoothstep(board,.5,1));
-   for(const [name,sign] of [['LegL',1],['LegR',-1]]){const limb=avatar.getObjectByName(name);if(limb)limb.rotation.x=board<.7?Math.sin(elapsed*10)*.24*sign:-Math.PI*.43*THREE.MathUtils.smoothstep(board,.7,1);}
+   const boarding=elapsed<3.15;world.playAvatarAnimation(boarding?'Walk':'Idle_Neutral');world.avatarPose=boarding?'standing':'ride';
    world.player.copy(cars[0].position);cars[0].updateMatrixWorld(true);avatar.visible=world.thirdPerson;
    const pose=trackPose(data,distance),target=cars[0].localToWorld(localEye.clone());
+   const speedFactor=THREE.MathUtils.clamp(speed/24,0,1),desiredFov=baseFov+(world.motion?7*speedFactor:0);if(Math.abs(world.camera.fov-desiredFov)>.05){world.camera.fov=THREE.MathUtils.damp(world.camera.fov,desiredFov,4,dt);world.camera.updateProjectionMatrix();}
    if(world.thirdPerson){
-    const desired=cars[0].localToWorld(cameraOffset.clone());world.camera.position.copy(desired);world.camera.up.copy(world.motion?pose.up:new THREE.Vector3(0,1,0));world.camera.lookAt(target.clone().addScaledVector(pose.forward,4));
+    const offset=cameraOffset.clone();if(world.motion){offset.x+=Math.sin(elapsed*.24)*.34;offset.y+=Math.sin(elapsed*.41)*.16;offset.z+=speedFactor*.28;}
+    const desired=cars[0].localToWorld(offset);if(world.motion){const shake=.012+speedFactor*.024;desired.addScaledVector(pose.up,Math.sin(elapsed*29)*shake);desired.addScaledVector(new THREE.Vector3().crossVectors(pose.forward,pose.up).normalize(),Math.sin(elapsed*21)*shake*.42);}world.camera.position.copy(desired);world.camera.up.copy(world.motion?pose.up:new THREE.Vector3(0,1,0));world.camera.lookAt(target);
    }else{
-    world.camera.position.copy(target);world.camera.up.copy(world.motion?pose.up:new THREE.Vector3(0,1,0));world.camera.lookAt(target.clone().addScaledVector(pose.forward,15));
+    world.camera.position.copy(target);if(world.motion){const shake=.004+speedFactor*.012;world.camera.position.addScaledVector(pose.up,Math.sin(elapsed*29)*shake);}world.camera.up.copy(world.motion?pose.up:new THREE.Vector3(0,1,0));world.camera.lookAt(target.clone().addScaledVector(pose.forward,15));
    }
    world.camera.updateMatrixWorld();status(phase);onSound?.(speed,phase,dt);
    if(distance>=data.length){finished=true;speed=0;status('arrival');onSound?.(0,'arrival',dt);onArrive();}
@@ -78,7 +80,7 @@ export async function beginTransfer(world,{onStatus,onArrive,onSound,onProgress}
 export async function enterRotunda(world){
  const gltf=await loader.loadAsync('/assets/room-two-rotunda.glb');const scene=sceneFor(world,'#eadce6',.003);scene.add(gltf.scene);world.model=gltf.scene;
  world.avatar.rotation.set(0,Math.PI,0);world.avatar.position.set(0,0,10);gltf.scene.add(world.avatar);
- for(const n of ['LegL','LegR','ArmL','ArmR']){const limb=world.get(n);if(limb)limb.rotation.x=0;}
+ world.avatarPose='standing';world.playAvatarAnimation('Idle_Neutral');
  world.mode='rotunda';world.state={stage:0,inventory:[]};world.player.set(0,0,10);world.yaw=0;world.pitch=.08;world.toggleView(false);world.thirdHeld.visible=true;world.ride=null;
  world.wallBoxes=[];world.colliders=[];world.collisionBoxes=[];
  for(let i=0;i<48;i++){const a=i*Math.PI*2/48,x=13.8*Math.cos(a),z=13.8*Math.sin(a);world.collisionBoxes.push(new THREE.Box3(v([x-.55,0,z-.55]),v([x+.55,7,z+.55])));}

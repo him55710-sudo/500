@@ -1,0 +1,72 @@
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {MeshoptDecoder} from 'meshoptimizer/decoder';
+import {rescueInitial} from './rescue-state.js';
+const v=(...p)=>new THREE.Vector3(...p);
+const part=(root,name)=>root?.children.find(o=>o.name.startsWith(name));
+export async function enterRescue(world,state=rescueInitial()){
+ world.rescueRuntime=null;
+ const [asset,garments,regions]=await Promise.all([new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/assets/rescue/rescue-room.glb'),fetch('/assets/rescue/catalog.json').then(r=>r.json()),fetch('/assets/rescue/regions.json').then(r=>r.json())]);
+ const old=world.scene,scene=new THREE.Scene();scene.background=new THREE.Color('#a6b7c1');scene.environment=old.environment;scene.environmentIntensity=.48;scene.fog=new THREE.Fog('#bec5c0',38,75);
+ world.scene=scene;world.model=asset.scene;scene.add(asset.scene,world.camera,world.avatar);world.mode='rescue-loading';world.state={stage:0,inventory:[]};world.targets=[];world.keys.clear();world.hit=null;world.ride=null;world.pendingAnimations=[];world.avatarPose='standing';world.camera.up.set(0,1,0);world.camera.far=90;world.camera.updateProjectionMatrix();world.renderer.toneMappingExposure=1.12;world.renderer.shadowMap.enabled=true;world.renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+ const hemi=new THREE.HemisphereLight('#fff1d9','#595d52',1.35);scene.add(hemi);const sun=new THREE.DirectionalLight('#fff0d4',2.4);sun.position.set(0,7,3);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-7;sun.shadow.camera.right=7;sun.shadow.camera.top=7;sun.shadow.camera.bottom=-7;sun.shadow.bias=-.001;sun.shadow.normalBias=.035;scene.add(sun,sun.target);const fill=new THREE.DirectionalLight('#9bc9e7',1);fill.position.set(-5,3,-6);scene.add(fill);
+ asset.scene.traverse(o=>{if(!o.isMesh)return;o.receiveShadow=true;let p=o;while(p){if(/Hyunsu|Cabinet|Bed|Checkout|Garments|Chairs|Dining/.test(p.name)){o.castShadow=true;break;}p=p.parent;}for(const m of Array.isArray(o.material)?o.material:[o.material]){if(m.map)m.map.anisotropy=4;if(m.name.startsWith('MI_Hair_1'))m.color.set('#30221a');}});
+ const get=n=>world.get(n),doors=[0,1,2,3].map(i=>get('Door'+i));const people=['HyunsuBed','HyunsuCold','HyunsuHungry','HyunsuQuake'].map(get);people.forEach(p=>p.scale.setScalar(.86));get('ShopAssistant').scale.setScalar(.86);get('ShopAssistant').rotation.y=Math.PI;for(const name of ['NaturalEarth_WorldAtlas','Official_Polo_Product','Official_TOMBOY_Product'])if(get(name))get(name).visible=false;
+ // Every visual state has the same face; coat and knit are separately authored layers.
+ for(const p of [...people,get('ShopAssistant')]){if(part(p,'Head'))part(p,'Head').visible=false;if(people.includes(p))for(const name of ['Coat','Knit','Sleeve-1','Sleeve1'])if(part(p,name))part(p,name).visible=false;}
+ const loader=new THREE.TextureLoader();const [map,photo]=await Promise.all(['/assets/rescue/world-map.svg','/assets/rescue/restaurant.jpg'].map(p=>loader.loadAsync(p)));for(const t of [map,photo]){t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;}
+ const atlas=world.plane(map,7.5,3.75,[24,2.48,-4.52]);atlas.material=new THREE.MeshBasicMaterial({map});
+ const restaurant=world.plane(photo,2.8,1.86,[28.5,2.4,-4.8]);restaurant.visible=state.fed;
+ const poster=await loader.loadAsync('/assets/rescue/polo-navy.jpg');poster.colorSpace=THREE.SRGBColorSpace;world.plane(poster,1.0,1.25,[16.8,2.5,-4.78]);
+ const coatPhoto=await loader.loadAsync('/assets/rescue/tomboy-coat.jpg');coatPhoto.colorSpace=THREE.SRGBColorSpace;world.plane(coatPhoto,1,1.25,[14.8,2.5,-4.78]);
+ const doorLabels=[];for(const [i,text] of ['02 · 겨울 옷가게','03 · 배고픈 현수','밖으로 나가기','400일 방 · 함께 탈출'].entries())doorLabels.push(world.label(text,[i*12+5.83,3.65,1],2.6,30,'#543f25',-Math.PI/2));
+ world.label('임현수 · 조금만 도와줘…',[1.7,1.8,-3.0],2.6,32,'#34564b');world.label('대상포진에 걸린 현수를 살려라',[0,3.08,-4.82],4,32,'#294a3d');const coldLabel=world.label('바람이 너무 차가워…',[8.7,2.25,1.2],2.3,30,'#233a56'),warmLabel=world.label('이제 따뜻해! 고마워, 하영아 ♡',[8.7,2.35,1.2],3,32,'#80563d');warmLabel.visible=state.warmed;
+ function bubble(lines){const c=document.createElement('canvas');c.width=1024;c.height=360;const ctx=c.getContext('2d');ctx.fillStyle='#fff9ea';ctx.beginPath();ctx.roundRect(15,15,994,274,75);ctx.fill();ctx.beginPath();ctx.moveTo(430,265);ctx.lineTo(460,335);ctx.lineTo(550,265);ctx.fill();ctx.fillStyle='#42382e';ctx.textAlign='center';ctx.font='38px Malgun Gothic';lines.forEach((s,i)=>ctx.fillText(s,512,112+i*65));const texture=new THREE.CanvasTexture(c);texture.colorSpace=THREE.SRGBColorSpace;const sprite=new THREE.Sprite(new THREE.SpriteMaterial({map:texture,depthTest:true}));sprite.position.set(26.8,2.9,1.3);sprite.scale.set(3.5,1.23,1);scene.add(sprite);return sprite;}
+ const thought=bubble(['너는 내가 어떤 식당을','가고 싶은지도 모르는구나....']);
+ const targetMat=new THREE.MeshBasicMaterial({visible:false});function target(id,name,desc,p,size,room,offset=[0,0,1.8]){const t=new THREE.Mesh(new THREE.BoxGeometry(...size),targetMat);t.position.set(...p);t.userData={id,name,desc,stage:-1,room,offset};scene.add(t);world.targets.push(t);}
+ target('rescue-cabinet','트로피 보관함','문을 열고 안쪽을 조사하기',[-2.9,1.4,-3.83],[2.9,2.6,.5],0);
+ target('rescue-bed','침대에 누운 현수','약을 찾아 건네주기',[1.7,1,-1.7],[2.35,1.2,3],0,[0,0,2.25]);
+ target('rescue-rack','겨울 옷 진열대','스물두 벌 중 두 벌 고르기',[13.4,1.5,-1.1],[6.3,2.5,3.7],1,[0,0,3]);
+ target('rescue-cashier','판매 직원','고른 옷 두 벌 건네고 계산하기',[15.2,1.2,2.8],[3.2,2.4,1.1],1,[0,0,-2.1]);
+ target('rescue-cold','덜덜 떠는 현수','계산한 옷 입혀 주기',[8.7,1.1,1.2],[.95,2.3,.7],1);
+ target('rescue-map','벽에 걸린 세계지도','파란 핀과 빨간 핀을 꽂기',[24,2.35,-4.3],[7.6,3.7,.5],2,[0,0,2.1]);
+ target('rescue-hungry','배고픈 현수','완성한 식당 이름판 제안하기',[26.8,1.15,1.3],[.95,2.3,.7],2);
+ target('rescue-hand','놀란 현수','손을 잡고 함께 탈출하기',[32.8,1.1,1.3],[1.1,2.2,.8],3);
+ for(let i=0;i<4;i++)target('rescue-door-'+i,i===3?'400일 방 출구':'다음 방으로',i===3?'현수와 함께 나가기':'현수를 도운 뒤 다음 기억으로',[i*12+5.65,1.5,1],[.5,3,2.6],i,[-1.9,0,0]);
+ target('rescue-finish','함께 도착한 400일 방','구출한 기억 돌아보기',[46,2.1,-4.65],[6,3,.4],4);
+ const collision=[[-4.4,-1.35,-4.8,-3.82],[.35,3,-3.85,-.3],[3.5,4.3,-3.2,-2.4],[10,17,-2.75,.4],[13.5,16.8,2.3,3.4],[22,24.8,.1,1.75],[40,41.3,3.3,4.3]];
+ world.colliders=collision;world.wallBoxes=[];for(const cx of [0,12,24,36,47])for(const z of [-5,5])world.wallBoxes.push(new THREE.Box3(v(cx-6,0,z-.15),v(cx+6,4.3,z+.15)));for(const x of [-6,6,18,30,42,53]){world.wallBoxes.push(new THREE.Box3(v(x-.15,0,-5),v(x+.15,4.3,-.3)),new THREE.Box3(v(x-.15,0,2.3),v(x+.15,4.3,5)));}world.collisionBoxes=[...world.wallBoxes,...collision.map(([a,b,c,d])=>new THREE.Box3(v(a,0,c),v(b,2.5,d)))];
+ const snowPositions=new Float32Array(160*3);for(let i=0;i<160;i++){snowPositions[i*3]=7+Math.random()*3.4;snowPositions[i*3+1]=.8+Math.random()*2.5;snowPositions[i*3+2]=-4.45+Math.random()*3.7;}const snowGeo=new THREE.BufferGeometry();snowGeo.setAttribute('position',new THREE.BufferAttribute(snowPositions,3));const snow=new THREE.Points(snowGeo,new THREE.PointsMaterial({color:'#e1f6ff',size:.025,transparent:true,opacity:.6}));scene.add(snow);world.addDust();world.dust.visible=false;
+ const rope=new THREE.Line(new THREE.BufferGeometry().setFromPoints([v(),v()]),new THREE.LineBasicMaterial({color:'#bc8869',linewidth:2}));scene.add(rope);rope.visible=false;
+ const redLight=new THREE.PointLight('#ff6438',0,12);redLight.position.set(36,3.2,1);scene.add(redLight);const pins={};for(const [c,color] of [['blue','#246ccb'],['red','#b13c42']]){const pin=new THREE.Mesh(new THREE.SphereGeometry(.065,12,8),new THREE.MeshStandardMaterial({color,roughness:.3}));scene.add(pin);pins[c]=pin;}
+ const pill=new THREE.Mesh(new THREE.CapsuleGeometry(.035,.09,4,8),new THREE.MeshStandardMaterial({color:'#f4efe0',roughness:.6}));scene.add(pill);pill.visible=false;
+ const rt={world,garments,regions,state,people,doors,transition:null,emotion:0,elapsed:0,medicineFlight:null,paymentMotion:0,
+  place(room){const cx=room===4?47:room*12;world.player.set(room===0?0:room===4?46:cx-3.9,0,room===0?3.4:room===4?2.8:2.8);world.lookAtPoint(room===0?[-1,1.6,-4]:room===1?[12,1.5,-1]:room===2?[24,2.2,-4]:room===4?[46,2,-4]:[cx+4,1.5,1]);sun.position.set(cx,7,3);sun.target.position.set(cx,0,-1);world.toggleView(room===3);if(room===4){people[3].position.set(47.4,0,-1.1);people[3].rotation.set(0,0,0);for(const sign of [-1,1]){const arm=part(people[3],'Arm'+sign);if(arm){arm.rotation.set(0,0,0);arm.scale.setScalar(1);}}}},
+  sync(s){const old=this.state;if(s.room!==old.room){this.transition={from:old.room,to:s.room,t:0,start:world.player.clone()};world.keys.clear();world.active=false;world.yaw=-Math.PI/2;world.pitch=-.05;}if(s.healed&&!old.healed)this.medicineFlight=0;if(s.paid.length&&!old.paid.length)this.paymentMotion=2;if((s.healed&&!old.healed)||(s.warmed&&!old.warmed)||(s.fed&&!old.fed))this.emotion=2.8;this.state=s;thought.visible=s.room===2&&!s.fed;restaurant.visible=s.fed;get('Medicine').visible=!s.medicine&&!s.healed;for(const p of [people[1],people[2],people[3]])for(const name of ['Coat','Knit','Sleeve-1','Sleeve1'])if(part(p,name))part(p,name).visible=s.warmed;get('ShoppingBag').visible=s.paid.length===2&&!s.warmed;
+   coldLabel.visible=!s.warmed;warmLabel.visible=s.warmed;for(const t of world.targets){t.visible=t.userData.room===s.room&&!(t.userData.id==='rescue-hand'&&s.holding);if(t.userData.id==='rescue-cold'){t.userData.name=s.warmed?'따뜻해진 현수':'덜덜 떠는 현수';t.userData.desc=s.warmed?'고마워, 하영아 ♡':'계산한 옷 입혀 주기';}}for(const [c,p]of Object.entries(pins)){const pin=s.pins[c];p.visible=!!pin;p.position.set(24+((pin?.lon||0)/360)*7.5,2.48+((pin?.lat||0)/180)*3.75,-4.46);}
+  },
+  blocked(x,z){const room=this.state.room,cx=room===4?47:room*12;if(x<cx-5.65||x>cx+5.4||z< -4.65||z>4.65)return true;return collision.some(([a,b,c,d])=>x>a-.23&&x<b+.23&&z>c-.23&&z<d+.23);},
+  update(dt,time){this.elapsed+=dt;const s=this.state;this.emotion=Math.max(0,this.emotion-dt);get('CabinetDoor').rotation.y=THREE.MathUtils.damp(get('CabinetDoor').rotation.y,s.cabinetOpen?-1.7:0,3,dt);
+   if(this.medicineFlight!==null){this.medicineFlight+=dt;const t=Math.min(1,this.medicineFlight/1.1);pill.visible=t<1;pill.position.lerpVectors(v(1.7,1.5,-.2),v(1.7,1.8,-2.1),t);if(t===1)this.medicineFlight=null;}
+   this.paymentMotion=Math.max(0,this.paymentMotion-dt);for(const sign of [-1,1]){const arm=part(get('ShopAssistant'),'Arm'+sign);if(arm)arm.rotation.x=this.paymentMotion?-.7:0;const hungryArm=part(people[2],'Arm'+sign);if(hungryArm){hungryArm.rotation.x=s.fed?0:-.45;hungryArm.rotation.z=s.fed?0:sign*.5;}}
+   if(this.transition){world.active=false;const tr=this.transition;tr.t+=dt;const progress=THREE.MathUtils.clamp((tr.t-.6)/2,0,1),destX=tr.to===4?43.1:tr.to*12-3.9;world.player.set(THREE.MathUtils.lerp(tr.start.x,destX,progress),0,THREE.MathUtils.lerp(tr.start.z,1,Math.min(1,tr.t*2)));world.avatar.position.copy(world.player);world.avatar.rotation.y=Math.PI/2;world.avatar.visible=true;world.playAvatarAnimation('Walk');world.camera.position.set(world.player.x-3,2.4,3.3);world.camera.lookAt(world.player.clone().add(v(1,1.2,0)));if(s.holding||s.completed){people[3].position.copy(world.player).add(v(-.4,0,.8));people[3].rotation.y=Math.PI/2;}if(tr.t>3.1){this.transition=null;this.place(s.room);world.active=true;}}
+   doors.forEach((door,i)=>door.rotation.y=THREE.MathUtils.damp(door.rotation.y,this.transition?.from===i&&this.transition.t<2.6?-1.65:0,5,dt));
+   const cold=people[1];cold.position.x=8.7+(s.room===1&&!s.warmed?Math.sin(time*33)*.017:0);cold.rotation.z=s.room===1&&!s.warmed?Math.sin(time*29)*.012:0;
+   for(const sign of [-1,1]){const arm=part(cold,'Arm'+sign);if(arm){arm.rotation.z=s.warmed?(this.emotion>0?sign*-.35:0):sign*.65;arm.rotation.x=s.warmed?(this.emotion>0?-.6:0):-.45;}}
+   if(s.warmed&&this.emotion>0)cold.position.y=Math.abs(Math.sin(this.emotion*5))*.09;else cold.position.y=0;
+   const patient=people[0];patient.rotation.x=THREE.MathUtils.damp(patient.rotation.x,s.healed?-.65:-Math.PI/2,2,dt);
+   const curtain=get('WinterCurtain');curtain.rotation.x=s.room===1?Math.sin(time*2.3)*.012:0;snow.visible=s.room===1&&!s.warmed;if(snow.visible){const a=snow.geometry.attributes.position;for(let i=0;i<a.count;i++){a.array[i*3+2]+=.6*dt;a.array[i*3+1]-=.09*dt;if(a.array[i*3+2]>-.3)a.array[i*3+2]=-4.45;if(a.array[i*3+1]<.8)a.array[i*3+1]=3.3;}a.needsUpdate=true;}
+   redLight.intensity=s.room===3?8+2*Math.sin(time*2):0;rope.visible=s.holding||!!this.transition&&s.completed;
+  },
+  afterUpdate(dt,time){const s=this.state;if(s.holding&&!this.transition){const npc=people[3],forward=v(-Math.sin(world.yaw),0,-Math.cos(world.yaw)),side=v(Math.cos(world.yaw),0,-Math.sin(world.yaw));npc.position.copy(world.player).addScaledVector(side,.75).addScaledVector(forward,-.35);npc.rotation.y=world.avatar.rotation.y;const walking=world.keys.has('KeyW')||world.keys.has('KeyA')||world.keys.has('KeyS')||world.keys.has('KeyD');for(const sign of [-1,1]){const limb=part(npc,'Leg'+sign);if(limb)limb.rotation.x=walking?Math.sin(time*9)*.35*sign:0;}const arm=part(npc,'Arm-1');if(arm){arm.rotation.z=-.65;arm.rotation.x=-.5;}const bone=(world.avatar.getObjectByName('UpperArm.R')||world.avatar.getObjectByName('UpperArmR'));if(bone){bone.rotation.z=-.7;bone.rotation.x=-.65;}}
+   if(s.holding||this.transition&&s.completed){
+    world.avatar.updateMatrixWorld(true);const lower=(world.avatar.getObjectByName('LowerArm.R')||world.avatar.getObjectByName('LowerArmR')),npc=people[3],arm=part(npc,'Arm-1');npc.updateMatrixWorld(true);
+    const hand=lower?lower.localToWorld(v(0,.23,0)):world.player.clone().add(v(.3,1,.1));
+    if(arm){const local=npc.worldToLocal(hand.clone()).sub(arm.position);arm.quaternion.setFromUnitVectors(v(-.03,-.67,.07).normalize(),local.clone().normalize());arm.scale.setScalar(THREE.MathUtils.clamp(local.length()/.675,.7,1.25));}
+   }
+   rope.visible=false;
+   for(const p of people)for(const sign of [-1,1]){const arm=part(p,'Arm'+sign),sleeve=part(p,'Sleeve'+sign);if(arm&&sleeve){sleeve.quaternion.copy(arm.quaternion);sleeve.scale.copy(arm.scale);}}
+   if(s.room===3&&world.active&&world.motion&&!this.transition){world.camera.position.x+=Math.sin(time*28)*.022;world.camera.position.y+=Math.sin(time*21)*.014;world.camera.rotateZ(Math.sin(time*18)*.004);}
+  }
+ };world.mode='rescue';world.rescueRuntime=rt;rt.place(state.room);rt.sync(state);rt.update(0,0);return rt;
+}

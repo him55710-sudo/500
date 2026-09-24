@@ -1,6 +1,6 @@
 export const VERSION = 1;
 export const SAVE_KEY = 'hayoung500.room1.v1';
-export const initialState = () => ({version:VERSION,stage:0,letterRead:false,inventory:[],selected:null,tasted:[],journal:[],completed:false,elapsed:0});
+export const initialState = () => ({version:VERSION,stage:0,letterRead:false,framesSolved:false,safeOpen:false,inventory:[],selected:null,tasted:[],journal:[],completed:false,elapsed:0});
 export const objectives = [
  ['아직 펼치지 않은 편지','책상 위에 놓인 현수의 편지를 읽어 보자.'],
  ['네 장의 기억','벽에 나타난 네 추억의 순서를 떠올려 보자.'],
@@ -38,7 +38,14 @@ export function transition(current, event) {
   case 'frames':
    if(s.stage!==1)return deny('아직 액자 장치가 작동하지 않는다.');
    if(JSON.stringify(event.order)!==JSON.stringify(['yellow','green','blue','red']))return deny('추억의 순서가 조금 다른 것 같아. 처음부터 다시 눌러 보자.');
-   take('violin');advance();message='액자가 열렸다. 바이올린 키링을 얻었다.';break;
+   if(s.framesSolved)return deny('액자 뒤에 열린 공간을 살펴봐.');
+   s.framesSolved=true;changed=true;effect='reveal';message='초록 액자가 움직였다. 뒤에 숨겨진 금고를 살펴보자.';break;
+  case 'open-safe':
+   if(s.stage!==1||!s.framesSolved||s.safeOpen)return deny('금고는 아직 열 수 없어.');
+   s.safeOpen=true;changed=true;effect='hatch';message='금고 안에, 생일에 받았던 바이올린 키링이 있다.';break;
+  case 'take-violin':
+   if(s.stage!==1||!s.safeOpen)return deny('먼저 액자 뒤 금고를 열어 봐.');
+   take('violin');advance();message='금고에서 바이올린 키링을 꺼냈다.';break;
   case 'give-violin':
    if(s.stage!==2||!s.inventory.includes('violin'))return deny('인형의 두 손이 비어 있다. 작은 악기가 필요해 보인다.');
    if(event.doll!=='violinist')return deny('이 인형의 자세는 바이올린을 연주하는 자세가 아닌 것 같아.');
@@ -82,7 +89,7 @@ export function transition(current, event) {
 export function loadState(raw){
  try{const p=JSON.parse(raw);if(p.version!==VERSION||!Number.isInteger(p.stage)||p.stage<0||p.stage>8)return null;
  if(!Array.isArray(p.inventory)||!p.inventory.every(x=>['violin','carousel','bench','beef'].includes(x))||!Array.isArray(p.tasted)||!p.tasted.every(x=>['hyunsu','alpero'].includes(x))||!Array.isArray(p.journal)||!p.journal.every(x=>typeof x==='string'))return null;
- return {...initialState(),...p,elapsed:Number.isFinite(p.elapsed)&&p.elapsed>=0?p.elapsed:0};}catch{return null;}
+ return {...initialState(),...p,framesSolved:p.framesSolved??p.stage>=2,safeOpen:p.safeOpen??p.stage>=2,elapsed:Number.isFinite(p.elapsed)&&p.elapsed>=0?p.elapsed:0};}catch{return null;}
 }
 export const hints = [
  ['편지에 유난히 또렷하게 남겨 둔 말이 있어. 숫자 하나, 좋아하던 음료, 그리고 마음을 바꾸겠다는 말. 천천히 이어 봐.','오로나민 C 대신 마실 만한 음료를 떠올려 봐. 우리가 기념하는 숫자가 그 음료 이름에도 들어간다면?','자물쇠의 일곱 칸을 V · I · T · A · 5 · 0 · 0 으로 맞춰 봐. 다 맞췄다면 자물쇠를 당겨 주고.'],

@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-24",
+  "url": "https://hyunsu-hayoung-500.vercel.app",
+  "preview": "https://hyunsu-hayoung-500.vercel.app/?preview=kitchen",
+  "deploymentId": "dpl_9f9nzeiCRaUyq2Z6X54rCNi6ErFN",
+  "immutableUrl": "https://hyunsu-hayoung-500-h0jny80dz-mongben.vercel.app",
+  "status": "READY",
+  "modelSha256": "91feba6521ec41212e4d8cb24f0113771df576fc96686baf05287c9a7bfd4c82",
+  "verification": {
+    "unitTestsPassed": 23,
+    "marketBrowser": "passed",
+    "allFourRecipesAndNextRoom": "passed",
+    "compiledFirstRoomSmoke": "passed",
+    "productionKitchenEntryAndControls": "passed",
+    "productionAssetHashMatches": 13,
+    "browserErrors": 0
+  }
+}

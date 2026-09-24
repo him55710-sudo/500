@@ -17,7 +17,7 @@ def mat(name,color,metal=0,rough=.5):
 rail=mat('Sun yellow enamel rails',(.95,.46,.018),.5,.28)
 blue=mat('Cobalt blue support steel',(.025,.18,.51),.6,.34)
 red=mat('Ruby red train body',(.58,.019,.025),.42,.24)
-dark=mat('Charcoal rubber and seats',(.035,.045,.052),.1,.54)
+dark=mat('Midnight blue rubber and seats',(.045,.09,.12),.12,.48)
 steel=mat('Brushed metal hardware',(.46,.54,.6),.8,.3)
 concrete=mat('Warm concrete',(.56,.54,.46),0,.94)
 white=mat('Ivory station canopy',(.84,.86,.81),.12,.6)
@@ -101,7 +101,7 @@ for x in [-.82,.82]:
   for dz in [-.16,.16]:tube((x-.085,-.02,z+dz),(x+.085,-.02,z+dz),.155,dark,root,n=16)
 for z in [-.68,.82]:
  for x in [-.43,.43]:
-  box((x,.86,z),(.64,.20,.62),dark,root);box((x,1.26,z+.32),(.65,.82,.17),dark,root)
+  box((x,.86,z),(.64,.20,.62),dark,root);box((x,.98,z+.32),(.65,.38,.17),dark,root)
   for side in [-1,1]:
    tube((x+side*.27,1.63,z+.3),(x+side*.27,1.3,z-.30),.047,steel,root)
    tube((x+side*.27,1.3,z-.30),(x+side*.27,.95,z-.30),.055,dark,root)

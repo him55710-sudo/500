@@ -1,0 +1,6 @@
+Character: Casual female model from Ultimate Modular Women Pack
+Creator: Quaternius
+License: CC0 1.0 Universal (public domain dedication)
+Official pack page: https://quaternius.com/packs/ultimatemodularwomen.html
+Source model: https://github.com/flawlesshappiness/EmotionCreatures/blob/main/Assets/Quaternius/Ultimate%20Modular%20Women%20-%20April%202022/Individual%20Characters/glTF/Casual.gltf
+The model is distributed as a CC0 asset. This project keeps the original glTF model and animations unchanged.
