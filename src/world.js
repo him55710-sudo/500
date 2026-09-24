@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import {readableSign} from './readable-signs.js';
+import beefPhotos from './beef-photos.json';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {MeshoptDecoder} from 'meshoptimizer/decoder';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
@@ -70,7 +72,7 @@ export class World{
   }
  }
  plane(texture,w,h,pos,rotY=0){const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshStandardMaterial({map:texture,roughness:.85,metalness:0,side:THREE.FrontSide}));m.position.copy(V(...pos));m.rotation.y=rotY;this.scene.add(m);return m;}
- label(text,p,w=1,size=44,color='#e8d5a9',rotY=0){const mesh=this.plane(canvasTexture(512,128,(c,W,H)=>{c.clearRect(0,0,W,H);c.fillStyle=color;c.font=`500 ${size}px "Noto Sans KR",sans-serif`;c.textAlign='center';c.textBaseline='middle';c.fillText(text,W/2,H/2);}),w,w/4,p,rotY);mesh.material.transparent=true;mesh.material.depthWrite=false;return mesh;}
+ label(text,p,w=1,size=44,color='#e8d5a9',rotY=0){const ink=new THREE.Color(color);return readableSign(this.scene,{lines:[text],position:p,width:w,height:w*.14,rotation:rotY,color,background:ink.r*.2126+ink.g*.7152+ink.b*.0722<.3?'#f3ead6':'#202c2b',fontSize:size*2});}
  async addArt(){
   this.model.traverse(o=>{if(!o.isMesh)return;o.receiveShadow=true;for(let p=o.parent;p;p=p.parent)if(/^(Desk|MusicCabinet|CarouselConsole|TastingTable)$/.test(p.name))o.castShadow=true;});
   // Joined wall mouldings give the frame wall the proportions of a paneled salon.
@@ -85,18 +87,19 @@ export class World{
   const photoMaps=await Promise.all(memoryPhotos.map(p=>p?personalPhoto(p,.97/1.24):null));
   for(let i=0;i<4;i++){const p=this.plane(photoMaps[i]||canvasTexture(512,640,(c,w,h)=>poster(c,w,h,names[i],subs[i],colors[i],i)),.97,1.24,[-4.65+i*1.6,2.85,-5.66]);this.posters.push(p);this.get('MemoryFrame'+i).attach(p);}
   this.painting=this.plane(await personalPhoto('/assets/memories/hayoung-painting.png',2.15/1.48),2.15,1.48,[5.657,2.48,-1.75],-Math.PI/2);this.customPainting=true;addMemorySafe(this);
-  this.label('한때 나는 너의 그림마저 사랑했어…',[5.62,1.35,-1.75],2.4,28,'#e3cfaa',-Math.PI/2);
-  this.cow=this.plane(canvasTexture(1000,640,(c,w,h)=>{
-   c.fillStyle='#ded1ad';c.fillRect(0,0,w,h);c.fillStyle='#775f43';c.font='25px serif';c.textAlign='center';c.fillText('THE TASTE OF OUR 100TH DAY',w/2,57);
-   c.fillStyle='#95614e';c.beginPath();c.ellipse(505,315,310,160,0,0,Math.PI*2);c.fill();c.fillRect(168,207,120,165);c.fillRect(142,178,85,60);c.fillRect(280,410,48,112);c.fillRect(680,410,48,112);c.strokeStyle='#ead8ac';c.lineWidth=5;
-   for(const x of [305,415,560,700]){c.beginPath();c.moveTo(x,182);c.lineTo(x,450);c.stroke();}c.beginPath();c.moveTo(258,310);c.lineTo(793,310);c.stroke();c.fillStyle='#f2e7c7';c.font='28px serif';[['A',280,270],['B',360,250],['C',485,260],['D',625,270],['E',760,300],['F',480,397]].forEach(([t,x,y])=>c.fillText(t,x,y));
-   c.fillStyle='#584836';c.font='23px "Malgun Gothic"';c.fillText('가려진 덮개를 열어 이름을 확인하세요',w/2,586);
-  }),1.8,1.21,[5.65,2.3,2.5],-Math.PI/2);
-  this.label('현수의 스테이크',[-3.35,1.4,4.62],.85,35,'#eedbb0',Math.PI);
-  this.label('홍대 알페로',[-1.67,1.4,4.62],.85,35,'#eedbb0',Math.PI);
+  this.label('한때 나는 너의 그림마저 사랑했어…',[5.46,1.35,-1.75],2.4,28,'#e3cfaa',-Math.PI/2);
+  const cutMaps=await Promise.all(beefPhotos.map(p=>new THREE.TextureLoader().loadAsync('/assets/beef-photos/'+p.file)));
+  const cutBoard=canvasTexture(1200,800,(c,w,h)=>{
+   c.fillStyle='#f3ead6';c.fillRect(0,0,w,h);c.fillStyle='#342a23';c.textAlign='center';c.font='30px "Malgun Gothic"';c.fillText('100일, 우리가 함께 먹었던 부위',w/2,53);
+   cutMaps.forEach((map,i)=>{const img=map.image,x=40+(i%3)*385,y=85+Math.floor(i/3)*315,scale=Math.min(350/img.width,248/img.height);c.fillStyle='#e2d7c3';c.fillRect(x,y,350,248);c.drawImage(img,x+(350-img.width*scale)/2,y+(248-img.height*scale)/2,img.width*scale,img.height*scale);c.fillStyle='#342a23';c.font='bold 30px sans-serif';c.fillText(String.fromCharCode(65+i),x+175,y+286);});
+   c.font='25px "Malgun Gothic"';c.fillText('E · 실제 사진을 살펴보고 이름 덮개 열기',w/2,758);
+  });cutMaps.forEach(t=>t.dispose());
+  this.cow=this.plane(cutBoard,1.8,1.21,[5.65,2.3,2.5],-Math.PI/2);this.cow.material.dispose();this.cow.material=new THREE.MeshBasicMaterial({map:cutBoard,toneMapped:false});
+  this.label('현수의 스테이크',[-3.35,1.3,4.12],.85,35,'#eedbb0',Math.PI);
+  this.label('홍대 알페로',[-1.67,1.3,4.12],.85,35,'#eedbb0',Math.PI);
   this.numberTiles=[];
   for(let row=0;row<3;row++)for(let col=0;col<3;col++){const num=row*3+col+1;const t=canvasTexture(256,256,c=>{c.fillStyle='#e5e1d7';c.fillRect(0,0,256,256);c.strokeStyle='#b9b5aa';c.lineWidth=1.5;c.strokeRect(10,10,236,236);c.fillStyle='#515b58';c.textAlign='center';c.textBaseline='middle';c.font='500 96px Arial';c.fillText(String(num),128,134);});const m=this.plane(t,1,1,[2.4+col*1.05,.108,.65+row*1.05]);m.name='NumberTile'+num;m.rotation.x=-Math.PI/2;this.numberTiles.push(m);const base=this.get('Tile'+num);base?.traverse(o=>{if(o.isMesh){o.material=new THREE.MeshStandardMaterial({color:'#c5c0b5',roughness:.9});}});}
-  this.label('DEAR. HAYOUNG',[-3.7,1.124,-3.3],.5,29); // face letter upward
+  this.label('DEAR. HAYOUNG',[-3.7,1.14,-3.3],.5,29); // above the envelope, facing upward
   this.scene.children[this.scene.children.length-1].rotation.x=-Math.PI/2;
   this.placedCarousel=this.get('Carousel').clone(true);this.placedCarousel.name='PaintedCarousel';this.placedCarousel.scale.setScalar(.52);this.placedCarousel.position.set(5.38,1.8,-1.28);this.placedCarousel.visible=false;this.scene.add(this.placedCarousel);
   this.held=new THREE.Group();this.camera.add(this.held);this.scene.add(this.camera);this.heldItems={};this.thirdHeld=new THREE.Group();this.avatar.add(this.thirdHeld);this.thirdHeld.position.set(.28,.84,.18);this.thirdItems={};

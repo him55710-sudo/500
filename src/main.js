@@ -1,6 +1,6 @@
 import './style.css';
 import {initPrologue} from './prologue.js';
-import {cutCardMarkup,revealCutCard,steakPhotoMarkup} from './food-art.js';
+import {cutCardMarkup,revealCutCard,steakPhotoMarkup,beefPhotoCredits} from './food-art.js';
 import './heaven.css';
 import './scene-clarity.css';
 import './transfer.css';
@@ -128,10 +128,36 @@ function closeModal(){
  kitchen?.closeView();
  const old=modalType;modalType=null;lastHit=null;$('#modal-backdrop').hidden=true;if(world){world.active=started;world.keys.clear();}if(started){sound.pause(false);lookControls.resume();updateCaptureHint();}
  if(focusReturn?.isConnected&&focusReturn!==document.body)focusReturn.focus();
+ // Keep the closing click's activation, but allow another dialog to replace it.
+ if(started)queueMicrotask(()=>{if(!modalType)capture();});
 }
 function resume(){closeModal();if(started)capture();}
-function updateCaptureHint(){$('#resume-capture').hidden=!!document.pointerLockElement||lookControls?.freeLooking||!started||!!modalType;}
-async function capture(){if(!started||modalType)return;lookControls.resume();try{await $('#scene').requestPointerLock();}catch{$('#resume-capture').textContent='화면 클릭: 시선 조작 · Tab: 커서 해제';}if(modalType){if(document.pointerLockElement)document.exitPointerLock();return;}world.active=true;updateCaptureHint();}
+let capturePending=false;
+function updateCaptureHint(){
+ const locked=document.pointerLockElement===$('#scene');
+ document.body.classList.toggle('pointer-locked',locked&&!modalType);
+ $('#resume-capture').hidden=locked||!started||!!modalType;
+ $('#resume-capture').textContent='클릭하여 시점 조작 · 마우스 숨기기';
+}
+async function capture(){
+ if(!started||modalType||capturePending||document.pointerLockElement===$('#scene'))return;
+ lookControls.resume();capturePending=true;
+ try{await $('#scene').requestPointerLock();}catch{lookControls.releaseCursor();}
+ finally{capturePending=false;}
+ if(modalType||lookControls.cursorReleased){if(document.pointerLockElement)document.exitPointerLock();updateCaptureHint();return;}
+ world.active=true;updateCaptureHint();
+}
+async function toggleFullscreen(){
+ if(!document.fullscreenEnabled){toast('이 브라우저는 게임 전체화면을 지원하지 않아요. F11을 사용해 주세요.');return;}
+ try{
+  if(document.fullscreenElement)await document.exitFullscreen();
+  else{
+   // Pointer lock must be requested before fullscreen consumes user activation.
+   if(started&&!modalType)void capture();
+   await document.documentElement.requestFullscreen();
+  }
+ }catch{toast('전체화면 버튼을 다시 눌러 주세요.');}
+}
 async function startGame(continuing=false){
  $('#start').disabled=true;$('#continue').disabled=true;$('#loading').hidden=false;
  await sound.start();try{await ensureWorld();}catch(e){errorScreen(e);return;}
@@ -283,7 +309,7 @@ function showCow(){
  if(state.stage<6){toast('부위 이름마다 덮개가 씌워져 있다. 여기에 올릴 무언가가 필요해 보인다.');return;}
  if(state.stage>6){toast('살치살. 100일 홍대에서의 저녁을 기억했다.');return;}
  const cuts=['안심','살치살','등심','채끝','우둔살','갈비'],revealed=new Set();
- showModal('cow','PUZZLE 06 · THE TASTE OF DAY 100','그날, 우리가 먹었던 부위',`<p class="body-copy">“500일은 기억도 못하면서… 100일 기념일은 기억하냐?”<br>고기의 모양과 결을 살펴보자. 이름 덮개를 열고, 같은 칸을 다시 눌러 고기 모형을 놓자.</p><div class="cuts">${cuts.map(cutCardMarkup).join('')}</div><p id="cut-error" class="puzzle-error" role="status"></p><p class="notice">가진 물건 · 고기 모형. 정답이 아니면 다시 다른 부위에 놓을 수 있다.</p><p class="food-image-note">부위별 실제 사진을 참고해 만든 재현 이미지입니다.</p>`);
+ showModal('cow','PUZZLE 06 · THE TASTE OF DAY 100','그날, 우리가 먹었던 부위',`<p class="body-copy">“500일은 기억도 못하면서… 100일 기념일은 기억하냐?”<br>실제 사진 속 고기의 모양과 결을 살펴보자. 이름 덮개를 열고, 같은 칸을 다시 눌러 고기 모형을 놓자.</p><div class="cuts">${cuts.map(cutCardMarkup).join('')}</div><p id="cut-error" class="puzzle-error" role="status"></p><p class="notice">가진 물건 · 고기 모형. 정답이 아니면 다시 다른 부위에 놓을 수 있다.</p>${beefPhotoCredits()}`);
  $$('.cut').forEach(b=>b.onclick=()=>{const cut=b.dataset.cut;if(!revealed.has(cut)){revealed.add(cut);revealCutCard(b,cut);sound.effect('paper');}else{const r=dispatch({type:'place-beef',cut});if(r.ok)resume();else $('#cut-error').textContent=r.message;}});
 }
 function showSteaks(){
@@ -332,7 +358,7 @@ function showSettings(){
  $('#settings-done').onclick=()=>{saveSettings();closeModal();};
 }
 function showPause(){
- showModal('pause','TAKE YOUR TIME','잠시 쉬어 가도 괜찮아',`<p class="body-copy">여기에는 시간 제한이 없다.<br>우리의 기억을 천천히 둘러봐.</p><p class="notice">WASD 이동 · 마우스로 시선 조절 · 1인칭 전용<br>우클릭 드래그로도 시선 조절 · Shift: 빠르게 걷기<br>E: 상호작용 · J: 기억 노트 · H: 힌트 · Tab: 커서 해제/시선 복귀 · Esc: 일시정지<br>방향키로도 시선을 조절할 수 있다. 퍼즐은 마우스와 키보드 Tab/Enter로 조작.</p><div class="modal-actions"><button id="resume" class="primary">기억 속으로 돌아가기</button><button id="settings" class="secondary">소리·연출·개인화 설정</button><button id="restart" class="secondary">처음부터 다시</button></div><p class="notice">진행은 이 브라우저에 자동 저장됩니다.</p>`);
+ showModal('pause','TAKE YOUR TIME','잠시 쉬어 가도 괜찮아',`<p class="body-copy">여기에는 시간 제한이 없다.<br>우리의 기억을 천천히 둘러봐.</p><p class="notice">WASD 이동 · 마우스로 시선 조절 · 1인칭 전용<br>우클릭 드래그로도 시선 조절 · Shift: 빠르게 걷기<br>E: 상호작용 · J: 기억 노트 · H: 힌트 · F: 전체화면 · Tab: 커서 해제/시선 복귀 · Esc: 일시정지<br>방향키로도 시선을 조절할 수 있다. 퍼즐은 마우스와 키보드 Tab/Enter로 조작.</p><div class="modal-actions"><button id="resume" class="primary">기억 속으로 돌아가기</button><button id="settings" class="secondary">소리·연출·개인화 설정</button><button id="restart" class="secondary">처음부터 다시</button></div><p class="notice">진행은 이 브라우저에 자동 저장됩니다.</p>`);
  $('#resume').onclick=resume;$('#settings').onclick=showSettings;$('#restart').onclick=()=>{showModal('restart','A NEW BEGINNING','처음부터 다시 시작할까?',`<p class="body-copy">현재 방의 진행 기록을 지우고 편지부터 다시 시작합니다.</p><div class="modal-actions"><button id="confirm-restart" class="primary">처음부터 시작</button><button id="cancel-restart" class="secondary">취소</button></div>`);$('#cancel-restart').onclick=showPause;$('#confirm-restart').onclick=()=>location.assign(location.pathname); // actual reset below
   $('#confirm-restart').onclick=()=>{try{localStorage.removeItem(SAVE_KEY);}catch{}location.reload();};};
 }
@@ -341,24 +367,30 @@ function showEnding(){
 }
 $('#close-modal').onclick=()=>{if(modalType==='ending'){$('#explore-again').click();}else closeModal();};$('#start').onclick=()=>startGame(false);$('#continue').onclick=()=>startGame(true);$('#menu-btn').onclick=showPause;$('#hint-btn').onclick=showHint;$('#journal-btn').onclick=showJournal;$('#intro-settings').onclick=showSettings;$('#resume-capture').onclick=capture;
 $('#scene').addEventListener('click',()=>{if(!document.pointerLockElement&&started&&!modalType)capture();});$('#scene').addEventListener('contextmenu',e=>e.preventDefault());
+$('#fullscreen-btn').onclick=toggleFullscreen;
+document.addEventListener('fullscreenchange',()=>{
+ $('#fullscreen-btn').setAttribute('aria-label',document.fullscreenElement?'전체화면 종료 (F)':'전체화면 (F)');
+ $('#fullscreen-btn').setAttribute('aria-pressed',String(!!document.fullscreenElement));
+ updateCaptureHint();
+});
 lookControls=createLookControls($('#scene'),{
  canLook:()=>started&&!modalType&&world?.active,
- canFreeLook:()=>started&&!modalType&&world?.active&&!world.thirdPerson,
  rotate:(dx,dy)=>{const gain=lookRadiansPerPixel(world.camera.getEffectiveFOV(),$('#scene').clientHeight,settings.sensitivity);world.yaw-=dx*gain;world.pitch=Math.max(-1.32,Math.min(1.25,world.pitch-dy*gain));},
  onDrag:active=>{updateCaptureHint();if(active)$('#resume-capture').hidden=true;}
 });
-document.addEventListener('pointerlockchange',updateCaptureHint);
-document.addEventListener('pointerlockerror',()=>{updateCaptureHint();$('#resume-capture').textContent='화면 클릭: 시선 조작 · Tab: 커서 해제';});
+document.addEventListener('pointerlockchange',()=>{if(!document.pointerLockElement){world?.keys.clear();lookControls.cancel();}updateCaptureHint();});
+document.addEventListener('pointerlockerror',()=>{lookControls.releaseCursor();updateCaptureHint();});
 addEventListener('blur',()=>{world?.keys.clear();lookControls.cancel();if(started&&!modalType)showPause();});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){world?.keys.clear();if(started&&!modalType)showPause();}});
 document.addEventListener('keydown',e=>{
+ if(e.code==='KeyF'&&!e.repeat&&!/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)){e.preventDefault();toggleFullscreen();return;}
  if(modalType){
   if(e.code==='Escape'){e.preventDefault();closeModal();return;}
   if(e.key==='Tab'){const focusables=$$('#modal button:not([disabled]),#modal input,#modal select,#modal textarea,#modal summary').filter(el=>el.offsetParent!==null);const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
   return;
  }
  if(!started)return;
- if(e.code==='Tab'){e.preventDefault();if(document.pointerLockElement||lookControls.freeLooking){lookControls.releaseCursor();if(document.pointerLockElement)document.exitPointerLock();updateCaptureHint();}else capture();return;}
+ if(e.code==='Tab'){e.preventDefault();if(document.pointerLockElement){lookControls.releaseCursor();world.keys.clear();document.exitPointerLock();updateCaptureHint();}else capture();return;}
  if(['KeyW','KeyA','KeyS','KeyD','ShiftLeft','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Space'].includes(e.code)){e.preventDefault();world.keys.add(e.code);}
  if(e.repeat)return;
  if(e.code==='KeyC'&&world.mode==='journey')journey.camera();
@@ -406,4 +438,6 @@ function installTestHooks(){
  // Test-only navigation: never changes puzzle state; browser tests still interact with the real UI.
  if(import.meta.env.DEV&&new URLSearchParams(location.search).has('e2e'))window.__roomTest={focus:id=>world.focus(id),read:()=>structuredClone(state),view:()=>({junction:world.junctionRuntime?{phase:state.junction.phase,redBeam:world.junctionRuntime.beams[0].visible,blueBeam:world.junctionRuntime.beams[1].visible,yellowBeam:world.junctionRuntime.beams[2].visible,npc:world.junctionRuntime.npc.position.toArray(),npcFall:world.junctionRuntime.npc.rotation.z,ipadVisible:world.junctionRuntime.ipad.visible,hearts:world.junctionRuntime.hearts.map(h=>h.visible)}:null,bakery:world.bakeryRuntime?{safeAngle:world.bakeryRuntime.safe.rotation.y,drawerZ:world.bakeryRuntime.drawer.position.z,gateAngle:world.bakeryRuntime.gate.rotation.y,cakeVisible:world.bakeryRuntime.cake.visible,letterVisible:world.bakeryRuntime.letter.visible}:null,mode:world.mode||'salon',journey:world.journeyRuntime?{zone:world.journeyRuntime.state.zone,transition:!!world.journeyRuntime.transition,cameraOn:world.journeyRuntime.cameraOn,scanAligned:world.journeyRuntime.scanAligned(),npc:world.journeyRuntime.npc?.position.toArray(),flight:world.journeyRuntime.state.flight}:null,rescue:world.rescueRuntime?{transition:!!world.rescueRuntime.transition,doors:world.rescueRuntime.doors.map(d=>d.rotation.y),room:world.rescueRuntime.state.room,npc:world.rescueRuntime.people[3].position.toArray(),cabinet:world.get('CabinetDoor').rotation.y,coat:world.rescueRuntime.people[1].children.filter(c=>c.name.startsWith('Coat')).map(c=>c.visible)}:null,doorAngle:world.doorHinge?.rotation.y,rideProgress:world.ride?.progress,ridePhase:world.ride?.phase,thirdPerson:world.thirdPerson,position:world.player.toArray(),camera:world.camera.position.toArray(),drawCalls:world.renderer.info.render.calls,triangles:world.renderer.info.render.triangles,pixelRatio:world.renderer.getPixelRatio(),quality:world.quality,lights:world.scene.children.filter(o=>o.isLight).length}),assets:()=>({safeVisible:world.memorySafe?.visible,safeAngle:world.safeHinge?.rotation.y,photoSources:memoryPhotos,violin:world.get('ViolinKeyring')?.visible,carousel:world.get('Carousel')?.visible,held:Object.fromEntries(Object.entries(world.heldItems).map(([k,v])=>[k,v.visible])),audio:sound.ctx?.state,music:sound.musicActive}),setPosition:(x,z)=>{world.player.set(x,0,z);},look:(x,y,z)=>world.lookAtPoint([x,y,z]),targets:()=>world.targets.map(t=>({id:t.userData.id,p:t.position.toArray()})),advanceRide:seconds=>{if(world.mode==='coaster')for(let t=0;t<seconds;t+=1/60){if(!world.ride)break;world.ride.update(1/60);}},input:()=>({yaw:world.yaw,pitch:world.pitch,dragging:lookControls.dragging,quaternion:world.camera.quaternion.toArray()}),ready:true};
 }
+// Keep scene inspection unavailable in the production build.
+if(import.meta.env.DEV&&new URLSearchParams(location.search).has('e2e'))Object.defineProperty(window,'__roomScene',{get:()=>world?.scene});
 addEventListener('beforeunload',()=>{if(started)save();});

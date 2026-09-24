@@ -3,57 +3,65 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import {Quaternion,Euler} from 'three';
 import {lookRadiansPerPixel} from '../src/look-controls.js';
-const gain=lookRadiansPerPixel(65,900);
 const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
 const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[],checks=[];
 page.on('pageerror',e=>errors.push(e.message));
 const input=()=>page.evaluate(()=>window.__roomTest.input());
-async function frame(){await page.evaluate(()=>new Promise(requestAnimationFrame));}
+const frame=()=>page.evaluate(()=>new Promise(requestAnimationFrame));
+// Chromium rate-limits rapid reacquisition. Space gestures as a person would.
+const locked=async()=>{await page.waitForFunction(()=>document.pointerLockElement?.id==='scene');await page.waitForTimeout(2100);};
 function matchesCamera(value){
  const q=new Quaternion().fromArray(value.quaternion),expected=new Quaternion().setFromEuler(new Euler(value.pitch,value.yaw,0,'YXZ'));
- assert.ok(q.angleTo(expected)<.0001,'Camera must use current input without trailing interpolation');
+ assert.ok(q.angleTo(expected)<.0001,'Camera must render current input without trailing interpolation');
 }
 try{
  await fs.mkdir('test-results/design',{recursive:true});
- await page.goto(new URL('?e2e=1',process.env.GAME_BASE_URL||'http://127.0.0.1:5179/').href);await page.locator('#start').focus();await page.keyboard.press('Enter');
- await page.waitForFunction(()=>window.__roomTest?.ready);
- await page.evaluate(()=>document.exitPointerLock());await page.waitForFunction(()=>!document.pointerLockElement);
- await page.mouse.move(750,450);const free=await input();
- await page.mouse.move(900,470,{steps:5});await frame();const freeMoved=await input();
- assert.equal(freeMoved.dragging,false);assert.ok(Math.abs(freeMoved.yaw-free.yaw+150*gain)<.00001);assert.ok(Math.abs(freeMoved.pitch-free.pitch+20*gain)<.00001);matchesCamera(freeMoved);
- checks.push('First person follows mouse movement without a held button or pointer lock');
- await page.keyboard.press('Tab');const cursor=await input();await page.mouse.move(750,450,{steps:5});await frame();assert.equal((await input()).yaw,cursor.yaw);
- checks.push('Tab releases the cursor without moving the first-person camera');
- await page.mouse.move(750,450);const before=await input();await page.mouse.down({button:'right'});
- await page.mouse.move(1050,470,{steps:5});await frame();const moved=await input();
- assert.ok(moved.dragging);assert.ok(Math.abs(moved.yaw-before.yaw+300*gain)<.00001);assert.ok(Math.abs(moved.pitch-before.pitch+20*gain)<.00001);matchesCamera(moved);
- checks.push('Right drag applies exact displacement once, visible in the next frame');
- // Cross an interactive HUD element while holding the pointer; capture keeps the drag.
- await page.mouse.move(1388,46,{steps:5});await frame();assert.ok((await input()).dragging);matchesCamera(await input());
- await page.mouse.up({button:'right'});assert.equal((await input()).dragging,false);const stopped=await input();
- await page.mouse.move(600,420);await frame();assert.equal((await input()).yaw,stopped.yaw);
- checks.push('Drag continues over HUD and stops immediately when released');
- await page.mouse.down({button:'right'});await page.mouse.move(630,420);await page.keyboard.press('KeyJ');
- assert.equal((await input()).dragging,false);const modal=await input();await page.mouse.move(700,500);await page.mouse.up({button:'right'});assert.equal((await input()).yaw,modal.yaw);
- await page.locator('#close-modal').click();await page.mouse.move(760,460);const resumed=await input();await page.mouse.down({button:'right'});await page.mouse.move(800,460);await frame();
- assert.ok((await input()).dragging);assert.ok(Math.abs((await input()).yaw-resumed.yaw+40*gain)<.00001);await page.mouse.up({button:'right'});
- checks.push('Opening a modal cancels dragging; the next drag starts with fresh coordinates');
- await page.mouse.down({button:'right'});await page.evaluate(()=>dispatchEvent(new Event('blur')));assert.equal((await input()).dragging,false);await page.mouse.up({button:'right'});await page.locator('#close-modal').click();
- checks.push('Losing window focus cannot leave rotation stuck');
- await page.locator('#scene').click({position:{x:750,y:420}});await page.waitForFunction(()=>document.pointerLockElement?.id==='scene');
- const locked=await input();await page.mouse.move(800,430);await frame();const lockMoved=await input();assert.notEqual(lockMoved.yaw,locked.yaw);matchesCamera(lockMoved);
- await page.evaluate(()=>document.exitPointerLock());await frame();await page.mouse.move(750,450);await page.mouse.down({button:'right'});await page.mouse.move(775,450);await frame();assert.ok((await input()).dragging);matchesCamera(await input());await page.mouse.up({button:'right'});
- checks.push('Pointer lock and right drag switch cleanly without double-applying motion');
- await page.keyboard.press('KeyV');assert.equal(await page.evaluate(()=>window.__roomTest.view().thirdPerson),false);await page.mouse.wheel(0,500);await frame();assert.equal(await page.evaluate(()=>window.__roomTest.view().thirdPerson),false);
- await page.mouse.move(880,460);const fixedFirst=await input();await page.mouse.move(920,460);await frame();assert.ok(Math.abs((await input()).yaw-fixedFirst.yaw+40*gain)<.00001);matchesCamera(await input());
- checks.push('V and wheel retain first person; mouse look continues without switching modes');
- await page.evaluate(()=>window.__roomTest.focus('letter'));await frame();await page.keyboard.press('KeyE');
- const typography=await page.locator('.letter-paper').evaluate(e=>{const s=getComputedStyle(e);return {font:s.fontFamily,color:s.color,background:s.backgroundColor,size:s.fontSize};});
- assert.ok(typography.font.includes('Noto Sans KR'));assert.equal(typography.background,'rgb(255, 255, 255)');
- await page.screenshot({path:'test-results/design/letter-final.png'});
- await page.setViewportSize({width:390,height:844});await frame();
- assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
- assert.ok(await page.locator('#letter-close').isVisible());await page.screenshot({path:'test-results/design/letter-mobile.png'});
- checks.push('Letter uses the new typography and remains usable on a narrow screen');
- assert.deepEqual(errors,[]);await fs.writeFile('test-results/design/controls-report.json',JSON.stringify({ok:true,checks,typography,errors},null,2));console.log(checks.join('\n'));
-}catch(e){await page.screenshot({path:'test-results/design/controls-failure.png'});throw e;}finally{await browser.close();}
+ await page.goto(new URL('?e2e=1',process.env.GAME_BASE_URL||'http://127.0.0.1:5179/').href);
+ await page.locator('#start').click();await page.waitForFunction(()=>window.__roomTest?.ready);
+ if(!await page.evaluate(()=>!!document.pointerLockElement))await page.locator('#resume-capture').click();
+ await locked();assert.equal(await page.locator('#scene').evaluate(e=>getComputedStyle(e).cursor),'none');
+ const before=await input();await page.mouse.move(800,420);await frame();assert.notEqual((await input()).yaw,before.yaw);matchesCamera(await input());
+ checks.push('Playing locks and hides the cursor; camera responds on the next frame');
+
+ await page.keyboard.press('Tab');await page.waitForFunction(()=>!document.pointerLockElement);
+ const free=await input();await page.mouse.move(300,400);await page.mouse.move(800,460);await frame();assert.equal((await input()).yaw,free.yaw);
+ assert.ok(await page.locator('#resume-capture').isVisible());
+ const gain=lookRadiansPerPixel(65,900);await page.mouse.down({button:'right'});await page.mouse.move(950,480,{steps:5});await frame();const dragged=await input();
+ assert.ok(dragged.dragging);assert.ok(Math.abs(dragged.yaw-free.yaw+150*gain)<.00001);matchesCamera(dragged);
+ await page.mouse.up({button:'right'});assert.equal((await input()).dragging,false);
+ checks.push('Released cursor does not steer; right drag remains an exact, button-held fallback');
+
+ await page.keyboard.press('Tab');await locked();await page.keyboard.press('KeyJ');await page.locator('#modal').waitFor({state:'visible'});
+ await page.waitForFunction(()=>!document.pointerLockElement);assert.notEqual(await page.locator('#close-modal').evaluate(e=>getComputedStyle(e).cursor),'none');
+ const modal=await input();await page.mouse.move(600,500);await frame();assert.equal((await input()).yaw,modal.yaw);
+ await page.locator('#close-modal').click();await locked();assert.equal(await page.locator('#scene').evaluate(e=>getComputedStyle(e).cursor),'none');
+ checks.push('Dialogs release the cursor; closing a dialog restores pointer lock automatically');
+
+ await page.keyboard.press('Tab');await page.waitForFunction(()=>!document.pointerLockElement);
+ await page.keyboard.press('KeyF');await page.waitForFunction(()=>!!document.fullscreenElement);await locked();
+ assert.equal(await page.locator('#scene').evaluate(e=>getComputedStyle(e).cursor),'none');
+ const start=await input();await page.mouse.move(750,400);await page.mouse.move(900,480);await page.waitForFunction(yaw=>window.__roomTest.input().yaw!==yaw,start.yaw);await frame();matchesCamera(await input());
+ const largeBefore=await input();const largeGain=await page.locator('#scene').evaluate(e=>2*Math.tan(65*Math.PI/360)/e.clientHeight);
+ await page.evaluate(()=>document.dispatchEvent(new MouseEvent('mousemove',{movementX:2400,movementY:0})));await frame();
+ assert.ok(Math.abs((await input()).yaw-largeBefore.yaw+2400*largeGain)<.00001,'Locked deltas are not clamped to the viewport');matchesCamera(await input());
+ await page.keyboard.press('KeyH');await page.locator('#modal').waitFor({state:'visible'});await page.waitForFunction(()=>!document.pointerLockElement);
+ assert.ok(await page.evaluate(()=>!!document.fullscreenElement));await page.locator('#close-modal').click();await locked();
+ await page.screenshot({path:'test-results/design/fullscreen-pointer-lock.png'});
+ await page.keyboard.press('KeyF');await page.waitForFunction(()=>!document.fullscreenElement);
+ checks.push('F enters fullscreen and locks in one gesture; large motion and modal resume work in fullscreen');
+
+ await page.keyboard.press('KeyJ');await page.locator('#modal').waitFor({state:'visible'});
+ await page.evaluate(()=>{const canvas=document.querySelector('#scene');window.originalLock=canvas.requestPointerLock;canvas.requestPointerLock=()=>Promise.reject(new DOMException('Denied by test','NotAllowedError'));});
+ await page.locator('#close-modal').click();await page.waitForFunction(()=>!document.pointerLockElement&&!document.querySelector('#resume-capture').hidden);
+ const failed=await input();await page.mouse.move(200,200);await frame();assert.equal((await input()).yaw,failed.yaw);
+ await page.evaluate(()=>{document.querySelector('#scene').requestPointerLock=window.originalLock;delete window.originalLock;});
+ await page.locator('#resume-capture').click();await locked();
+ checks.push('A rejected lock keeps the cursor available and offers a working retry');
+
+ await page.evaluate(()=>dispatchEvent(new Event('blur')));await page.locator('#modal').waitFor({state:'visible'});await page.waitForFunction(()=>!document.pointerLockElement);
+ assert.equal((await input()).dragging,false);await page.locator('#resume').click();await locked();
+ checks.push('Losing focus releases input; resume restores capture');
+ assert.deepEqual(errors,[]);console.log(checks.join('\n'));
+}finally{
+ await fs.writeFile('test-results/design/look-controls-report.json',JSON.stringify({checks,errors},null,2));await browser.close();
+}

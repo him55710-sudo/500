@@ -3,14 +3,14 @@
 <canvas id="scene" aria-label="500일 기념 방탈출 3D 공간"></canvas>
 <div id="vignette"></div><div id="flash"></div>
 <div id="hud" hidden>
- <header><div class="wordmark">500<span>오백 번째 기억</span></div><div class="chapter"><span class="eyebrow">CHAPTER 01 / 05</span><span>삐친 현수의 비밀 음악실</span></div><button id="menu-btn" class="icon-button" aria-label="일시정지 및 설정">Ⅱ</button></header>
+ <header><div class="wordmark">500<span>오백 번째 기억</span></div><div class="chapter"><span class="eyebrow">CHAPTER 01 / 05</span><span>삐친 현수의 비밀 음악실</span></div><button id="fullscreen-btn" class="icon-button" aria-label="전체화면 (F)" aria-pressed="false" title="전체화면 (F)">⛶</button><button id="menu-btn" class="icon-button" aria-label="일시정지 및 설정">Ⅱ</button></header>
  <div class="objective"><span class="eyebrow" id="objective-label">첫 번째 기억</span><p id="objective-text"></p><div id="progress" aria-label="문제 진행"></div></div>
  <div id="crosshair" aria-hidden="true"><i></i><i></i></div>
  <div id="prompt" hidden><span class="key">E</span><div><b id="target-label"></b><small id="target-desc"></small></div></div>
  <div id="toast" role="status" aria-live="polite"></div>
  <div id="subtitle" role="status" aria-live="polite"></div>
  <footer><div class="profile"><span class="profile-dot"></span><div>정하영 <small>23세 · 오늘의 주인공</small></div></div><div class="inventory" id="inventory"></div><div class="tools"><button id="journal-btn">J <span>기억 노트</span></button><button id="hint-btn">H <span>현수에게 힌트</span></button></div></footer>
- <div class="controls-hint">W A S D 이동 <span>·</span> 마우스 시선 <span>·</span> E 상호작용 <span>·</span> Tab 커서 <span>·</span> Esc 메뉴</div>
+ <div class="controls-hint">W A S D 이동 <span>·</span> 마우스 시선 <span>·</span> E 상호작용 <span>·</span> F 전체화면 <span>·</span> Tab 커서 <span>·</span> Esc 메뉴</div>
 </div>
 <section id="loading" class="fullscreen" hidden><span class="eyebrow">HYUNSU & HAYOUNG</span><h1>오백 번째 기억</h1><p id="loading-label">기억 보관실을 준비하고 있어요…</p><div class="load-track"><i id="load-progress"></i></div></section>
 <section id="welcome" class="fullscreen scroll-story" aria-labelledby="invitation-title" tabindex="0">

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {readableSign,hideModelSigns} from './readable-signs.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {MeshoptDecoder} from 'meshoptimizer/decoder';
 import {polishRoomMaterials} from './render-look.js';
@@ -13,6 +14,11 @@ export async function enterJourney(world,state){
  const scene=new THREE.Scene();scene.environment=world.scene.environment;scene.environmentIntensity=.6;scene.background=new THREE.Color('#1e1017');scene.fog=new THREE.Fog('#1e1017',22,65);
  world.scene=scene;world.model=asset.scene;scene.add(asset.scene,world.camera,world.avatar);world.mode='journey-loading';world.rescueRuntime=null;world.kitchenRuntime=null;world.state={stage:0,inventory:[]};world.targets=[];world.keys.clear();world.hit=null;world.ride=null;world.pendingAnimations=[];world.avatarPose='standing';world.camera.up.set(0,1,0);world.camera.far=110;world.camera.updateProjectionMatrix();world.renderer.toneMappingExposure=.95;world.renderer.shadowMap.enabled=true;
  const get=n=>asset.scene.getObjectByName(n);
+ hideModelSigns(asset.scene,n=>n.startsWith('CabinSeatNumbers_'));
+ for(let row=1;row<=3;row++)for(const side of ['A','B']){
+  // Put seat numbers above the front of the backrest, facing the cabin aisle.
+  readableSign(scene,{id:`seat-number-${row}${side}`,lines:[`${row}${side}`],position:[side==='A'?22.28:25.72,7.85,4-(row-1)*3.8],width:.38,height:.24,rotation:side==='A'?Math.PI/2:-Math.PI/2});
+ }
  asset.scene.traverse(o=>{if(/^(Reference_|FoodPreview_|SourceZagee|SourceKey)/.test(o.name))o.visible=false;});
  const hemi=new THREE.HemisphereLight('#ffffff','#34465a',1);scene.add(hemi);
  const sun=new THREE.DirectionalLight('#fff9f3',2.2);sun.position.set(0,6,4);sun.target.position.set(0,0,-3);scene.add(sun,sun.target);
@@ -32,7 +38,7 @@ export async function enterJourney(world,state){
  const lockScreen=world.plane(lockedMap,1.64,.99,[.7,1.65,-5.38]);
  const phoneMap=texture(256,480,c=>{c.fillStyle='#b4cbdf';c.fillRect(0,0,256,480);c.fillStyle='#ffeb52';c.fillRect(52,105,186,82);c.fillStyle='#fff';c.fillRect(16,220,225,60);c.fillStyle='#172c38';c.font='20px sans-serif';c.fillText('5.16 어디 갈까?',67,149);c.font='17px sans-serif';c.fillText('222.44.444.66.1',25,257);});
  const phoneFace=world.plane(phoneMap,.27,.5,[-1.1,1.023,-4.95]);phoneFace.rotation.x=-Math.PI/2;
- world.label('현수의 감옥',[-5,3.96,-3.88],2.7,38,'#ebc687');world.label('작은 계단 ↑ 2F',[6.1,1.7,5.72],2,34,'#efddbb');
+ world.label('현수의 감옥',[-5,3.96,-3.88],2.7,38,'#ebc687');world.label('작은 계단 ↑ 2F',[6.1,1.7,5.84],2,34,'#efddbb');
  const targetMat=new THREE.MeshBasicMaterial({visible:false});
  function target(id,name,desc,p,size,zone,offset=[0,0,1.6]){const t=new THREE.Mesh(new THREE.BoxGeometry(...size),targetMat);t.position.set(...p);t.userData={id,name,desc,stage:-1,zone,offset};scene.add(t);world.targets.push(t);return t;}
  target('journey-phone','책상 위 휴대폰','현수와 하영의 카톡 대화',[-1.1,1.06,-4.95],[.6,.3,.8],'hell');

@@ -1,4 +1,6 @@
 import * as THREE from 'three';
+import {readableSign,hideModelSigns} from './readable-signs.js';
+import bakeryData from './bakery-data.json' with {type:'json'};
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {MeshoptDecoder} from 'meshoptimizer/decoder';
 import layout from './bakery-layout.json' with {type:'json'};
@@ -9,6 +11,16 @@ export async function enterBakery(world,state){
  world.scene=scene;world.model=asset.scene;scene.add(asset.scene,world.camera,world.avatar);world.mode='bakery-loading';world.state={stage:0,inventory:[]};world.targets=[];world.keys.clear();world.hit=null;world.ride=null;world.pendingAnimations=[];world.avatarPose='standing';world.camera.up.set(0,1,0);world.camera.far=55;world.camera.updateProjectionMatrix();world.renderer.toneMappingExposure=1.05;
  world.journeyRuntime=null;world.rescueRuntime=null;world.kitchenRuntime=null;world.arrivalRuntime=null;
  const get=n=>asset.scene.getObjectByName(n),safe=get('BakerySafeHinge'),cake=get('MangoSiruCake'),letter=get('BakeryLetterFragment'),drawer=get('BakeryCashDrawer'),keyItem=get('BakeryCakeKey'),usb=get('BakeryCakeUSB'),gate=get('Gate_01_to_02_Pivot');
+ // Old text was inside trays, on the wrong side of the island, or underneath
+ // a newer price plate. Keep all clue boards on the two reachable aisle faces.
+ hideModelSigns(asset.scene,n=>/^(Labels \/|Unit price plates \/|Order quantity cards \/|성심당\s+\/\s+0[1-6]|개당 |[3467]개|갓 구운 빵|우리의 다음 장소|01  대전|02  POSTECH|03  PC방|JUNCTION KOREA 2026|튀김소보로|튀소구마|판타롱부추빵|명란바게트|보문산메아리)/.test(n));
+ for(const [id,col,back]of [['soboro',0,false],['guma',1,false],['buchu',2,false],['baguette',0,true],['meari',1,true],['soboro',2,true]]){
+  const p=bakeryData.products.find(p=>p.id===id);
+  readableSign(scene,{id:`bakery-price-sign-${id}-${back?'back':'front'}`,lines:[p.name,`개당 ${p.price.toLocaleString('ko-KR')}원`],position:[-3.45+col*1.6,1.42,back?-.91:2.23],width:1.32,height:.42,rotation:back?Math.PI:0});
+ }
+ readableSign(scene,{id:'bakery-order-sign',lines:['계산을 기다리는 빵',...bakeryData.products.map(p=>`${p.name} · ${p.quantity}개`)],position:[4,1.82,4.58],width:2.15,height:1.06,fontSize:59});
+ readableSign(scene,{id:'bakery-rack-sign',lines:['갓 구운 빵'],position:[-3.7,2.72,-4.92],width:2.2,height:.32});
+ readableSign(scene,{id:'bakery-route-sign',lines:['다음 기억 · POSTECH','JUNCTION KOREA 2026'],position:[6.02,3.62,-6.10],width:2.45,height:.58});
  if(!safe||!cake||!letter)throw new Error('성심당 퍼즐 모델을 찾을 수 없습니다.');
  asset.scene.traverse(o=>{if(o.isMesh){o.castShadow=!o.name.startsWith('Removable ceiling');o.receiveShadow=true;}});
  scene.add(new THREE.HemisphereLight('#fff8e9','#766f57',1.3));
@@ -26,7 +38,7 @@ export async function enterBakery(world,state){
  const cakeTarget=target('bakery-cake','망고시루 케이크','열린 금고에서 케이크 꺼내기',layout.cake,[.68,.50,.65],[0,0,1.8]);
  target('bakery-next','포스텍으로 향하는 문','두 번째 기억의 장소',layout.gate,[2.03,2.7,.2],[0,0,1.65]);
  for(const [id,name,x,z]of [['soboro','튀김소보로',-2.25,2.13],['guma','튀소구마',-.65,2.13],['buchu','판타롱부추빵',.95,2.13],['baguette','명란바게트',-2.25,.50],['meari','보문산메아리',-.65,.50]]){
-  target('bakery-price-'+id,name+' 가격표','개당 가격 확인',[x+layout.displayShift[0],1.29,z],[.85,.32,.10],z<1?[0,0,-1.8]:[0,0,1.35]);
+  target('bakery-price-'+id,name+' 가격표','개당 가격 확인',[x+layout.displayShift[0],1.42,z<1?-.91:2.23],[1.32,.42,.10],z<1?[0,0,-1.4]:[0,0,1.35]);
  }
  world.colliders=layout.colliders;
  world.wallBoxes=[new THREE.Box3(V(-8.4,0,-7),V(8.4,4.3,-6.552)),new THREE.Box3(V(-8.4,0,-7),V(-7.98,4.3,7)),new THREE.Box3(V(7.98,0,-7),V(8.4,4.3,7)),new THREE.Box3(V(-8.4,0,6.72),V(8.4,4.3,7.14))];

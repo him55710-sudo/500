@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {readableSign,hideModelSigns} from './readable-signs.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {MeshoptDecoder} from 'meshoptimizer/decoder';
 import {installHyunsu} from './hyunsu-character.js';
@@ -20,6 +21,9 @@ export async function enterJunction(world,state){
  const scene=new THREE.Scene();scene.background=new THREE.Color('#090310');scene.environment=world.scene.environment;scene.environmentIntensity=.14;world.scene=scene;world.model=asset.scene;scene.add(asset.scene,world.camera,world.avatar);world.mode='junction-loading';world.state={stage:0,inventory:[]};world.targets=[];world.keys.clear();world.hit=null;world.ride=null;world.pendingAnimations=[];world.avatarPose='standing';world.camera.up.set(0,1,0);world.camera.far=90;world.camera.updateProjectionMatrix();world.renderer.toneMappingExposure=.96;world.bakeryRuntime=null;world.journeyRuntime=null;world.rescueRuntime=null;world.kitchenRuntime=null;world.arrivalRuntime=null;
  world.held.visible=false;for(const a of Object.values(world.heldItems))a.visible=false;
  const get=n=>asset.scene.getObjectByName(n),coat=get('RewardCoat'),ipad=get('IPad'),envelope=get('Envelope');
+ hideModelSigns(asset.scene,n=>n.startsWith('무대 방향')||n.startsWith('02 / BLUE'));
+ readableSign(scene,{id:'maze-stage-direction',lines:['무대 방향 ↑ · 12시'],position:[0,2.5,43.8],width:2.7,height:.42,rotation:Math.PI});
+ readableSign(scene,{id:'blue-console-heading',lines:['02 / BLUE'],position:at('blue',[6.8,2.6,-3.2]),width:1.4,height:.3,color:'#a5d6ff'});
  for(const n of ['RedScreen','BlueScreen','SignalRed','SignalYellow','SignalBlue','Minion_0','Minion_1','Minion_2','JunctionHyunsu'])if(!get(n))throw new Error('강당 오브젝트 누락: '+n);
  asset.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
  const [npc]=await installHyunsu(asset.scene,['JunctionHyunsu']);npc.position.set(2.3,0,-7.7);

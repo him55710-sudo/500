@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {readableSign,hideModelSigns} from './readable-signs.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {MeshoptDecoder} from 'meshoptimizer/decoder';
 import {polishRoomMaterials} from './render-look.js';
@@ -23,7 +24,11 @@ export async function enterRescue(world,state=rescueInitial()){
  for(const p of [...people,get('ShopAssistant')]){if(part(p,'Head'))part(p,'Head').visible=false;if(people.includes(p))for(const name of ['Coat','Knit','Sleeve-1','Sleeve1'])if(part(p,name))part(p,name).visible=false;}
  get('Duvet')?.traverse(o=>{if(!o.isMesh)return;o.material=o.material.clone();o.material.color.set(o.material.name==='Hospital sage'?'#e5edf3':'#b4d0d5');o.material.roughness=.95;});
  const loader=new THREE.TextureLoader();const [map,photo]=await Promise.all(['/assets/rescue/world-map.svg','/assets/rescue/restaurant.jpg'].map(p=>loader.loadAsync(p)));for(const t of [map,photo]){t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;}
- const atlas=world.plane(map,7.5,3.75,[24,2.48,-4.52]);atlas.material=new THREE.MeshBasicMaterial({map});
+ const atlasSize={width:6,height:3,y:2.12};
+ const atlas=world.plane(map,atlasSize.width,atlasSize.height,[24,atlasSize.y,-4.50]);atlas.material.dispose();atlas.material=new THREE.MeshBasicMaterial({map,toneMapped:false});
+ hideModelSigns(asset.scene,n=>/^(AtlasTitle_|BoutiqueSubtitle_|NaturalEarth_WorldAtlas)/.test(n));
+ readableSign(scene,{id:'atlas-heading',lines:['03 · 어디에서 함께 먹을까?'],position:[24,3.86,-4.48],width:5.6,height:.35});
+ readableSign(scene,{id:'boutique-heading',lines:['THE WINTER EDIT'],position:[15,3.24,-4.72],width:2.5,height:.25});
  const restaurant=world.plane(photo,2.8,1.86,[28.5,2.4,-4.8]);restaurant.visible=state.fed;
  const poster=await loader.loadAsync('/assets/rescue/polo-navy.jpg');poster.colorSpace=THREE.SRGBColorSpace;world.plane(poster,1.0,1.25,[16.8,2.5,-4.78]);
  const coatPhoto=await loader.loadAsync('/assets/rescue/tomboy-coat.jpg');coatPhoto.colorSpace=THREE.SRGBColorSpace;world.plane(coatPhoto,1,1.25,[14.8,2.5,-4.78]);
@@ -51,7 +56,7 @@ export async function enterRescue(world,state=rescueInitial()){
  const rt={world,garments,regions,usMapSvg,state,people,doors,transition:null,emotion:0,elapsed:0,medicineFlight:null,paymentMotion:0,
   place(room){const cx=room===4?47:room*12;world.player.set(room===0?0:room===4?46:cx-3.9,0,room===0?3.4:room===4?2.8:2.8);world.lookAtPoint(room===0?[-1,1.6,-4]:room===1?[12,1.5,-1]:room===2?[24,2.2,-4]:room===4?[46,2,-4]:[cx+4,1.5,1]);sun.position.set(cx,7,3);sun.target.position.set(cx,0,-1);world.renderer.shadowMap.needsUpdate=true;world.toggleView(false);if(room===4){people[3].position.set(47.4,0,-1.1);people[3].rotation.set(0,0,0);for(const sign of [-1,1]){const arm=part(people[3],'Arm'+sign);if(arm){arm.rotation.set(0,0,0);arm.scale.setScalar(1);}}}},
   sync(s){const old=this.state;if(s.room!==old.room){this.transition={from:old.room,to:s.room,t:0,start:world.player.clone()};world.keys.clear();world.active=false;world.yaw=-Math.PI/2;world.pitch=-.05;}if(s.healed&&!old.healed)this.medicineFlight=0;if(s.paid.length&&!old.paid.length)this.paymentMotion=2;if((s.healed&&!old.healed)||(s.warmed&&!old.warmed)||(s.fed&&!old.fed))this.emotion=2.8;this.state=s;thought.visible=s.room===2&&!s.fed;restaurant.visible=s.fed;get('Medicine').visible=!s.medicine&&!s.healed;for(const p of [people[1],people[2],people[3]])for(const name of ['Coat','Knit','Sleeve-1','Sleeve1'])if(part(p,name))part(p,name).visible=s.warmed;get('ShoppingBag').visible=s.paid.length===2&&!s.warmed;
-   coldLabel.visible=!s.warmed;warmLabel.visible=s.warmed;for(const t of world.targets){t.visible=t.userData.room===s.room&&!(t.userData.id==='rescue-hand'&&s.holding);if(t.userData.id==='rescue-cold'){t.userData.name=s.warmed?'따뜻해진 현수':'덜덜 떠는 현수';t.userData.desc=s.warmed?'고마워, 하영아 ♡':'계산한 옷 입혀 주기';}}for(const [c,p]of Object.entries(pins)){const pin=s.pins[c];p.visible=!!pin;p.position.set(24+((pin?.lon||0)/360)*7.5,2.48+((pin?.lat||0)/180)*3.75,-4.46);}
+   coldLabel.visible=!s.warmed;warmLabel.visible=s.warmed;for(const t of world.targets){t.visible=t.userData.room===s.room&&!(t.userData.id==='rescue-hand'&&s.holding);if(t.userData.id==='rescue-cold'){t.userData.name=s.warmed?'따뜻해진 현수':'덜덜 떠는 현수';t.userData.desc=s.warmed?'고마워, 하영아 ♡':'계산한 옷 입혀 주기';}}for(const [c,p]of Object.entries(pins)){const pin=s.pins[c];p.visible=!!pin;p.position.set(24+((pin?.lon||0)/360)*atlasSize.width,atlasSize.y+((pin?.lat||0)/180)*atlasSize.height,-4.44);}
   },
   blocked(x,z){const room=this.state.room,cx=room===4?47:room*12;if(x<cx-5.65||x>cx+5.4||z< -4.65||z>4.65)return true;return collision.some(([a,b,c,d])=>x>a-.23&&x<b+.23&&z>c-.23&&z<d+.23);},
   update(dt,time){this.elapsed+=dt;const s=this.state;this.emotion=Math.max(0,this.emotion-dt);get('CabinetDoor').rotation.y=THREE.MathUtils.damp(get('CabinetDoor').rotation.y,s.cabinetOpen?-1.7:0,3,dt);

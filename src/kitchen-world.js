@@ -43,13 +43,13 @@ export async function enterKitchen(world,state){
  label('200 MARKET  ·  오늘도 너와 함께',[0,4.65,5.10],9.8,27);
  label('네 가지 마음을 완성하면 열리는 문',[exitPosition[0],4.2,exitPosition[2]],3.7,27,'#fff0ce',.63);
  const doorLabels={};
- recipeKeys.forEach((key,index)=>{const a=stations[key][2],p=stationPoint(key,0,2.85,kitchenArchitecture.doorPlane+.12);doorLabels[key]={ready:label(`${index+1} · ${recipes[key].name} · E로 열기`,p,2.2,25,'#fff7d8',a),locked:label(`${index+1} · 잠김 · 앞 요리부터`,p,2.2,25,'#f9d4bc',a)};});
- for(const key of recipeKeys){const a=stations[key][2];label(recipes[key].clock+'  /  '+recipes[key].name,stationPoint(key,0,3.04,-3.09),5.7,32,'#ffefd9',a);label('E · 레시피 / 작업대',stationPoint(key,0,1.48,-.89),2.4,30,'#fff1da',a);}
+ recipeKeys.forEach((key,index)=>{const a=stations[key][2],p=stationPoint(key,0,3.75,kitchenArchitecture.doorPlane+.19);doorLabels[key]={ready:label(`${index+1} · ${recipes[key].name} · E로 열기`,p,2.2,25,'#fff7d8',a),locked:label(`${index+1} · 잠김 · 앞 요리부터`,p,2.2,25,'#f9d4bc',a)};});
+ for(const key of recipeKeys){const a=stations[key][2];label(recipes[key].clock+'  /  '+recipes[key].name,stationPoint(key,0,3.65,-3.0),5.7,32,'#ffefd9',a);label('E · 레시피 / 작업대',stationPoint(key,0,1.48,-.89),2.4,30,'#fff1da',a);}
  for(const [x,text] of [[-4.5,'BAKERY · 베이커리'],[0,'PANTRY · 소스 / 조미료'],[4.5,'DRINKS · 음료 / 간식']])label(text,[x,2.62,4.04],1.3,18,'#fff5d9');
  label('FRESH · 과일과 채소',[0,1.2,7.77],5.5,26,'#fff2cf');label('FROZEN · 새우',[-7.5,.67,7.77],2.05,27,'#fff2cf');
  label('COLD · 냉장 / 해산물',[-7.35,3.03,0],6.6,27,'#fff2cf',Math.PI/2);label('DAIRY · 우유 / 디저트',[7.35,3.03,0],6.6,27,'#fff2cf',-Math.PI/2);
- recipeKeys.forEach((key,i)=>{const tex=photoTextures[i];tex.colorSpace=THREE.SRGBColorSpace;const ratio=tex.image.width/tex.image.height,width=1.85,height=width/ratio;world.plane(tex,width,height,stationPoint(key,-1.85,2.3,-3.065),stations[key][2]);label('실제 음식 · 형태 참고',stationPoint(key,-1.85,1.55,-3.02),1.9,23,'#334d3c',stations[key][2]);});
- for(const key of recipeKeys){const arrow=label(recipes[key].clock+' ↑',stationPoint(key,0,.03,5.4),2.1,32,'#345641',stations[key][2]);arrow.rotation.x=-Math.PI/2;}
+ recipeKeys.forEach((key,i)=>{const tex=photoTextures[i];tex.colorSpace=THREE.SRGBColorSpace;const ratio=tex.image.width/tex.image.height,width=Math.min(1.85,1.25*ratio),height=width/ratio;world.plane(tex,width,height,stationPoint(key,-1.85,2.3,-3.0),stations[key][2]);label('실제 음식 · 형태 참고',stationPoint(key,-1.85,1.4,-2.98),1.9,23,'#334d3c',stations[key][2]);});
+ for(const key of recipeKeys){const arrow=label(recipes[key].clock+' ↑',stationPoint(key,0,.035,5.4),2.1,32,'#345641',stations[key][2]);arrow.rotation.set(-Math.PI/2,stations[key][2],0,'YXZ');}
  label('7호선  ·  불을 켜는 기억',[powerPosition[0],2.86,powerPosition[2]-.12],4.1,32,'#c5ff7a',Math.PI,true);
  label('짧게 일한 학원  <  <  오래 일한 학원',[powerPosition[0],1.15,powerPosition[2]-.14],4.1,24,'#b8ff80',Math.PI,true);
  // The line is readable before all the other lights come on.

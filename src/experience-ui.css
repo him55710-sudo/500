@@ -2,6 +2,10 @@
 :root{--ui-font:'Noto Sans KR','Malgun Gothic',sans-serif;--ui-ink:#20252b;--ui-muted:#59616b;--ui-accent:#ad1835;--ui-line:#dde1e5}
 #scene{user-select:none;-webkit-user-select:none}
 #scene.is-looking{cursor:grabbing}
+body.pointer-locked,body.pointer-locked #scene,body.pointer-locked #hud *{cursor:none!important}
+body.pointer-locked #hud button{pointer-events:none}
+#fullscreen-btn{flex-shrink:0}
+@media(max-width:550px){#hud header{gap:10px}#hud header .chapter{min-width:0;flex:1}#hud header .icon-button{flex:0 0 36px;width:36px;height:36px}}
 body #vignette{background:none}
 body #hud{padding:24px 28px;color:#fff;text-shadow:none}
 body #hud :is(.wordmark,.chapter,.profile,.controls-hint){text-shadow:none}
