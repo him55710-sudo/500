@@ -2,6 +2,8 @@ import { chromium } from '@playwright/test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 
+const baseURL = process.env.GAME_BASE_URL || 'http://127.0.0.1:5179/';
+const origin = new URL(baseURL).origin;
 await fs.mkdir('test-results', { recursive: true });
 const browser = await chromium.launch({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' });
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
@@ -10,7 +12,7 @@ await page.routeWebSocket('**', socket => socket.close());
 const errors = [], assets = [];
 page.on('pageerror', error => errors.push(error.message));
 page.on('request', request => { if (/\.glb(?:\?|$)/.test(request.url())) assets.push(request.url()); });
-page.on('response', response => { if (response.url().startsWith('http://127.0.0.1:5179') && response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
+page.on('response', response => { if (new URL(response.url()).origin === origin && response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
 const chapter = async (id, progress = 0) => {
   await page.evaluate(({ id, progress }) => {
     const root = document.querySelector('#welcome'), section = document.getElementById(id);
@@ -20,7 +22,7 @@ const chapter = async (id, progress = 0) => {
 };
 const shot = name => page.screenshot({ path: `test-results/prologue-${name}.png` });
 try {
-  await page.goto('http://127.0.0.1:5179/?e2e=1', { waitUntil: 'networkidle' });
+  await page.goto(new URL('?e2e=1', baseURL).href, { waitUntil: 'networkidle' });
   await shot('desktop');
   assert.equal(await page.locator('[data-chapter]').count(), 5);
   await page.mouse.move(600, 450);
