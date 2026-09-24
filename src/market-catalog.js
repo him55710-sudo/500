@@ -2,8 +2,8 @@ export const extraIngredients={carrot:['당근','두 개','produce'],onion:['양
 export const categoryNames={all:'전체',seafood:'냉장·해산물',produce:'과일·채소·밥',pantry:'소스·조미료',dairy:'유제품·디저트',bakery:'베이커리',drinks:'음료',pack:'포장 용품'};
 export const modelIcons={carrot:'carrot',onion:'onion',leek:'leek',tomato:'tomato',broccoli:'broccoli',cabbage:'cabbage',mushroom:'mushroom',paprika:'paprika',corn:'corn',apple:'apple',pear:'pear',banana:'banana',orange:'orange',lemon:'lemon',avocado:'avocado',strawberry:'strawberry',milk:'carton',cheese:'cheese-cut',honey:'honey',mustard:'bottle-musterd',salt:'shaker-salt',peanutbutter:'peanut-butter',bread:'bread',croissant:'croissant',cookies:'cookie-chocolate',water:'soda-bottle',soda:'soda-can',juice:'carton-small',fish:'fish',bacon:'bacon-raw',sausage:'meat-sausage',chocolatebar:'candy-bar-wrapper',egg:'egg',oil:'bottle-oil',ketchup:'bottle-ketchup',soy:'soy',pepper:'shaker-pepper',chocolate:'chocolate',box:'styrofoam'};
 export const foodReferences={
- chili:{label:'새우볶음밥의 밥·새우 질감',author:'Shene81',license:'CC BY 3.0',licenseUrl:'https://creativecommons.org/licenses/by/3.0/',source:'https://commons.wikimedia.org/wiki/File:Korean_Shrimp_Fried_Rice.jpg'},
- chicken:{label:'후라이드 닭다리의 형태와 튀김옷',author:'Mumujit',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',source:'https://commons.wikimedia.org/wiki/File:Fried_chicken_drumsticks.jpg'},
- garlic:{label:'갈릭새우의 익은 속살과 윤기',author:'Banej',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',source:'https://commons.wikimedia.org/wiki/File:Gambas_Al_Ajillo_(Spanish_Garlic_Shrimp).jpg'},
- pepero:{label:'초콜릿 코팅과 아몬드 토핑',author:'Evan-Amos',license:'CC0',licenseUrl:'https://creativecommons.org/publicdomain/zero/1.0/',source:'https://commons.wikimedia.org/wiki/File:Pepero-Almond-Sticks.jpg'}
+ kimchi:{label:'직접 만든 김치볶음밥과 계란',provided:true},
+ pepero:{label:'크리스마스 선물 빼빼로',provided:true},
+ chili:{label:'직접 만든 칠리새우',provided:true},
+ chicken:{label:'후라이드·양념 반반 치킨',provided:true}
 };

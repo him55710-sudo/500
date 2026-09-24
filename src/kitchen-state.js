@@ -1,9 +1,9 @@
 import {employmentOrder,ingredients,recipes,recipeKeys} from './kitchen-data.js';
-export const initialKitchen=()=>({version:1,lights:false,bag:{},progress:Object.fromEntries(recipeKeys.map(k=>[k,0])),orderAt:null,received:false,completed:false});
+export const initialKitchen=()=>({version:1,lights:false,bag:{},progress:Object.fromEntries(recipeKeys.map(k=>[k,0])),opened:Object.fromEntries(recipeKeys.map(k=>[k,false])),orderAt:null,received:false,completed:false});
 export function loadKitchen(value){
  const s=initialKitchen();if(!value||value.version!==1)return s;s.lights=value.lights===true;
  for(const k of Object.keys(ingredients))if(Number.isInteger(value.bag?.[k])&&value.bag[k]>0&&value.bag[k]<=9)s.bag[k]=value.bag[k];
- for(const k of recipeKeys){const n=value.progress?.[k];if(Number.isInteger(n)&&n>=0&&n<=recipes[k].steps.length)s.progress[k]=n;}
+ for(const k of recipeKeys){const n=value.progress?.[k];if(Number.isInteger(n)&&n>=0&&n<=recipes[k].steps.length)s.progress[k]=n;s.opened[k]=value.opened?.[k]===true||s.progress[k]>0;}
  s.orderAt=Number.isFinite(value.orderAt)&&value.orderAt>0?value.orderAt:null;s.received=value.received===true&&s.orderAt!==null;s.completed=recipeKeys.every(k=>s.progress[k]===recipes[k].steps.length);return s;
 }
 export function kitchenTransition(current,event,{order=employmentOrder,now=Date.now()}={}){
@@ -19,7 +19,14 @@ export function kitchenTransition(current,event,{order=employmentOrder,now=Date.
  if(event.type==='return'){
   if(!ingredients[event.item]||!(s.bag[event.item]>0))return deny('가방에 없는 재료야.');s.bag[event.item]--;if(!s.bag[event.item])delete s.bag[event.item];return{ok:true,state:s,message:ingredients[event.item][0]+'을 진열대에 돌려놓았다.',effect:'paper'};
  }
+ if(event.type==='open'){
+  const index=recipeKeys.indexOf(event.recipe);if(index<0)return deny('요리방을 먼저 골라 줘.');
+  if(index>0&&s.progress[recipeKeys[index-1]]!==recipes[recipeKeys[index-1]].steps.length)return deny('먼저 '+recipes[recipeKeys[index-1]].name+'을 완성해야 열려.');
+  if(s.opened[event.recipe])return deny('이미 열린 요리방이야.');s.opened[event.recipe]=true;
+  return{ok:true,state:s,effect:'door',message:recipes[event.recipe].name+' 요리방이 열렸어.'};
+ }
  const r=recipes[event.recipe];if(!r)return deny('작업대를 먼저 골라 줘.');const index=s.progress[event.recipe],step=r.steps[index];if(!step)return deny('이미 정성껏 완성한 요리야.');
+ if(!s.opened[event.recipe])return deny('먼저 요리방 문을 열어 줘.');
  if(event.type==='order'){
   if(event.recipe!=='chicken'||step.id!=='order')return deny('주문은 이미 접수했어.');
   if(event.brand!=='BBQ'||event.cut!=='drumsticks'||event.flavor!=='half')return deny('BBQ · 닭다리만 · 양념 반 / 후라이드 반을 확인해 줘.');s.orderAt=now;s.progress.chicken++;return{ok:true,state:s,effect:'order',message:'주문 접수! 10초 뒤 배달기사가 도착해.'};

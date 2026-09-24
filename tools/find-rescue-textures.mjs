@@ -1,0 +1,1 @@
+const data=await(await fetch('https://api.polyhaven.com/assets?t=textures')).json();console.log(Object.entries(data).filter(([k])=>/plaster|fabric|wool|knit/.test(k)).map(([id,v])=>({id,name:v.name})).slice(0,35));

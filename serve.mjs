@@ -7,7 +7,7 @@ import {spawn} from 'node:child_process';
 const here=path.dirname(fileURLToPath(import.meta.url));
 const root=path.join(here,'dist');
 if(!fs.existsSync(path.join(root,'index.html'))){console.error('먼저 pnpm build를 실행해 주세요.');process.exit(1);}
-const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.glb':'model/gltf-binary','.woff2':'font/woff2','.mp3':'audio/mpeg','.wav':'audio/wav','.json':'application/json'};
+const types={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.webp':'image/webp','.glb':'model/gltf-binary','.woff2':'font/woff2','.mp3':'audio/mpeg','.wav':'audio/wav','.json':'application/json'};
 const server=http.createServer((req,res)=>{
  let name;try{name=decodeURIComponent(new URL(req.url,'http://127.0.0.1').pathname);}catch{res.writeHead(400);res.end();return;}
  if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end();return;}

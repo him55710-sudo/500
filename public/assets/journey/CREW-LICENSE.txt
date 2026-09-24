@@ -1,0 +1,8 @@
+Female cabin crew character
+Base model: Casual from Quaternius Ultimate Modular Women Pack
+Creator: Quaternius
+License: CC0 1.0 Universal (public domain dedication)
+Official pack: https://quaternius.com/packs/ultimatemodularwomen.html
+Original model already included at ../hayoung-casual.gltf; source details in ../hayoung-casual-license.txt.
+Adaptation: neutral standing pose, navy uniform and shoes, ivory collar, teal scarf, pillbox hat and brass insignia.
+Editable source and reproducible adaptation: blender/day-400-china-journey.blend and blender/journey_attendant.py.

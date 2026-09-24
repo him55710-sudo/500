@@ -1,0 +1,55 @@
+	<li class="comm-prd-list__item ">
+		<div class="img" style="background:#fff5dc;">
+			<a href="/shop/product/product_view?product_cd=523262">
+									<img src="/uploads/product/500/3e40b69900f08a781ad4442e2813964c.png" alt="">
+							</a>
+		</div>
+		<div class="info">
+					<a href="javascript:void(0)" class="btn btn--line-gray btn-cart" onclick="direct_cart('523262')"><span>담기</span></a>
+					<div class="common-label">
+						<!-- 배송아이콘 추가  -->
+							<span class="common-label__box c5102" style="background:#794422;">대전배송</span>
+							<span class="common-label__box c5103" style="background:#412716;">매장방문</span>
+						<!-- 배송아이콘 추가  -->
+			</div>
+			<p class="title"><a href="/shop/product/product_view?product_cd=523262">튀소구마</a></p>
+			<div class="price-area">
+				<p><em>1,700</em>원</p>
+			</div>
+			<div class="comment-area">
+				<span class="comment-area__mark"></span>
+			</div>
+					</div>
+	</li>
+	<li class="comm-prd-list__item ">
+		<div class="img" style="background:#fff5dc;">
+			<a href="/shop/product/product_view?product_cd=523146">
+									<img src="/uploads/product/500/9931a559fcb12471701e97e669778fc5.png" alt="">
+							</a>
+		</div>
+		<div class="info">
+					<a href="javascript:void(0)" class="btn btn--line-gray btn-cart" onclick="direct_cart('523146')"><span>담기</span></a>
+					<div class="common-label">
+						<!-- 배송아이콘 추가  -->
+							<span class="common-label__box c5102" style="background:#794422;">대전배송</span>
+							<span class="common-label__box c5103" style="background:#412716;">매장방문</span>
+						<!-- 배송아이콘 추가  -->
+			</div>
+			<p class="title"><a href="/shop/product/product_view?product_cd=523146">튀소구마세트</a></p>
+			<div class="price-area">
+				<p><em>10,000</em>원</p>
+			</div>
+			<div class="comment-area">
+				<span class="comment-area__mark"></span>
+			</div>
+					</div>
+	</li>
+	<script>
+			$("#total_count_text").text('2');
+	
+	//일시품절 영역 추가
+	document.querySelectorAll('.sold-out .img').forEach(function(el){
+		el.insertAdjacentHTML('beforeend', '<div class="sold-out__content"><em>SOLD OUT</em>준비된 상품이 일시적으로<br>품절되었습니다.</div>');
+	});
+	</script>
+

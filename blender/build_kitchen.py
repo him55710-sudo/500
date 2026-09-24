@@ -1,5 +1,5 @@
 """200-day cooking rotunda. New scene, material-batched meshes, original detailed food models."""
-import bpy, math, random, os, json
+import bpy, math, random, os, json, subprocess
 from mathutils import Vector
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 random.seed(200)
@@ -16,6 +16,7 @@ red=mat('Paprika glaze',(.66,.11,.042),.04,.29);blue=mat('Sky blue ceramic',(.13
 neon=mat('Line 7 phosphorescent green',(.38,1,.055),0,.4,2.4);lamp=mat('Pendant milk glass',(1,.79,.45),0,.3,.12)
 raw=mat('Raw translucent shrimp',(.60,.55,.54),0,.22);shrimp=mat('Cooked shrimp coral',(.95,.38,.17),0,.28);flesh=mat('Shrimp pale segments',(1,.77,.55),0,.3)
 sauce=mat('Glossy chili sauce',(.59,.045,.013),.02,.17);rice=mat('Individual rice grains',(.92,.84,.65),0,.58);carrot=mat('Diced carrot',(.90,.21,.028),0,.5);herb=mat('Chives parsley',(.12,.34,.065),0,.5)
+kimchi=mat('Kimchi red rice',(.65,.22,.07),0,.55);eggwhite=mat('Fried egg white',(.96,.93,.81),0,.38);yolk=mat('Soft golden egg yolk',(.98,.60,.035),0,.18)
 egg=mat('Egg curds',(1,.65,.10),0,.62);fried=mat('Craggy golden chicken',(.69,.30,.042),0,.69);crust=mat('Crunchy crust tips',(.90,.54,.15),0,.73);bone=mat('Chicken bone ivory',(.9,.82,.63),0,.67)
 choc=mat('Dark glossy chocolate',(.07,.021,.009),0,.22);cookie=mat('Biscuit golden wheat',(.64,.39,.15),0,.75);almond=mat('Chopped almonds',(.87,.69,.41),0,.6)
 def add(v,f,m,root='KitchenArchitecture',smooth=False):
@@ -77,16 +78,28 @@ import sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 import market_shelves
 market_shelves.architecture(globals())
+# Use the same sealed room envelope for Blender geometry and game collisions.
+with open(os.path.join(ROOT,'src/kitchen-architecture.json'),encoding='utf-8') as file:bay_architecture=json.load(file)
 # Four room bays: each is 7m across with tiled backsplash, sink, stove and packaging counter.
-for key,cx,cz,ang,color in [('chili',0,-16,0,red),('chicken',16,0,-math.pi/2,gold),('garlic',0,16,math.pi,green),('pepero',-16,0,math.pi/2,pink)]:
+for key,cx,cz,ang,color in [('kimchi',0,-16,0,red),('pepero',16,0,-math.pi/2,pink),('chili',0,16,math.pi,green),('chicken',-16,0,math.pi/2,gold)]:
  root='Bay_'+key
  def P(p):return (cx+p[0]*math.cos(ang)+p[2]*math.sin(ang),p[1],cz-p[0]*math.sin(ang)+p[2]*math.cos(ang))
  def B(p,s,m):
   if abs(math.sin(ang))>.5:s=(s[2],s[1],s[0])
   box(P(p),s,m,root)
  B((0,.016,0),(7,.03,6.6),color)
- for side in [-1,1]:B((side*3.5,1.75,-.65),(.12,3.5,5.3),cream);B((side*3.5,3.55,-.65),(.19,.09,5.4),gold)
- B((0,1.8,-3.2),(7,3.6,.15),color);B((0,3.65,-3.2),(7,.15,.2),gold)
+ for wall in bay_architecture['walls']:B(wall['center'],wall['size'],cream if wall['surface']=='cream' else color)
+ for side in [-1,1]:B((side*3.35,3.55,-.49),(.045,.09,5.66),gold)
+ B((0,3.54,2.39),(2.65,.16,.12),gold)
+ # Closed door reference stays editable in the .blend. The game exports the
+ # aperture only and builds an animated, collidable door in kitchen-world.js.
+ def D(p,s,m):
+  if abs(math.sin(ang))>.5:s=(s[2],s[1],s[0])
+  box(P(p),s,m,'BayDoor_'+key)
+ D((0,1.72,bay_architecture['doorPlane']),(2.34,3.36,.10),wood)
+ D((0,2.12,bay_architecture['doorPlane']+.07),(1.66,1.33,.025),blue)
+ D((.93,1.61,bay_architecture['doorPlane']+.12),(.08,.24,.08),gold)
+ B((0,3.65,-3.08),(7,.10,.055),gold)
  B((0,.57,-1.7),(6,1.1,1.5),wood);B((0,1.15,-1.7),(6.15,.12,1.65),white)
  for x in [-2.3,-.8,.8,2.3]:
   B((x,.59,-.93),(1.35,.95,.04),color);B((x,.9,-.86),(.38,.035,.06),gold)
@@ -97,8 +110,8 @@ for key,cx,cz,ang,color in [('chili',0,-16,0,red),('chicken',16,0,-math.pi/2,gol
  B((.1,1.235,-1.7),(1.3,.04,1.1),black)
  for x in [-.28,.47]:ring(P((x,1.28,-1.7)),.23,.02,steel,root)
  B((2,1.245,-1.6),(1.15,.06,.75),wood)
- B((0,3.25,-1.7),(1.7,.25,1.4),steel);tube(P((0,3.2,-1.7)),P((0,6,-1.7)),.22,steel,root)
- for x in [-2,2]:tube(P((x,3.6,.4)),P((x,6,.4)),.012,gold,root);tube(P((x,3.4,.4)),P((x,3.62,.4)),.26,lamp,root,n=24,r2=.10)
+ B((0,3.25,-1.7),(1.7,.25,1.4),steel);tube(P((0,3.2,-1.7)),P((0,bay_architecture['ceilingHeight'],-1.7)),.22,steel,root)
+ for x in [-2,2]:tube(P((x,3.6,.4)),P((x,bay_architecture['ceilingHeight'],.4)),.012,gold,root);tube(P((x,3.4,.4)),P((x,3.62,.4)),.26,lamp,root,n=24,r2=.10)
  # Per-room pans and recipe stand.
  pan=P((.1,1.32,-1.65));tube((pan[0],pan[1]-.06,pan[2]),(pan[0],pan[1]+.07,pan[2]),.47,black,root,n=36)
  ring((pan[0],pan[1]+.085,pan[2]),.46,.023,steel,root)
@@ -120,12 +133,16 @@ def chicken_box(root,stage):
   for z in [-.035,.31]:drumstick((-.34,.24,z),fried,root,-.25)
  if stage>=3:
   for z in [-.035,.31]:drumstick((.34,.24,z),sauce,root,.25)
-for name in ['chili','garlic']:
- root='Dish_'+name;lunchbox(root)
- grains((0,.09,0),1.25,root,name=='chili')
- for j in range(8):
-  x=(j%4-1.5)*.28;z=(j//4-.5)*.4;prawn((x,.25,z),.74 if name=='chili' else .59,sauce if name=='chili' else shrimp,root)
- for j in range(35):box((random.uniform(-.55,.55),.32,random.uniform(-.38,.38)),(.024,.018,.028),herb,root)
+root='Dish_kimchi';tube((0,-.02,0),(0,.08,0),.68,white,root,n=48);ring((0,.085,0),.68,.025,cream,root)
+ball((0,.115,0),(.58,.09,.52),kimchi,root,n=28,k=12);grains((0,.15,0),1.05,root,True)
+for j in range(64):
+ x=random.uniform(-.49,.49);z=random.uniform(-.39,.39);box((x,.245,z),(.05,.035,.043),kimchi if j%3 else herb,root)
+ball((.03,.29,.01),(.46,.032,.36),eggwhite,root,n=32,k=12);ball((.14,.318,.06),(.17,.064,.145),yolk,root,n=24,k=12)
+root='Dish_chili';tube((0,-.02,0),(0,.08,0),.65,white,root,n=48);ring((0,.085,0),.65,.022,cream,root)
+ball((0,.10,0),(.56,.06,.52),sauce,root,n=28,k=10)
+for j in range(9):
+ x=(j%3-1)*.32;z=(j//3-1)*.29;prawn((x,.18,z),.8,sauce,root)
+for j in range(38):box((random.uniform(-.53,.53),.25,random.uniform(-.42,.42)),(.024,.018,.028),herb,root)
 for name,stage in [('ChickenEmpty',0),('ChickenRice',1),('ChickenFried',2),('Dish_chicken',3)]:chicken_box(name,stage)
 for name,decorated in [('PeperoCoated',False),('Dish_pepero',True)]:
  box((0,0,0),(1.5,.05,1.1),white,name)
@@ -140,6 +157,8 @@ for j in range(6):prawn(((j%3-1)*.3,.05,(j//3-.5)*.36),.8,sauce,root)
 for name,ma in [('raw',raw),('cooked',shrimp),('sauced',sauce)]:
  root='Pan_'+name;tube((0,-.03,0),(0,.025,0),.6,black,root,n=40);ring((0,.04,0),.59,.024,steel,root);tube((.55,.02,0),(.96,.02,0),.038,wood,root)
  for j in range(6):prawn(((j%3-1)*.28,.05,(j//3-.5)*.32),.75,ma,'Pan_'+name)
+root='Pan_kimchi';tube((0,-.03,0),(0,.025,0),.6,black,root,n=40);ring((0,.04,0),.59,.024,steel,root);tube((.55,.02,0),(.96,.02,0),.038,wood,root)
+ball((0,.06,0),(.52,.04,.46),kimchi,root,n=24,k=8);grains((0,.075,0),.85,root,True)
 water=mat('Warm water blue',(.12,.26,.29),.25,.13)
 for name,stage in [('WaterPot',0),('ChocolateChunks',1),('ChocolateBowl',2)]:
  tube((0,-.1,0),(0,.08,0),.46,steel,name,n=40);tube((0,.081,0),(0,.09,0),.44,water,name,n=40)
@@ -167,11 +186,11 @@ for (root,m),(vertices,faces,smooth) in batches.items():
  for p,sm in zip(me.polygons,smooth):p.use_smooth=sm
  ob=bpy.data.objects.new(root+' '+m,me);scene.collection.objects.link(ob);ob.parent=roots[root]
 # Native source puts food on all four worktops, with asset-library copies in their own collection.
-for key,pos in [('chili',(1.9,1.26,-17.4)),('chicken',(17.4,1.26,1.9)),('garlic',(-1.9,1.26,17.4)),('pepero',(-17.4,1.26,-1.9))]:roots['Dish_'+key].location=xyz(pos)
+for key,pos in [('kimchi',(1.9,1.26,-17.4)),('pepero',(17.4,1.26,1.9)),('chili',(-1.9,1.26,17.4)),('chicken',(-17.4,1.26,-1.9))]:roots['Dish_'+key].location=xyz(pos)
 for name in ['raw','cooked','sauced']:roots['Pan_'+name].location=xyz((0,1.4,-17.6));roots['Pan_'+name].hide_render=name!='raw'
-library=['ChickenEmpty','ChickenRice','ChickenFried','PeperoCoated','RiceOnly','FriedRice','SideShrimp','WaterPot','ChocolateChunks']
+library=['ChickenEmpty','ChickenRice','ChickenFried','PeperoCoated','RiceOnly','FriedRice','SideShrimp','WaterPot','ChocolateChunks','Pan_kimchi']
 for i,name in enumerate(library):roots[name].location=xyz((22+(i%3)*2,0,(i//3)*2));roots[name].hide_render=True
-roots['ChocolateBowl'].location=xyz((-17.7,1.2,0));roots['GiftParcel'].location=xyz((17.6,1.3,0))
+roots['ChocolateBowl'].location=xyz((17.7,1.2,0));roots['GiftParcel'].location=xyz((-17.6,1.3,0))
 for root in roots:
  if root.startswith('Courier'):roots[root].location=xyz((9,0,9))
 stock_root,stock_objects,stock_count,stock_varieties=market_shelves.stock(scene,ROOT)
@@ -191,9 +210,15 @@ market_shelves.merge_export_stock(stock_objects)
 for root,g in roots.items():
  if root.startswith(('Dish_','Pan_','Courier')) or root in ['ChocolateBowl','GiftParcel']+library:g.location=(0,0,0)
 bpy.ops.object.select_all(action='DESELECT')
-for g in roots.values():
+for name,g in roots.items():
+ if name.startswith('BayDoor_'):continue
  g.select_set(True)
  for ob in g.children:ob.select_set(True)
-bpy.ops.export_scene.gltf(filepath=os.path.join(ROOT,'public/assets/day-200-kitchen.glb'),export_format='GLB',use_selection=True,use_active_scene=True,export_lights=False,export_cameras=False,export_yup=True)
+export_path=os.path.join(ROOT,'public/assets/day-200-kitchen-build.glb')
+bpy.ops.export_scene.gltf(filepath=export_path,export_format='GLB',use_selection=True,use_active_scene=True,export_lights=False,export_cameras=False,export_yup=True)
+final_path=os.path.join(ROOT,'public/assets/day-200-kitchen.glb')
+if os.name=='nt':
+ subprocess.run(['powershell.exe','-NoProfile','-ExecutionPolicy','Bypass','-File',os.path.join(ROOT,'blender/replace_export.ps1'),'-Source',export_path,'-Destination',final_path],check=True)
+else:os.replace(export_path,final_path)
 print('MARKET_STOCK',stock_count,stock_varieties,flush=True)
 print('DAY200_MODEL_READY',len(scene.objects),sum(len(o.data.polygons) for o in scene.objects if o.type=='MESH'),flush=True)

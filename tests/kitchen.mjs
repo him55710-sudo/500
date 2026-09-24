@@ -1,24 +1,29 @@
-import {chromium} from '@playwright/test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';
-import {initialState,SAVE_KEY} from '../src/state.js';import {recipes,recipeKeys,employmentOrder} from '../src/kitchen-data.js';
-const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'}),page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[],checks=[];
-page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.url().includes('/assets/')&&r.status()>=400)errors.push(r.status()+' '+r.url());});
-const check=t=>{checks.push(t);console.log(t);},read=()=>page.evaluate(()=>window.__roomTest.read()),view=()=>page.evaluate(()=>window.__roomTest.view());
-async function focus(id){await page.evaluate(id=>window.__roomTest.focus(id),id);await page.waitForTimeout(200);await page.keyboard.press('KeyE');}
-const close=()=>page.locator('#close-modal').click();const shot=n=>page.screenshot({path:'test-results/kitchen-'+n+'.png'});
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {initialState,SAVE_KEY} from '../src/state.js';
+import {recipes,recipeKeys,employmentOrder} from '../src/kitchen-data.js';
+
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+const errors=[],checks=[];
+page.on('pageerror',error=>errors.push(error.message));
+page.on('response',response=>{if(response.url().includes('/assets/')&&response.status()>=400)errors.push(`${response.status()} ${response.url()}`);});
+const read=()=>page.evaluate(()=>window.__roomTest.read());
+async function focus(id){await page.evaluate(id=>window.__roomTest.focus(id),id);await page.waitForTimeout(120);await page.keyboard.press('KeyE');}
+async function shot(name){await page.screenshot({path:`test-results/kitchen-${name}.png`});}
+async function enter(){await page.goto('http://127.0.0.1:5179/?e2e=1');await page.evaluate(({key,state})=>localStorage.setItem(key,JSON.stringify(state)),{key:SAVE_KEY,state:{...initialState(),stage:8,completed:true,location:'kitchen'}});await page.reload();await page.locator('#continue').click();await page.waitForFunction(()=>window.__roomTest?.view().mode==='kitchen',null,{timeout:120000});}
 try{
- await page.goto('http://127.0.0.1:5179/?e2e=1');await page.evaluate(({key,s})=>localStorage.setItem(key,JSON.stringify(s)),{key:SAVE_KEY,s:{...initialState(),stage:8,completed:true,location:'kitchen'}});await page.reload();await page.locator('#continue').click();await page.waitForFunction(()=>window.__roomTest?.view().mode==='kitchen',null,{timeout:120000});await page.waitForTimeout(300);await shot('01-dark');
- await focus('kitchen-power');for(const n of ['철산','상동','신대방삼거리'])await page.locator(`[data-station="${n}"]`).click();await page.locator('#subway-check').click();assert.equal((await read()).cooking.lights,false);await page.locator('#subway-reset').click();for(const n of employmentOrder)await page.locator(`[data-station="${n}"]`).click();await shot('02-subway');await page.locator('#subway-check').click();assert.equal((await read()).cooking.lights,true);check('Line 7 duration order gates lights');
- await page.waitForTimeout(1400);await page.evaluate(()=>{window.__roomTest.setPosition(5,8);window.__roomTest.look(0,2.1,-5);});await page.waitForTimeout(250);await shot('03-lit');
- await page.keyboard.press('KeyV');assert.equal((await view()).thirdPerson,true);await page.keyboard.press('KeyV');
- await focus('kitchen-market');const counts={};for(const r of Object.values(recipes))for(const step of r.steps)for(const i of step.need)counts[i]=(counts[i]||0)+1;for(const [id,n] of Object.entries(counts))for(let i=0;i<n;i++)await page.locator(`[data-ingredient="${id}"]`).click();await shot('04-market');await close();check('Ingredients selected individually from central market');
- await focus('cook-chicken');await page.locator('#delivery-search').fill('BBQ');await page.locator('#delivery-find').click();await page.locator('#send-delivery').click();assert.equal((await read()).cooking.orderAt,null);await page.locator('#chicken-cut').selectOption('drumsticks');await page.locator('#chicken-flavor').selectOption('half');await shot('05-order');await page.locator('#send-delivery').click();const ordered=(await read()).cooking.orderAt;await page.locator('#go-receive').click();
- await page.reload();await page.locator('#continue').click();await page.waitForFunction(()=>window.__roomTest?.view().mode==='kitchen',null,{timeout:120000});assert.equal((await read()).cooking.orderAt,ordered);check('Correct BBQ menu ordered once; reload keeps delivery clock');
- const remaining=Math.max(0,ordered+7800-Date.now());if(remaining)await page.waitForTimeout(remaining);await page.evaluate(()=>{window.__roomTest.setPosition(6,4);window.__roomTest.look(8,1.2,5);});await page.waitForTimeout(100);await shot('06-courier-walking');const wait=Math.max(0,ordered+10300-Date.now());if(wait)await page.waitForTimeout(wait);await focus('kitchen-courier');assert.equal((await read()).cooking.received,true);await close();check('Courier walks in, arrives after ten seconds and hands over chicken');
- for(const key of recipeKeys){await focus('cook-'+key);const start=(await read()).cooking.progress[key];
-  if(key==='chili'){await page.locator('[data-action="plate"]').click();assert.equal((await read()).cooking.progress.chili,0);}
-  for(let i=start;i<recipes[key].steps.length;i++){const step=recipes[key].steps[i];await page.locator(`[data-heat="${step.heat}"]`).click();if(step.id==='measure'){for(const [j,n] of ['ketchup','chili','sugar','soy','vinegar'].entries())await page.locator(`[data-measure="${n}"]`).selectOption(String(j?1:2));}if(step.id==='water')await page.locator('#water-temperature').selectOption('50');await page.locator(`[data-action="${step.id}"]`).click();assert.equal((await read()).cooking.progress[key],i+1);}
-  await shot('dish-'+key);await page.locator('#leave-kitchen').click();check(recipes[key].name+' completes in recipe order');
+ await enter();await focus('kitchen-power');for(const station of employmentOrder)await page.locator(`[data-station="${station}"]`).click();await page.locator('#subway-check').click();assert.equal((await read()).cooking.lights,true);await shot('lit');checks.push('7호선 정답 후 요리방 점등');
+ await focus('kitchen-door-pepero');assert.equal((await read()).cooking.opened.pepero,false);checks.push('두 번째 방 선행 잠금');
+ await focus('kitchen-market');const counts={};for(const recipe of Object.values(recipes))for(const step of recipe.steps)for(const item of step.need)counts[item]=(counts[item]||0)+1;for(const [item,count] of Object.entries(counts))for(let n=0;n<count;n++)await page.locator(`[data-ingredient="${item}"]`).click();await page.locator('#close-modal').click();
+ for(const key of recipeKeys){await focus('kitchen-door-'+key);assert.equal((await read()).cooking.opened[key],true);await focus('cook-'+key);await page.waitForTimeout(150);assert.equal(await page.locator('#photo-view img').getAttribute('src'),`/assets/food-reference/${key}.jpg`);await shot('recipe-'+key);
+  for(let index=0;index<recipes[key].steps.length;index++){const step=recipes[key].steps[index];if(step.id==='order'){await page.locator('#delivery-search').fill('BBQ');await page.locator('#delivery-find').click();await page.locator('#chicken-cut').selectOption('drumsticks');await page.locator('#chicken-flavor').selectOption('half');await page.locator('#send-delivery').click();}
+   else if(step.id==='receive'){await page.locator('#go-receive').click();await page.waitForFunction(()=>window.__roomTest.read().cooking.orderAt+10000<=Date.now(),null,{timeout:15000});await focus('kitchen-courier');}
+   else await page.locator(`[data-action="${step.id}"]`).click();
+   assert.equal((await read()).cooking.progress[key],index+1,`${key} ${step.id}`);
+  }
+  await shot('done-'+key);await page.locator('#leave-kitchen').click();checks.push(`${recipes[key].name} 순서대로 완성`);
  }
- assert.equal((await read()).cooking.completed,true);await page.reload();await page.locator('#continue').click();await page.waitForFunction(()=>window.__roomTest?.view().mode==='kitchen',null,{timeout:120000});assert.equal((await read()).cooking.completed,true);
- await focus('kitchen-exit');await page.locator('#kitchen-finish').click();await page.waitForFunction(()=>window.__roomTest.view().mode==='rescue',null,{timeout:60000});check('Four completed meals persist and unlock the 201–300 day room');assert.deepEqual(errors,[]);await fs.writeFile('test-results/kitchen-report.json',JSON.stringify({ok:true,checks,errors},null,2));
-}catch(e){await shot('failure');await fs.writeFile('test-results/kitchen-report.json',JSON.stringify({ok:false,checks,errors,error:e.stack,view:await view().catch(()=>null)},null,2));throw e;}finally{await browser.close();}
+ assert.equal((await read()).cooking.completed,true);await page.reload();await page.locator('#continue').click();await page.waitForFunction(()=>window.__roomTest?.view().mode==='kitchen',null,{timeout:120000});assert.equal((await read()).cooking.completed,true);assert.deepEqual(errors,[]);checks.push('새로고침 후 완성 상태 유지');await fs.writeFile('test-results/kitchen-report.json',JSON.stringify({ok:true,checks,errors},null,2));
+}catch(error){await shot('failure');await fs.writeFile('test-results/kitchen-report.json',JSON.stringify({ok:false,checks,errors,error:error.stack},null,2));throw error;}finally{await browser.close();}

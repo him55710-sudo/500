@@ -1,8 +1,10 @@
 """Editable 201–300 day rescue chapter. Blender 5.2; no existing files/scenes removed."""
-import bpy, math, random, os, json
+import bpy, math, random, os, json, sys
 from mathutils import Vector
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSET=os.path.join(ROOT,'public','assets','rescue')
+sys.path.insert(0,os.path.join(ROOT,'blender'))
+from rescue_cabinet import build_glass_cabinet
 scene=bpy.data.scenes.new('Day_300_Save_Hyunsu');bpy.context.window.scene=scene
 random.seed(300);batches={};mats={};origins={}
 def xyz(p):return (p[0],-p[2],p[1])
@@ -59,20 +61,13 @@ for i,cx in enumerate([0,12,24,36,47]):
   for z in [-3,0,3]:box((cx,4.05,z),(11.8,.16,.12),walnut,root)
 text('201 — 300   /   SAVE HYUNSU',(0,3.48,-4.85),.26,'Title',gold)
 text('01   A LITTLE CARE',(-2.9,2.88,-4.18),.16,'CabinetTitle',gold)
-# Trophy cabinet shelves and hinged paneled door. Medicine is behind trophies.
-for x in [-4.3,-1.5]:box((x,1.38,-4.35),(.13,2.65,.78),walnut,'Cabinet')
-box((-2.9,1.38,-4.73),(2.9,2.65,.08),walnut,'Cabinet')
-for y in [.12,.88,1.68,2.68]:box((-2.9,y,-4.35),(2.9,.10,.82),walnut,'Cabinet')
+# Six trophies remain visible through a hinged glass display cabinet.
 for y in [1.02,1.82]:
  for x in [-3.88,-2.92,-1.94]:
   box((x,y,-4.24),(.46,.12,.34),black,'Trophies');tube((x,y+.07,-4.24),(x,y+.3,-4.24),.047,gold,'Trophies');tube((x,y+.28,-4.24),(x,y+.54,-4.24),.055,gold,'Trophies',24,.19);ring((x,y+.53,-4.24),.19,.012,gold,'Trophies');
   for s in [-1,1]:ring((x+s*.18,y+.42,-4.24),.1,.018,gold,'Trophies',True)
   text('대상',(x,y+.02,-4.05),.085,'TrophyPlate',gold)
 origins['CabinetDoor']=(-4.3,0,-3.88)
-box((1.38,1.40,0),(2.76,2.65,.10),sage,'CabinetDoor')
-for x in [.08,2.68]:box((x,1.4,.065),(.03,2.43,.025),gold,'CabinetDoor')
-for y in [.2,2.6]:box((1.38,y,.065),(2.62,.03,.025),gold,'CabinetDoor')
-tube((2.5,1.25,.12),(2.5,1.6,.12),.026,gold,'CabinetDoor')
 box((-3.15,1.02,-4.55),(.4,.12,.23),white,'Medicine');box((-3.15,1.09,-4.55),(.27,.014,.12),sage,'Medicine')
 # Carved bed, upholstered headboard, folded duvet, pillow and bedside props.
 box((1.7,.47,-2),(2.45,.20,3.7),walnut,'Bed');box((1.7,.66,-2),(2.34,.26,3.5),white,'Bed');box((1.7,1.12,-3.75),(2.52,1.5,.20),walnut,'Bed');box((1.7,1.18,-3.60),(2.22,.9,.13),sage,'Bed')
@@ -172,6 +167,7 @@ for (root,m),(v,f,smooth) in batches.items():
  # Subtle bevels on cabinetry and trim rather than razor sharp primitives.
  if root.startswith(('Architecture','Bed','Cabinet','Checkout','MapFrame')):
   mod=o.modifiers.new('Softened furniture edges','BEVEL');mod.width=.013;mod.segments=2
+build_glass_cabinet(scene,group('Cabinet'),group('CabinetDoor'))
 for root in ['HyunsuBed','HyunsuCold','HyunsuHungry','HyunsuQuake']:
  for part in ['Coat','Knit','Sleeve-1','Sleeve1']:
   for obj in [group(root+'/'+part),*group(root+'/'+part).children_recursive]:obj.hide_render=True

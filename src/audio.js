@@ -40,7 +40,6 @@ export class Soundscape {
  }
  effect(name){
   if(name==='power'){this.noise(.08,.12,1100);this.tone(110,.35,.04,'sine');[440,660,880].forEach((f,i)=>this.tone(f,.3,.035,'sine',i*.08));}
-  if(name==='sizzle'){this.noise(.65,.12,3400);this.noise(.18,.06,1700);}
   if(name==='chop'){[0,.13,.26].forEach(t=>this.tone(170,.055,.08,'triangle',t));}
   if(name==='wash')this.noise(.6,.09,2500);
   if(name==='order'){this.tone(659,.18,.065,'sine');this.tone(880,.4,.06,'sine',.15);}

@@ -1,0 +1,37 @@
+body #modal[data-kind="journey-ticket"]{max-width:1050px;background:#f3f5f7;color:#142b40;padding:32px}
+body #modal[data-kind="journey-ticket"] #modal-kicker{color:#587086}
+body #modal[data-kind="journey-ticket"] #modal-title{color:#142b40;margin-bottom:25px}
+.ticket-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(240px,1fr);gap:28px;align-items:start}
+.memory-pass{background:#fffef9;border:1px solid #e0ded4;border-radius:16px;box-shadow:0 12px 34px #10273e12;overflow:hidden}
+.ticket-brand{display:flex;align-items:center;justify-content:space-between;padding:23px 26px;background:#112d44;color:#f9f3e5;gap:12px}
+.ticket-brand>div{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:650;letter-spacing:1.3px}
+.ticket-brand small{display:block;font-size:8px;letter-spacing:3px;margin-top:4px;color:#bdd1dd}
+.ticket-airline-icon svg{width:25px;height:25px;transform:rotate(35deg);color:#d7b97c}
+.ticket-brand>b{font-size:9px;letter-spacing:1.4px;border:1px solid #c8ac7070;padding:8px 10px;border-radius:3px;color:#ead7ac;white-space:nowrap}
+.ticket-main{padding:27px 27px 0}
+.ticket-route{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:center}
+.ticket-route>div:first-child,.ticket-route>div:last-child{display:grid;gap:6px}.ticket-route>div:last-child{text-align:right}
+.ticket-route small,.ticket-person dt{font-size:9px;letter-spacing:1px;font-weight:550;color:#657582}
+.ticket-route strong{font:650 55px/1.08 var(--ui-font,sans-serif);letter-spacing:-2px;color:#112d44}
+.ticket-route>div>span{font-size:11px;color:#566a77}
+.ticket-route-line{text-align:center;position:relative}.ticket-route-line:before{content:'';position:absolute;top:17px;left:0;right:0;border-top:1px dashed #aebcc4}
+.ticket-route-line>span{display:block;position:relative;width:35px;margin:auto;background:#fffef9}
+.ticket-route-line svg{height:28px;width:28px;transform:rotate(90deg);color:#b99b62}
+.ticket-route-line>small{display:block;white-space:nowrap;font-size:9px;margin-top:11px;letter-spacing:0;color:#71808b}
+.ticket-person{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;margin:29px 0 24px;padding-top:21px;border-top:1px solid #e5e7e6}
+.ticket-person>div{min-width:0}.ticket-person dd{font-size:14px;font-weight:650;margin:8px 0 0;color:#243c4c;white-space:nowrap}
+.ticket-clues{display:grid;grid-template-columns:1fr 1fr;border:1px solid #e7dfce;border-radius:8px;background:#f6f1e7}
+.ticket-clues>div{padding:17px 21px}.ticket-clues>div+div{border-left:1px solid #e0d6c4}
+.ticket-clues span{display:block;font-size:10px;letter-spacing:1.4px;font-weight:650;color:#4e5d66}.ticket-clues small{font-size:10px;letter-spacing:0;margin-left:5px;color:#7a7b70;font-weight:400}
+.ticket-clues strong{font-size:44px;font-weight:650;line-height:1.4;letter-spacing:-1px;color:#142f46}.ticket-clues p{font-size:10px;line-height:1.6;color:#6f736e;margin:0;word-break:keep-all}
+.ticket-tear{display:flex;align-items:center;margin-top:26px}.ticket-tear span{flex:1;border-top:1px dashed #c6cdcc}.ticket-tear i{width:18px;height:18px;border-radius:50%;background:#f3f5f7;border:1px solid #e0ded4}.ticket-tear i:first-child{margin-left:-10px}.ticket-tear i:last-child{margin-right:-10px}
+.ticket-stub{position:static;inset:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:12px 27px 24px}.ticket-stub b{font-size:10px;letter-spacing:1px;color:#314957}.ticket-stub span{display:block;font-size:9px;color:#6d7b81;margin-top:6px}
+.ticket-code{width:132px;flex-shrink:0;text-align:center}.ticket-code>div{height:30px;background:repeating-linear-gradient(90deg,#173347 0 2px,transparent 2px 4px,#173347 4px 5px,transparent 5px 9px,#173347 9px 12px,transparent 12px 14px)}.ticket-code small{display:block;font-size:7px;letter-spacing:1.6px;margin-top:6px;color:#657681}
+.ticket-guide{padding:3px 0}.ticket-status{display:inline-flex;align-items:center;gap:7px;color:#236049;background:#e2efe8;border:1px solid #c8e0d2;border-radius:30px;padding:7px 11px;font-size:11px;font-weight:600}.ticket-status i{width:6px;height:6px;border-radius:50%;background:#358968}
+.ticket-guide-kicker{margin:24px 0 9px;font-size:9px;letter-spacing:1.8px;color:#73838e}.ticket-guide h3{margin:0;font-size:21px;line-height:1.6;letter-spacing:-.5px;word-break:keep-all}.ticket-guide>p:not(.ticket-guide-kicker):not(.ticket-chosen-seat){font-size:12px;color:#667782;line-height:1.9;word-break:keep-all;margin:13px 0 20px}
+.ticket-steps{list-style:none;padding:0;margin:22px 0;display:grid;gap:16px}.ticket-steps li{display:flex;align-items:center;gap:12px;color:#83929a}.ticket-steps li>span{width:30px;height:30px;display:grid;place-items:center;border:1px solid #d7dfe2;border-radius:50%;font-size:10px;flex:none}.ticket-steps b{font-size:12px;font-weight:550}.ticket-steps small{display:block;font-size:10px;margin-top:4px;color:#7a8991}.ticket-steps .done>span{color:#368568;background:#e4eee8;border-color:#cfe0d5}.ticket-steps .done b{color:#63786d}.ticket-steps .current>span{background:#142f46;color:#fff;border-color:#142f46}.ticket-steps .current b{color:#142f46;font-weight:700}
+body #modal[data-kind="journey-ticket"] #journey-ticket-continue{display:flex;justify-content:space-between;align-items:center;width:100%;gap:10px;background:#142f46;color:#fff;min-height:46px;font-size:12px;border:1px solid #142f46}
+.ticket-save-note{display:block;text-align:center;font-size:10px;color:#7a8991;margin-top:11px}.ticket-chosen-seat{display:flex;justify-content:space-between;padding:12px;background:#e8edf1;border-radius:5px;font-size:12px}
+.crew-identity{display:flex;align-items:center;gap:13px;background:#122e43;padding:18px;border-radius:8px;color:#fbf4e7}.crew-wing{color:#dcbe7c;font-size:30px}.crew-identity b{display:block;font-size:13px}.crew-identity small{display:block;font-size:8px;letter-spacing:1px;color:#bdd0da;margin-top:6px}.crew-state{margin-left:auto;white-space:nowrap;font-size:10px;color:#e3c993;border:1px solid #dec69850;padding:7px;border-radius:4px}.crew-state.ready{color:#b5e9ce;border-color:#94d5b850}.crew-clue{font-size:12px;color:#627481;line-height:1.8}
+@media(max-width:760px){body #modal[data-kind="journey-ticket"]{padding:24px 18px}.ticket-layout{grid-template-columns:1fr;gap:25px}.ticket-guide{padding:0 6px}.ticket-guide h3{font-size:19px}.ticket-steps{grid-template-columns:1fr 1fr;gap:16px 8px}.ticket-brand{padding:18px 20px}.ticket-main{padding:22px 20px 0}.ticket-route strong{font-size:46px}.ticket-stub{padding:12px 20px 20px}}
+@media(max-width:420px){.ticket-brand>div{font-size:10px;gap:7px}.ticket-brand>b{font-size:8px;padding:6px}.ticket-main{padding:20px 15px 0}.ticket-route{gap:5px}.ticket-route strong{font-size:41px}.ticket-route>div>span{font-size:10px}.ticket-person{gap:10px}.ticket-person dd{font-size:12px}.ticket-clues>div{padding:13px}.ticket-clues p{font-size:9px}.ticket-stub{padding:10px 15px 20px;gap:10px}.ticket-code{width:90px}.ticket-stub b{font-size:8px}.ticket-stub span{font-size:8px}.crew-identity{flex-wrap:wrap}.crew-state{margin-left:0}}

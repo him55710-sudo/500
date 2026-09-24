@@ -5,3 +5,8 @@ body.coaster #subtitle{background:#173344d9;color:#fff8eb;border-radius:24px;fon
 body.coaster #hud:before,body.coaster #hud:after{content:'';position:absolute;left:0;right:0;height:16px;background:#172a35;pointer-events:none}
 body.coaster #hud:before{top:0}body.coaster #hud:after{bottom:0}
 body.coaster .wordmark,body.coaster .wordmark span,body.coaster .chapter,body.coaster .chapter .eyebrow,body.coaster .objective .eyebrow,body.coaster .objective p,body.coaster .profile,body.coaster .profile small{color:#234b5e;text-shadow:0 1px 4px #d8eaf1}
+body.arrival #vignette{background:linear-gradient(#172b3b25,transparent 22%,transparent 68%,#172b3b45)}
+body.arrival .wordmark,body.arrival .wordmark span,body.arrival .chapter,body.arrival .chapter .eyebrow,body.arrival .objective .eyebrow,body.arrival .objective p,body.arrival .profile,body.arrival .profile small{color:#243e45;text-shadow:0 1px 5px #fff5ed}
+body.arrival #subtitle{background:#203a3ae8;color:#fff5e4;border-radius:20px;padding:12px 20px}
+body.arrival .bag-chip{background:#213c3a;color:#ffe5a7;border-color:#b7995c}
+body.arrival.arrival-doorway .wordmark,body.arrival.arrival-doorway .wordmark span,body.arrival.arrival-doorway .chapter,body.arrival.arrival-doorway .chapter .eyebrow,body.arrival.arrival-doorway .objective .eyebrow,body.arrival.arrival-doorway .objective p,body.arrival.arrival-doorway .profile,body.arrival.arrival-doorway .profile small{color:#fff2d8;text-shadow:0 1px 4px #102825}

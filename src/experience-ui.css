@@ -1,0 +1,93 @@
+/* Shared reading and play surfaces. The story's black/red prologue has its own palette. */
+:root{--ui-font:'Noto Sans KR','Malgun Gothic',sans-serif;--ui-ink:#20252b;--ui-muted:#59616b;--ui-accent:#ad1835;--ui-line:#dde1e5}
+#scene{user-select:none;-webkit-user-select:none}
+#scene.is-looking{cursor:grabbing}
+body #vignette{background:none}
+body #hud{padding:24px 28px;color:#fff;text-shadow:none}
+body #hud :is(.wordmark,.chapter,.profile,.controls-hint){text-shadow:none}
+body #hud .wordmark{font-family:var(--ui-font);font-size:28px;font-weight:600;letter-spacing:-1.5px;color:#fff;gap:12px;padding:9px 15px;background:#171c23e8;border-radius:8px}
+body #hud .wordmark span{color:#f7f9fc;font-size:11px;letter-spacing:1.5px}
+body #hud .chapter{color:#fff;background:#171c23e8;border-radius:8px;padding:12px 16px;gap:5px}
+body #hud .chapter .eyebrow{color:#cbd4df;font-size:10px;letter-spacing:1.8px;text-shadow:none}
+body #hud .icon-button{background:#171c23ed;border:1px solid #ffffff45;color:#fff;width:44px;height:44px;border-radius:8px}
+body #hud .objective{margin-top:28px;padding:16px 18px;max-width:285px;border:1px solid #ffffff24;border-radius:8px;background:#171c23eb;text-shadow:none}
+body #hud #objective-label{color:#cbd4df;font-size:10px;letter-spacing:1.3px}
+body #hud .objective p{color:#fff;text-shadow:none;font-size:13px;line-height:1.8;margin:9px 0 13px;word-break:keep-all;overflow-wrap:anywhere}
+body #hud #progress i{background:#ffffff32}body #hud #progress i.done{background:#b8c9db}body #hud #progress i.current{background:#ff4966}
+body #hud #prompt{background:#141a23f5;color:#fff;border:1px solid #ffffff42;border-radius:8px;padding:12px 18px;box-shadow:0 8px 26px #0002;max-width:calc(100vw - 36px)}
+body #hud #prompt b{font-size:14px;font-weight:600}body #hud #prompt small{font-size:12px;color:#d4dbe5;line-height:1.6}
+body #hud .key{border-color:#ffffff65;color:#fff;border-radius:4px}
+body #hud #subtitle{font-family:var(--ui-font);font-size:15px;font-weight:400;line-height:1.85;letter-spacing:-.15px;color:#fff;background:#131a24ed;border:1px solid #ffffff24;border-radius:8px;padding:13px 22px;text-shadow:none;max-width:min(750px,88vw);word-break:keep-all}
+body #hud #toast{font-family:var(--ui-font);font-size:14px;line-height:1.7;color:#fff;background:#131a24f2;border:1px solid #ffffff24;border-radius:8px}
+body #hud .tools button,body #resume-capture{color:#fff;background:#171c23ed;border:1px solid #ffffff32;border-radius:6px;min-height:42px;font-size:12px}
+body #hud .profile{color:#fff;background:#171c23e8;border-radius:8px;padding:10px 14px}body #hud .profile small{color:#cbd4df;text-shadow:none}
+body #hud .controls-hint{color:#fff;background:#171c23e8;padding:8px 12px;border-radius:5px;font-size:10px;text-shadow:none}
+body #modal-backdrop,body #modal-backdrop.story-backdrop{background:#090e19b5;backdrop-filter:none;padding:28px}
+body #modal,body #modal.story-dialog{--story-wine:var(--ui-accent);--story-ink:var(--ui-ink);--story-muted:var(--ui-muted);font-family:var(--ui-font);color:var(--ui-ink);background:#fafbfc;border:1px solid #fff;border-radius:12px;padding:34px 38px 28px;box-shadow:0 24px 100px #0006;color-scheme:light;scrollbar-color:#aab2bd #fafbfc;max-height:calc(100dvh - 56px)}
+body #modal.story-dialog #modal-kicker{color:var(--ui-accent);font-size:10px;font-weight:600;letter-spacing:1.8px;line-height:1.8;padding-right:44px}
+body #modal.story-dialog h2,body #modal.story-dialog #modal-title{font-family:var(--ui-font);font-size:27px;font-weight:600;letter-spacing:-1px;line-height:1.45;color:var(--ui-ink);margin:10px 0 24px;border-bottom:1px solid var(--ui-line);padding:0 40px 21px 0}
+body #modal.story-dialog h3,body #modal.story-dialog .hint-envelope summary b,body #modal.story-dialog .recipe-book summary{font-family:var(--ui-font);font-weight:600;letter-spacing:-.5px;color:var(--ui-ink)}
+body #modal.story-dialog .close{width:40px;height:40px;top:20px;right:20px;border:1px solid var(--ui-line);background:#fff;color:#39424e;border-radius:8px;display:grid;place-items:center;padding:0;font-size:25px}
+body #modal.story-dialog .body-copy,body #modal.story-dialog .story-intro,body #modal.story-dialog .rescue-lead,body #modal.story-dialog .recipe-intro{font-size:14px;line-height:1.85;color:var(--ui-muted);word-break:keep-all}
+body #modal.story-dialog .primary{background:var(--ui-accent);border:1px solid var(--ui-accent);color:#fff;border-radius:6px;min-height:46px;font-size:13px;font-weight:600;padding:12px 20px;letter-spacing:0}
+body #modal.story-dialog .primary:hover:not(:disabled){background:#86112a}
+body #modal.story-dialog .primary:disabled{color:#68717d;background:#e8ebef;border-color:#d5dae1;opacity:1}
+body #modal.story-dialog .secondary{color:#303b49;background:#fff;border:1px solid #bdc6d2;border-radius:6px;min-height:44px;font-size:13px;padding:10px 16px}
+body #modal.story-dialog :is(button,input,select,textarea,summary):focus-visible{outline:3px solid #1c67cc;outline-offset:3px}
+body #modal.story-dialog .notice{color:#59616b;background:#eef1f5;border-left:2px solid #9cabbc;font-size:12px;line-height:1.8}
+body #modal.story-dialog .story-label{color:#59616b;font-size:10px;font-weight:600;letter-spacing:1.25px}
+body #modal.story-dialog .letter-layout{grid-template-columns:minmax(0,1fr) 220px;gap:30px}
+body #modal.story-dialog .letter-paper,body #modal.story-dialog .keepsake-paper{font-family:var(--ui-font);font-size:17px;font-weight:400;letter-spacing:-.25px;line-height:1.9;color:#27303b;background:#fff;padding:28px 32px;border:1px solid var(--ui-line);border-radius:7px;box-shadow:none;transform:none}
+body #modal.story-dialog .letter-postmark{margin-bottom:25px;color:#626d7c;letter-spacing:1.6px;font-size:9px}
+body #modal.story-dialog .letter-postmark b{color:#59616b;font-size:9px;font-weight:500}
+body #modal.story-dialog .paper-stamp{font-family:var(--ui-font);font-size:26px;border:1px solid #d7dce4;border-radius:50%;width:47px;height:47px;outline:none;transform:none;color:var(--ui-accent)}
+body #modal.story-dialog .paper-stamp small,body #modal.story-dialog .paper-fold{display:none}
+body #modal.story-dialog .letter-salutation{font-size:19px;margin-bottom:18px;font-weight:600}
+body #modal.story-dialog .letter-lines{background:none;line-height:1.9}
+body #modal.story-dialog .letter-lines p{margin-bottom:20px}
+body #modal.story-dialog .letter-paper strong{color:var(--ui-accent);font-weight:600;background:none;border:0;padding:0}
+body #modal.story-dialog .letter-last-word{font-size:19px;font-weight:600;transform:none}
+body #modal.story-dialog .signature{font-size:19px;font-weight:600;color:#27303b;gap:6px;margin-top:28px}
+body #modal.story-dialog .signature small{color:#59616b;font-size:12px}
+body #modal.story-dialog .letter-margin h3{font-size:18px;line-height:1.65}
+body #modal.story-dialog .letter-margin p{font-size:13px;line-height:1.85;color:var(--ui-muted)}
+body #modal.story-dialog .letter-keep span{font-size:12px;color:#59616b}
+body #modal.story-dialog .letter-next,body #modal.story-dialog .story-bottom{border-color:var(--ui-line)}
+body #modal.story-dialog .story-bottom>span{font-size:11px;color:#59616b}
+body #modal.story-dialog #hint-question{font-family:var(--ui-font);font-size:15px;line-height:1.8;background:#fff;color:#303b49;border-color:#bdc6d2;border-radius:6px}
+body #modal.story-dialog .hint-contact,body #modal.story-dialog .hint-envelope,body #modal.story-dialog .rescue-note,body #modal.story-dialog .journey-dialogue{background:#eef1f5;border-color:#d5dce5;border-radius:7px;color:var(--ui-ink)}
+body #modal.story-dialog .hint-contact p,body #modal.story-dialog .hint-envelope summary small,body #modal.story-dialog #copy-status{color:#59616b;font-size:12px}
+body #modal.story-dialog .sender-mark{background:#253448;color:#fff;font:600 25px var(--ui-font)}
+body #modal.story-dialog .contact-caption{font:11px/1.6 var(--ui-font);color:#59616b}
+body #modal.story-dialog :is(.journal-cover p,.memory-pages p,.journal-count b,.journal-progress span,.memory-page-number,.hint-card-number,.hint-steps li>span,.rescue-stamp,.rescue-answer,.rescue-answer>b,.dish-count){font-family:var(--ui-font);font-style:normal}
+body #modal.story-dialog :is(.journal-cover p,.memory-pages p){color:var(--ui-ink);font-size:15px;line-height:1.9}
+body #modal.story-dialog :is(.recipe-book li,.recipe-book li small,.step-guide,.food-reference figcaption,.needed-items span){font-size:12px;line-height:1.8}
+body #modal.story-dialog .recipe-book li{color:var(--ui-muted)}
+body #modal.story-dialog .recipe-book li.current{color:#246848;font-weight:600}
+body #modal.story-dialog .dish-count{font-size:16px;color:var(--ui-muted)}
+body #modal.story-dialog .ingredient{background:#fff;border-color:var(--ui-line);color:var(--ui-ink)}
+body #modal.story-dialog .ingredient:hover{background:#f1f5f7;border-color:#8b9baa}
+body #modal.story-dialog .market-tabs button{color:#3b4858;border-color:#c6ced8;min-height:40px}
+body #modal.story-dialog .market-tabs .active{background:#253448;color:#fff;border-color:#253448}
+body #modal.story-dialog .market-card-actions button{min-height:38px}
+body #modal.story-dialog .station{color:#36512e}
+body #modal.story-dialog .station.selected{color:#16390b}
+body #modal.story-dialog .station-sequence span{border-color:#9dad97;background:#f0f5eb}
+@media(max-width:720px){
+ body #hud{padding:16px}body #hud .wordmark{font-size:23px;padding:8px 12px}body #hud .wordmark span{font-size:9px}
+ body #hud .chapter{padding:9px 11px;font-size:10px}body #hud .chapter .eyebrow{font-size:8px}
+ body #hud .objective{margin-top:18px;max-width:240px;padding:12px 14px}body #hud .objective p{font-size:12px}
+ body #modal-backdrop,body #modal-backdrop.story-backdrop{padding:12px}body #modal,body #modal.story-dialog{padding:25px 20px 20px;max-height:calc(100dvh - 24px)}
+ body #modal.story-dialog h2,body #modal.story-dialog #modal-title{font-size:23px;padding-bottom:17px;margin-bottom:20px}
+ body #modal.story-dialog .letter-layout{grid-template-columns:1fr;gap:20px}body #modal.story-dialog .letter-paper{font-size:16px;padding:22px}
+ body #modal.story-dialog .letter-margin{padding:0}body #modal.story-dialog .margin-icon,body #modal.story-dialog .letter-margin>.story-label{display:none}
+ body #modal.story-dialog .story-bottom{gap:14px;flex-wrap:wrap}body #modal.story-dialog .story-actions{width:100%;justify-content:flex-end}
+ body #hud #subtitle{font-size:13px;padding:11px 16px}body #hud .profile{padding:8px 10px}
+}
+@media(max-height:600px){body #hud .objective{margin-top:16px}body #modal.story-dialog .letter-paper{padding:20px 26px}body #modal.story-dialog .letter-postmark{margin-bottom:14px}}
+@media(max-width:420px){
+ body #modal.story-dialog[data-kind=market]{width:100%}
+ body #modal.story-dialog .market-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ body #modal.story-dialog .market-card-actions button{min-height:44px;white-space:nowrap}
+ body #modal.story-dialog .ingredient>img{height:82px}
+}

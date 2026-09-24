@@ -1,0 +1,121 @@
+/* The photograph stays whole. Motion belongs to its frame, never to a crop. */
+body.watching-memory-film { background: #0e0c0c; }
+body.watching-memory-film > :not(#memory-film):not(script) { display: none !important; }
+#memory-film { --film-cream: #f1e6d9; --film-rose: #d9a39c; position: fixed; inset: 0; z-index: 1000; overflow: hidden; background: #0e0c0c; color: var(--film-cream); font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; color-scheme: dark; isolation: isolate; outline: none; }
+#memory-film *, #memory-film *::before, #memory-film *::after { box-sizing: border-box; }
+#memory-film [hidden] { display: none !important; }
+#memory-film a { color: inherit; text-decoration: none; }
+#memory-film button { appearance: none; font: inherit; color: inherit; cursor: pointer; border-radius: 0; }
+#memory-film button:focus-visible, #memory-film a:focus-visible { outline: 2px solid var(--film-rose); outline-offset: 5px; }
+#memory-film button:disabled { opacity: .25; cursor: default; }
+#memory-film .film-ambient { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 45%, #42302933, transparent 67%); pointer-events: none; }
+#memory-film .film-grain { position: absolute; inset: 0; z-index: 4; opacity: .035; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' opacity='.7' d='M0 0h150v150H0z'/%3E%3C/svg%3E"); }
+#memory-film .film-header { position: absolute; z-index: 5; inset: max(24px, env(safe-area-inset-top)) 4.5vw auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; height: 45px; }
+#memory-film .film-brand { display: flex; align-items: center; gap: 17px; font: italic 32px Georgia, serif; }
+#memory-film .film-brand span { font: 10px 'Noto Sans KR', sans-serif; letter-spacing: .07em; color: #c4b4a8; }
+#memory-film .film-dedication { position: absolute; left: 50%; transform: translateX(-50%); color: #a98c80; font: 9px Georgia, serif; letter-spacing: .24em; white-space: nowrap; }
+#memory-film .film-sound { border: 1px solid #e8c6b528; background: #160f0e88; display: flex; align-items: center; gap: 9px; font-size: 17px; padding: 10px 14px; }
+#memory-film .film-sound span { font-size: 10px; color: #c4b4a8; }
+#memory-film .film-stage { position: absolute; inset: 0; }
+#memory-film .film-scene { position: absolute; inset: 0; display: grid; place-items: center; animation: film-arrive 1.4s ease both; }
+#memory-film .film-scene.is-leaving { animation: film-leave 1.4s ease both; pointer-events: none; }
+#memory-film .film-title-card { text-align: center; position: relative; z-index: 2; padding: 90px 24px 120px; max-width: 100%; }
+#memory-film .film-eyebrow { color: #b79789; font-size: 10px; letter-spacing: .24em; margin: 0 0 28px; font-weight: 400; }
+#memory-film h1, #memory-film h2 { font-family: 'Gowun Batang', 'Batang', Georgia, serif; font-weight: 400; font-size: clamp(34px, 4.5vw, 66px); line-height: 1.55; letter-spacing: -.055em; word-break: keep-all; margin: 0; }
+#memory-film h1 em, #memory-film h2 em { font-style: normal; color: var(--film-rose); }
+#memory-film .film-fine-line { display: block; width: 36px; height: 1px; background: #d4ab9570; margin: 30px auto; }
+#memory-film .film-intro-copy { color: #c0afa3; font: 15px/2.1 'Gowun Batang', 'Batang', serif; margin: 0; word-break: keep-all; }
+#memory-film .film-start { display: inline-flex; gap: 35px; align-items: center; justify-content: center; margin-top: 35px; padding: 16px 27px; background: #dbc0aa; border: 1px solid #e7cdb8; color: #2a1c18; font-size: 12px; transition: background .3s, transform .3s; }
+#memory-film .film-start:hover { background: #f0d8c3; transform: translateY(-2px); }
+#memory-film .film-start span { font-size: 20px; }
+#memory-film .film-intro-note { color: #8f7f76; font-size: 10px; margin: 16px 0 0; }
+#memory-film .film-ghost-number { position: absolute; left: 50%; top: 43%; transform: translate(-50%, -50%); font: italic clamp(220px, 44vw, 660px)/1 Georgia, serif; letter-spacing: -.08em; color: #d2a18407; user-select: none; }
+#memory-film .film-photo-haze { position: absolute; inset: -8%; width: 116%; height: 116%; object-fit: cover; filter: blur(65px) saturate(.6); opacity: .16; pointer-events: none; }
+#memory-film .film-photo-frame { position: absolute; left: 10%; right: 10%; top: 12.5%; height: 59%; margin: 0; display: flex; align-items: center; justify-content: center; }
+#memory-film .film-photo { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 18px 30px #0006); animation: film-drift var(--scene-duration) linear both; }
+#memory-film [data-drift='1'] .film-photo { animation-name: film-drift-back; }
+#memory-film [data-drift='2'] .film-photo { animation-name: film-drift-rise; }
+#memory-film .film-photo-copy { position: absolute; left: 20px; right: 20px; top: 77%; text-align: center; animation: film-words 1.7s ease both; }
+#memory-film .film-photo-title { display: block; color: #b08d7e; font-size: 9px; letter-spacing: .21em; margin-bottom: 14px; }
+#memory-film .film-photo-copy p { white-space: pre-line; font: 400 clamp(17px, 1.8vw, 27px)/1.85 'Gowun Batang', 'Batang', serif; letter-spacing: -.025em; word-break: keep-all; margin: 0; text-shadow: 0 2px 18px #000; }
+#memory-film .film-footer { position: absolute; z-index: 5; left: 4.5vw; right: 4.5vw; bottom: max(23px, env(safe-area-inset-bottom)); height: 45px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+#memory-film .film-meta { display: flex; align-items: center; gap: 22px; padding-top: 8px; }
+#memory-film .film-chapter { color: #bd9a87; font-size: 9px; letter-spacing: .07em; }
+#memory-film .film-counter { color: #938076; font: 10px Georgia, serif; letter-spacing: .08em; }
+#memory-film .film-controls { position: absolute; top: -8px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; align-items: center; }
+#memory-film .film-controls button { width: 40px; height: 40px; background: transparent; border: 1px solid transparent; color: #e8d4c3; font-size: 18px; }
+#memory-film .film-controls button:hover:not(:disabled) { border-color: #d3b09760; }
+#memory-film .film-controls .film-pause { font-size: 15px; border: 1px solid #d3b09735; border-radius: 50%; }
+#memory-film .film-time { padding-top: 8px; font: 9px Georgia, 'Gowun Batang', serif; letter-spacing: .1em; color: #998278; }
+#memory-film .film-progress { position: absolute; left: 0; bottom: 0; appearance: none; border: 0; width: 100%; height: 1px; background: #d4af9025; color: var(--film-rose); }
+#memory-film .film-progress::-webkit-progress-bar { background: #d4af9025; }
+#memory-film .film-progress::-webkit-progress-value { background: var(--film-rose); }
+#memory-film .film-progress::-moz-progress-bar { background: var(--film-rose); }
+#memory-film .film-final-halo { position: absolute; width: min(700px, 95vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(ellipse, #a1554323, transparent 67%); animation: film-glow 6s ease-in-out infinite alternate; }
+#memory-film .film-final .film-title-card { padding-top: 100px; }
+#memory-film .film-final .film-eyebrow { margin-bottom: 24px; font: 9px Georgia, serif; letter-spacing: .25em; }
+#memory-film .film-heart { display: block; width: 81px; height: 77px; margin: 0 auto 17px; overflow: visible; filter: drop-shadow(0 0 18px #c2796830); }
+#memory-film .film-heart path { stroke: #d69891; stroke-width: 1.4; fill: #d6989100; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: film-heart-draw 3s .4s ease forwards; }
+#memory-film .film-love { font-size: clamp(39px, 5.5vw, 82px); color: #f3ddd4; animation: film-words 2.5s .5s ease both; }
+#memory-film .film-final-copy { color: #c4a598; font: 15px/2 'Gowun Batang', 'Batang', serif; margin: 24px 0; animation: film-words 2s 1.3s ease both; }
+#memory-film .film-signature { color: #ac8a7b; font: 12px 'Gowun Batang', serif; letter-spacing: .04em; }
+#memory-film .film-final-actions { display: flex; align-items: center; justify-content: center; gap: 26px; margin-top: 42px; }
+#memory-film .film-final-actions button, #memory-film .film-final-actions a { background: none; border: 0; border-bottom: 1px solid #d6b39e3b; color: #b89d8e; font-size: 10px; padding: 10px 0; }
+#memory-film .film-loading { position: absolute; z-index: 8; left: 50%; top: 48%; transform: translate(-50%, -50%); font-size: 12px; padding: 15px 22px; background: #160f0ee8; border: 1px solid #a1826730; }
+#memory-film .film-photo-error { text-align: center; color: #cab1a1; font-size: 13px; }
+#memory-film .film-photo-error button { border: 1px solid #bd9a8760; background: #251914; padding: 12px 18px; margin-top: 12px; }
+#memory-film .film-announcement, #memory-film .film-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#memory-film.film-paused .film-photo { animation-play-state: paused; }
+#memory-film.film-reduced-motion *, #memory-film.film-reduced-motion *::before, #memory-film.film-reduced-motion *::after { animation: none !important; transition: none !important; }
+#memory-film.film-reduced-motion .film-heart path { stroke-dashoffset: 0; fill: #d6989125; }
+#memory-film.film-reduced-motion .is-leaving { display: none; }
+@keyframes film-arrive { from { opacity: 0; } to { opacity: 1; } }
+@keyframes film-leave { to { opacity: 0; } }
+@keyframes film-words { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes film-drift { from { transform: scale(.97) translateX(-.3%); } to { transform: scale(1.025) translateX(.3%); } }
+@keyframes film-drift-back { from { transform: scale(1.025); } to { transform: scale(.97); } }
+@keyframes film-drift-rise { from { transform: scale(.97) translateY(.6%); } to { transform: scale(1.02) translateY(-.6%); } }
+@keyframes film-heart-draw { 0% { stroke-dashoffset: 1; fill: #d6989100; } 70% { stroke-dashoffset: 0; fill: #d6989100; } 100% { stroke-dashoffset: 0; fill: #d6989125; } }
+@keyframes film-glow { from { opacity: .55; transform: scale(.94); } to { opacity: 1; transform: scale(1.08); } }
+@media (max-width: 700px) {
+  #memory-film .film-header { inset: max(19px, env(safe-area-inset-top)) 6vw auto; }
+  #memory-film .film-brand { font-size: 28px; gap: 12px; }
+  #memory-film .film-brand span { font-size: 8px; }
+  #memory-film .film-dedication { display: none; }
+  #memory-film .film-sound { padding: 9px; }
+  #memory-film .film-sound span { font-size: 9px; }
+  #memory-film .film-title-card { padding-left: 22px; padding-right: 22px; }
+  #memory-film .film-eyebrow { font-size: 8px; letter-spacing: .15em; }
+  #memory-film .film-intro-copy { font-size: 13px; }
+  #memory-film .film-photo-frame { left: 6%; right: 6%; top: 14%; height: 52%; }
+  #memory-film .film-photo-copy { top: 71%; left: 24px; right: 24px; }
+  #memory-film .film-photo-copy p { font-size: clamp(16px, 4.3vw, 22px); line-height: 1.9; }
+  #memory-film .film-photo-title { margin-bottom: 12px; font-size: 8px; }
+  #memory-film .film-footer { left: 6vw; right: 6vw; bottom: max(22px, env(safe-area-inset-bottom)); height: 62px; }
+  #memory-film .film-meta { align-items: flex-start; flex-direction: column; gap: 7px; padding-top: 1px; max-width: 42%; }
+  #memory-film .film-chapter { font-size: 8px; }
+  #memory-film .film-counter { font-size: 9px; }
+  #memory-film .film-controls { left: auto; right: -8px; transform: none; gap: 3px; top: -5px; }
+  #memory-film .film-time { position: absolute; bottom: 10px; right: 0; font-size: 8px; }
+  #memory-film .film-heart { width: 66px; height: 64px; }
+  #memory-film .film-final-copy { font-size: 13px; }
+  #memory-film .film-final .film-eyebrow { font-size: 7px; letter-spacing: .16em; }
+}
+@media (max-height: 650px) {
+  #memory-film .film-header { top: 10px; height: 36px; }
+  #memory-film .film-title-card { padding-top: 60px; padding-bottom: 75px; }
+  #memory-film h1, #memory-film h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.4; }
+  #memory-film .film-eyebrow { margin-bottom: 15px; }
+  #memory-film .film-fine-line { margin: 16px auto; }
+  #memory-film .film-start { margin-top: 18px; padding: 10px 23px; }
+  #memory-film .film-photo-frame { top: 15%; height: 46%; }
+  #memory-film .film-photo-copy { top: 66%; }
+  #memory-film .film-photo-copy p { font-size: 16px; line-height: 1.65; }
+  #memory-film .film-photo-title { margin-bottom: 8px; }
+  #memory-film .film-footer { bottom: 12px; height: 43px; }
+  #memory-film .film-final .film-title-card { padding-top: 50px; }
+  #memory-film .film-final .film-eyebrow { margin-bottom: 10px; }
+  #memory-film .film-heart { width: 48px; height: 44px; margin-bottom: 8px; }
+  #memory-film .film-final-copy { margin: 10px 0; font-size: 12px; }
+  #memory-film .film-final-actions { margin-top: 15px; }
+}

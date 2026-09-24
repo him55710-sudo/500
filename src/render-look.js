@@ -10,14 +10,14 @@ const salon={
  'Ceramic cream':{color:'#fff7e8',roughness:.22},
  'Calacatta warm marble':{color:'#faf3e7',metalness:.05,roughness:.27},
  'Hand painted miniature':{roughness:.28},
- 'Dark walnut':{color:'#c3b5a4',roughness:.43},
- 'Walnut | fine satin':{color:'#d6c8b6',roughness:.43},
+ 'Dark walnut':{color:'#faf4ee',roughness:.43},
+ 'Walnut | fine satin':{color:'#faf4ee',roughness:.43},
  'Porcelain painted window':{color:'#f3efe3',roughness:.34},
  'Window recessed stone':{color:'#acbcb8',roughness:.68},
- 'Raspberry silk velvet':{color:'#b44460',roughness:.69},
+ 'Raspberry silk velvet':{color:'#be2854',roughness:.74},
  'Pearl curtain lining':{color:'#eee6d3',roughness:.83},
  'Champagne textile braid':{color:'#c5a66c',roughness:.76,metalness:0},
- 'Aubusson handwoven floral wool':{color:'#aaa89f',roughness:1},
+ 'Aubusson handwoven floral wool':{color:'#f5f5f5',roughness:1},
  'Frame red':{color:'#d52749',metalness:.18,roughness:.25},
  'Frame yellow':{color:'#edbd23',metalness:.18,roughness:.25},
  'Frame green':{color:'#219f69',metalness:.18,roughness:.25},
@@ -40,8 +40,48 @@ const heaven={
  'Soft silver mirror':{color:'#d7edf4',metalness:.94,roughness:.11},
 };
 
+const rescue={
+ 'Ivory lime plaster':{color:'#f5f7f5',roughness:.85},
+ 'Hospital sage':{color:'#4da699',roughness:.8},
+ 'Cotton white':{color:'#fafafa',roughness:.94},
+ 'Walnut':{color:'#71462f',roughness:.5},
+ 'Brushed warm brass':{color:'#caa15b',metalness:.78,roughness:.32},
+ 'Brushed nickel':{color:'#bac7d0',metalness:.8,roughness:.35},
+ 'Paper cream':{color:'#fcfcf9',roughness:.88},
+ 'Winter blue glass':{color:'#73bfeb',roughness:.18},
+ 'Polo navy knit':{color:'#15375e',roughness:.9},
+ 'TOMBOY charcoal wool':{color:'#242933',roughness:.95},
+};
+const kitchen={
+ 'Porcelain white':{color:'#fafcfb',roughness:.32},
+ 'Warm ceramic':{color:'#e9eff0',roughness:.65},
+ 'Sage enamel':{color:'#208f82',roughness:.4},
+ 'Paprika glaze':{color:'#c73b26',roughness:.38},
+ 'Rose patisserie':{color:'#e3638f',roughness:.48},
+ 'Brushed steel':{color:'#bcc8d1',metalness:.86,roughness:.3},
+ 'Oak cabinet':{color:'#ae794a',roughness:.6},
+ 'Powder coated shelving':{color:'#eff4f5',roughness:.65},
+ 'Warm terrazzo':{color:'#e5e9e6',roughness:.84},
+ 'Shelf price strips':{color:'#1d4f54',roughness:.65},
+};
+const journey={
+ ...rescue,
+ 'Warm ivory marble':{color:'#e7edf0',roughness:.28},
+ 'Chapel porcelain':{color:'#f6f8fc',roughness:.52},
+ 'First class midnight leather':{color:'#123557',roughness:.5},
+ 'Longge lacquer red':{color:'#bc182e',roughness:.3},
+ 'Scarlet velvet':{color:'#bd1233',roughness:.9},
+ 'Heaven blue':{color:'#66bdec',roughness:.8},
+};
+const rotunda={
+ 'Room II blush plaster':{color:'#e8c0d4',roughness:.8},
+ 'Room II pearl stone':{color:'#f5f8fb',roughness:.4},
+ 'Room II champagne brass':{color:'#c99d50',roughness:.28,metalness:.78},
+ 'Still rose water':{color:'#56b9d9',roughness:.16,metalness:.12},
+};
+
 export function polishRoomMaterials(root,room){
- const palette=room==='heaven'?heaven:salon;
+ const palette={salon,heaven,rescue,kitchen,journey,rotunda}[room]||{};
  const seen=new Set();
  root.traverse(object=>{
   if(!object.isMesh)return;
@@ -54,7 +94,7 @@ export function polishRoomMaterials(root,room){
    // Shared materials must be treated once, not darkened once per mesh.
    if(seen.has(material))continue;seen.add(material);
    if(material.map)material.map.anisotropy=8;
-   const finish=palette[material.name];if(!finish)continue;
+   const finish=palette[material.name.replace(/\.\d+$/,'')];if(!finish)continue;
    if(finish.color)material.color.set(finish.color);
    if(finish.roughness!==undefined)material.roughness=finish.roughness;
    if(finish.metalness!==undefined)material.metalness=finish.metalness;

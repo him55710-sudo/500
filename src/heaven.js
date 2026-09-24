@@ -8,14 +8,14 @@ export async function enterHeaven(world,onProgress){
  const gltf=await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).loadAsync('/assets/kitty-heaven.glb',e=>onProgress?.(e.loaded/(e.total||1)));
  const previousScene=world.scene;
  const scene=new THREE.Scene();scene.background=new THREE.Color('#dceeff');
- scene.environment=previousScene.environment;scene.environmentIntensity=.60;
+ scene.environment=previousScene.environment;scene.environmentIntensity=.4;
  world.scene=scene;world.salonScene=previousScene;world.model=gltf.scene;scene.add(gltf.scene);
  gltf.scene.add(world.avatar);world.avatar.visible=false;
  scene.add(world.camera);world.held.visible=false;
- scene.add(new THREE.HemisphereLight(0xfffcff,0xe8cadd,1.20));
- const sun=new THREE.DirectionalLight(0xfff9f2,1.65);sun.position.set(-3,5,3);sun.castShadow=true;
+ scene.add(new THREE.HemisphereLight(0xffffff,0x65718a,.7));
+ const sun=new THREE.DirectionalLight(0xffffff,1.8);sun.position.set(-3,5,3);sun.castShadow=true;
  sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-8,right:8,top:8,bottom:-8,near:.5,far:25});sun.shadow.bias=-.0003;sun.shadow.normalBias=.035;scene.add(sun,sun.target);
- const fill=new THREE.DirectionalLight(0xdbeaff,.65);fill.position.set(5,3,-5);scene.add(fill);
+ const fill=new THREE.DirectionalLight(0xeaf2ff,.38);fill.position.set(5,3,-5);scene.add(fill);
  const avatarMeshes=new Set();world.avatar.traverse(o=>{if(o.isMesh)avatarMeshes.add(o);});
  gltf.scene.traverse(o=>{
   if(!o.isMesh)return;
@@ -23,7 +23,7 @@ export async function enterHeaven(world,onProgress){
   for(const m of (Array.isArray(o.material)?o.material:[o.material])){if(m.map)m.map.anisotropy=4;}
  });
  polishRoomMaterials(gltf.scene,'heaven');
- world.renderer.toneMappingExposure=1.04;world.renderer.shadowMap.needsUpdate=true;
+ world.renderer.toneMappingExposure=1;world.renderer.shadowMap.needsUpdate=true;
  world.mode='heaven';world.state={stage:0,inventory:[]};world.player.set(0,0,4.80);world.yaw=0;world.pitch=.01;world.toggleView(false);
  world.wallBoxes=[new THREE.Box3(new THREE.Vector3(-7,0,-7.1),new THREE.Vector3(7,6,-6.80)),new THREE.Box3(new THREE.Vector3(-7.1,0,-7),new THREE.Vector3(-6.8,6,7)),new THREE.Box3(new THREE.Vector3(6.8,0,-7),new THREE.Vector3(7.1,6,7)),new THREE.Box3(new THREE.Vector3(-7,0,6.8),new THREE.Vector3(7,6,7.1))];
  world.colliders=[[-1.85,1.85,-5.60,-1.73],[-6.65,-3.65,-4.95,-2.48],[4.15,5.60,-3.45,-.55],[-5.97,-2.95,.48,2.65],[-3.66,-2.05,2.56,4.19],[1.78,4.49,4.09,5.20]];

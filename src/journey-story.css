@@ -1,0 +1,20 @@
+#modal[data-kind="journey-tea"]{max-width:760px;background:linear-gradient(150deg,#fbf6e9,#f2e6d5)}
+.journey-story{text-align:center}
+.journey-story-narration{color:#6b584b;font-size:16px;line-height:2.05;margin:24px 0;text-wrap:pretty;word-break:keep-all}
+.journey-story .journey-dialogue{background:#e9d8bd88;border-top:1px solid #c8ac7f55;border-bottom:1px solid #c8ac7f55;font-size:18px;margin:22px 0 26px;word-break:keep-all}
+.journey-story-actions{display:grid;justify-content:center;gap:10px}
+.journey-story-actions button{min-height:46px;white-space:normal}
+.journey-story-note{font-size:12px;color:#837261;line-height:1.8;margin:18px 0 0;word-break:keep-all}
+.journey-story-dishes{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0}
+.journey-story-dishes span{border:1px solid #c9aa7a80;background:#fff9ed;border-radius:20px;padding:6px 13px;font-size:12px;color:#754b3c}
+.journey-meal-art{height:135px;position:relative;width:170px;margin:20px auto 0}
+.meal-pot{position:absolute;bottom:0;left:12px;width:146px;height:75px;border:5px solid #ba855d;border-top:12px solid #cfab7d;border-radius:15px 15px 65px 65px;background:linear-gradient(#8a2833,#501c2a);box-shadow:0 12px 22px #6736291a;color:#eac191;font-size:32px;line-height:56px}
+.meal-pot:before,.meal-pot:after{content:'';position:absolute;width:20px;height:16px;border:5px solid #ad7a4f;top:10px;border-radius:12px}
+.meal-pot:before{left:-26px}.meal-pot:after{right:-26px}
+.meal-steam{position:absolute;left:50px;top:5px;display:flex;gap:17px}
+.meal-steam i{display:block;width:11px;height:43px;border-left:2px solid #aa856355;border-radius:50%;transform:rotate(12deg);animation:journey-steam 4s ease-in-out infinite alternate}
+.meal-steam i:nth-child(2){animation-delay:-2s;height:50px}.meal-steam i:nth-child(3){animation-delay:-1s}
+.journey-story .zagee-cup{transform:scale(.82);margin:6px auto -28px}
+@keyframes journey-steam{to{transform:translateY(-7px) rotate(-10deg);opacity:.35}}
+@media(prefers-reduced-motion:reduce){.meal-steam i{animation:none}}
+@media(max-width:600px){.journey-story-narration{font-size:14px;line-height:1.95}.journey-story-narration br{display:none}.journey-story .journey-dialogue{font-size:15px;padding:18px}.journey-story .zagee-cup{transform:scale(.7);margin:-12px auto -40px}.journey-story-actions{justify-content:stretch}.journey-story-note{font-size:11px}}

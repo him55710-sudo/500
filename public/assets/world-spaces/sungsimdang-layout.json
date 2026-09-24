@@ -1,0 +1,123 @@
+{
+  "version": 3,
+  "coordinateSystem": "glTF Y-up, metres",
+  "stageOrder": [
+    "sungsimdang",
+    "postech-junction-korea-2026",
+    "ending"
+  ],
+  "authoredStages": [
+    "sungsimdang",
+    "postech-junction-korea-2026"
+  ],
+  "model": "/assets/world-spaces/sungsimdang-room.glb",
+  "spawn": [
+    0.6,
+    0,
+    5.65
+  ],
+  "boundsXZ": [
+    -7.78,
+    7.78,
+    -6.15,
+    6.42
+  ],
+  "furnitureAABBsXZ": [
+    [
+      -4.465,
+      0.765,
+      -0.84,
+      2.14
+    ],
+    [
+      2.72,
+      5.28,
+      1.15,
+      4.49
+    ],
+    [
+      -6.805,
+      -5.255,
+      3.775,
+      4.825
+    ],
+    [
+      -6.5,
+      -0.9,
+      -6.02,
+      -5
+    ],
+    [
+      3.48,
+      5.52,
+      -3.12,
+      -1.82
+    ],
+    [
+      0.18,
+      1.82,
+      -5.05,
+      -3.84
+    ]
+  ],
+  "gates": [
+    {
+      "node": "Gate_01_to_02_Pivot",
+      "position": [
+        4.984,
+        0,
+        -6.328
+      ],
+      "width": 2.072,
+      "from": "sungsimdang",
+      "to": "postech-junction-korea-2026",
+      "requires": "usbTaken",
+      "locked": true
+    }
+  ],
+  "puzzleLogicImplemented": true,
+  "drawer": {
+    "node": "BakeryCashDrawer",
+    "prize": "BakeryCakeKey",
+    "codeRule": "checkout unit prices multiplied by quantities",
+    "position": [
+      4.5,
+      0,
+      -2.55
+    ]
+  },
+  "safe": {
+    "node": "BakerySafeHinge",
+    "prize": "MangoSiruCake",
+    "locked": true,
+    "requires": "keyTaken",
+    "position": [
+      1,
+      1.13,
+      -3.73
+    ]
+  },
+  "letter": {
+    "node": "BakeryLetterFragment",
+    "part": 1,
+    "total": 3,
+    "near": "명란바게트"
+  },
+  "completionRequires": [
+    "usbTaken"
+  ],
+  "nextInteriorImplemented": true,
+  "register": {
+    "node": "BakeryRegister",
+    "interactable": "bakery-register",
+    "position": [
+      4.5,
+      1.6,
+      -2.065
+    ]
+  },
+  "floorDimensionsMetres": [
+    16.8,
+    14
+  ]
+}

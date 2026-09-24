@@ -1,0 +1,12 @@
+{
+  "ceilingHeight": 7.8,
+  "doorPlane": 2.42,
+  "walls": [
+    {"name":"left","center":[-3.5,3.9,-0.49],"size":[0.24,7.8,5.76],"surface":"cream"},
+    {"name":"right","center":[3.5,3.9,-0.49],"size":[0.24,7.8,5.76],"surface":"cream"},
+    {"name":"back","center":[0,3.9,-3.24],"size":[6.8,7.8,0.24],"surface":"color"},
+    {"name":"front-left","center":[-2.3,3.9,2.23],"size":[2.2,7.8,0.24],"surface":"color"},
+    {"name":"front-right","center":[2.3,3.9,2.23],"size":[2.2,7.8,0.24],"surface":"color"},
+    {"name":"lintel","center":[0,5.6,2.23],"size":[2.4,4.4,0.24],"surface":"color"}
+  ]
+}

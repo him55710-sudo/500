@@ -1,0 +1,11 @@
+{
+  "verifiedDate": "2026-09-24",
+  "products": [
+    {"id":"soboro","name":"튀김소보로","price":1700,"quantity":4,"catalogueCode":"523080"},
+    {"id":"guma","name":"튀소구마","price":1700,"quantity":3,"catalogueCode":"523262"},
+    {"id":"buchu","name":"판타롱부추빵","price":2000,"quantity":6,"catalogueCode":"523168"},
+    {"id":"baguette","name":"명란바게트","price":3800,"quantity":7,"catalogueCode":"523165"},
+    {"id":"meari","name":"보문산메아리","price":6000,"quantity":7,"catalogueCode":"523114"}
+  ],
+  "letter": {"part":1,"total":3,"text":"하영아,\n낯선 곳을 걸을 때도\n너와 함께라서…"}
+}

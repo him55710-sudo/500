@@ -23,6 +23,13 @@ concrete=mat('Warm concrete',(.56,.54,.46),0,.94)
 white=mat('Ivory station canopy',(.84,.86,.81),.12,.6)
 grass=mat('Meadow green',(.22,.34,.21),0,1)
 leaves=mat('Tree canopy',(.11,.23,.16),0,1)
+leaf_sun=mat('Sunlit leaves',(.28,.40,.22),0,.95)
+leaf_moss=mat('Deep moss leaves',(.09,.17,.13),0,.97)
+bark=mat('Ridged brown bark',(.20,.12,.075),0,1)
+flower=mat('Garden flowers',(.84,.31,.30),0,.83)
+ride_cream=mat('Carousel ivory',(.90,.78,.57),.15,.55)
+ride_ruby=mat('Carnival ruby',(.63,.035,.055),.35,.34)
+ride_teal=mat('Carnival teal',(.025,.42,.43),.4,.34)
 hills=mat('Distant mountain blue',(.24,.38,.39),0,1)
 pink=mat('Room II blush plaster',(.87,.64,.69),0,.8)
 ivory=mat('Room II pearl stone',(.92,.86,.79),.05,.38)
@@ -43,6 +50,15 @@ def tube(a,b,r,m,root='Environment',n=8,r2=None):
 def ring(center,r,y,m,width=.05,root='Environment',n=96):
  for i in range(n):
   a=i*math.tau/n;b=(i+1)*math.tau/n;tube((center[0]+r*math.cos(a),y,center[1]+r*math.sin(a)),(center[0]+r*math.cos(b),y,center[1]+r*math.sin(b)),width,m,root)
+def crown(center,scale,m,root='Environment',n=12,lat=7):
+ x,y,z=center;sx,sy,sz=scale;vertices=[]
+ for j in range(lat+1):
+  theta=j*math.pi/lat
+  for i in range(n):
+   phi=i*math.tau/n;ruffle=1+.055*math.sin(phi*5+y*.6)+.035*math.cos(theta*7+i*2)
+   vertices.append((x+sx*math.sin(theta)*math.cos(phi)*ruffle,y+sy*math.cos(theta),z+sz*math.sin(theta)*math.sin(phi)*ruffle))
+ faces=[(j*n+i,j*n+(i+1)%n,(j+1)*n+(i+1)%n,(j+1)*n+i) for j in range(lat) for i in range(n)]
+ add(vertices,faces,m,root)
 path=json.load(open(os.path.join(ROOT,'public/assets/coaster-path.json'),encoding='utf8'));samples=path['samples'];frames=[]
 for i,s in enumerate(samples):
  p=Vector(s['p']);t=(Vector(samples[min(i+1,len(samples)-1)]['p'])-Vector(samples[max(0,i-1)]['p'])).normalized();u=Vector(s['up']);r=t.cross(u).normalized();u=r.cross(t).normalized();frames.append((p,t,u,r))
@@ -59,13 +75,17 @@ for i,(p,t,u,r) in enumerate(frames[:-1]):
   tube(p+r*1.67+u*.9,q+qr*1.67+qu*.9,.023,steel)
   if i%7==0:tube(p+r*1.67,p+r*1.67+u*.9,.022,steel)
 # Bent supports are deliberately outside the track clearance envelope.
+supportFootprints=[]
+supportSegments=[]
 for i in range(18,len(frames)-18,19):
  p,t,u,r=frames[i]
  if p.y<3:continue
  side=1 if i%2 else -1;anchor=p+r*(4.3*side);anchor.y=.18
- top=p-u*.75;tube(anchor,top,.19,blue,n=10);box((anchor.x,.05,anchor.z),(1.7,.25,1.7),concrete)
+ supportFootprints.append((anchor.x,anchor.z))
+ top=p-u*.75;supportSegments.append((anchor.x,anchor.z,top.x,top.z));tube(anchor,top,.19,blue,n=10);box((anchor.x,.05,anchor.z),(1.7,.25,1.7),concrete)
  if p.y>14:
-  anchor2=anchor+Vector((0,0,6));tube(anchor2,top,.15,blue);box((anchor2.x,.05,anchor2.z),(1.5,.25,1.5),concrete)
+  anchor2=anchor+Vector((0,0,6));supportSegments.append((anchor2.x,anchor2.z,top.x,top.z));tube(anchor2,top,.15,blue);box((anchor2.x,.05,anchor2.z),(1.5,.25,1.5),concrete)
+  supportFootprints.append((anchor2.x,anchor2.z))
 # Functional station, restrained surroundings.
 box((-2.7,1.15,56),(3.3,2.2,36),concrete);box((-2.7,2.31,56),(3.5,.08,36),white)
 for x in [-4.6,1.7]:
@@ -75,11 +95,88 @@ for i in range(12):box((-6.0, .10+i*.19,74-i*.35),(2,.20,.36),concrete)
 for z in range(39,74,2):tube((-4.3,2.4,z),(-4.3,3.3,z),.035,blue)
 tube((-4.3,3.3,39),(-4.3,3.3,73),.035,blue)
 box((58,1.1,79),(4,2.2,18),concrete);box((58,2.3,79),(4,.12,18),white)
-box((0,-.2,0),(240,.3,250),grass)
+box((0,-.2,0),(290,.3,290),grass)
 for x,z,w,d in [(-10,38,7,50),(57,60,7,55),(5,64,110,7)]:box((x,.015,z),(w,.03,d),concrete)
-for i in range(60):
- a=random.uniform(0,math.tau);r=random.uniform(98,119);x,z=math.cos(a)*r,math.sin(a)*r;h=random.uniform(5,10)
- tube((x,0,z),(x,h*.65,z),.21,concrete,n=5);tube((x,h*.3,z),(x,h,z),random.uniform(2,4),leaves,n=7,r2=.05)
+# The amusement rides sit on clear pads away from trains and structural braces.
+rides=[(105,10,11),(40,120,13),(-90,-85,13)]
+def ride_pad(x,z,r):
+ tube((x,-.04,z),(x,.05,z),r,concrete,n=48)
+ ring((x,z),r,.06,gold,.055)
+ride_pad(105,10,9.4)
+for yy,rr in [(.24,6.9),(.43,7.0),(3.15,6.6)]:tube((105,yy-.04,10),(105,yy+.04,10),rr,ride_teal,n=48)
+tube((105,.45,10),(105,8.4,10),.18,gold,n=16)
+for j in range(12):
+ a=j*math.tau/12;x=105+5.2*math.cos(a);z=10+5.2*math.sin(a)
+ tube((x,.4,z),(x,3.8,z),.045,gold,n=10)
+ crown((x,1.5,z),(.48,.35,.2),ride_cream,n=10,lat=5)
+ tube((x-.16,1.17,z),(x-.26,.65,z-.12),.08,ride_cream,n=8)
+ tube((x+.2,1.2,z),(x+.33,.67,z+.1),.08,ride_cream,n=8)
+ tube((x-.33,1.63,z-.06),(x-.56,1.8,z-.15),.07,ride_cream,n=8)
+ crown((x-.58,1.85,z-.15),(.22,.14,.12),ride_cream,n=8,lat=4)
+for j in range(48):
+ a=j*math.tau/48;b=(j+1)*math.tau/48
+ x1,z1=105+7.1*math.cos(a),10+7.1*math.sin(a);x2,z2=105+7.1*math.cos(b),10+7.1*math.sin(b)
+ tube((x1,3.2,z1),(x2,3.2,z2),.055,gold,n=6)
+ add([(105,7.9,10),(x1,3.2,z1),(x2,3.2,z2)],[(0,1,2)],ride_ruby)
+crown((105,8.2,10),(.62,.5,.62),gold,n=12,lat=6)
+ride_pad(40,120,9.5)
+for d in [-.8,.8]:
+ for j in range(32):
+  a=j*math.tau/32;b=(j+1)*math.tau/32
+  p=(40+7.6*math.cos(a),11.3+7.6*math.sin(a),120+d)
+  q=(40+7.6*math.cos(b),11.3+7.6*math.sin(b),120+d)
+  tube(p,q,.105,ride_teal,n=8)
+ for j in range(16):
+  a=j*math.tau/16;tube((40,11.3,120+d),(40+7.6*math.cos(a),11.3+7.6*math.sin(a),120+d),.045,gold,n=7)
+for side in [-1,1]:
+ for d in [-1.25,1.25]:tube((40+side*5.8,.08,120+d),(40,11.4,120+d*.45),.20,blue,n=10)
+for j in range(12):
+ a=j*math.tau/12;x=40+7.6*math.cos(a);y=11.3+7.6*math.sin(a)
+ tube((x,y,119.2),(x,y,120.8),.065,gold,n=7)
+ tube((x,y-.1,120),(x,y-1.4,120),.034,steel,n=7)
+ box((x,y-1.6,120),(1.35,.62,1.12),ride_ruby if j%2 else ride_cream)
+ride_pad(-90,-85,10)
+for d in [-1.1,1.1]:
+ tube((-95,.06,-85+d),(-90,9.6,-85+d*.35),.18,blue,n=10)
+ tube((-85,.06,-85+d),(-90,9.6,-85+d*.35),.18,blue,n=10)
+tube((-90,9.6,-86),(-90,9.6,-84),.20,gold,n=14)
+for d in [-.9,.9]:tube((-90,9.5,-85+d),(-90,2.2,-85+d),.05,steel,n=8)
+for j in range(18):
+ a=j*math.pi/17;x=-90+6.2*math.cos(a)
+ box((x,1.54,-85),(6.2/18,.52,2.5),ride_ruby if j%2 else ride_teal)
+ tube((x,1.22,-86.3),(x,1.22,-83.7),.055,gold,n=7)
+for x in [-96.2,-83.8]:crown((x,2.0,-85),(.27,.62,1.35),gold,n=10,lat=5)
+# Trees use a clearance envelope around every rail sample and support foot.
+# Reject canopy positions near the three ride pads and the station walkway.
+track2d=[(p.x,p.z) for p,_,_,_ in frames[::3]]
+def segment_distance_sq(x,z,ax,az,bx,bz):
+ dx,dz=bx-ax,bz-az;t=max(0,min(1,((x-ax)*dx+(z-az)*dz)/(dx*dx+dz*dz))) if dx*dx+dz*dz>0 else 0
+ return (x-ax-t*dx)**2+(z-az-t*dz)**2
+trees=[];attempts=0
+while len(trees)<86 and attempts<3000:
+ attempts+=1;x=random.uniform(-132,132);z=random.uniform(-132,132)
+ if -16<x<9 and 29<z<78:continue
+ if any((x-rx)**2+(z-rz)**2<(radius+7.2)**2 for rx,rz,radius in rides):continue
+ if any((x-px)**2+(z-pz)**2<10.8**2 for px,pz in track2d):continue
+ if any((x-px)**2+(z-pz)**2<7.2**2 for px,pz in supportFootprints):continue
+ if any(segment_distance_sq(x,z,*segment)<7.2**2 for segment in supportSegments):continue
+ if any((x-tx)**2+(z-tz)**2<8.1**2 for tx,tz in trees):continue
+ trees.append((x,z));h=random.uniform(6.4,10.8)
+ tube((x,0,z),(x,h*.45,z),.28,bark,n=12,r2=.21)
+ tube((x,h*.45,z),(x+.25,h*.79,z-.12),.20,bark,n=12,r2=.10)
+ for j in range(5):
+  a=j*math.tau/5+random.uniform(-.18,.18);reach=random.uniform(1.7,2.6)
+  start=Vector((x+.08,h*.54,z-.04));end=Vector((x+math.cos(a)*reach,h*(.76+.04*(j%2)),z+math.sin(a)*reach))
+  tube(start,end,.12,bark,n=9,r2=.045)
+  crown((end.x,end.y+.25,end.z),(1.45,1.40,1.40),[leaves,leaf_sun,leaf_moss][j%3],n=12,lat=7)
+ crown((x+.22,h*.94,z-.1),(2.05,1.75,1.90),leaf_sun if len(trees)%3 else leaves,n=14,lat=8)
+ for j in range(3):
+  a=j*math.tau/3;tube((x+.24*math.cos(a),.03,z+.24*math.sin(a)),(x+1.15*math.cos(a),.02,z+1.15*math.sin(a)),.045,bark,n=7)
+for x,z in trees[::4]:
+ for j in range(6):
+  a=j*math.tau/6;xx=x+4.4*math.cos(a);zz=z+4.4*math.sin(a)
+  crown((xx,.25,zz),(.48,.30,.42),leaves if j%2 else leaf_sun,n=9,lat=5)
+  if j%2==0:crown((xx,.5,zz),(.13,.13,.13),flower,n=8,lat=4)
 for i in range(15):
  a=i*math.tau/15;x,z=math.cos(a)*190,math.sin(a)*190;tube((x,-5,z),(x,random.uniform(25,45),z),random.uniform(30,52),hills,n=8,r2=4)
 # One reusable four-seat car. Six cars are articulated along the exported path in-game.

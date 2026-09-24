@@ -15,8 +15,8 @@ try{
  await page.goto('http://127.0.0.1:5179/?e2e=1',{waitUntil:'domcontentloaded'});
  await shot('01-intro');await page.locator('#start').click();await page.waitForFunction(()=>window.__roomTest?.ready,null,{timeout:120000});await page.waitForTimeout(300);
  record('3D asset loaded; start button enters the room');
- await page.keyboard.press('KeyV');assert.equal(await page.evaluate(()=>window.__roomTest.view().thirdPerson),true);await shot('02-third-person');await page.keyboard.press('KeyV');
- await page.evaluate(()=>window.__roomTest.setPosition(1,3.5));const before=await page.evaluate(()=>window.__roomTest.view().position);await page.keyboard.down('KeyW');await page.waitForTimeout(700);await page.keyboard.up('KeyW');const after=await page.evaluate(()=>window.__roomTest.view().position);assert.ok(after[2]<before[2]-.2);record('First/third person and WASD movement work');
+ await page.keyboard.press('KeyV');assert.equal(await page.evaluate(()=>window.__roomTest.view().thirdPerson),false);await shot('02-first-person-only');await page.keyboard.press('KeyV');
+ await page.evaluate(()=>window.__roomTest.setPosition(1,3.5));const before=await page.evaluate(()=>window.__roomTest.view().position);await page.keyboard.down('KeyW');await page.waitForTimeout(700);await page.keyboard.up('KeyW');const after=await page.evaluate(()=>window.__roomTest.view().position);assert.ok(after[2]<before[2]-.2);record('First-person lock and WASD movement work');
  await page.evaluate(()=>{window.__roomTest.setPosition(1,-5.35);window.__roomTest.look(1,1.63,-8);});await page.keyboard.down('KeyW');await page.waitForTimeout(350);await page.keyboard.up('KeyW');assert.ok((await page.evaluate(()=>window.__roomTest.view().position))[2]>=-5.43);record('Room boundary collision holds');
  await focus('letter');await page.locator('.letter-paper').waitFor();await shot('03-letter');await close();
  await focus('lock');await page.locator('#try-lock').click();assert.match(await page.locator('#lock-error').innerText(),/잠겨/);
