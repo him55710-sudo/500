@@ -1,0 +1,45 @@
+import {chromium} from '@playwright/test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import {initialState,SAVE_KEY} from '../src/state.js';
+import {memorySafeAngles} from '../src/personal-memories.js';
+const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe'});
+const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
+page.on('pageerror',e=>errors.push(e.message));
+const url=process.env.GAME_BASE_URL||'http://127.0.0.1:5179/';
+await fs.mkdir('test-results',{recursive:true});
+const focus=async id=>{await page.evaluate(id=>window.__roomTest.focus(id),id);await page.waitForTimeout(180);await page.keyboard.press('KeyE');};
+const pose=async()=>{await page.evaluate(()=>{window.__roomTest.setPosition(-1.45,-3.55);window.__roomTest.look(-1.45,2.83,-5.93);});await page.waitForTimeout(200);};
+try{
+ await page.addInitScript(({state,key})=>{
+  if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(state));
+  localStorage.setItem('hayoung500.settings',JSON.stringify({version:2,quality:'high',motion:false,scares:false,voice:false}));
+ },{state:{...initialState(),stage:1,letterRead:true},key:SAVE_KEY});
+ await page.goto(url+'?e2e=1',{waitUntil:'networkidle'});await page.locator('#continue').click();
+ await page.waitForFunction(()=>window.__roomTest?.ready,null,{timeout:120000});
+ assert.match((await page.evaluate(()=>window.__roomTest.assets())).photoSources[2],/hyunsu-birthday\.png$/);
+ await pose();await page.screenshot({path:'test-results/memory-birthday-frame.png'});
+ await focus('frames');
+ const photo=page.locator('[data-color="green"] img');await photo.waitFor();
+ assert.match(await photo.getAttribute('src'),/hyunsu-birthday\.png$/);
+ assert.equal(await photo.evaluate(i=>i.complete&&i.naturalWidth===1178&&i.naturalHeight===2069),true);
+ await page.screenshot({path:'test-results/memory-birthday-choice.png'});
+ for(const color of ['yellow','green','blue','red'])await page.locator(`[data-color="${color}"]`).click();
+ await page.waitForFunction(()=>window.__roomTest.read().framesSolved);
+ await page.waitForTimeout(1300);await pose();await page.screenshot({path:'test-results/memory-frame-open.png'});
+ await page.evaluate(()=>window.__roomTest.focus('memory-safe'));await page.waitForTimeout(180);
+ assert.match(await page.locator('#prompt').innerText(),/금고/);
+ await page.keyboard.press('KeyE');await page.locator('#open-memory-safe').click();
+ await page.locator('#close-modal').click();
+ await page.waitForFunction(target=>Math.abs(window.__roomTest.assets().safeAngle-target)<.001,memorySafeAngles.door);
+ await pose();await page.screenshot({path:'test-results/memory-safe-open.png'});
+ await page.evaluate(()=>{window.__roomTest.setPosition(-2.35,-3.55);window.__roomTest.look(-1.45,2.83,-5.93);});
+ await page.waitForTimeout(200);await page.screenshot({path:'test-results/memory-safe-side.png'});
+ await page.reload();await page.locator('#continue').click();await page.waitForFunction(()=>window.__roomTest?.ready,null,{timeout:120000});
+ assert.ok(Math.abs((await page.evaluate(()=>window.__roomTest.assets())).safeAngle-memorySafeAngles.door)<.001);
+ await focus('memory-safe');await page.locator('#take-violin').click();
+ assert.equal((await page.evaluate(()=>window.__roomTest.read())).stage,2);
+ assert.deepEqual(errors,[]);
+ console.log('Birthday photo, independent frame/safe opening, saved open pose and keyring pickup passed.');
+ await fs.writeFile('test-results/memory-safe-report.json',JSON.stringify({ok:true,errors,photo:'1178 × 2069, entire image preserved'},null,2));
+}finally{await browser.close();}

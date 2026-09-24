@@ -7,7 +7,7 @@ import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {movePlayer} from './movement.js';
 import {polishRoomMaterials} from './render-look.js';
 import {improveSalon} from './salon-upgrades.js';
-import {personalPhoto,memoryPhotos,addMemorySafe} from './personal-memories.js';
+import {personalPhoto,memoryPhotos,addMemorySafe,syncMemorySafe} from './personal-memories.js';
 const V=(x=0,y=0,z=0)=>new THREE.Vector3(x,y,z);
 function canvasTexture(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;draw(c.getContext('2d'),w,h);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=8;return t;}
 function poster(ctx,w,h,title,subtitle,color,index){
@@ -113,7 +113,7 @@ export class World{
  addTargets(){
   const add=(id,name,desc,p,s,stage=-1)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(...s),new THREE.MeshBasicMaterial({visible:false}));m.position.copy(V(...p));m.userData={id,name,desc,stage};this.scene.add(m);this.targets.push(m);};
   add('letter','현수의 편지','책상 위의 봉투 읽기',[-3.7,1.2,-3.25],[.8,.32,.65]);
-  add('memory-safe','초록 액자 뒤 금고','금고를 열고 첫 선물 꺼내기',[-1.45,2.75,-5.15],[1.1,1.3,.4]);
+  add('memory-safe','초록 액자 뒤 금고','금고를 열고 첫 선물 꺼내기',[-1.45,2.75,-5.87],[1.1,1.3,.24]);
   add('lock','일곱 자리 자물쇠','휠을 돌려 잠금 해제',[-2.65,1.32,-3.3],[.85,.6,.5]);
   for(let i=0;i<4;i++)add('frames','네 장의 추억','시간 순서대로 색 버튼 누르기',[-4.65+i*1.6,2.6,-5.43],[1.25,1.8,.6],1);
   add('violinist','바이올린 연주 인형','턱 아래로 악기를 받치는 자세',[-4.55,1.3,-.8],[.65,.8,.62]);
@@ -131,9 +131,7 @@ export class World{
  sync(state,animate=true){
   if(!this.model)return;this.state=state;const st=state.stage;
   for(let i=0;i<4;i++){const cover=this.get('FrameCover'+i);if(!animate||this.oldStage<0)cover.position.y=st>0?4.43:2.85;else if(st>0&&this.oldStage===0)this.animate(cover.position,'y',4.43,1.4+i*.12);this.posters[i].visible=st>0;}
-  this.memorySafe.visible=state.framesSolved||st>=2;
-  const open=state.framesSolved||st>=2;if(this.safeWasOpen!==open){if(animate&&open)this.animate(this.memoryFrameHinge.rotation,'y',-1.5,1.2);else this.memoryFrameHinge.rotation.y=open?-1.5:0;this.safeWasOpen=open;}
-  this.safeHinge.rotation.y=state.safeOpen?-1.7:0;
+  syncMemorySafe(this,state,animate);
   this.get('ViolinKeyring').visible=(st===1&&state.safeOpen)||st>=3;
   if(st>=3){this.get('ViolinKeyring').position.set(-4.45,1.46,-.91);this.get('ViolinKeyring').rotation.set(0,Math.PI/2,Math.PI/2);}
   else if(st===2)this.get('ViolinKeyring').visible=false;
@@ -204,6 +202,7 @@ export class World{
   for(const h of hits){const t=h.object,st=this.state?.stage||0,id=t.userData.id;
    if(!t.visible)continue;
    if(t.userData.stage>=0&&t.userData.stage!==st)continue;
+   if(id==='frames'&&this.state?.framesSolved)continue;
    if(id==='memory-safe'&&(!this.state.framesSolved||st!==1))continue;
    if(id==='bench'&&(st!==5||this.state.inventory.includes('bench')))continue;if(id==='carousel'&&st>=4)continue;
    if(this.player.clone().add(V(0,1.3,0)).distanceTo(t.position)>3.05)continue;
