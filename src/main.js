@@ -1,4 +1,5 @@
 import './style.css';
+import {initPrologue} from './prologue.js';
 import {cutCardMarkup,revealCutCard,steakPhotoMarkup} from './food-art.js';
 import './heaven.css';
 import './scene-clarity.css';
@@ -231,6 +232,7 @@ function loop(now){
  sound.update(world.camera.position,world.camera.getWorldDirection(rafDirection),now/1000);
 }
 $('#loading').hidden=true;$('#welcome').hidden=false;$('#start').disabled=false;
+initPrologue();
 $('#princess-preview').onclick=()=>enterPrincess(true);
 $('#princess-preview').hidden=new URLSearchParams(location.search).get('preview')!=='heaven';
 if(import.meta.env.DEV&&new URLSearchParams(location.search).get('preview')==='transfer'){
